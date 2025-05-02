@@ -1,11 +1,11 @@
 #include "../../template.h"
 
 template <typename T>
-struct LazySegTree{
+struct LazySegTree {
 	vector<T> st, lazy;
 
+    LazySegTree() {}
     LazySegTree(int n): st(n*4), lazy(n*4) {}
-
 
     void update(int id, int l, int r, int u, int v, T val) {
         if (v < l || u > r)
@@ -33,11 +33,8 @@ struct LazySegTree{
     }
 
     T getSum(int id, int l, int r, int u, int v) {
-        if (r < u || v < l)
-            return 0;
-        if (u <= l && v >= r)
-            return st[id];
-        push(id);
+        if (l > v || r < u) return 0;
+        if (l >= u && r <= v) return sum[id];
         int mid = (l + r) >> 1;
         T t1 = getSum(id*2, l, mid, u, v);
         T t2 = getSum(id*2+1, mid+1, r, u, v);
