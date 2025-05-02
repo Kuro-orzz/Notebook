@@ -20,6 +20,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: Big_Integer/Addition_of_Big_Integers.test.cpp
       title: Big_Integer/Addition_of_Big_Integers.test.cpp
+  - name: DataStructure
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: DataStructure/Associative_array.test.cpp
+      title: DataStructure/Associative_array.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: DataStructure/Predecessor_problem.test.cpp
+      title: DataStructure/Predecessor_problem.test.cpp
   - name: Sample
     pages:
     - icon: ':heavy_check_mark:'

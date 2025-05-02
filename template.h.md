@@ -10,6 +10,12 @@ data:
     path: Big_Integer/Addition_of_Big_Integers.test.cpp
     title: Big_Integer/Addition_of_Big_Integers.test.cpp
   - icon: ':heavy_check_mark:'
+    path: DataStructure/Associative_array.test.cpp
+    title: DataStructure/Associative_array.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: DataStructure/Predecessor_problem.test.cpp
+    title: DataStructure/Predecessor_problem.test.cpp
+  - icon: ':heavy_check_mark:'
     path: Sample/A_plus_B.test.cpp
     title: Sample/A_plus_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -49,6 +55,8 @@ data:
   - Sample/A_plus_B.test.cpp
   - Sample/Many_A_plus_B.test.cpp
   - Sample/Many_A_plus_B_128bit.test.cpp
+  - DataStructure/Predecessor_problem.test.cpp
+  - DataStructure/Associative_array.test.cpp
 documentation_of: template.h
 layout: document
 redirect_from:
