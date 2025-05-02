@@ -29,6 +29,9 @@ data:
     - icon: ':warning:'
       path: DataStructure/SegTree/LazySegTree.h
       title: DataStructure/SegTree/LazySegTree.h
+    - icon: ':heavy_check_mark:'
+      path: DataStructure/SegTree/SegTree.h
+      title: DataStructure/SegTree/SegTree.h
   - name: .
     pages:
     - icon: ':warning:'
@@ -48,6 +51,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/Associative_array.test.cpp
       title: DataStructure/Associative_array.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: DataStructure/Point_add_range_sum.test.cpp
+      title: DataStructure/Point_add_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: DataStructure/Predecessor_problem.test.cpp
       title: DataStructure/Predecessor_problem.test.cpp
