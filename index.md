@@ -8,7 +8,7 @@ data:
       title: Big_Integer/BigInt.h
   - name: DataStructure/DSU
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/DSU/Dsu.h
       title: DataStructure/DSU/Dsu.h
   - name: .
@@ -33,7 +33,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/Predecessor_problem.test.cpp
       title: DataStructure/Predecessor_problem.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/Union_find.test.cpp
       title: DataStructure/Union_find.test.cpp
   - name: Sample

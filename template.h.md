@@ -5,7 +5,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: Big_Integer/BigInt.h
     title: Big_Integer/BigInt.h
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: DataStructure/DSU/Dsu.h
     title: DataStructure/DSU/Dsu.h
   _extendedVerifiedWith:
@@ -18,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/Predecessor_problem.test.cpp
     title: DataStructure/Predecessor_problem.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: DataStructure/Union_find.test.cpp
+    title: DataStructure/Union_find.test.cpp
   - icon: ':heavy_check_mark:'
     path: Sample/A_plus_B.test.cpp
     title: Sample/A_plus_B.test.cpp
@@ -61,6 +64,7 @@ data:
   - Sample/Many_A_plus_B_128bit.test.cpp
   - DataStructure/Predecessor_problem.test.cpp
   - DataStructure/Associative_array.test.cpp
+  - DataStructure/Union_find.test.cpp
 documentation_of: template.h
 layout: document
 redirect_from:
