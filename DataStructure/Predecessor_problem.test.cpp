@@ -38,7 +38,7 @@ void solve(){
     int n, q; cin >> n >> q;
     string str; cin >> str;
     custom_set<int> s;
-    for (int i = 0; i < str.size(); i++) {
+    for (size_t i = 0; i < str.size(); i++) {
         if (str[i] == '1')
             s.insert(i);
     }
