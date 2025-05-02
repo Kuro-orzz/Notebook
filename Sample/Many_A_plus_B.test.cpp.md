@@ -1,0 +1,45 @@
+---
+data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: template.h
+    title: template.h
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/many_aplusb
+    links:
+    - https://judge.yosupo.jp/problem/many_aplusb
+  bundledCode: "#line 1 \"Sample/Many_A_plus_B.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb\"\
+    \n\n#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    \ \n#define ll long long\n#define MOD (ll)(1e9+7)\n#define all(x) (x).begin(),(x).end()\n\
+    \ \n#define vi vector<int>\n#define pii pair<int, int>\n#define fi first\n#define\
+    \ se second\n\nvoid solve();\n\nint main(){\n    ios_base::sync_with_stdio(false);cin.tie(NULL);\n\
+    \    // cin.exceptions(cin.failbit);\n    // int t; cin >> t;\n    // while(t--)\n\
+    \        solve();\n    cerr << \"\\nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC\
+    \ << \"ms\" << '\\n';\n    return 0;\n}\n#line 4 \"Sample/Many_A_plus_B.test.cpp\"\
+    \n\nvoid solve(){\n    int t; cin >> t;\n    while(t--) {\n        long long a,\
+    \ b; cin >> a >> b;\n        cout << a + b << '\\n';\n    }\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb\"\n\n#include\
+    \ \"../template.h\"\n\nvoid solve(){\n    int t; cin >> t;\n    while(t--) {\n\
+    \        long long a, b; cin >> a >> b;\n        cout << a + b << '\\n';\n   \
+    \ }\n}"
+  dependsOn:
+  - template.h
+  isVerificationFile: true
+  path: Sample/Many_A_plus_B.test.cpp
+  requiredBy: []
+  timestamp: '2025-05-02 19:47:33+07:00'
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: Sample/Many_A_plus_B.test.cpp
+layout: document
+redirect_from:
+- /verify/Sample/Many_A_plus_B.test.cpp
+- /verify/Sample/Many_A_plus_B.test.cpp.html
+title: Sample/Many_A_plus_B.test.cpp
+---

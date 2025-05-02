@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: Big_Integer/Addition_of_Big_Integers.test.cpp
     title: Big_Integer/Addition_of_Big_Integers.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: Sample/Many_A_plus_B_128bit.test.cpp
+    title: Sample/Many_A_plus_B_128bit.test.cpp
   _isVerificationFailed: false
   _pathExtension: h
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -167,6 +170,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - Big_Integer/Addition_of_Big_Integers.test.cpp
+  - Sample/Many_A_plus_B_128bit.test.cpp
 documentation_of: Big_Integer/BigInt.h
 layout: document
 redirect_from:
