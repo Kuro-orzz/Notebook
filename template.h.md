@@ -31,6 +31,9 @@ data:
     path: DataStructure/Union_find.test.cpp
     title: DataStructure/Union_find.test.cpp
   - icon: ':heavy_check_mark:'
+    path: DataStructure/Unionfind_with_potential.test.cpp
+    title: DataStructure/Unionfind_with_potential.test.cpp
+  - icon: ':heavy_check_mark:'
     path: Sample/A_plus_B.test.cpp
     title: Sample/A_plus_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -76,6 +79,7 @@ data:
   - Sample/Many_A_plus_B_128bit.test.cpp
   - DataStructure/Predecessor_problem.test.cpp
   - DataStructure/Associative_array.test.cpp
+  - DataStructure/Unionfind_with_potential.test.cpp
   - DataStructure/Union_find.test.cpp
 documentation_of: template.h
 layout: document

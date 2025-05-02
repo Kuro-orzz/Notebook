@@ -1,0 +1,77 @@
+---
+data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: DataStructure/DSU/Dsu.h
+    title: DataStructure/DSU/Dsu.h
+  - icon: ':heavy_check_mark:'
+    path: template.h
+    title: template.h
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/unionfind_with_potential
+    links:
+    - https://judge.yosupo.jp/problem/unionfind_with_potential
+  bundledCode: "#line 1 \"DataStructure/Unionfind_with_potential.test.cpp\"\n#define\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/unionfind_with_potential\"\n\n#line\
+    \ 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace std;\n \n#define\
+    \ ll long long\n#define MOD (ll)(1e9+7)\n#define all(x) (x).begin(),(x).end()\n\
+    \ \n#define vi vector<int>\n#define pii pair<int, int>\n#define fi first\n#define\
+    \ se second\n\nvoid solve();\n\nint main(){\n    ios_base::sync_with_stdio(false);cin.tie(NULL);\n\
+    \    // cin.exceptions(cin.failbit);\n    // int t; cin >> t;\n    // while(t--)\n\
+    \        solve();\n    cerr << \"\\nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC\
+    \ << \"ms\" << '\\n';\n    return 0;\n}\n#line 2 \"DataStructure/DSU/Dsu.h\"\n\
+    \n/* Diff: different between a[u] and a[par[u]] */\n\nstruct Dsu {\n    vector<int>\
+    \ par, sz;\n    vector<ll> diff;\n\n    Dsu(int n): par(n+1), sz(n+1, 1), diff(n+1)\
+    \ {\n        iota(all(par), 0);\n    }\n\n    int find(int v) {\n        if(v\
+    \ == par[v]) return v;\n        return par[v] = find(par[v]);\n    }\n    \n \
+    \   void merge(int a, int b) {\n        a = find(a);\n        b = find(b);\n \
+    \       if (a == b) return;\n        if(sz[a] < sz[b]) swap(a, b);\n        par[b]\
+    \ = a;\n        sz[a] += sz[b];\n    }\n\n    bool same_component(int u, int v)\
+    \ {\n        return find(u) == find(v);\n    }\n\n    int component_size(int u)\
+    \ {\n        u = find(u);\n        return sz[u];\n    }\n\n    /* https://judge.yosupo.jp/problem/unionfind_with_potential\
+    \ */\n    int findPotential(int v, int mod) {\n        if (v == par[v]) return\
+    \ v;\n        int p = par[v];\n        int root = findPotential(p, mod);\n   \
+    \     diff[v] = (diff[v] + diff[p]) % mod;\n        return par[v] = root;\n  \
+    \  }\n\n    bool mergePotential(int u, int v, int x, int mod) {\n        int pu\
+    \ = findPotential(u, mod);\n        int pv = findPotential(v, mod);\n        if\
+    \ (pu == pv) {\n            return (diff[u] - diff[v] + mod) % mod == x;\n   \
+    \     }\n        if(sz[pu] < sz[pv]) {\n            swap(u, v);\n            swap(pu,\
+    \ pv);\n            x = (mod - x) % mod;\n        }\n        par[pv] = pu;\n \
+    \       sz[pu] += sz[pv];\n        diff[pv] = ((diff[u] - diff[v] - x) % mod +\
+    \ mod) % mod;\n        return true;\n    }\n\n    int getDiff(int u, int v, int\
+    \ mod) {\n        int pu = findPotential(u, mod);\n        int pv = findPotential(v,\
+    \ mod);\n        if (pu != pv) return -1;\n        return (diff[u] - diff[v] +\
+    \ mod) % mod;\n    }\n};\n#line 5 \"DataStructure/Unionfind_with_potential.test.cpp\"\
+    \n\nconst int mod = 998244353;\n\nvoid solve() {\n\tint n, q; cin >> n >> q;\n\
+    \tDsu g(n);\n\twhile (q--) {\n\t\tint tv, u, v; cin >> tv >> u >> v;\n\t\tif (tv\
+    \ == 0) {\n\t\t\tint x; cin >> x;\n\t\t\tcout << (g.mergePotential(u, v, x, mod)\
+    \ ? 1 : 0) << \"\\n\";\n\t\t} else {\n\t\t\tcout << g.getDiff(u, v, mod) << '\\\
+    n';\n\t\t}\n\t}\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind_with_potential\"\
+    \n\n#include \"../template.h\"\n#include \"DSU/Dsu.h\"\n\nconst int mod = 998244353;\n\
+    \nvoid solve() {\n\tint n, q; cin >> n >> q;\n\tDsu g(n);\n\twhile (q--) {\n\t\
+    \tint tv, u, v; cin >> tv >> u >> v;\n\t\tif (tv == 0) {\n\t\t\tint x; cin >>\
+    \ x;\n\t\t\tcout << (g.mergePotential(u, v, x, mod) ? 1 : 0) << \"\\n\";\n\t\t\
+    } else {\n\t\t\tcout << g.getDiff(u, v, mod) << '\\n';\n\t\t}\n\t}\n}"
+  dependsOn:
+  - template.h
+  - DataStructure/DSU/Dsu.h
+  isVerificationFile: true
+  path: DataStructure/Unionfind_with_potential.test.cpp
+  requiredBy: []
+  timestamp: '2025-05-03 00:12:45+07:00'
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: DataStructure/Unionfind_with_potential.test.cpp
+layout: document
+redirect_from:
+- /verify/DataStructure/Unionfind_with_potential.test.cpp
+- /verify/DataStructure/Unionfind_with_potential.test.cpp.html
+title: DataStructure/Unionfind_with_potential.test.cpp
+---

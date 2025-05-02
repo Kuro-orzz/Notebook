@@ -49,6 +49,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/Union_find.test.cpp
       title: DataStructure/Union_find.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: DataStructure/Unionfind_with_potential.test.cpp
+      title: DataStructure/Unionfind_with_potential.test.cpp
   - name: Sample
     pages:
     - icon: ':heavy_check_mark:'
