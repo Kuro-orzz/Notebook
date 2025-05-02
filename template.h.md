@@ -14,6 +14,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/Fenwick/Fenwick.h
     title: DataStructure/Fenwick/Fenwick.h
+  - icon: ':heavy_check_mark:'
+    path: DataStructure/RMQ/RMQ.h
+    title: DataStructure/RMQ/RMQ.h
   - icon: ':warning:'
     path: DataStructure/SegTree/LazySegTree.h
     title: DataStructure/SegTree/LazySegTree.h
@@ -27,6 +30,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/Predecessor_problem.test.cpp
     title: DataStructure/Predecessor_problem.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: DataStructure/Static_RMQ.test.cpp
+    title: DataStructure/Static_RMQ.test.cpp
   - icon: ':heavy_check_mark:'
     path: DataStructure/Static_range_sum.test.cpp
     title: DataStructure/Static_range_sum.test.cpp
@@ -72,6 +78,7 @@ data:
   - DataStructure/DSU/Dsu_2D.h
   - DataStructure/DSU/Dsu.h
   - DataStructure/Fenwick/Fenwick.h
+  - DataStructure/RMQ/RMQ.h
   - DataStructure/SegTree/LazySegTree.h
   timestamp: '2025-05-02 19:05:46+07:00'
   verificationStatus: LIBRARY_ALL_AC
@@ -81,6 +88,7 @@ data:
   - Sample/Many_A_plus_B.test.cpp
   - Sample/Many_A_plus_B_128bit.test.cpp
   - DataStructure/Predecessor_problem.test.cpp
+  - DataStructure/Static_RMQ.test.cpp
   - DataStructure/Static_range_sum.test.cpp
   - DataStructure/Associative_array.test.cpp
   - DataStructure/Unionfind_with_potential.test.cpp

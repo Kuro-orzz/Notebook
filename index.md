@@ -19,6 +19,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/Fenwick/Fenwick.h
       title: DataStructure/Fenwick/Fenwick.h
+  - name: DataStructure/RMQ
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: DataStructure/RMQ/RMQ.h
+      title: DataStructure/RMQ/RMQ.h
   - name: DataStructure/SegTree
     pages:
     - icon: ':warning:'
@@ -46,6 +51,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/Predecessor_problem.test.cpp
       title: DataStructure/Predecessor_problem.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: DataStructure/Static_RMQ.test.cpp
+      title: DataStructure/Static_RMQ.test.cpp
     - icon: ':heavy_check_mark:'
       path: DataStructure/Static_range_sum.test.cpp
       title: DataStructure/Static_range_sum.test.cpp
