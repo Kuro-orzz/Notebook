@@ -5,7 +5,7 @@
 
 void solve(){
     int n, q; cin >> n >> q;
-    Dsu g(n+1);
+    Dsu g(n);
     while (q--) {
         int tv, u, v; cin >> tv >> u >> v;
         if (tv == 0) g.merge(u, v);
