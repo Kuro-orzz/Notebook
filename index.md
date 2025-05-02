@@ -11,6 +11,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/DSU/Dsu.h
       title: DataStructure/DSU/Dsu.h
+    - icon: ':warning:'
+      path: DataStructure/DSU/Dsu_2D.h
+      title: DataStructure/DSU/Dsu_2D.h
+  - name: DataStructure/Fenwick
+    pages:
+    - icon: ':warning:'
+      path: DataStructure/Fenwick/Fenwick.h
+      title: DataStructure/Fenwick/Fenwick.h
+  - name: DataStructure/SegTree
+    pages:
+    - icon: ':warning:'
+      path: DataStructure/SegTree/LazySegTree.h
+      title: DataStructure/SegTree/LazySegTree.h
   - name: .
     pages:
     - icon: ':warning:'

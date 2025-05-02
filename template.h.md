@@ -8,6 +8,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/DSU/Dsu.h
     title: DataStructure/DSU/Dsu.h
+  - icon: ':warning:'
+    path: DataStructure/DSU/Dsu_2D.h
+    title: DataStructure/DSU/Dsu_2D.h
+  - icon: ':warning:'
+    path: DataStructure/Fenwick/Fenwick.h
+    title: DataStructure/Fenwick/Fenwick.h
+  - icon: ':warning:'
+    path: DataStructure/SegTree/LazySegTree.h
+    title: DataStructure/SegTree/LazySegTree.h
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: Big_Integer/Addition_of_Big_Integers.test.cpp
@@ -54,7 +63,10 @@ data:
   path: template.h
   requiredBy:
   - Big_Integer/BigInt.h
+  - DataStructure/DSU/Dsu_2D.h
   - DataStructure/DSU/Dsu.h
+  - DataStructure/Fenwick/Fenwick.h
+  - DataStructure/SegTree/LazySegTree.h
   timestamp: '2025-05-02 19:05:46+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
