@@ -5,10 +5,13 @@ data:
     path: template.h
     title: template.h
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: DataStructure/Static_range_sum.test.cpp
+    title: DataStructure/Static_range_sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -43,8 +46,9 @@ data:
   path: DataStructure/Fenwick/Fenwick.h
   requiredBy: []
   timestamp: '2025-05-02 22:25:58+07:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - DataStructure/Static_range_sum.test.cpp
 documentation_of: DataStructure/Fenwick/Fenwick.h
 layout: document
 redirect_from:

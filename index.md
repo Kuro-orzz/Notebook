@@ -16,7 +16,7 @@ data:
       title: DataStructure/DSU/Dsu_2D.h
   - name: DataStructure/Fenwick
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/Fenwick/Fenwick.h
       title: DataStructure/Fenwick/Fenwick.h
   - name: DataStructure/SegTree
@@ -46,6 +46,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/Predecessor_problem.test.cpp
       title: DataStructure/Predecessor_problem.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: DataStructure/Static_range_sum.test.cpp
+      title: DataStructure/Static_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: DataStructure/Union_find.test.cpp
       title: DataStructure/Union_find.test.cpp

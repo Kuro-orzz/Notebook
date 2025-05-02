@@ -11,7 +11,7 @@ data:
   - icon: ':warning:'
     path: DataStructure/DSU/Dsu_2D.h
     title: DataStructure/DSU/Dsu_2D.h
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: DataStructure/Fenwick/Fenwick.h
     title: DataStructure/Fenwick/Fenwick.h
   - icon: ':warning:'
@@ -27,6 +27,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/Predecessor_problem.test.cpp
     title: DataStructure/Predecessor_problem.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: DataStructure/Static_range_sum.test.cpp
+    title: DataStructure/Static_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: DataStructure/Union_find.test.cpp
     title: DataStructure/Union_find.test.cpp
@@ -78,6 +81,7 @@ data:
   - Sample/Many_A_plus_B.test.cpp
   - Sample/Many_A_plus_B_128bit.test.cpp
   - DataStructure/Predecessor_problem.test.cpp
+  - DataStructure/Static_range_sum.test.cpp
   - DataStructure/Associative_array.test.cpp
   - DataStructure/Unionfind_with_potential.test.cpp
   - DataStructure/Union_find.test.cpp
