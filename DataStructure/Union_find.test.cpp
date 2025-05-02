@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
 
 #include "../template.h"
-#include "Dsu/Dsu.h"
+#include "DSU/Dsu.h"
 
 void solve(){
     int n, q; cin >> n >> q;
