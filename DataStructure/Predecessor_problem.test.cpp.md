@@ -31,9 +31,9 @@ data:
     \      auto it = s.upper_bound(k);\n        if (it == s.begin())\n           \
     \ return -1;\n        return *prev(it);\n    }\n};\n\nvoid solve(){\n    int n,\
     \ q; cin >> n >> q;\n    string str; cin >> str;\n    custom_set<int> s;\n   \
-    \ for (int i = 0; i < str.size(); i++) {\n        if (str[i] == '1')\n       \
-    \     s.insert(i);\n    }\n    while (q--) {\n        int tv, k; cin >> tv >>\
-    \ k;\n        if (tv == 0) {\n            s.insert(k);\n        } else if (tv\
+    \ for (size_t i = 0; i < str.size(); i++) {\n        if (str[i] == '1')\n    \
+    \        s.insert(i);\n    }\n    while (q--) {\n        int tv, k; cin >> tv\
+    \ >> k;\n        if (tv == 0) {\n            s.insert(k);\n        } else if (tv\
     \ == 1) {\n            s.erase(k);\n        } else if (tv == 2) {\n          \
     \  cout << (s.contain(k) ? 1 : 0) << '\\n';\n        } else if (tv == 3) {\n \
     \           cout << s.find_next(k) << '\\n'; \n        } else if (tv == 4) {\n\
@@ -47,9 +47,9 @@ data:
     \ }\n\n    T find_prev(T k) {\n        auto it = s.upper_bound(k);\n        if\
     \ (it == s.begin())\n            return -1;\n        return *prev(it);\n    }\n\
     };\n\nvoid solve(){\n    int n, q; cin >> n >> q;\n    string str; cin >> str;\n\
-    \    custom_set<int> s;\n    for (int i = 0; i < str.size(); i++) {\n        if\
-    \ (str[i] == '1')\n            s.insert(i);\n    }\n    while (q--) {\n      \
-    \  int tv, k; cin >> tv >> k;\n        if (tv == 0) {\n            s.insert(k);\n\
+    \    custom_set<int> s;\n    for (size_t i = 0; i < str.size(); i++) {\n     \
+    \   if (str[i] == '1')\n            s.insert(i);\n    }\n    while (q--) {\n \
+    \       int tv, k; cin >> tv >> k;\n        if (tv == 0) {\n            s.insert(k);\n\
     \        } else if (tv == 1) {\n            s.erase(k);\n        } else if (tv\
     \ == 2) {\n            cout << (s.contain(k) ? 1 : 0) << '\\n';\n        } else\
     \ if (tv == 3) {\n            cout << s.find_next(k) << '\\n'; \n        } else\
@@ -60,7 +60,7 @@ data:
   isVerificationFile: true
   path: DataStructure/Predecessor_problem.test.cpp
   requiredBy: []
-  timestamp: '2025-05-02 20:11:04+07:00'
+  timestamp: '2025-05-02 20:27:32+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: DataStructure/Predecessor_problem.test.cpp

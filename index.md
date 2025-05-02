@@ -6,6 +6,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: Big_Integer/BigInt.h
       title: Big_Integer/BigInt.h
+  - name: DataStructure/DSU
+    pages:
+    - icon: ':warning:'
+      path: DataStructure/DSU/Dsu.h
+      title: DataStructure/DSU/Dsu.h
   - name: .
     pages:
     - icon: ':warning:'
@@ -28,6 +33,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/Predecessor_problem.test.cpp
       title: DataStructure/Predecessor_problem.test.cpp
+    - icon: ':x:'
+      path: DataStructure/Union_find.test.cpp
+      title: DataStructure/Union_find.test.cpp
   - name: Sample
     pages:
     - icon: ':heavy_check_mark:'
