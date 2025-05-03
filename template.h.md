@@ -14,6 +14,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/Fenwick/Fenwick.h
     title: DataStructure/Fenwick/Fenwick.h
+  - icon: ':warning:'
+    path: DataStructure/Point_set_range_composite.brute_force.cpp
+    title: DataStructure/Point_set_range_composite.brute_force.cpp
   - icon: ':heavy_check_mark:'
     path: DataStructure/RMQ/RMQ.h
     title: DataStructure/RMQ/RMQ.h
@@ -23,6 +26,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/SegTree/SegTree.h
     title: DataStructure/SegTree/SegTree.h
+  - icon: ':heavy_check_mark:'
+    path: Tree/Tree/Lca.h
+    title: Tree/Tree/Lca.h
   - icon: ':heavy_check_mark:'
     path: Tree/Tree/Tree.h
     title: Tree/Tree/Tree.h
@@ -36,9 +42,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/Point_add_range_sum.test.cpp
     title: DataStructure/Point_add_range_sum.test.cpp
-  - icon: ':x:'
-    path: DataStructure/Point_set_range_composite.test.cpp
-    title: DataStructure/Point_set_range_composite.test.cpp
   - icon: ':heavy_check_mark:'
     path: DataStructure/Predecessor_problem.test.cpp
     title: DataStructure/Predecessor_problem.test.cpp
@@ -66,9 +69,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: Tree/Diameter_tree.test.cpp
     title: Tree/Diameter_tree.test.cpp
-  _isVerificationFailed: true
+  - icon: ':heavy_check_mark:'
+    path: Tree/Lowest_common_ancestor.test.cpp
+    title: Tree/Lowest_common_ancestor.test.cpp
+  _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -89,6 +95,7 @@ data:
   isVerificationFile: false
   path: template.h
   requiredBy:
+  - Tree/Tree/Lca.h
   - Tree/Tree/Tree.h
   - Big_Integer/BigInt.h
   - DataStructure/DSU/Dsu_2D.h
@@ -97,10 +104,12 @@ data:
   - DataStructure/RMQ/RMQ.h
   - DataStructure/SegTree/SegTree.h
   - DataStructure/SegTree/LazySegTree.h
+  - DataStructure/Point_set_range_composite.brute_force.cpp
   timestamp: '2025-05-02 19:05:46+07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - Tree/Diameter_tree.test.cpp
+  - Tree/Lowest_common_ancestor.test.cpp
   - Big_Integer/Addition_of_Big_Integers.test.cpp
   - Sample/A_plus_B.test.cpp
   - Sample/Many_A_plus_B.test.cpp
@@ -111,7 +120,6 @@ data:
   - DataStructure/Static_range_sum.test.cpp
   - DataStructure/Associative_array.test.cpp
   - DataStructure/Unionfind_with_potential.test.cpp
-  - DataStructure/Point_set_range_composite.test.cpp
   - DataStructure/Union_find.test.cpp
 documentation_of: template.h
 layout: document

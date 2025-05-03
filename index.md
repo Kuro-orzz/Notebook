@@ -19,6 +19,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/Fenwick/Fenwick.h
       title: DataStructure/Fenwick/Fenwick.h
+  - name: DataStructure
+    pages:
+    - icon: ':warning:'
+      path: DataStructure/Point_set_range_composite.brute_force.cpp
+      title: DataStructure/Point_set_range_composite.brute_force.cpp
   - name: DataStructure/RMQ
     pages:
     - icon: ':heavy_check_mark:'
@@ -35,6 +40,9 @@ data:
   - name: Tree/Tree
     pages:
     - icon: ':heavy_check_mark:'
+      path: Tree/Tree/Lca.h
+      title: Tree/Tree/Lca.h
+    - icon: ':heavy_check_mark:'
       path: Tree/Tree/Tree.h
       title: Tree/Tree/Tree.h
   - name: .
@@ -42,7 +50,7 @@ data:
     - icon: ':warning:'
       path: setup.py
       title: setup.py
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template.h
       title: template.h
   verificationCategories:
@@ -59,9 +67,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/Point_add_range_sum.test.cpp
       title: DataStructure/Point_add_range_sum.test.cpp
-    - icon: ':x:'
-      path: DataStructure/Point_set_range_composite.test.cpp
-      title: DataStructure/Point_set_range_composite.test.cpp
     - icon: ':heavy_check_mark:'
       path: DataStructure/Predecessor_problem.test.cpp
       title: DataStructure/Predecessor_problem.test.cpp
@@ -93,6 +98,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: Tree/Diameter_tree.test.cpp
       title: Tree/Diameter_tree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: Tree/Lowest_common_ancestor.test.cpp
+      title: Tree/Lowest_common_ancestor.test.cpp
   - name: .
     pages:
     - icon: ':heavy_check_mark:'
