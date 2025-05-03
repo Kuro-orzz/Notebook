@@ -23,6 +23,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/SegTree/SegTree.h
     title: DataStructure/SegTree/SegTree.h
+  - icon: ':heavy_check_mark:'
+    path: Tree/Tree/Tree.h
+    title: Tree/Tree/Tree.h
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: Big_Integer/Addition_of_Big_Integers.test.cpp
@@ -33,6 +36,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/Point_add_range_sum.test.cpp
     title: DataStructure/Point_add_range_sum.test.cpp
+  - icon: ':x:'
+    path: DataStructure/Point_set_range_composite.test.cpp
+    title: DataStructure/Point_set_range_composite.test.cpp
   - icon: ':heavy_check_mark:'
     path: DataStructure/Predecessor_problem.test.cpp
     title: DataStructure/Predecessor_problem.test.cpp
@@ -57,9 +63,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: Sample/Many_A_plus_B_128bit.test.cpp
     title: Sample/Many_A_plus_B_128bit.test.cpp
-  _isVerificationFailed: false
+  - icon: ':heavy_check_mark:'
+    path: Tree/Diameter_tree.test.cpp
+    title: Tree/Diameter_tree.test.cpp
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -80,6 +89,7 @@ data:
   isVerificationFile: false
   path: template.h
   requiredBy:
+  - Tree/Tree/Tree.h
   - Big_Integer/BigInt.h
   - DataStructure/DSU/Dsu_2D.h
   - DataStructure/DSU/Dsu.h
@@ -88,8 +98,9 @@ data:
   - DataStructure/SegTree/SegTree.h
   - DataStructure/SegTree/LazySegTree.h
   timestamp: '2025-05-02 19:05:46+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - Tree/Diameter_tree.test.cpp
   - Big_Integer/Addition_of_Big_Integers.test.cpp
   - Sample/A_plus_B.test.cpp
   - Sample/Many_A_plus_B.test.cpp
@@ -100,6 +111,7 @@ data:
   - DataStructure/Static_range_sum.test.cpp
   - DataStructure/Associative_array.test.cpp
   - DataStructure/Unionfind_with_potential.test.cpp
+  - DataStructure/Point_set_range_composite.test.cpp
   - DataStructure/Union_find.test.cpp
 documentation_of: template.h
 layout: document

@@ -32,12 +32,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/SegTree/SegTree.h
       title: DataStructure/SegTree/SegTree.h
+  - name: Tree/Tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: Tree/Tree/Tree.h
+      title: Tree/Tree/Tree.h
   - name: .
     pages:
     - icon: ':warning:'
       path: setup.py
       title: setup.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template.h
       title: template.h
   verificationCategories:
@@ -54,6 +59,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/Point_add_range_sum.test.cpp
       title: DataStructure/Point_add_range_sum.test.cpp
+    - icon: ':x:'
+      path: DataStructure/Point_set_range_composite.test.cpp
+      title: DataStructure/Point_set_range_composite.test.cpp
     - icon: ':heavy_check_mark:'
       path: DataStructure/Predecessor_problem.test.cpp
       title: DataStructure/Predecessor_problem.test.cpp
@@ -80,6 +88,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: Sample/Many_A_plus_B_128bit.test.cpp
       title: Sample/Many_A_plus_B_128bit.test.cpp
+  - name: Tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: Tree/Diameter_tree.test.cpp
+      title: Tree/Diameter_tree.test.cpp
   - name: .
     pages:
     - icon: ':heavy_check_mark:'
