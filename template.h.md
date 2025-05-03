@@ -27,6 +27,9 @@ data:
     path: DataStructure/SegTree/SegTree.h
     title: DataStructure/SegTree/SegTree.h
   - icon: ':heavy_check_mark:'
+    path: Tree/Tree/BinaryLifting.h
+    title: Tree/Tree/BinaryLifting.h
+  - icon: ':heavy_check_mark:'
     path: Tree/Tree/Lca.h
     title: Tree/Tree/Lca.h
   - icon: ':heavy_check_mark:'
@@ -70,6 +73,9 @@ data:
     path: Tree/Diameter_tree.test.cpp
     title: Tree/Diameter_tree.test.cpp
   - icon: ':heavy_check_mark:'
+    path: Tree/Jump_on_tree.test.cpp
+    title: Tree/Jump_on_tree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: Tree/Lowest_common_ancestor.test.cpp
     title: Tree/Lowest_common_ancestor.test.cpp
   _isVerificationFailed: false
@@ -95,6 +101,7 @@ data:
   isVerificationFile: false
   path: template.h
   requiredBy:
+  - Tree/Tree/BinaryLifting.h
   - Tree/Tree/Lca.h
   - Tree/Tree/Tree.h
   - Big_Integer/BigInt.h
@@ -108,6 +115,7 @@ data:
   timestamp: '2025-05-02 19:05:46+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - Tree/Jump_on_tree.test.cpp
   - Tree/Diameter_tree.test.cpp
   - Tree/Lowest_common_ancestor.test.cpp
   - Big_Integer/Addition_of_Big_Integers.test.cpp

@@ -40,6 +40,9 @@ data:
   - name: Tree/Tree
     pages:
     - icon: ':heavy_check_mark:'
+      path: Tree/Tree/BinaryLifting.h
+      title: Tree/Tree/BinaryLifting.h
+    - icon: ':heavy_check_mark:'
       path: Tree/Tree/Lca.h
       title: Tree/Tree/Lca.h
     - icon: ':heavy_check_mark:'
@@ -98,6 +101,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: Tree/Diameter_tree.test.cpp
       title: Tree/Diameter_tree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: Tree/Jump_on_tree.test.cpp
+      title: Tree/Jump_on_tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: Tree/Lowest_common_ancestor.test.cpp
       title: Tree/Lowest_common_ancestor.test.cpp
