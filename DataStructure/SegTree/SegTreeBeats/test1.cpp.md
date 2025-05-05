@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':warning:'
-    path: DataStructure/SegTree/SegTreeBeats.h
-    title: DataStructure/SegTree/SegTreeBeats.h
+    path: DataStructure/SegTree/SegTreeBeats/SegTreeBeats1.h
+    title: DataStructure/SegTree/SegTreeBeats/SegTreeBeats1.h
   - icon: ':heavy_check_mark:'
     path: template.h
     title: template.h
@@ -15,14 +15,14 @@ data:
   attributes:
     links:
     - https://codeforces.com/problemset/problem/438/D
-  bundledCode: "#line 1 \"DataStructure/SegTree/test.cpp\"\n// https://codeforces.com/problemset/problem/438/D\n\
+  bundledCode: "#line 1 \"DataStructure/SegTree/SegTreeBeats/test1.cpp\"\n// https://codeforces.com/problemset/problem/438/D\n\
     \n#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace std;\n \n\
     #define ll long long\n#define MOD (ll)(1e9+7)\n#define all(x) (x).begin(),(x).end()\n\
     \ \n#define vi vector<int>\n#define pii pair<int, int>\n#define fi first\n#define\
     \ se second\n\nvoid solve();\n\nint main(){\n    ios_base::sync_with_stdio(false);cin.tie(NULL);\n\
     \    // cin.exceptions(cin.failbit);\n    // int t; cin >> t;\n    // while(t--)\n\
     \        solve();\n    cerr << \"\\nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC\
-    \ << \"ms\" << '\\n';\n    return 0;\n}\n#line 2 \"DataStructure/SegTree/SegTreeBeats.h\"\
+    \ << \"ms\" << '\\n';\n    return 0;\n}\n#line 2 \"DataStructure/SegTree/SegTreeBeats/SegTreeBeats1.h\"\
     \n\n\nstruct Node {\n\tll Max, sum;\n\n\tNode() {}\n\n\tNode(int val) {\n\t\t\
     Max = val;\n\t\tsum = val;\n\t}\n\n\tNode operator+(const Node &b) {\n\t\tNode\
     \ res;\n\t\tres.Max = max(Max, b.Max);\n\t\tres.sum = sum + b.sum;\n\t\treturn\
@@ -40,7 +40,7 @@ data:
     \t}\n\n\tll getSum(int id, int l, int r, int u, int v) {\n\t\tif (l > v || r <\
     \ u) return 0;\n\t\tif (u <= l && r <= v) return tree[id].sum;\n\t\tint mid =\
     \ (l + r) >> 1;\n\t\tll t1 = getSum(id*2, l, mid, u, v);\n\t\tll t2 = getSum(id*2+1,\
-    \ mid+1, r, u, v);\n\t\treturn t1 + t2;\n\t}\n};\n#line 5 \"DataStructure/SegTree/test.cpp\"\
+    \ mid+1, r, u, v);\n\t\treturn t1 + t2;\n\t}\n};\n#line 5 \"DataStructure/SegTree/SegTreeBeats/test1.cpp\"\
     \n\nvoid solve() {\n\tint n, m; cin >> n >> m;\n\tSegTreeBeats st(n);\n\tfor (int\
     \ i = 1; i <= n; i++) {\n\t\tint x; cin >> x;\n\t\tst.build(1, 1, n, i, i, x);\n\
     \t}\n\twhile (m--) {\n\t\tint type; cin >> type;\n\t\tif (type == 1) {\n\t\t\t\
@@ -48,10 +48,10 @@ data:
     \t} else if (type == 2) {\n\t\t\tint l, r, x; cin >> l >> r >> x;\n\t\t\tst.updateMod(1,\
     \ 1, n, l, r, x);\n\t\t} else if (type == 3) {\n\t\t\tint k, x; cin >> k >> x;\n\
     \t\t\tst.build(1, 1, n, k, k, x);\n\t\t}\n\t}\n}\n"
-  code: "// https://codeforces.com/problemset/problem/438/D\n\n#include \"../../template.h\"\
-    \n#include \"SegTreeBeats.h\"\n\nvoid solve() {\n\tint n, m; cin >> n >> m;\n\t\
-    SegTreeBeats st(n);\n\tfor (int i = 1; i <= n; i++) {\n\t\tint x; cin >> x;\n\t\
-    \tst.build(1, 1, n, i, i, x);\n\t}\n\twhile (m--) {\n\t\tint type; cin >> type;\n\
+  code: "// https://codeforces.com/problemset/problem/438/D\n\n#include \"../../../template.h\"\
+    \n#include \"SegTreeBeats1.h\"\n\nvoid solve() {\n\tint n, m; cin >> n >> m;\n\
+    \tSegTreeBeats st(n);\n\tfor (int i = 1; i <= n; i++) {\n\t\tint x; cin >> x;\n\
+    \t\tst.build(1, 1, n, i, i, x);\n\t}\n\twhile (m--) {\n\t\tint type; cin >> type;\n\
     \t\tif (type == 1) {\n\t\t\tint l, r; cin >> l >> r;\n\t\t\tcout << st.getSum(1,\
     \ 1, n, l, r) << '\\n';\n\t\t} else if (type == 2) {\n\t\t\tint l, r, x; cin >>\
     \ l >> r >> x;\n\t\t\tst.updateMod(1, 1, n, l, r, x);\n\t\t} else if (type ==\
@@ -59,17 +59,17 @@ data:
     }\n\t}\n}"
   dependsOn:
   - template.h
-  - DataStructure/SegTree/SegTreeBeats.h
+  - DataStructure/SegTree/SegTreeBeats/SegTreeBeats1.h
   isVerificationFile: false
-  path: DataStructure/SegTree/test.cpp
+  path: DataStructure/SegTree/SegTreeBeats/test1.cpp
   requiredBy: []
-  timestamp: '2025-05-05 10:27:01+07:00'
+  timestamp: '2025-05-05 11:43:15+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: DataStructure/SegTree/test.cpp
+documentation_of: DataStructure/SegTree/SegTreeBeats/test1.cpp
 layout: document
 redirect_from:
-- /library/DataStructure/SegTree/test.cpp
-- /library/DataStructure/SegTree/test.cpp.html
-title: DataStructure/SegTree/test.cpp
+- /library/DataStructure/SegTree/SegTreeBeats/test1.cpp
+- /library/DataStructure/SegTree/SegTreeBeats/test1.cpp.html
+title: DataStructure/SegTree/SegTreeBeats/test1.cpp
 ---

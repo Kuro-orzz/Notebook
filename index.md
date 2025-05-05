@@ -37,12 +37,20 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/SegTree/SegTree.h
       title: DataStructure/SegTree/SegTree.h
+  - name: DataStructure/SegTree/SegTreeBeats
+    pages:
     - icon: ':warning:'
-      path: DataStructure/SegTree/SegTreeBeats.h
-      title: DataStructure/SegTree/SegTreeBeats.h
+      path: DataStructure/SegTree/SegTreeBeats/SegTreeBeats1.h
+      title: DataStructure/SegTree/SegTreeBeats/SegTreeBeats1.h
     - icon: ':warning:'
-      path: DataStructure/SegTree/test.cpp
-      title: DataStructure/SegTree/test.cpp
+      path: DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
+      title: DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
+    - icon: ':warning:'
+      path: DataStructure/SegTree/SegTreeBeats/test1.cpp
+      title: DataStructure/SegTree/SegTreeBeats/test1.cpp
+    - icon: ':warning:'
+      path: DataStructure/SegTree/SegTreeBeats/test2.cpp
+      title: DataStructure/SegTree/SegTreeBeats/test2.cpp
   - name: Tree/Tree
     pages:
     - icon: ':heavy_check_mark:'
