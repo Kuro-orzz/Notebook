@@ -1,7 +1,7 @@
 // https://codeforces.com/problemset/problem/438/D
 
-#include "../../template.h"
-#include "SegTreeBeats.h"
+#include "../../../template.h"
+#include "SegTreeBeats1.h"
 
 void solve() {
 	int n, m; cin >> n >> m;
