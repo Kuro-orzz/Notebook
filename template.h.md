@@ -26,6 +26,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/SegTree/SegTree.h
     title: DataStructure/SegTree/SegTree.h
+  - icon: ':warning:'
+    path: DataStructure/SegTree/SegTreeBeats.h
+    title: DataStructure/SegTree/SegTreeBeats.h
+  - icon: ':warning:'
+    path: DataStructure/SegTree/test.cpp
+    title: DataStructure/SegTree/test.cpp
   - icon: ':heavy_check_mark:'
     path: Tree/Tree/BinaryLifting.h
     title: Tree/Tree/BinaryLifting.h
@@ -109,7 +115,9 @@ data:
   - DataStructure/DSU/Dsu.h
   - DataStructure/Fenwick/Fenwick.h
   - DataStructure/RMQ/RMQ.h
+  - DataStructure/SegTree/test.cpp
   - DataStructure/SegTree/SegTree.h
+  - DataStructure/SegTree/SegTreeBeats.h
   - DataStructure/SegTree/LazySegTree.h
   - DataStructure/Point_set_range_composite.brute_force.cpp
   timestamp: '2025-05-02 19:05:46+07:00'

@@ -37,6 +37,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/SegTree/SegTree.h
       title: DataStructure/SegTree/SegTree.h
+    - icon: ':warning:'
+      path: DataStructure/SegTree/SegTreeBeats.h
+      title: DataStructure/SegTree/SegTreeBeats.h
+    - icon: ':warning:'
+      path: DataStructure/SegTree/test.cpp
+      title: DataStructure/SegTree/test.cpp
   - name: Tree/Tree
     pages:
     - icon: ':heavy_check_mark:'
