@@ -3,6 +3,7 @@
 "DataStructure/Associative_array.test.cpp": "2025-05-02 20:11:04 +0700",
 "DataStructure/Point_add_range_sum.test.cpp": "2025-05-03 01:44:57 +0700",
 "DataStructure/Predecessor_problem.test.cpp": "2025-05-02 20:27:32 +0700",
+"DataStructure/Range_chmin_chmax_add_range_sum.test.cpp": "2025-05-06 20:15:37 +0700",
 "DataStructure/Static_RMQ.test.cpp": "2025-05-03 01:26:17 +0700",
 "DataStructure/Static_range_sum.test.cpp": "2025-05-03 00:24:12 +0700",
 "DataStructure/Union_find.test.cpp": "2025-05-03 00:12:45 +0700",
