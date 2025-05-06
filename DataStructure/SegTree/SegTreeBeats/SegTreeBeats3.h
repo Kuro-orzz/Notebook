@@ -5,16 +5,16 @@ struct Node {
 	ll max1, max2, cntMax, min1, min2, cntMin, sum, lazy, sz;
 
 	Node() {
-		max1 = max2 = -1e18;
-		min1 = min2 = 1e18;
+		max1 = max2 = -inf;
+		min1 = min2 = inf;
 		cntMax = cntMin = 0;
 		sum = lazy = sz = 0;
 	}
 
 	Node(ll val) {
 		max1 = min1 = val;
-		max2 = -1e18;
-		min2 = 1e18;
+		max2 = -inf;
+		min2 = inf;
 		cntMax = cntMin = 1;
 		sum = val;
 		lazy = 0;
@@ -52,7 +52,7 @@ struct Node {
 		sum -= (max1 - x) * cntMax;
 		max1 = x;
 		min1 = min(min1, x);
-		if (min2 != 1e18) min2 = min(min2, x);
+		if (min2 != inf) min2 = min(min2, x);
 	}
 
 	void setMax(ll x) {
@@ -60,14 +60,14 @@ struct Node {
 		sum += (x-min1) * cntMin;
 		min1 = x;
 		max1 = max(max1, x);
-		if (max2 != -1e18) max2 = max(max2, x);
+		if (max2 != -inf) max2 = max(max2, x);
 	}
 
 	void add(ll x) {
 		max1 += x;
 		min1 += x;
-		if (max2 != -1e18) max2 += x;
-		if (min2 != 1e18) min2 += x;
+		if (max2 != -inf) max2 += x;
+		if (min2 != inf) min2 += x;
 		sum += x * sz;
 		lazy += x;
 	}

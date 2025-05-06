@@ -1,28 +1,36 @@
 #include "../../template.h"
 
 template <typename T>
-struct LazySegTree {
-	vector<T> st, lazy;
+struct AfflineSegTree {
+	vector<T> st;
+    vector<pll> lazy;
 
-    LazySegTree() {}
-    LazySegTree(int n): st(n*4), lazy(n*4) {}
+    AfflineSegTree() {}
+    AfflineSegTree(int n): st(n*4), lazy(n*4) {}
 
     void push(int id) {
-        if (lazy[id]) {
-            st[id*2] += lazy[id];
-            st[id*2+1] += lazy[id];
-            lazy[id*2] += lazy[id];
-            lazy[id*2+1] += lazy[id];
-            lazy[id] = 0;
+        if (lazy[id] == make_pair(1ll*0, 1ll*0)) return;
+        st[id*2] = st[id*2] * lazy[id].fi + lazy[id].se;
+        st[id*2+1] = st[id*2+1] * lazy[id].fi + lazy[id].se;
+        setLazy(id*2, lazy[id]);
+        setLazy(id*2+1, lazy[id]);
+        lazy[id] = {0, 0};
+    }
+
+    void setLazy(int id, pll val) {
+        if (lazy[id] == make_pair(1ll*0, 1ll*0)) lazy[id] = val;
+        else {
+            lazy[id].fi *= val.fi;
+            lazy[id].se = lazy[id].se*val.fi + val.se;
         }
     }
 
-    void update(int id, int l, int r, int u, int v, T val) {
+    void update(int id, int l, int r, int u, int v, pll val) {
         if (v < l || u > r)
             return;
         if (u <= l && v >= r) {
-            st[id] += val;
-            lazy[id] += val;
+            st[id] = st[id] * val.fi + val.se;
+            setLazy(id, val);
             return;
         }
         push(id);

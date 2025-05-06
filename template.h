@@ -6,11 +6,16 @@ using namespace std;
 #define ll long long
 #define MOD (ll)(1e9+7)
 #define all(x) (x).begin(),(x).end()
- 
+#define INF32 ((1ull<<31)-1)
+#define INF64 ((1ull<<63)-1)
+#define inf (ll)1e18
 #define vi vector<int>
 #define pii pair<int, int>
+#define pll pair<ll, ll>
 #define fi first
 #define se second
+
+const int mod = 998244353;
 
 void solve();
 
