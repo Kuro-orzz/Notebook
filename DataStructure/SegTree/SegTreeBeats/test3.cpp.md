@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
     title: DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -18,39 +18,41 @@ data:
   bundledCode: "#line 1 \"DataStructure/SegTree/SegTreeBeats/test3.cpp\"\n// https://judge.yosupo.jp/problem/range_chmin_chmax_add_range_sum\n\
     \n#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace std;\n \n\
     #define ll long long\n#define MOD (ll)(1e9+7)\n#define all(x) (x).begin(),(x).end()\n\
-    \ \n#define vi vector<int>\n#define pii pair<int, int>\n#define fi first\n#define\
-    \ se second\n\nvoid solve();\n\nint main(){\n    ios_base::sync_with_stdio(false);cin.tie(NULL);\n\
-    \    // cin.exceptions(cin.failbit);\n    // int t; cin >> t;\n    // while(t--)\n\
-    \        solve();\n    cerr << \"\\nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC\
-    \ << \"ms\" << '\\n';\n    return 0;\n}\n#line 2 \"DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h\"\
-    \n\n\nstruct Node {\n\tll max1, max2, cntMax, min1, min2, cntMin, sum, lazy, sz;\n\
-    \n\tNode() {\n\t\tmax1 = max2 = -1e18;\n\t\tmin1 = min2 = 1e18;\n\t\tcntMax =\
-    \ cntMin = 0;\n\t\tsum = lazy = sz = 0;\n\t}\n\n\tNode(ll val) {\n\t\tmax1 = min1\
-    \ = val;\n\t\tmax2 = -1e18;\n\t\tmin2 = 1e18;\n\t\tcntMax = cntMin = 1;\n\t\t\
-    sum = val;\n\t\tlazy = 0;\n\t\tsz = 1;\n\t}\n\n\tNode operator+(const Node &b)\
-    \ {\n\t\tNode res;\n\n\t\tres.max1 = max(max1, b.max1);\n\t\tres.max2 = max(max2,\
-    \ b.max2);\n\t\tif (res.max1 != max1) res.max2 = max(res.max2, max1);\n\t\tif\
-    \ (res.max1 != b.max1) res.max2 = max(res.max2, b.max1); \n\t\tres.cntMax = 0;\n\
-    \t\tif (res.max1 == max1) res.cntMax += cntMax;\n\t\tif (res.max1 == b.max1) res.cntMax\
-    \ += b.cntMax;\n\n\t\tres.min1 = min(min1, b.min1);\n\t\tres.min2 = min(min2,\
-    \ b.min2);\n\t\tif (res.min1 != min1) res.min2 = min(res.min2, min1);\n\t\tif\
-    \ (res.min1 != b.min1) res.min2 = min(res.min2, b.min1);\n\t\tres.cntMin = 0;\n\
-    \t\tif (res.min1 == min1) res.cntMin += cntMin;\n\t\tif (res.min1 == b.min1) res.cntMin\
-    \ += b.cntMin;\n\n\t\tres.sum = sum + b.sum;\n\t\tres.lazy = 0;\n\t\tres.sz =\
-    \ sz + b.sz;\n\n\t\treturn res;\n\t}\n\n\tvoid setMin(ll x) {\n\t\tif (x >= max1)\
-    \ return;\n\t\tsum -= (max1 - x) * cntMax;\n\t\tmax1 = x;\n\t\tmin1 = min(min1,\
-    \ x);\n\t\tif (min2 != 1e18) min2 = min(min2, x);\n\t}\n\n\tvoid setMax(ll x)\
-    \ {\n\t\tif (x <= min1) return;\n\t\tsum += (x-min1) * cntMin;\n\t\tmin1 = x;\n\
-    \t\tmax1 = max(max1, x);\n\t\tif (max2 != -1e18) max2 = max(max2, x);\n\t}\n\n\
-    \tvoid add(ll x) {\n\t\tmax1 += x;\n\t\tmin1 += x;\n\t\tif (max2 != -1e18) max2\
-    \ += x;\n\t\tif (min2 != 1e18) min2 += x;\n\t\tsum += x * sz;\n\t\tlazy += x;\n\
-    \t}\n};\n\n// range chmin, chmax, update range, sum\nclass SegTreeBeats {\npublic:\n\
-    \tvector<Node> tree;\n\n\tSegTreeBeats(int n): tree(4*n+6) {}\n\n\tvoid build(int\
-    \ id, int l, int r, int pos, ll val) {\n\t\tif (pos < l || pos > r) return;\n\t\
-    \tif (l == r) {\n\t\t\ttree[id] = Node(val);\n\t\t\treturn;\n\t\t}\n\t\tint mid\
-    \ = (l + r) >> 1;\n\t\tbuild(id*2, l, mid, pos, val);\n\t\tbuild(id*2+1, mid+1,\
-    \ r, pos, val);\n\t\ttree[id] = tree[id*2] + tree[id*2+1];\n\t}\t\n\n\tvoid push(int\
-    \ id) {\n\t\ttree[id*2].add(tree[id].lazy);\n\t\ttree[id*2+1].add(tree[id].lazy);\n\
+    #define INF32 ((1ull<<31)-1)\n#define INF64 ((1ull<<63)-1)\n#define inf (ll)1e18\n\
+    #define vi vector<int>\n#define pii pair<int, int>\n#define pll pair<ll, ll>\n\
+    #define fi first\n#define se second\n\nconst int mod = 998244353;\n\nvoid solve();\n\
+    \nint main(){\n    ios_base::sync_with_stdio(false);cin.tie(NULL);\n    // cin.exceptions(cin.failbit);\n\
+    \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
+    nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
+    \ 0;\n}\n#line 2 \"DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h\"\n\n\n\
+    struct Node {\n\tll max1, max2, cntMax, min1, min2, cntMin, sum, lazy, sz;\n\n\
+    \tNode() {\n\t\tmax1 = max2 = -inf;\n\t\tmin1 = min2 = inf;\n\t\tcntMax = cntMin\
+    \ = 0;\n\t\tsum = lazy = sz = 0;\n\t}\n\n\tNode(ll val) {\n\t\tmax1 = min1 = val;\n\
+    \t\tmax2 = -inf;\n\t\tmin2 = inf;\n\t\tcntMax = cntMin = 1;\n\t\tsum = val;\n\t\
+    \tlazy = 0;\n\t\tsz = 1;\n\t}\n\n\tNode operator+(const Node &b) {\n\t\tNode res;\n\
+    \n\t\tres.max1 = max(max1, b.max1);\n\t\tres.max2 = max(max2, b.max2);\n\t\tif\
+    \ (res.max1 != max1) res.max2 = max(res.max2, max1);\n\t\tif (res.max1 != b.max1)\
+    \ res.max2 = max(res.max2, b.max1); \n\t\tres.cntMax = 0;\n\t\tif (res.max1 ==\
+    \ max1) res.cntMax += cntMax;\n\t\tif (res.max1 == b.max1) res.cntMax += b.cntMax;\n\
+    \n\t\tres.min1 = min(min1, b.min1);\n\t\tres.min2 = min(min2, b.min2);\n\t\tif\
+    \ (res.min1 != min1) res.min2 = min(res.min2, min1);\n\t\tif (res.min1 != b.min1)\
+    \ res.min2 = min(res.min2, b.min1);\n\t\tres.cntMin = 0;\n\t\tif (res.min1 ==\
+    \ min1) res.cntMin += cntMin;\n\t\tif (res.min1 == b.min1) res.cntMin += b.cntMin;\n\
+    \n\t\tres.sum = sum + b.sum;\n\t\tres.lazy = 0;\n\t\tres.sz = sz + b.sz;\n\n\t\
+    \treturn res;\n\t}\n\n\tvoid setMin(ll x) {\n\t\tif (x >= max1) return;\n\t\t\
+    sum -= (max1 - x) * cntMax;\n\t\tmax1 = x;\n\t\tmin1 = min(min1, x);\n\t\tif (min2\
+    \ != inf) min2 = min(min2, x);\n\t}\n\n\tvoid setMax(ll x) {\n\t\tif (x <= min1)\
+    \ return;\n\t\tsum += (x-min1) * cntMin;\n\t\tmin1 = x;\n\t\tmax1 = max(max1,\
+    \ x);\n\t\tif (max2 != -inf) max2 = max(max2, x);\n\t}\n\n\tvoid add(ll x) {\n\
+    \t\tmax1 += x;\n\t\tmin1 += x;\n\t\tif (max2 != -inf) max2 += x;\n\t\tif (min2\
+    \ != inf) min2 += x;\n\t\tsum += x * sz;\n\t\tlazy += x;\n\t}\n};\n\n// range\
+    \ chmin, chmax, update range, sum\nclass SegTreeBeats {\npublic:\n\tvector<Node>\
+    \ tree;\n\n\tSegTreeBeats(int n): tree(4*n+6) {}\n\n\tvoid build(int id, int l,\
+    \ int r, int pos, ll val) {\n\t\tif (pos < l || pos > r) return;\n\t\tif (l ==\
+    \ r) {\n\t\t\ttree[id] = Node(val);\n\t\t\treturn;\n\t\t}\n\t\tint mid = (l +\
+    \ r) >> 1;\n\t\tbuild(id*2, l, mid, pos, val);\n\t\tbuild(id*2+1, mid+1, r, pos,\
+    \ val);\n\t\ttree[id] = tree[id*2] + tree[id*2+1];\n\t}\t\n\n\tvoid push(int id)\
+    \ {\n\t\ttree[id*2].add(tree[id].lazy);\n\t\ttree[id*2+1].add(tree[id].lazy);\n\
     \t\ttree[id].lazy = 0;\n\t\t\n\t\ttree[id*2].setMax(tree[id].min1);\n\t\ttree[id*2+1].setMax(tree[id].min1);\n\
     \n\t\ttree[id*2].setMin(tree[id].max1);\n\t\ttree[id*2+1].setMin(tree[id].max1);\n\
     \t}\n\n\tvoid updateChmax(int id, int l, int r, int u, int v, ll x) {\n\t\tif\
@@ -96,7 +98,7 @@ data:
   isVerificationFile: false
   path: DataStructure/SegTree/SegTreeBeats/test3.cpp
   requiredBy: []
-  timestamp: '2025-05-06 20:15:37+07:00'
+  timestamp: '2025-05-06 22:27:53+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: DataStructure/SegTree/SegTreeBeats/test3.cpp

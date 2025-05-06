@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: Big_Integer/BigInt.h
     title: Big_Integer/BigInt.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -21,40 +21,42 @@ data:
     \ PROBLEM \"https://judge.yosupo.jp/problem/addition_of_big_integers\"\n\n#line\
     \ 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace std;\n \n#define\
     \ ll long long\n#define MOD (ll)(1e9+7)\n#define all(x) (x).begin(),(x).end()\n\
-    \ \n#define vi vector<int>\n#define pii pair<int, int>\n#define fi first\n#define\
-    \ se second\n\nvoid solve();\n\nint main(){\n    ios_base::sync_with_stdio(false);cin.tie(NULL);\n\
-    \    // cin.exceptions(cin.failbit);\n    // int t; cin >> t;\n    // while(t--)\n\
-    \        solve();\n    cerr << \"\\nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC\
-    \ << \"ms\" << '\\n';\n    return 0;\n}\n#line 2 \"Big_Integer/BigInt.h\"\n\n\
-    class BigInt {\npublic:\n    static const int BASE = 10;\n    vector<uint32_t>\
-    \ digit;\n    bool neg = false;\n\n    BigInt() {}\n\n    BigInt(int64_t val)\
-    \ {*this = val;}\n\n    BigInt(const string &s) {*this = s;}\n\n    uint32_t getDigit(const\
-    \ uint32_t i) const {return digit[i];}\n\n    uint32_t size() const {return digit.size();}\n\
-    \n    bool isZero() const {return digit.empty();}\n\n    int compare(const BigInt\
-    \ &b) const {\n        if (size() != b.size())\n            return size() > b.size()\
-    \ ? 1 : -1;\n        else if (size() < b.size())\n            return -1;\n   \
-    \     for (int i = (int)size()-1; i >= 0; i--) {\n            if (digit[i] !=\
-    \ b.getDigit(i))\n                return digit[i] > b.getDigit(i) ? 1 : -1;\n\
-    \        }\n        return 0;\n    }\n\n    void trim() {\n        while (!digit.empty()\
-    \ && digit.back() == 0)\n            digit.pop_back();\n        if (digit.empty())\
-    \ neg = false;\n    }\n\n    BigInt &operator=(int64_t val) {\n        digit.clear();\n\
-    \        if (val < 0) {\n            neg = true;\n            val = -val;\n  \
-    \      }\n        while (val) {\n            digit.push_back(val % BASE);\n  \
-    \          val /= BASE;\n        }\n        return *this;\n    }\n\n    BigInt\
-    \ &operator=(const string &s) {\n        digit.clear();\n        int32_t pos =\
-    \ 0;\n        if (s[0] == '-') {\n            neg = true;\n            pos = 1;\n\
-    \        }\n        for (int i = (int)s.size()-1; i >= pos; i--) {\n         \
-    \   digit.push_back(s[i]-'0');\n        }\n        trim();\n        return *this;\n\
-    \    }\n\n    friend ostream &operator<<(ostream &out, const BigInt &b) {\n  \
-    \      if (b.isZero()) return out << \"0\";\n        if (b.neg) out << \"-\";\n\
-    \        for (int i = (int)b.size()-1; i >= 0; i--)\n            out << b.getDigit(i);\n\
-    \        return out;\n    }\n\n    BigInt operator+(const BigInt &b) const {\n\
-    \        BigInt res;\n        if (neg == b.neg) {\n            res.neg = neg;\n\
-    \            int carry = 0;\n            size_t len = max(size(), b.size());\n\
-    \            for (size_t i = 0; i < len; i++) {\n                int sum = carry;\n\
-    \                if (i < size()) sum += digit[i];\n                if (i < b.size())\
-    \ sum += b.getDigit(i);\n                res.digit.push_back(sum % BASE);\n  \
-    \              carry = sum / BASE;\n            }\n            if (carry) res.digit.push_back(carry);\n\
+    #define INF32 ((1ull<<31)-1)\n#define INF64 ((1ull<<63)-1)\n#define inf (ll)1e18\n\
+    #define vi vector<int>\n#define pii pair<int, int>\n#define pll pair<ll, ll>\n\
+    #define fi first\n#define se second\n\nconst int mod = 998244353;\n\nvoid solve();\n\
+    \nint main(){\n    ios_base::sync_with_stdio(false);cin.tie(NULL);\n    // cin.exceptions(cin.failbit);\n\
+    \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
+    nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
+    \ 0;\n}\n#line 2 \"Big_Integer/BigInt.h\"\n\nclass BigInt {\npublic:\n    static\
+    \ const int BASE = 10;\n    vector<uint32_t> digit;\n    bool neg = false;\n\n\
+    \    BigInt() {}\n\n    BigInt(int64_t val) {*this = val;}\n\n    BigInt(const\
+    \ string &s) {*this = s;}\n\n    uint32_t getDigit(const uint32_t i) const {return\
+    \ digit[i];}\n\n    uint32_t size() const {return digit.size();}\n\n    bool isZero()\
+    \ const {return digit.empty();}\n\n    int compare(const BigInt &b) const {\n\
+    \        if (size() != b.size())\n            return size() > b.size() ? 1 : -1;\n\
+    \        else if (size() < b.size())\n            return -1;\n        for (int\
+    \ i = (int)size()-1; i >= 0; i--) {\n            if (digit[i] != b.getDigit(i))\n\
+    \                return digit[i] > b.getDigit(i) ? 1 : -1;\n        }\n      \
+    \  return 0;\n    }\n\n    void trim() {\n        while (!digit.empty() && digit.back()\
+    \ == 0)\n            digit.pop_back();\n        if (digit.empty()) neg = false;\n\
+    \    }\n\n    BigInt &operator=(int64_t val) {\n        digit.clear();\n     \
+    \   if (val < 0) {\n            neg = true;\n            val = -val;\n       \
+    \ }\n        while (val) {\n            digit.push_back(val % BASE);\n       \
+    \     val /= BASE;\n        }\n        return *this;\n    }\n\n    BigInt &operator=(const\
+    \ string &s) {\n        digit.clear();\n        int32_t pos = 0;\n        if (s[0]\
+    \ == '-') {\n            neg = true;\n            pos = 1;\n        }\n      \
+    \  for (int i = (int)s.size()-1; i >= pos; i--) {\n            digit.push_back(s[i]-'0');\n\
+    \        }\n        trim();\n        return *this;\n    }\n\n    friend ostream\
+    \ &operator<<(ostream &out, const BigInt &b) {\n        if (b.isZero()) return\
+    \ out << \"0\";\n        if (b.neg) out << \"-\";\n        for (int i = (int)b.size()-1;\
+    \ i >= 0; i--)\n            out << b.getDigit(i);\n        return out;\n    }\n\
+    \n    BigInt operator+(const BigInt &b) const {\n        BigInt res;\n       \
+    \ if (neg == b.neg) {\n            res.neg = neg;\n            int carry = 0;\n\
+    \            size_t len = max(size(), b.size());\n            for (size_t i =\
+    \ 0; i < len; i++) {\n                int sum = carry;\n                if (i\
+    \ < size()) sum += digit[i];\n                if (i < b.size()) sum += b.getDigit(i);\n\
+    \                res.digit.push_back(sum % BASE);\n                carry = sum\
+    \ / BASE;\n            }\n            if (carry) res.digit.push_back(carry);\n\
     \            res.trim();\n            return res;\n        } else {\n        \
     \    return *this - (-b);\n        }\n    }\n\n    BigInt operator-(const BigInt\
     \ &b) const {\n        if (!neg && b.neg)\n            return *this + (-b);\n\
@@ -107,7 +109,7 @@ data:
   isVerificationFile: true
   path: Big_Integer/Addition_of_Big_Integers.test.cpp
   requiredBy: []
-  timestamp: '2025-05-02 19:05:46+07:00'
+  timestamp: '2025-05-06 22:27:53+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Big_Integer/Addition_of_Big_Integers.test.cpp

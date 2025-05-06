@@ -4,7 +4,7 @@ data:
   - icon: ':warning:'
     path: DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
     title: DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -18,16 +18,18 @@ data:
   bundledCode: "#line 1 \"DataStructure/SegTree/SegTreeBeats/test2.cpp\"\n// https://codeforces.com/group/1rv4rhCsHp/contest/327313/problem/B\n\
     \n#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace std;\n \n\
     #define ll long long\n#define MOD (ll)(1e9+7)\n#define all(x) (x).begin(),(x).end()\n\
-    \ \n#define vi vector<int>\n#define pii pair<int, int>\n#define fi first\n#define\
-    \ se second\n\nvoid solve();\n\nint main(){\n    ios_base::sync_with_stdio(false);cin.tie(NULL);\n\
-    \    // cin.exceptions(cin.failbit);\n    // int t; cin >> t;\n    // while(t--)\n\
-    \        solve();\n    cerr << \"\\nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC\
-    \ << \"ms\" << '\\n';\n    return 0;\n}\n#line 2 \"DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h\"\
-    \n\n\nstruct Node {\n\tll max1, max2, cntMax, sum, lazy;\n\n\tNode() {}\n\n\t\
-    Node(int val) {\n\t\tmax1 = val;\n\t\tmax2 = -1;\n\t\tcntMax = 1;\n\t\tsum = val;\n\
-    \t\tlazy = -1;\n\t}\n\n\tNode operator+(const Node &b) {\n\t\tNode res;\n\t\t\
-    res.max1 = max(max1, b.max1);\n\t\tres.max2 = max(max2, b.max2);\n\t\tif (res.max1\
-    \ != max1) res.max2 = max(res.max2, max1);\n\t\tif (res.max1 != b.max1) res.max2\
+    #define INF32 ((1ull<<31)-1)\n#define INF64 ((1ull<<63)-1)\n#define inf (ll)1e18\n\
+    #define vi vector<int>\n#define pii pair<int, int>\n#define pll pair<ll, ll>\n\
+    #define fi first\n#define se second\n\nconst int mod = 998244353;\n\nvoid solve();\n\
+    \nint main(){\n    ios_base::sync_with_stdio(false);cin.tie(NULL);\n    // cin.exceptions(cin.failbit);\n\
+    \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
+    nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
+    \ 0;\n}\n#line 2 \"DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h\"\n\n\n\
+    struct Node {\n\tll max1, max2, cntMax, sum, lazy;\n\n\tNode() {}\n\n\tNode(int\
+    \ val) {\n\t\tmax1 = val;\n\t\tmax2 = -1;\n\t\tcntMax = 1;\n\t\tsum = val;\n\t\
+    \tlazy = -1;\n\t}\n\n\tNode operator+(const Node &b) {\n\t\tNode res;\n\t\tres.max1\
+    \ = max(max1, b.max1);\n\t\tres.max2 = max(max2, b.max2);\n\t\tif (res.max1 !=\
+    \ max1) res.max2 = max(res.max2, max1);\n\t\tif (res.max1 != b.max1) res.max2\
     \ = max(res.max2, b.max1); \n\t\tres.cntMax = 0;\n\t\tif (res.max1 == max1) res.cntMax\
     \ += cntMax;\n\t\tif (res.max1 == b.max1) res.cntMax += b.cntMax;\n\t\tres.sum\
     \ = sum + b.sum;\n\t\tres.lazy = -1;\n\t\treturn res;\n\t}\n\n\tvoid setMin(int\
@@ -70,7 +72,7 @@ data:
   isVerificationFile: false
   path: DataStructure/SegTree/SegTreeBeats/test2.cpp
   requiredBy: []
-  timestamp: '2025-05-05 11:43:15+07:00'
+  timestamp: '2025-05-06 22:27:53+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: DataStructure/SegTree/SegTreeBeats/test2.cpp
