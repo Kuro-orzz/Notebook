@@ -33,11 +33,17 @@ data:
     path: DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
     title: DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
   - icon: ':warning:'
+    path: DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
+    title: DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
+  - icon: ':warning:'
     path: DataStructure/SegTree/SegTreeBeats/test1.cpp
     title: DataStructure/SegTree/SegTreeBeats/test1.cpp
   - icon: ':warning:'
     path: DataStructure/SegTree/SegTreeBeats/test2.cpp
     title: DataStructure/SegTree/SegTreeBeats/test2.cpp
+  - icon: ':warning:'
+    path: DataStructure/SegTree/SegTreeBeats/test3.cpp
+    title: DataStructure/SegTree/SegTreeBeats/test3.cpp
   - icon: ':heavy_check_mark:'
     path: Tree/Tree/BinaryLifting.h
     title: Tree/Tree/BinaryLifting.h
@@ -126,6 +132,8 @@ data:
   - DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
   - DataStructure/SegTree/SegTreeBeats/test2.cpp
   - DataStructure/SegTree/SegTreeBeats/SegTreeBeats1.h
+  - DataStructure/SegTree/SegTreeBeats/test3.cpp
+  - DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
   - DataStructure/SegTree/LazySegTree.h
   - DataStructure/Point_set_range_composite.brute_force.cpp
   timestamp: '2025-05-02 19:05:46+07:00'

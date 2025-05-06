@@ -46,11 +46,17 @@ data:
       path: DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
       title: DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
     - icon: ':warning:'
+      path: DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
+      title: DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
+    - icon: ':warning:'
       path: DataStructure/SegTree/SegTreeBeats/test1.cpp
       title: DataStructure/SegTree/SegTreeBeats/test1.cpp
     - icon: ':warning:'
       path: DataStructure/SegTree/SegTreeBeats/test2.cpp
       title: DataStructure/SegTree/SegTreeBeats/test2.cpp
+    - icon: ':warning:'
+      path: DataStructure/SegTree/SegTreeBeats/test3.cpp
+      title: DataStructure/SegTree/SegTreeBeats/test3.cpp
   - name: Tree/Tree
     pages:
     - icon: ':heavy_check_mark:'
