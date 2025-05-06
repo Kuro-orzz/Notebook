@@ -3,8 +3,6 @@
 #include "../template.h"
 #include "DSU/Dsu.h"
 
-const int mod = 998244353;
-
 void solve() {
 	int n, q; cin >> n >> q;
 	Dsu g(n);
