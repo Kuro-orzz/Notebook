@@ -32,7 +32,7 @@ data:
   - icon: ':warning:'
     path: DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
     title: DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
     title: DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
   - icon: ':warning:'
@@ -66,6 +66,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/Predecessor_problem.test.cpp
     title: DataStructure/Predecessor_problem.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: DataStructure/Range_chmin_chmax_add_range_sum.test.cpp
+    title: DataStructure/Range_chmin_chmax_add_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: DataStructure/Static_RMQ.test.cpp
     title: DataStructure/Static_RMQ.test.cpp
@@ -119,40 +122,41 @@ data:
   isVerificationFile: false
   path: template.h
   requiredBy:
+  - DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
+  - DataStructure/SegTree/SegTreeBeats/test1.cpp
+  - DataStructure/SegTree/SegTreeBeats/test2.cpp
+  - DataStructure/SegTree/SegTreeBeats/test3.cpp
+  - DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
+  - DataStructure/SegTree/SegTreeBeats/SegTreeBeats1.h
+  - DataStructure/SegTree/LazySegTree.h
+  - DataStructure/SegTree/SegTree.h
+  - DataStructure/RMQ/RMQ.h
+  - DataStructure/Point_set_range_composite.brute_force.cpp
+  - DataStructure/DSU/Dsu.h
+  - DataStructure/DSU/Dsu_2D.h
+  - DataStructure/Fenwick/Fenwick.h
   - Tree/Tree/BinaryLifting.h
   - Tree/Tree/Lca.h
   - Tree/Tree/Tree.h
   - Big_Integer/BigInt.h
-  - DataStructure/DSU/Dsu_2D.h
-  - DataStructure/DSU/Dsu.h
-  - DataStructure/Fenwick/Fenwick.h
-  - DataStructure/RMQ/RMQ.h
-  - DataStructure/SegTree/SegTree.h
-  - DataStructure/SegTree/SegTreeBeats/test1.cpp
-  - DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
-  - DataStructure/SegTree/SegTreeBeats/test2.cpp
-  - DataStructure/SegTree/SegTreeBeats/SegTreeBeats1.h
-  - DataStructure/SegTree/SegTreeBeats/test3.cpp
-  - DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
-  - DataStructure/SegTree/LazySegTree.h
-  - DataStructure/Point_set_range_composite.brute_force.cpp
   timestamp: '2025-05-02 19:05:46+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - Tree/Jump_on_tree.test.cpp
-  - Tree/Diameter_tree.test.cpp
-  - Tree/Lowest_common_ancestor.test.cpp
-  - Big_Integer/Addition_of_Big_Integers.test.cpp
   - Sample/A_plus_B.test.cpp
   - Sample/Many_A_plus_B.test.cpp
   - Sample/Many_A_plus_B_128bit.test.cpp
   - DataStructure/Predecessor_problem.test.cpp
   - DataStructure/Point_add_range_sum.test.cpp
-  - DataStructure/Static_RMQ.test.cpp
-  - DataStructure/Static_range_sum.test.cpp
   - DataStructure/Associative_array.test.cpp
+  - DataStructure/Static_RMQ.test.cpp
+  - DataStructure/Range_chmin_chmax_add_range_sum.test.cpp
   - DataStructure/Unionfind_with_potential.test.cpp
   - DataStructure/Union_find.test.cpp
+  - DataStructure/Static_range_sum.test.cpp
+  - Tree/Diameter_tree.test.cpp
+  - Tree/Lowest_common_ancestor.test.cpp
+  - Tree/Jump_on_tree.test.cpp
+  - Big_Integer/Addition_of_Big_Integers.test.cpp
 documentation_of: template.h
 layout: document
 redirect_from:

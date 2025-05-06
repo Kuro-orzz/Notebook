@@ -45,7 +45,7 @@ data:
     - icon: ':warning:'
       path: DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
       title: DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
       title: DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
     - icon: ':warning:'
@@ -93,6 +93,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/Predecessor_problem.test.cpp
       title: DataStructure/Predecessor_problem.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: DataStructure/Range_chmin_chmax_add_range_sum.test.cpp
+      title: DataStructure/Range_chmin_chmax_add_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: DataStructure/Static_RMQ.test.cpp
       title: DataStructure/Static_RMQ.test.cpp

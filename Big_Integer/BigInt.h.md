@@ -169,8 +169,8 @@ data:
   timestamp: '2025-05-02 19:05:46+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - Big_Integer/Addition_of_Big_Integers.test.cpp
   - Sample/Many_A_plus_B_128bit.test.cpp
+  - Big_Integer/Addition_of_Big_Integers.test.cpp
 documentation_of: Big_Integer/BigInt.h
 layout: document
 redirect_from:

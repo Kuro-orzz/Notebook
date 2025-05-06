@@ -11,13 +11,16 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/range_chmin_chmax_add_range_sum
     links:
     - https://judge.yosupo.jp/problem/range_chmin_chmax_add_range_sum
-  bundledCode: "#line 1 \"DataStructure/SegTree/SegTreeBeats/test3.cpp\"\n// https://judge.yosupo.jp/problem/range_chmin_chmax_add_range_sum\n\
-    \n#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace std;\n \n\
-    #define ll long long\n#define MOD (ll)(1e9+7)\n#define all(x) (x).begin(),(x).end()\n\
+  bundledCode: "#line 1 \"DataStructure/Range_chmin_chmax_add_range_sum.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_chmin_chmax_add_range_sum\"\
+    \n\n#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    \ \n#define ll long long\n#define MOD (ll)(1e9+7)\n#define all(x) (x).begin(),(x).end()\n\
     \ \n#define vi vector<int>\n#define pii pair<int, int>\n#define fi first\n#define\
     \ se second\n\nvoid solve();\n\nint main(){\n    ios_base::sync_with_stdio(false);cin.tie(NULL);\n\
     \    // cin.exceptions(cin.failbit);\n    // int t; cin >> t;\n    // while(t--)\n\
@@ -71,7 +74,7 @@ data:
     \ getSum(int id, int l, int r, int u, int v) {\n\t\tif (l > v || r < u) return\
     \ 0;\n\t\tif (u <= l && r <= v) return tree[id].sum;\n\t\tpush(id);\n\t\tint mid\
     \ = (l + r) >> 1;\n\t\tll t1 = getSum(id*2, l, mid, u, v);\n\t\tll t2 = getSum(id*2+1,\
-    \ mid+1, r, u, v);\n\t\treturn t1 + t2;\n\t}\n};\n#line 5 \"DataStructure/SegTree/SegTreeBeats/test3.cpp\"\
+    \ mid+1, r, u, v);\n\t\treturn t1 + t2;\n\t}\n};\n#line 5 \"DataStructure/Range_chmin_chmax_add_range_sum.test.cpp\"\
     \n\nvoid solve() {\n\tint n, q; cin >> n >> q;\n\tSegTreeBeats st(n);\n\tfor (int\
     \ i = 1; i <= n; i++) {\n\t\tll x; cin >> x;\n\t\tst.build(1, 1, n, i, x);\n\t\
     }\n\twhile (q--) {\n\t\tint type, l, r; cin >> type >> l >> r;\n\t\tif (type ==\
@@ -80,29 +83,29 @@ data:
     \ l+1, r, b);\n\t\t} else if (type == 2) {\n\t\t\tll b; cin >> b;\n\t\t\tst.updateRange(1,\
     \ 1, n, l+1, r, b);\n\t\t} else if (type == 3) {\n\t\t\tcout << st.getSum(1, 1,\
     \ n, l+1, r) << '\\n';\n\t\t}\t\t\n\t}\n}\n"
-  code: "// https://judge.yosupo.jp/problem/range_chmin_chmax_add_range_sum\n\n#include\
-    \ \"../../../template.h\"\n#include \"SegTreeBeats3.h\"\n\nvoid solve() {\n\t\
-    int n, q; cin >> n >> q;\n\tSegTreeBeats st(n);\n\tfor (int i = 1; i <= n; i++)\
-    \ {\n\t\tll x; cin >> x;\n\t\tst.build(1, 1, n, i, x);\n\t}\n\twhile (q--) {\n\
-    \t\tint type, l, r; cin >> type >> l >> r;\n\t\tif (type == 0) {\n\t\t\tll b;\
-    \ cin >> b;\n\t\t\tst.updateChmin(1, 1, n, l+1, r, b);\n\t\t} else if (type ==\
-    \ 1) {\n\t\t\tll b; cin >> b;\n\t\t\tst.updateChmax(1, 1, n, l+1, r, b);\n\t\t\
-    } else if (type == 2) {\n\t\t\tll b; cin >> b;\n\t\t\tst.updateRange(1, 1, n,\
-    \ l+1, r, b);\n\t\t} else if (type == 3) {\n\t\t\tcout << st.getSum(1, 1, n, l+1,\
-    \ r) << '\\n';\n\t\t}\t\t\n\t}\n}"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_chmin_chmax_add_range_sum\"\
+    \n\n#include \"../template.h\"\n#include \"SegTree/SegTreeBeats/SegTreeBeats3.h\"\
+    \n\nvoid solve() {\n\tint n, q; cin >> n >> q;\n\tSegTreeBeats st(n);\n\tfor (int\
+    \ i = 1; i <= n; i++) {\n\t\tll x; cin >> x;\n\t\tst.build(1, 1, n, i, x);\n\t\
+    }\n\twhile (q--) {\n\t\tint type, l, r; cin >> type >> l >> r;\n\t\tif (type ==\
+    \ 0) {\n\t\t\tll b; cin >> b;\n\t\t\tst.updateChmin(1, 1, n, l+1, r, b);\n\t\t\
+    } else if (type == 1) {\n\t\t\tll b; cin >> b;\n\t\t\tst.updateChmax(1, 1, n,\
+    \ l+1, r, b);\n\t\t} else if (type == 2) {\n\t\t\tll b; cin >> b;\n\t\t\tst.updateRange(1,\
+    \ 1, n, l+1, r, b);\n\t\t} else if (type == 3) {\n\t\t\tcout << st.getSum(1, 1,\
+    \ n, l+1, r) << '\\n';\n\t\t}\t\t\n\t}\n}"
   dependsOn:
   - template.h
   - DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
-  isVerificationFile: false
-  path: DataStructure/SegTree/SegTreeBeats/test3.cpp
+  isVerificationFile: true
+  path: DataStructure/Range_chmin_chmax_add_range_sum.test.cpp
   requiredBy: []
   timestamp: '2025-05-06 20:15:37+07:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: DataStructure/SegTree/SegTreeBeats/test3.cpp
+documentation_of: DataStructure/Range_chmin_chmax_add_range_sum.test.cpp
 layout: document
 redirect_from:
-- /library/DataStructure/SegTree/SegTreeBeats/test3.cpp
-- /library/DataStructure/SegTree/SegTreeBeats/test3.cpp.html
-title: DataStructure/SegTree/SegTreeBeats/test3.cpp
+- /verify/DataStructure/Range_chmin_chmax_add_range_sum.test.cpp
+- /verify/DataStructure/Range_chmin_chmax_add_range_sum.test.cpp.html
+title: DataStructure/Range_chmin_chmax_add_range_sum.test.cpp
 ---
