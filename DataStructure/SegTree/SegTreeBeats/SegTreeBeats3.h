@@ -80,7 +80,7 @@ public:
 
 	SegTreeBeats(int n): tree(4*n+6) {}
 
-	void build(int id, int l, int r, int pos, int val) {
+	void build(int id, int l, int r, int pos, ll val) {
 		if (pos < l || pos > r) return;
 		if (l == r) {
 			tree[id] = Node(val);
@@ -104,7 +104,7 @@ public:
 		tree[id*2+1].setMin(tree[id].max1);
 	}
 
-	void updateChmax(int id, int l, int r, int u, int v, int x) {
+	void updateChmax(int id, int l, int r, int u, int v, ll x) {
 		if (l > v || r < u) return;
 		if (tree[id].min1 >= x) return;
 		if (u <= l && r <= v && tree[id].min2 > x) {
@@ -118,7 +118,7 @@ public:
 		tree[id] = tree[id*2] + tree[id*2+1];
 	}
 	
-	void updateChmin(int id, int l, int r, int u, int v, int x) {
+	void updateChmin(int id, int l, int r, int u, int v, ll x) {
 		if (l > v || r < u) return;
 		if (tree[id].max1 <= x) return;
 		if (u <= l && r <= v && tree[id].max2 < x) {
@@ -132,7 +132,7 @@ public:
 		tree[id] = tree[id*2] + tree[id*2+1];
 	}
 
-	void updateRange(int id, int l, int r, int u, int v, int x) {
+	void updateRange(int id, int l, int r, int u, int v, ll x) {
 		if (l > v || r < u) return;
 		if (u <= l && r <= v) {
 			tree[id].add(x);

@@ -1,7 +1,7 @@
-// https://judge.yosupo.jp/problem/range_chmin_chmax_add_range_sum
+#define PROBLEM "https://judge.yosupo.jp/problem/range_chmin_chmax_add_range_sum"
 
-#include "../../../template.h"
-#include "SegTreeBeats3.h"
+#include "../template.h"
+#include "SegTree/SegTreeBeats/SegTreeBeats3.h"
 
 void solve() {
 	int n, q; cin >> n >> q;
