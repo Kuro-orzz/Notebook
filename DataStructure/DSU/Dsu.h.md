@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -9,12 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/Union_find.test.cpp
     title: DataStructure/Union_find.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: DataStructure/Unionfind_with_potential.test.cpp
     title: DataStructure/Unionfind_with_potential.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://judge.yosupo.jp/problem/unionfind_with_potential
@@ -77,7 +77,7 @@ data:
   path: DataStructure/DSU/Dsu.h
   requiredBy: []
   timestamp: '2025-05-06 22:27:53+07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - DataStructure/Unionfind_with_potential.test.cpp
   - DataStructure/Union_find.test.cpp

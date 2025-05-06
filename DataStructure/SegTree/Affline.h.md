@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: DataStructure/Range_affine_range_sum.test.cpp
     title: DataStructure/Range_affine_range_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -24,59 +24,63 @@ data:
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"DataStructure/SegTree/Affline.h\"\n\ntemplate <typename T>\n\
     struct AfflineSegTree {\n\tvector<T> st;\n    vector<pll> lazy;\n\n    AfflineSegTree()\
-    \ {}\n    AfflineSegTree(int n): st(n*4), lazy(n*4) {}\n\n    void push(int id)\
-    \ {\n        if (lazy[id] == make_pair(1ll*0, 1ll*0)) return;\n        st[id*2]\
-    \ = st[id*2] * lazy[id].fi + lazy[id].se;\n        st[id*2+1] = st[id*2+1] * lazy[id].fi\
-    \ + lazy[id].se;\n        setLazy(id*2, lazy[id]);\n        setLazy(id*2+1, lazy[id]);\n\
-    \        lazy[id] = {0, 0};\n    }\n\n    void setLazy(int id, pll val) {\n  \
-    \      if (lazy[id] == make_pair(1ll*0, 1ll*0)) lazy[id] = val;\n        else\
-    \ {\n            lazy[id].fi *= val.fi;\n            lazy[id].se = lazy[id].se*val.fi\
-    \ + val.se;\n        }\n    }\n\n    void update(int id, int l, int r, int u,\
-    \ int v, pll val) {\n        if (v < l || u > r)\n            return;\n      \
-    \  if (u <= l && v >= r) {\n            st[id] = st[id] * val.fi + val.se;\n \
-    \           setLazy(id, val);\n            return;\n        }\n        push(id);\n\
-    \        int mid = (l + r) >> 1;\n        update(id*2, l, mid, u, v, val);\n \
-    \       update(id*2+1, mid+1, r, u, v, val);\n        st[id] = st[id*2] + st[id*2+1];\n\
-    \    }\n\n    T getSum(int id, int l, int r, int u, int v) {\n        if (l >\
-    \ v || r < u) return 0;\n        if (l >= u && r <= v) return st[id];\n      \
-    \  int mid = (l + r) >> 1;\n        push(id);\n        T t1 = getSum(id*2, l,\
-    \ mid, u, v);\n        T t2 = getSum(id*2+1, mid+1, r, u, v);\n        return\
-    \ t1 + t2;\n    }\n\n    T getSumMod(int id, int l, int r, int u, int v) {\n \
-    \       if (l > v || r < u) return 0;\n        if (l >= u && r <= v) return st[id];\n\
-    \        int mid = (l + r) >> 1;\n        push(id);\n        T t1 = getSum(id*2,\
-    \ l, mid, u, v) % mod;\n        T t2 = getSum(id*2+1, mid+1, r, u, v) % mod;\n\
-    \        return (t1 + t2) % mod;\n    }\n};\n"
+    \ {}\n    AfflineSegTree(int n): st(n*4), lazy(n*4) {}\n\n    void build(int id,\
+    \ int l, int r, const vector<ll> &a) {\n        lazy[id] = {1, 0};\n        if\
+    \ (l == r) {\n            st[id] = a[l] % mod;\n            return;\n        }\n\
+    \        int m = (l + r) >> 1;\n        build(id*2, l, m, a);\n        build(id*2+1,\
+    \ m+1, r, a);\n        st[id] = (st[id*2] + st[id*2+1]) % mod;\n    }\n\n    void\
+    \ push(int id, int l, int r) {\n        if (lazy[id] == make_pair(1ll*1, 1ll*0))\
+    \ return;\n        int m = (l + r) >> 1;\n        st[id*2] = st[id*2] * lazy[id].fi\
+    \ % mod + lazy[id].se * (m-l+1) % mod;\n        st[id*2] %= mod;\n        st[id*2+1]\
+    \ = st[id*2+1] * lazy[id].fi % mod + lazy[id].se * (r-m) % mod;\n        st[id*2+1]\
+    \ %= mod;\n        setLazy(id*2, lazy[id]);\n        setLazy(id*2+1, lazy[id]);\n\
+    \        lazy[id] = {1, 0};\n    }\n\n    void setLazy(int id, pll val) {\n  \
+    \      lazy[id].fi = lazy[id].fi * val.fi % mod;\n        lazy[id].se = (lazy[id].se\
+    \ * val.fi % mod + val.se) % mod;\n    }\n\n    void update(int id, int l, int\
+    \ r, int u, int v, pll val) {\n        if (v < l || u > r)\n            return;\n\
+    \        if (u <= l && v >= r) {\n            st[id] = (st[id] * val.fi % mod\
+    \ + val.se * (r-l+1) % mod) % mod;\n            setLazy(id, val);\n          \
+    \  return;\n        }\n        push(id, l, r);\n        int mid = (l + r) >> 1;\n\
+    \        update(id*2, l, mid, u, v, val);\n        update(id*2+1, mid+1, r, u,\
+    \ v, val);\n        st[id] = (st[id*2] + st[id*2+1]) % mod;\n    }\n\n    T getSumMod(int\
+    \ id, int l, int r, int u, int v) {\n        if (l > v || r < u) return 0;\n \
+    \       if (l >= u && r <= v) return st[id];\n        int mid = (l + r) >> 1;\n\
+    \        push(id, l, r);\n        T t1 = getSumMod(id*2, l, mid, u, v) % mod;\n\
+    \        T t2 = getSumMod(id*2+1, mid+1, r, u, v) % mod;\n        return (t1 +\
+    \ t2) % mod;\n    }\n};\n"
   code: "#include \"../../template.h\"\n\ntemplate <typename T>\nstruct AfflineSegTree\
     \ {\n\tvector<T> st;\n    vector<pll> lazy;\n\n    AfflineSegTree() {}\n    AfflineSegTree(int\
-    \ n): st(n*4), lazy(n*4) {}\n\n    void push(int id) {\n        if (lazy[id] ==\
-    \ make_pair(1ll*0, 1ll*0)) return;\n        st[id*2] = st[id*2] * lazy[id].fi\
-    \ + lazy[id].se;\n        st[id*2+1] = st[id*2+1] * lazy[id].fi + lazy[id].se;\n\
+    \ n): st(n*4), lazy(n*4) {}\n\n    void build(int id, int l, int r, const vector<ll>\
+    \ &a) {\n        lazy[id] = {1, 0};\n        if (l == r) {\n            st[id]\
+    \ = a[l] % mod;\n            return;\n        }\n        int m = (l + r) >> 1;\n\
+    \        build(id*2, l, m, a);\n        build(id*2+1, m+1, r, a);\n        st[id]\
+    \ = (st[id*2] + st[id*2+1]) % mod;\n    }\n\n    void push(int id, int l, int\
+    \ r) {\n        if (lazy[id] == make_pair(1ll*1, 1ll*0)) return;\n        int\
+    \ m = (l + r) >> 1;\n        st[id*2] = st[id*2] * lazy[id].fi % mod + lazy[id].se\
+    \ * (m-l+1) % mod;\n        st[id*2] %= mod;\n        st[id*2+1] = st[id*2+1]\
+    \ * lazy[id].fi % mod + lazy[id].se * (r-m) % mod;\n        st[id*2+1] %= mod;\n\
     \        setLazy(id*2, lazy[id]);\n        setLazy(id*2+1, lazy[id]);\n      \
-    \  lazy[id] = {0, 0};\n    }\n\n    void setLazy(int id, pll val) {\n        if\
-    \ (lazy[id] == make_pair(1ll*0, 1ll*0)) lazy[id] = val;\n        else {\n    \
-    \        lazy[id].fi *= val.fi;\n            lazy[id].se = lazy[id].se*val.fi\
-    \ + val.se;\n        }\n    }\n\n    void update(int id, int l, int r, int u,\
+    \  lazy[id] = {1, 0};\n    }\n\n    void setLazy(int id, pll val) {\n        lazy[id].fi\
+    \ = lazy[id].fi * val.fi % mod;\n        lazy[id].se = (lazy[id].se * val.fi %\
+    \ mod + val.se) % mod;\n    }\n\n    void update(int id, int l, int r, int u,\
     \ int v, pll val) {\n        if (v < l || u > r)\n            return;\n      \
-    \  if (u <= l && v >= r) {\n            st[id] = st[id] * val.fi + val.se;\n \
-    \           setLazy(id, val);\n            return;\n        }\n        push(id);\n\
-    \        int mid = (l + r) >> 1;\n        update(id*2, l, mid, u, v, val);\n \
-    \       update(id*2+1, mid+1, r, u, v, val);\n        st[id] = st[id*2] + st[id*2+1];\n\
-    \    }\n\n    T getSum(int id, int l, int r, int u, int v) {\n        if (l >\
-    \ v || r < u) return 0;\n        if (l >= u && r <= v) return st[id];\n      \
-    \  int mid = (l + r) >> 1;\n        push(id);\n        T t1 = getSum(id*2, l,\
-    \ mid, u, v);\n        T t2 = getSum(id*2+1, mid+1, r, u, v);\n        return\
-    \ t1 + t2;\n    }\n\n    T getSumMod(int id, int l, int r, int u, int v) {\n \
-    \       if (l > v || r < u) return 0;\n        if (l >= u && r <= v) return st[id];\n\
-    \        int mid = (l + r) >> 1;\n        push(id);\n        T t1 = getSum(id*2,\
-    \ l, mid, u, v) % mod;\n        T t2 = getSum(id*2+1, mid+1, r, u, v) % mod;\n\
-    \        return (t1 + t2) % mod;\n    }\n};"
+    \  if (u <= l && v >= r) {\n            st[id] = (st[id] * val.fi % mod + val.se\
+    \ * (r-l+1) % mod) % mod;\n            setLazy(id, val);\n            return;\n\
+    \        }\n        push(id, l, r);\n        int mid = (l + r) >> 1;\n       \
+    \ update(id*2, l, mid, u, v, val);\n        update(id*2+1, mid+1, r, u, v, val);\n\
+    \        st[id] = (st[id*2] + st[id*2+1]) % mod;\n    }\n\n    T getSumMod(int\
+    \ id, int l, int r, int u, int v) {\n        if (l > v || r < u) return 0;\n \
+    \       if (l >= u && r <= v) return st[id];\n        int mid = (l + r) >> 1;\n\
+    \        push(id, l, r);\n        T t1 = getSumMod(id*2, l, mid, u, v) % mod;\n\
+    \        T t2 = getSumMod(id*2+1, mid+1, r, u, v) % mod;\n        return (t1 +\
+    \ t2) % mod;\n    }\n};"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: DataStructure/SegTree/Affline.h
   requiredBy: []
-  timestamp: '2025-05-06 22:27:53+07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2025-05-06 22:56:49+07:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - DataStructure/Range_affine_range_sum.test.cpp
 documentation_of: DataStructure/SegTree/Affline.h

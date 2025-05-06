@@ -8,7 +8,7 @@ data:
       title: Big_Integer/BigInt.h
   - name: DataStructure/DSU
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/DSU/Dsu.h
       title: DataStructure/DSU/Dsu.h
     - icon: ':warning:'
@@ -31,7 +31,7 @@ data:
       title: DataStructure/RMQ/RMQ.h
   - name: DataStructure/SegTree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/SegTree/Affline.h
       title: DataStructure/SegTree/Affline.h
     - icon: ':warning:'
@@ -76,7 +76,7 @@ data:
     - icon: ':warning:'
       path: setup.py
       title: setup.py
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template.h
       title: template.h
   verificationCategories:
@@ -96,7 +96,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/Predecessor_problem.test.cpp
       title: DataStructure/Predecessor_problem.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/Range_affine_range_sum.test.cpp
       title: DataStructure/Range_affine_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
@@ -111,7 +111,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/Union_find.test.cpp
       title: DataStructure/Union_find.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/Unionfind_with_potential.test.cpp
       title: DataStructure/Unionfind_with_potential.test.cpp
   - name: Sample
