@@ -43,6 +43,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/SegTree/SegTree.h
       title: DataStructure/SegTree/SegTree.h
+    - icon: ':warning:'
+      path: DataStructure/SegTree/SparseSegTree.h
+      title: DataStructure/SegTree/SparseSegTree.h
   - name: DataStructure/SegTree/SegTreeBeats
     pages:
     - icon: ':warning:'

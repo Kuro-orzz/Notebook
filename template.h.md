@@ -51,6 +51,9 @@ data:
     path: DataStructure/SegTree/SegTreeBeats/test3.cpp
     title: DataStructure/SegTree/SegTreeBeats/test3.cpp
   - icon: ':warning:'
+    path: DataStructure/SegTree/SparseSegTree.h
+    title: DataStructure/SegTree/SparseSegTree.h
+  - icon: ':warning:'
     path: Misc/Compress.h
     title: Misc/Compress.h
   - icon: ':heavy_check_mark:'
@@ -149,6 +152,7 @@ data:
   - DataStructure/SegTree/SegTreeBeats/test3.cpp
   - DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
   - DataStructure/SegTree/SegTreeBeats/SegTreeBeats1.h
+  - DataStructure/SegTree/SparseSegTree.h
   - DataStructure/SegTree/LazySegTree.h
   - DataStructure/SegTree/Affline.h
   - DataStructure/SegTree/SegTree.h
