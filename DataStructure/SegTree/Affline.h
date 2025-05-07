@@ -21,7 +21,6 @@ struct AfflineSegTree {
     }
 
     void push(int id, int l, int r) {
-        if (lazy[id] == make_pair(1ll*1, 1ll*0)) return;
         int m = (l + r) >> 1;
         apply(id*2, l, m, lazy[id]);
         apply(id*2+1, m+1, r, lazy[id]);

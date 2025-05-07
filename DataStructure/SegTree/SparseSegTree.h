@@ -1,65 +1,74 @@
 #include "../../template.h"
 
 
-struct Data {
-	ll val = 0;
-	ll sz = 0;
-	Data() {}
-	Data(ll x) {
-		this->sz = 1;
-		val = x * sz;
-	}
-	Data(ll x, ll L, ll R) {
-		this->sz = R-L+1;
-		val = x * sz;
-	}
-	void upd(Data x) {this->val = x.val * sz;}
-	static Data merge(Data a, Data b) {
-		Data res;
-		res.val = a.val + b.val;
-		res.sz = a.sz + b.sz;
+struct Node {
+	Node *left = nullptr, *right = nullptr;
+	ll val;
+	pll lazy = {1, 0};
+	
+	Node(): val(0), lazy({1, 0}) {}
+	
+	Node operator+(const Node& b) const {
+		Node res;
+		res.val = (val + b.val) % mod;
 		return res;
 	}
-};
 
-struct Tree {
-	Tree *left = 0, *right = 0;
-	ll l, r;
-	Data d;
-
-	Tree(int L, int R) {l = L, r = R;}
-	~Tree() {
+	~Node() {
 		delete left;
 		delete right;
 	}
+};
 
-	void update(int u, int v, Data x) {
+class SparseSegTree {
+private:
+	Node *r = new Node();
+	int n;
+
+	void push(Node *cur, int l, int r) {
+		int m = (l + r) >> 1;
+		if (!cur->left) cur->left = new Node();
+		if (!cur->right) cur->right = new Node();
+		apply(cur->left, l, m, cur->lazy);
+		apply(cur->right, m+1, r, cur->lazy);
+		cur->lazy = {1, 0};
+	}
+
+	void apply(Node *cur, int l, int r, pll x) {
+		ll b = x.fi, c = x.se;
+		int len = r-l+1;
+		cur->val = (cur->val * b % mod + c * len % mod) % mod;
+		cur->lazy.fi = cur->lazy.fi * b % mod;
+		cur->lazy.se = (cur->lazy.se * b % mod + c) % mod;
+	}
+
+	void update(Node *cur, int l, int r, int u, int v, pll x) {
 		if (l > v || r < u) return;
 		if (u <= l && r <= v) {
-			d.upd(x);
+			apply(cur, l, r, x);
 			return;
 		}
+		push(cur, l, r);
 		ll mid = (l + r) >> 1;
-		if (u <= mid) {
-			if (!left) left = new Tree(l, mid);
-			left->update(u, v, x);
-		}
-		if (v >= mid+1){
-			if (!right) right = new Tree(mid+1, r);
-			right->update(u, v, x);
-		}
-		Data t1 = left ? left->d : Data(0, l, mid);
-		Data t2 = right ? right->d : Data(0, mid+1, r);
-		d = Data::merge(t1, t2);
+		update(cur->left, l, mid, u, v, x);
+		update(cur->right, mid+1, r, u, v, x);
+		cur->val = (cur->left->val + cur->right->val) % mod;
 	}
 
-	Data query(int u, int v) {
-		if (l > v || r < u) return {};
-		if (u <= l && r <= v) return d;
+	ll query(Node *cur, int l, int r, int u, int v) {
+		if (l > v || r < u) return 0;
+		if (u <= l && r <= v) return cur->val;
+		push(cur, l, r);
 		int mid = (l + r) >> 1;
-		if (left && right) return Data::merge(left->query(u, v), right->query(u, v));
-		Data t1 = left ? left->query(u, v) : Data();
-		Data t2 = right ? right->query(u, v) : Data();
-		return Data::merge(t1, t2);
+		ll t1 = query(cur->left, l, mid, u, v) % mod;
+		ll t2 = query(cur->right, mid+1, r, u, v) % mod;
+		return (t1 + t2) % mod;
 	}
+
+public:
+	SparseSegTree(int _n): n(_n) {}
+
+	void update(int u, int v, pll val) { update(r, 1, n, u, v, val); }
+	
+	ll query(int u, int v) { return query(r, 1, n, u, v); }
 };
