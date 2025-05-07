@@ -24,6 +24,9 @@ data:
     - icon: ':warning:'
       path: DataStructure/Point_set_range_composite.brute_force.cpp
       title: DataStructure/Point_set_range_composite.brute_force.cpp
+    - icon: ':warning:'
+      path: DataStructure/Range_affine_range_sum_large_array.wrong_solve.cpp
+      title: DataStructure/Range_affine_range_sum_large_array.wrong_solve.cpp
   - name: DataStructure/RMQ
     pages:
     - icon: ':heavy_check_mark:'
@@ -60,6 +63,11 @@ data:
     - icon: ':warning:'
       path: DataStructure/SegTree/SegTreeBeats/test3.cpp
       title: DataStructure/SegTree/SegTreeBeats/test3.cpp
+  - name: Misc
+    pages:
+    - icon: ':warning:'
+      path: Misc/Compress.h
+      title: Misc/Compress.h
   - name: Tree/Tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -96,6 +104,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/Predecessor_problem.test.cpp
       title: DataStructure/Predecessor_problem.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: DataStructure/Range_affine_point_get.test.cpp
+      title: DataStructure/Range_affine_point_get.test.cpp
     - icon: ':heavy_check_mark:'
       path: DataStructure/Range_affine_range_sum.test.cpp
       title: DataStructure/Range_affine_range_sum.test.cpp

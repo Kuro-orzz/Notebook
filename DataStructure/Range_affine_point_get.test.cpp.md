@@ -14,11 +14,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/range_affine_range_sum
+    PROBLEM: https://judge.yosupo.jp/problem/range_affine_point_get
     links:
-    - https://judge.yosupo.jp/problem/range_affine_range_sum
-  bundledCode: "#line 1 \"DataStructure/Range_affine_range_sum.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\n\n#line\
+    - https://judge.yosupo.jp/problem/range_affine_point_get
+  bundledCode: "#line 1 \"DataStructure/Range_affine_point_get.test.cpp\"\n#define\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/range_affine_point_get\"\n\n#line\
     \ 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace std;\n \n#define\
     \ ll long long\n#define MOD (ll)(1e9+7)\n#define all(x) (x).begin(),(x).end()\n\
     #define unique(x) x.erase(unique(all(x)), x.end())\n#define INF32 ((1ull<<31)-1)\n\
@@ -51,34 +51,34 @@ data:
     \ < u) return 0;\n        if (l >= u && r <= v) return st[id];\n        int mid\
     \ = (l + r) >> 1;\n        push(id, l, r);\n        T t1 = getSumMod(id*2, l,\
     \ mid, u, v) % mod;\n        T t2 = getSumMod(id*2+1, mid+1, r, u, v) % mod;\n\
-    \        return (t1 + t2) % mod;\n    }\n};\n#line 5 \"DataStructure/Range_affine_range_sum.test.cpp\"\
+    \        return (t1 + t2) % mod;\n    }\n};\n#line 5 \"DataStructure/Range_affine_point_get.test.cpp\"\
     \n\nvoid solve() {\n\tint n, q; cin >> n >> q;\n\tvector<ll> a(n+1);\n\tfor (int\
     \ i = 1; i <= n; i++) {\n\t\tcin >> a[i];\n\t}\n\tAfflineSegTree<ll> st(n);\n\t\
-    st.build(1, 1, n, a);\n\twhile (q--) {\n\t\tint tv, l, r; cin >> tv >> l >> r;\n\
-    \t\tif (tv == 0) {\n\t\t\tll b, c; cin >> b >> c;\n\t\t\tst.update(1, 1, n, l+1,\
-    \ r, make_pair(b, c));\n\t\t} else if (tv == 1) {\n\t\t\tcout << st.getSumMod(1,\
-    \ 1, n, l+1, r) << '\\n';\n\t\t}\n\t}\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\
+    st.build(1, 1, n, a);\n\twhile (q--) {\n\t\tint tv; cin >> tv;\n\t\tif (tv ==\
+    \ 0) {\n\t\t\tll l, r, b, c; cin >> l >> r >> b >> c;\n\t\t\tst.update(1, 1, n,\
+    \ l+1, r, make_pair(b, c));\n\t\t} else if (tv == 1) {\n\t\t\tint i; cin >> i;\n\
+    \t\t\tcout << st.getSumMod(1, 1, n, i+1, i+1) << '\\n';\n\t\t}\n\t}\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_point_get\"\
     \n\n#include \"../template.h\"\n#include \"SegTree/Affline.h\"\n\nvoid solve()\
     \ {\n\tint n, q; cin >> n >> q;\n\tvector<ll> a(n+1);\n\tfor (int i = 1; i <=\
     \ n; i++) {\n\t\tcin >> a[i];\n\t}\n\tAfflineSegTree<ll> st(n);\n\tst.build(1,\
-    \ 1, n, a);\n\twhile (q--) {\n\t\tint tv, l, r; cin >> tv >> l >> r;\n\t\tif (tv\
-    \ == 0) {\n\t\t\tll b, c; cin >> b >> c;\n\t\t\tst.update(1, 1, n, l+1, r, make_pair(b,\
-    \ c));\n\t\t} else if (tv == 1) {\n\t\t\tcout << st.getSumMod(1, 1, n, l+1, r)\
-    \ << '\\n';\n\t\t}\n\t}\n}"
+    \ 1, n, a);\n\twhile (q--) {\n\t\tint tv; cin >> tv;\n\t\tif (tv == 0) {\n\t\t\
+    \tll l, r, b, c; cin >> l >> r >> b >> c;\n\t\t\tst.update(1, 1, n, l+1, r, make_pair(b,\
+    \ c));\n\t\t} else if (tv == 1) {\n\t\t\tint i; cin >> i;\n\t\t\tcout << st.getSumMod(1,\
+    \ 1, n, i+1, i+1) << '\\n';\n\t\t}\n\t}\n}"
   dependsOn:
   - template.h
   - DataStructure/SegTree/Affline.h
   isVerificationFile: true
-  path: DataStructure/Range_affine_range_sum.test.cpp
+  path: DataStructure/Range_affine_point_get.test.cpp
   requiredBy: []
   timestamp: '2025-05-07 22:18:34+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: DataStructure/Range_affine_range_sum.test.cpp
+documentation_of: DataStructure/Range_affine_point_get.test.cpp
 layout: document
 redirect_from:
-- /verify/DataStructure/Range_affine_range_sum.test.cpp
-- /verify/DataStructure/Range_affine_range_sum.test.cpp.html
-title: DataStructure/Range_affine_range_sum.test.cpp
+- /verify/DataStructure/Range_affine_point_get.test.cpp
+- /verify/DataStructure/Range_affine_point_get.test.cpp.html
+title: DataStructure/Range_affine_point_get.test.cpp
 ---
