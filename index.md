@@ -81,6 +81,9 @@ data:
       title: Tree/Tree/Tree.h
   - name: .
     pages:
+    - icon: ':warning:'
+      path: setup.py
+      title: setup.py
     - icon: ':heavy_check_mark:'
       path: template.h
       title: template.h
