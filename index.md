@@ -24,9 +24,6 @@ data:
     - icon: ':warning:'
       path: DataStructure/Point_set_range_composite.brute_force.cpp
       title: DataStructure/Point_set_range_composite.brute_force.cpp
-    - icon: ':warning:'
-      path: DataStructure/Range_affine_range_sum_large_array.wrong_solve.cpp
-      title: DataStructure/Range_affine_range_sum_large_array.wrong_solve.cpp
   - name: DataStructure/RMQ
     pages:
     - icon: ':heavy_check_mark:'
@@ -43,7 +40,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/SegTree/SegTree.h
       title: DataStructure/SegTree/SegTree.h
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: DataStructure/SegTree/SparseSegTree.h
       title: DataStructure/SegTree/SparseSegTree.h
   - name: DataStructure/SegTree/SegTreeBeats
@@ -113,6 +110,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/Range_affine_range_sum.test.cpp
       title: DataStructure/Range_affine_range_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: DataStructure/Range_affine_range_sum_large_array.test.cpp
+      title: DataStructure/Range_affine_range_sum_large_array.test.cpp
     - icon: ':heavy_check_mark:'
       path: DataStructure/Range_chmin_chmax_add_range_sum.test.cpp
       title: DataStructure/Range_chmin_chmax_add_range_sum.test.cpp

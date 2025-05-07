@@ -4,10 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: template.h
     title: template.h
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: DataStructure/Range_affine_range_sum_large_array.wrong_solve.cpp
-    title: DataStructure/Range_affine_range_sum_large_array.wrong_solve.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: h
@@ -37,8 +34,7 @@ data:
   - template.h
   isVerificationFile: false
   path: Misc/Compress.h
-  requiredBy:
-  - DataStructure/Range_affine_range_sum_large_array.wrong_solve.cpp
+  requiredBy: []
   timestamp: '2025-05-07 22:18:34+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
