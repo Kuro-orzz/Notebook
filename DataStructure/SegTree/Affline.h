@@ -2,7 +2,7 @@
 
 template <typename T>
 struct AfflineSegTree {
-	vector<T> st;
+    vector<T> st;
     vector<pll> lazy;
 
     AfflineSegTree() {}
@@ -23,16 +23,14 @@ struct AfflineSegTree {
     void push(int id, int l, int r) {
         if (lazy[id] == make_pair(1ll*1, 1ll*0)) return;
         int m = (l + r) >> 1;
-        st[id*2] = st[id*2] * lazy[id].fi % mod + lazy[id].se * (m-l+1) % mod;
-        st[id*2] %= mod;
-        st[id*2+1] = st[id*2+1] * lazy[id].fi % mod + lazy[id].se * (r-m) % mod;
-        st[id*2+1] %= mod;
-        setLazy(id*2, lazy[id]);
-        setLazy(id*2+1, lazy[id]);
+        apply(id*2, l, m, lazy[id]);
+        apply(id*2+1, m+1, r, lazy[id]);
         lazy[id] = {1, 0};
     }
 
-    void setLazy(int id, pll val) {
+    void apply(int id, int l, int r, pll val) {
+        int len = r-l+1;
+        st[id] = (st[id] * val.fi % mod + val.se * len % mod) % mod;
         lazy[id].fi = lazy[id].fi * val.fi % mod;
         lazy[id].se = (lazy[id].se * val.fi % mod + val.se) % mod;
     }
@@ -41,8 +39,7 @@ struct AfflineSegTree {
         if (v < l || u > r)
             return;
         if (u <= l && v >= r) {
-            st[id] = (st[id] * val.fi % mod + val.se * (r-l+1) % mod) % mod;
-            setLazy(id, val);
+            apply(id, l, r, val);
             return;
         }
         push(id, l, r);
