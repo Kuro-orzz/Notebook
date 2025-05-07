@@ -23,19 +23,19 @@ data:
     \ 0;\n}\n#line 2 \"Misc/Compress.h\"\n\ntemplate <typename T>\nstruct Compress\
     \ {\n\tint cnt = 1;\n\tmap<T, int> compressed;\n\tvector<T> decompress;\n\n\t\
     Compress(const vector<T> &a) {\n\t\tdecompress.push_back(T(0));\n\t\tvector<T>\
-    \ b = a;\n\t\tsort(all(b));\n        unique(b);\n\t\tfor (T x : b) {\n\t\t\tcompressed[x]\
+    \ b = a;\n\t\tsort(all(b));\n\t\tunique(b);\n\t\tfor (T x : b) {\n\t\t\tcompressed[x]\
     \ = cnt++;\n\t\t\tdecompress.push_back(x);\n\t\t}\n\t}\n};\n"
   code: "#include \"../template.h\"\n\ntemplate <typename T>\nstruct Compress {\n\t\
     int cnt = 1;\n\tmap<T, int> compressed;\n\tvector<T> decompress;\n\n\tCompress(const\
     \ vector<T> &a) {\n\t\tdecompress.push_back(T(0));\n\t\tvector<T> b = a;\n\t\t\
-    sort(all(b));\n        unique(b);\n\t\tfor (T x : b) {\n\t\t\tcompressed[x] =\
-    \ cnt++;\n\t\t\tdecompress.push_back(x);\n\t\t}\n\t}\n};"
+    sort(all(b));\n\t\tunique(b);\n\t\tfor (T x : b) {\n\t\t\tcompressed[x] = cnt++;\n\
+    \t\t\tdecompress.push_back(x);\n\t\t}\n\t}\n};"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: Misc/Compress.h
   requiredBy: []
-  timestamp: '2025-05-07 22:18:34+07:00'
+  timestamp: '2025-05-08 02:12:25+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: Misc/Compress.h

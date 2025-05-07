@@ -81,9 +81,6 @@ data:
       title: Tree/Tree/Tree.h
   - name: .
     pages:
-    - icon: ':warning:'
-      path: setup.py
-      title: setup.py
     - icon: ':heavy_check_mark:'
       path: template.h
       title: template.h
@@ -150,10 +147,5 @@ data:
     - icon: ':heavy_check_mark:'
       path: Tree/Lowest_common_ancestor.test.cpp
       title: Tree/Lowest_common_ancestor.test.cpp
-  - name: .
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: example.test.cpp
-      title: example.test.cpp
 layout: toppage
 ---
