@@ -2,7 +2,7 @@
 
 template <typename T>
 struct LazySegTree {
-	vector<T> st, lazy;
+    vector<T> st, lazy;
 
     LazySegTree() {}
     LazySegTree(int n): st(n*4), lazy(n*4) {}

@@ -10,7 +10,7 @@ struct Compress {
 		decompress.push_back(T(0));
 		vector<T> b = a;
 		sort(all(b));
-        unique(b);
+		unique(b);
 		for (T x : b) {
 			compressed[x] = cnt++;
 			decompress.push_back(x);
