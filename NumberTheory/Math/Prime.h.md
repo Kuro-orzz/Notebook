@@ -41,19 +41,18 @@ data:
     \ false;\n\t}\n\treturn true;\n}\n\nbool test(ll a, ll n, ll k, ll m) {\n\tll\
     \ mod = binPow(a, m, n);\n\tif (mod == 1 || mod == n - 1) return true;\n\tfor\
     \ (int l = 1; l < k; l++) {\n\t\tmod = (u128)mod * mod % n;\n\t\tif (mod == n\
-    \ - 1) return true;\n\t}\n\treturn false;\n}\n\n// Miller rabin\nbool MillerRabin(ll\
-    \ n) {\n\tif (n <= 1) return false;\n\tstatic vector<int> checkSet = {2, 3, 5,\
-    \ 7, 11, 13, 17, 19, 23, 29, 31, 37};\n\tfor (int a : checkSet) {\n\t\tif (n ==\
-    \ a) return true;\n\t}\n\tif (n < 41) return false;\n\tll k = 0, m = n-1;\n\t\
-    while (m % 2 == 0) {\n\t\tm /= 2;\n\t\tk++;\n\t}\n\tfor (int a : checkSet) {\n\
-    \t\tif (!test(a, n, k, m)) return false;\n\t}\n\treturn true;\n}\n\nbool MillerRabin0(ll\
+    \ - 1) return true;\n\t}\n\treturn false;\n}\n\n// Miller rabin\nbool MillerRabin0(ll\
     \ n) {\n\tif (n == 2) return true;\n\tif (n < 2 || n % 2 == 0) return false;\n\
     \tll k = 0, m = n - 1;\n\twhile(m % 2 == 0) {\n\t\tm /= 2;\n\t\tk++;\n\t}\n\t\
     for (int i = 0; i < 5; i++) {\n\t\tll a = rand() % (n - 3) + 2;\n\t\tif (!test(a,\
-    \ n, k, m)) return false;\n\t}\n\treturn true;\n}\n\nvector<int> sieve(int n)\
-    \ {\n\tvector<int> nt(n+1, 1);\n\tnt[0] = nt[1] = 0;\n\tfor (int i = 2; i * i\
-    \ <= n; i++) {\n\t\tif (!nt[i]) continue;\n\t\tfor (int j = i * i; j <= n; j +=\
-    \ i)\n\t\t\tnt[j] = 0;\n\t}\n\treturn nt;\n}\n"
+    \ n, k, m)) return false;\n\t}\n\treturn true;\n}\n\n// Miller Rabin deterministic\
+    \ version\nbool MillerRabin(ll n) {\n\tif (n <= 1) return false;\n\tll k = 0,\
+    \ m = n-1;\n\twhile (m % 2 == 0) {\n\t\tm /= 2;\n\t\tk++;\n\t}\n\tfor (int a :\
+    \ {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37}) {\n\t\tif (n == a) return true;\n\
+    \t\tif (!test(a, n, k, m)) return false;\n\t}\n\treturn true;\n}\n\nvector<int>\
+    \ sieve(int n) {\n\tvector<int> nt(n+1, 1);\n\tnt[0] = nt[1] = 0;\n\tfor (int\
+    \ i = 2; i * i <= n; i++) {\n\t\tif (!nt[i]) continue;\n\t\tfor (int j = i * i;\
+    \ j <= n; j += i)\n\t\t\tnt[j] = 0;\n\t}\n\treturn nt;\n}\n"
   code: "#include \"../../template.h\"\n\nusing u32 = uint32_t;\nusing u64 = uint64_t;\n\
     using u128 = __uint128_t;\n\nbool primeCheck(ll n) {\n\tif (n == 2 || n == 3)\
     \ return true;\n\tif (n <= 1 || n % 2 == 0 || n % 3 == 0) return false;\n\tfor\
@@ -72,25 +71,24 @@ data:
     }\n\nbool test(ll a, ll n, ll k, ll m) {\n\tll mod = binPow(a, m, n);\n\tif (mod\
     \ == 1 || mod == n - 1) return true;\n\tfor (int l = 1; l < k; l++) {\n\t\tmod\
     \ = (u128)mod * mod % n;\n\t\tif (mod == n - 1) return true;\n\t}\n\treturn false;\n\
-    }\n\n// Miller rabin\nbool MillerRabin(ll n) {\n\tif (n <= 1) return false;\n\t\
-    static vector<int> checkSet = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37};\n\t\
-    for (int a : checkSet) {\n\t\tif (n == a) return true;\n\t}\n\tif (n < 41) return\
-    \ false;\n\tll k = 0, m = n-1;\n\twhile (m % 2 == 0) {\n\t\tm /= 2;\n\t\tk++;\n\
-    \t}\n\tfor (int a : checkSet) {\n\t\tif (!test(a, n, k, m)) return false;\n\t\
-    }\n\treturn true;\n}\n\nbool MillerRabin0(ll n) {\n\tif (n == 2) return true;\n\
-    \tif (n < 2 || n % 2 == 0) return false;\n\tll k = 0, m = n - 1;\n\twhile(m %\
-    \ 2 == 0) {\n\t\tm /= 2;\n\t\tk++;\n\t}\n\tfor (int i = 0; i < 5; i++) {\n\t\t\
-    ll a = rand() % (n - 3) + 2;\n\t\tif (!test(a, n, k, m)) return false;\n\t}\n\t\
-    return true;\n}\n\nvector<int> sieve(int n) {\n\tvector<int> nt(n+1, 1);\n\tnt[0]\
-    \ = nt[1] = 0;\n\tfor (int i = 2; i * i <= n; i++) {\n\t\tif (!nt[i]) continue;\n\
-    \t\tfor (int j = i * i; j <= n; j += i)\n\t\t\tnt[j] = 0;\n\t}\n\treturn nt;\n\
-    }"
+    }\n\n// Miller rabin\nbool MillerRabin0(ll n) {\n\tif (n == 2) return true;\n\t\
+    if (n < 2 || n % 2 == 0) return false;\n\tll k = 0, m = n - 1;\n\twhile(m % 2\
+    \ == 0) {\n\t\tm /= 2;\n\t\tk++;\n\t}\n\tfor (int i = 0; i < 5; i++) {\n\t\tll\
+    \ a = rand() % (n - 3) + 2;\n\t\tif (!test(a, n, k, m)) return false;\n\t}\n\t\
+    return true;\n}\n\n// Miller Rabin deterministic version\nbool MillerRabin(ll\
+    \ n) {\n\tif (n <= 1) return false;\n\tll k = 0, m = n-1;\n\twhile (m % 2 == 0)\
+    \ {\n\t\tm /= 2;\n\t\tk++;\n\t}\n\tfor (int a : {2, 3, 5, 7, 11, 13, 17, 19, 23,\
+    \ 29, 31, 37}) {\n\t\tif (n == a) return true;\n\t\tif (!test(a, n, k, m)) return\
+    \ false;\n\t}\n\treturn true;\n}\n\nvector<int> sieve(int n) {\n\tvector<int>\
+    \ nt(n+1, 1);\n\tnt[0] = nt[1] = 0;\n\tfor (int i = 2; i * i <= n; i++) {\n\t\t\
+    if (!nt[i]) continue;\n\t\tfor (int j = i * i; j <= n; j += i)\n\t\t\tnt[j] =\
+    \ 0;\n\t}\n\treturn nt;\n}"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: NumberTheory/Math/Prime.h
   requiredBy: []
-  timestamp: '2025-05-08 21:29:20+07:00'
+  timestamp: '2025-05-08 23:54:53+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - NumberTheory/Primality_test.test.cpp

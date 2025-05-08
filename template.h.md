@@ -73,6 +73,9 @@ data:
     path: DataStructure/Associative_array.test.cpp
     title: DataStructure/Associative_array.test.cpp
   - icon: ':heavy_check_mark:'
+    path: DataStructure/Ordered_set.test.cpp
+    title: DataStructure/Ordered_set.test.cpp
+  - icon: ':heavy_check_mark:'
     path: DataStructure/Point_add_range_sum.test.cpp
     title: DataStructure/Point_add_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -184,6 +187,7 @@ data:
   - Sample/A_plus_B.test.cpp
   - Sample/Many_A_plus_B.test.cpp
   - Sample/Many_A_plus_B_128bit.test.cpp
+  - DataStructure/Ordered_set.test.cpp
   - DataStructure/Range_affine_range_sum_large_array.test.cpp
   - DataStructure/Predecessor_problem.test.cpp
   - DataStructure/Point_add_range_sum.test.cpp

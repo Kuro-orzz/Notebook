@@ -104,6 +104,9 @@ data:
       path: DataStructure/Associative_array.test.cpp
       title: DataStructure/Associative_array.test.cpp
     - icon: ':heavy_check_mark:'
+      path: DataStructure/Ordered_set.test.cpp
+      title: DataStructure/Ordered_set.test.cpp
+    - icon: ':heavy_check_mark:'
       path: DataStructure/Point_add_range_sum.test.cpp
       title: DataStructure/Point_add_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
