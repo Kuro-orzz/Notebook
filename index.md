@@ -68,6 +68,11 @@ data:
     - icon: ':warning:'
       path: Misc/Compress.h
       title: Misc/Compress.h
+  - name: NumberTheory/Math
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: NumberTheory/Math/Prime.h
+      title: NumberTheory/Math/Prime.h
   - name: Tree/Tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -128,6 +133,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/Unionfind_with_potential.test.cpp
       title: DataStructure/Unionfind_with_potential.test.cpp
+  - name: NumberTheory
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: NumberTheory/Enumerate_quotients.test.cpp
+      title: NumberTheory/Enumerate_quotients.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: NumberTheory/Primality_test.test.cpp
+      title: NumberTheory/Primality_test.test.cpp
   - name: Sample
     pages:
     - icon: ':heavy_check_mark:'

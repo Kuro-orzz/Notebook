@@ -54,6 +54,9 @@ data:
     path: Misc/Compress.h
     title: Misc/Compress.h
   - icon: ':heavy_check_mark:'
+    path: NumberTheory/Math/Prime.h
+    title: NumberTheory/Math/Prime.h
+  - icon: ':heavy_check_mark:'
     path: Tree/Tree/BinaryLifting.h
     title: Tree/Tree/BinaryLifting.h
   - icon: ':heavy_check_mark:'
@@ -99,6 +102,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/Unionfind_with_potential.test.cpp
     title: DataStructure/Unionfind_with_potential.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: NumberTheory/Enumerate_quotients.test.cpp
+    title: NumberTheory/Enumerate_quotients.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: NumberTheory/Primality_test.test.cpp
+    title: NumberTheory/Primality_test.test.cpp
   - icon: ':heavy_check_mark:'
     path: Sample/A_plus_B.test.cpp
     title: Sample/A_plus_B.test.cpp
@@ -146,6 +155,7 @@ data:
   isVerificationFile: false
   path: template.h
   requiredBy:
+  - NumberTheory/Math/Prime.h
   - DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
   - DataStructure/SegTree/SegTreeBeats/test1.cpp
   - DataStructure/SegTree/SegTreeBeats/test2.cpp
@@ -169,6 +179,8 @@ data:
   timestamp: '2025-05-07 22:18:34+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - NumberTheory/Enumerate_quotients.test.cpp
+  - NumberTheory/Primality_test.test.cpp
   - Sample/A_plus_B.test.cpp
   - Sample/Many_A_plus_B.test.cpp
   - Sample/Many_A_plus_B_128bit.test.cpp
