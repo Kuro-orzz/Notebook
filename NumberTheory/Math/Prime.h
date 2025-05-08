@@ -70,24 +70,6 @@ bool test(ll a, ll n, ll k, ll m) {
 }
 
 // Miller rabin
-bool MillerRabin(ll n) {
-	if (n <= 1) return false;
-	static vector<int> checkSet = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37};
-	for (int a : checkSet) {
-		if (n == a) return true;
-	}
-	if (n < 41) return false;
-	ll k = 0, m = n-1;
-	while (m % 2 == 0) {
-		m /= 2;
-		k++;
-	}
-	for (int a : checkSet) {
-		if (!test(a, n, k, m)) return false;
-	}
-	return true;
-}
-
 bool MillerRabin0(ll n) {
 	if (n == 2) return true;
 	if (n < 2 || n % 2 == 0) return false;
@@ -98,6 +80,21 @@ bool MillerRabin0(ll n) {
 	}
 	for (int i = 0; i < 5; i++) {
 		ll a = rand() % (n - 3) + 2;
+		if (!test(a, n, k, m)) return false;
+	}
+	return true;
+}
+
+// Miller Rabin deterministic version
+bool MillerRabin(ll n) {
+	if (n <= 1) return false;
+	ll k = 0, m = n-1;
+	while (m % 2 == 0) {
+		m /= 2;
+		k++;
+	}
+	for (int a : {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37}) {
+		if (n == a) return true;
 		if (!test(a, n, k, m)) return false;
 	}
 	return true;
