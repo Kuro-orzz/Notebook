@@ -71,8 +71,20 @@ data:
   - name: NumberTheory/Math
     pages:
     - icon: ':heavy_check_mark:'
-      path: NumberTheory/Math/Prime.h
-      title: NumberTheory/Math/Prime.h
+      path: NumberTheory/Math/Binary_exponentiation.h
+      title: NumberTheory/Math/Binary_exponentiation.h
+    - icon: ':heavy_check_mark:'
+      path: NumberTheory/Math/CheckPrime.h
+      title: NumberTheory/Math/CheckPrime.h
+    - icon: ':heavy_check_mark:'
+      path: NumberTheory/Math/MillerRabin.h
+      title: NumberTheory/Math/MillerRabin.h
+    - icon: ':warning:'
+      path: NumberTheory/Math/Primality_test.h
+      title: NumberTheory/Math/Primality_test.h
+    - icon: ':warning:'
+      path: NumberTheory/Math/Sieve.h
+      title: NumberTheory/Math/Sieve.h
   - name: Tree/Tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -138,6 +150,9 @@ data:
       title: DataStructure/Unionfind_with_potential.test.cpp
   - name: NumberTheory
     pages:
+    - icon: ':heavy_check_mark:'
+      path: NumberTheory/Counting_primes.test.cpp
+      title: NumberTheory/Counting_primes.test.cpp
     - icon: ':heavy_check_mark:'
       path: NumberTheory/Enumerate_quotients.test.cpp
       title: NumberTheory/Enumerate_quotients.test.cpp

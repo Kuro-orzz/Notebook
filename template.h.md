@@ -54,8 +54,20 @@ data:
     path: Misc/Compress.h
     title: Misc/Compress.h
   - icon: ':heavy_check_mark:'
-    path: NumberTheory/Math/Prime.h
-    title: NumberTheory/Math/Prime.h
+    path: NumberTheory/Math/Binary_exponentiation.h
+    title: NumberTheory/Math/Binary_exponentiation.h
+  - icon: ':heavy_check_mark:'
+    path: NumberTheory/Math/CheckPrime.h
+    title: NumberTheory/Math/CheckPrime.h
+  - icon: ':heavy_check_mark:'
+    path: NumberTheory/Math/MillerRabin.h
+    title: NumberTheory/Math/MillerRabin.h
+  - icon: ':warning:'
+    path: NumberTheory/Math/Primality_test.h
+    title: NumberTheory/Math/Primality_test.h
+  - icon: ':warning:'
+    path: NumberTheory/Math/Sieve.h
+    title: NumberTheory/Math/Sieve.h
   - icon: ':heavy_check_mark:'
     path: Tree/Tree/BinaryLifting.h
     title: Tree/Tree/BinaryLifting.h
@@ -105,6 +117,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/Unionfind_with_potential.test.cpp
     title: DataStructure/Unionfind_with_potential.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: NumberTheory/Counting_primes.test.cpp
+    title: NumberTheory/Counting_primes.test.cpp
   - icon: ':heavy_check_mark:'
     path: NumberTheory/Enumerate_quotients.test.cpp
     title: NumberTheory/Enumerate_quotients.test.cpp
@@ -158,7 +173,11 @@ data:
   isVerificationFile: false
   path: template.h
   requiredBy:
-  - NumberTheory/Math/Prime.h
+  - NumberTheory/Math/Primality_test.h
+  - NumberTheory/Math/Binary_exponentiation.h
+  - NumberTheory/Math/MillerRabin.h
+  - NumberTheory/Math/CheckPrime.h
+  - NumberTheory/Math/Sieve.h
   - DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
   - DataStructure/SegTree/SegTreeBeats/test1.cpp
   - DataStructure/SegTree/SegTreeBeats/test2.cpp
@@ -182,6 +201,7 @@ data:
   timestamp: '2025-05-07 22:18:34+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - NumberTheory/Counting_primes.test.cpp
   - NumberTheory/Enumerate_quotients.test.cpp
   - NumberTheory/Primality_test.test.cpp
   - Sample/A_plus_B.test.cpp
