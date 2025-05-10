@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/primality_test"
 
 #include "../template.h"
-#include "Math/Prime.h"
+#include "Math/MillerRabin.h"
 
 void solve() {
 	int q; cin >> q;
