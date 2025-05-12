@@ -1,8 +1,5 @@
 #include "../../template.h"
 
-using u32 = uint32_t;
-using u64 = uint64_t;
-
 
 bool BruteForce(ll n) {
 	if (n == 2 || n == 3) return true;
@@ -13,20 +10,8 @@ bool BruteForce(ll n) {
 	return true;
 }
 
-vector<int> primeFactorization(ll n) {
-	vector<int> res;
-	for (ll i = 2; i * i <= n; i++) {
-		while(n % i == 0) {
-			n /= i;
-			res.push_back(i);
-		}
-	}
-	if (n > 1) res.push_back(n);
-	return res;
-}
-
 // https://codeforces.com/blog/entry/91632
-ll Lehmer(ll n) {
+ll Meissel(ll n) {
     vector<ll> v;
     for (ll i = 1; i*i <= n; i++) {
         v.push_back(i);

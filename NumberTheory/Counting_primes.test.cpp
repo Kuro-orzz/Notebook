@@ -5,5 +5,5 @@
 
 void solve() {
 	ll n; cin >> n;
-	cout << Lehmer(n);
+	cout << Meissel(n);
 }

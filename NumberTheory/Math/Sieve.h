@@ -11,17 +11,24 @@ vector<int> sieve(int n) {
 	return nt;
 }
 
-void segmentSieve(int l, int r){
-    bool prime[r-l+1];
-    memset(prime, true, sizeof(prime));
-    for(int i = 2; i <= sqrt(r); i++){
-        for(int j = max(i*i, (l+i-1)/i*i); j <= r; j+=i)
-            prime[j-l] = false;
+vector<int> segmentSieve(int l, int r){
+    vector<int> prime(r-l+1, 1);
+    for(ll p = 2; p*p <= r; p++){
+    	ll lim = max(p*p, (l+p-1)/p*p);
+        for(ll j = lim; j <= r; j += p)
+            if (j-l >= 0) prime[j-l] = 0;
     }
-    if(l <= 1)
-        prime[1-l] = false;
-    // for(int i = l; i <= r; i++)
-    //     if(prime[i-l])
-    //         cout << i << '\n';
-    // cout << '\n';
+    if (l == 0) prime[0] = 0;
+    if (l == 0 && r > l) prime[1] = 0;
+    if (l == 1) prime[1-l] = 0;
+    return prime;
+}
+
+vector<int> listPrime(int l, int r) {
+	vector<int> prime = segmentSieve(l, r);
+	vector<int> listPi;
+	for (int i = l; i <= r; i++) {
+		if (prime[i-l]) listPi.push_back(i);
+	}
+	return listPi;
 }
