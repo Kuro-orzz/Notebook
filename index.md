@@ -76,13 +76,16 @@ data:
     - icon: ':heavy_check_mark:'
       path: NumberTheory/Math/CheckPrime.h
       title: NumberTheory/Math/CheckPrime.h
+    - icon: ':warning:'
+      path: NumberTheory/Math/Factorization.h
+      title: NumberTheory/Math/Factorization.h
     - icon: ':heavy_check_mark:'
       path: NumberTheory/Math/MillerRabin.h
       title: NumberTheory/Math/MillerRabin.h
     - icon: ':warning:'
       path: NumberTheory/Math/Primality_test.h
       title: NumberTheory/Math/Primality_test.h
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: NumberTheory/Math/Sieve.h
       title: NumberTheory/Math/Sieve.h
   - name: Tree/Tree
@@ -115,6 +118,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/Associative_array.test.cpp
       title: DataStructure/Associative_array.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: DataStructure/Double_end_priority_queue.test.cpp
+      title: DataStructure/Double_end_priority_queue.test.cpp
     - icon: ':heavy_check_mark:'
       path: DataStructure/Ordered_set.test.cpp
       title: DataStructure/Ordered_set.test.cpp
@@ -153,6 +159,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: NumberTheory/Counting_primes.test.cpp
       title: NumberTheory/Counting_primes.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: NumberTheory/Enumerate_primes.test.cpp
+      title: NumberTheory/Enumerate_primes.test.cpp
     - icon: ':heavy_check_mark:'
       path: NumberTheory/Enumerate_quotients.test.cpp
       title: NumberTheory/Enumerate_quotients.test.cpp

@@ -5,10 +5,13 @@ data:
     path: template.h
     title: template.h
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: NumberTheory/Enumerate_primes.test.cpp
+    title: NumberTheory/Enumerate_primes.test.cpp
   _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -23,29 +26,34 @@ data:
     \ 0;\n}\n#line 2 \"NumberTheory/Math/Sieve.h\"\n\nvector<int> sieve(int n) {\n\
     \tvector<int> nt(n+1, 1);\n\tnt[0] = nt[1] = 0;\n\tfor (int i = 2; i * i <= n;\
     \ i++) {\n\t\tif (!nt[i]) continue;\n\t\tfor (int j = i * i; j <= n; j += i)\n\
-    \t\t\tnt[j] = 0;\n\t}\n\treturn nt;\n}\n\nvoid segmentSieve(int l, int r){\n \
-    \   bool prime[r-l+1];\n    memset(prime, true, sizeof(prime));\n    for(int i\
-    \ = 2; i <= sqrt(r); i++){\n        for(int j = max(i*i, (l+i-1)/i*i); j <= r;\
-    \ j+=i)\n            prime[j-l] = false;\n    }\n    if(l <= 1)\n        prime[1-l]\
-    \ = false;\n    // for(int i = l; i <= r; i++)\n    //     if(prime[i-l])\n  \
-    \  //         cout << i << '\\n';\n    // cout << '\\n';\n}\n"
+    \t\t\tnt[j] = 0;\n\t}\n\treturn nt;\n}\n\nvector<int> segmentSieve(int l, int\
+    \ r){\n    vector<int> prime(r-l+1, 1);\n    for(ll p = 2; p*p <= r; p++){\n \
+    \   \tll lim = max(p*p, (l+p-1)/p*p);\n        for(ll j = lim; j <= r; j += p)\n\
+    \            if (j-l >= 0) prime[j-l] = 0;\n    }\n    if (l == 0) prime[0] =\
+    \ 0;\n    if (l == 0 && r > l) prime[1] = 0;\n    if (l == 1) prime[1-l] = 0;\n\
+    \    return prime;\n}\n\nvector<int> listPrime(int l, int r) {\n\tvector<int>\
+    \ prime = segmentSieve(l, r);\n\tvector<int> listPi;\n\tfor (int i = l; i <= r;\
+    \ i++) {\n\t\tif (prime[i-l]) listPi.push_back(i);\n\t}\n\treturn listPi;\n}\n"
   code: "#include \"../../template.h\"\n\nvector<int> sieve(int n) {\n\tvector<int>\
     \ nt(n+1, 1);\n\tnt[0] = nt[1] = 0;\n\tfor (int i = 2; i * i <= n; i++) {\n\t\t\
     if (!nt[i]) continue;\n\t\tfor (int j = i * i; j <= n; j += i)\n\t\t\tnt[j] =\
-    \ 0;\n\t}\n\treturn nt;\n}\n\nvoid segmentSieve(int l, int r){\n    bool prime[r-l+1];\n\
-    \    memset(prime, true, sizeof(prime));\n    for(int i = 2; i <= sqrt(r); i++){\n\
-    \        for(int j = max(i*i, (l+i-1)/i*i); j <= r; j+=i)\n            prime[j-l]\
-    \ = false;\n    }\n    if(l <= 1)\n        prime[1-l] = false;\n    // for(int\
-    \ i = l; i <= r; i++)\n    //     if(prime[i-l])\n    //         cout << i <<\
-    \ '\\n';\n    // cout << '\\n';\n}"
+    \ 0;\n\t}\n\treturn nt;\n}\n\nvector<int> segmentSieve(int l, int r){\n    vector<int>\
+    \ prime(r-l+1, 1);\n    for(ll p = 2; p*p <= r; p++){\n    \tll lim = max(p*p,\
+    \ (l+p-1)/p*p);\n        for(ll j = lim; j <= r; j += p)\n            if (j-l\
+    \ >= 0) prime[j-l] = 0;\n    }\n    if (l == 0) prime[0] = 0;\n    if (l == 0\
+    \ && r > l) prime[1] = 0;\n    if (l == 1) prime[1-l] = 0;\n    return prime;\n\
+    }\n\nvector<int> listPrime(int l, int r) {\n\tvector<int> prime = segmentSieve(l,\
+    \ r);\n\tvector<int> listPi;\n\tfor (int i = l; i <= r; i++) {\n\t\tif (prime[i-l])\
+    \ listPi.push_back(i);\n\t}\n\treturn listPi;\n}"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: NumberTheory/Math/Sieve.h
   requiredBy: []
-  timestamp: '2025-05-10 21:29:43+07:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2025-05-12 18:52:18+07:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - NumberTheory/Enumerate_primes.test.cpp
 documentation_of: NumberTheory/Math/Sieve.h
 layout: document
 redirect_from:
