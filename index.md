@@ -74,11 +74,28 @@ data:
     - icon: ':warning:'
       path: DataStructure/SegTree/SegTreeBeats/test3.cpp
       title: DataStructure/SegTree/SegTreeBeats/test3.cpp
+  - name: DataStructure/SqrtDecomposition
+    pages:
+    - icon: ':warning:'
+      path: DataStructure/SqrtDecomposition/Mo.h
+      title: DataStructure/SqrtDecomposition/Mo.h
+    - icon: ':heavy_check_mark:'
+      path: DataStructure/SqrtDecomposition/Sqrt.h
+      title: DataStructure/SqrtDecomposition/Sqrt.h
+    - icon: ':warning:'
+      path: DataStructure/SqrtDecomposition/test1.cpp
+      title: DataStructure/SqrtDecomposition/test1.cpp
+    - icon: ':warning:'
+      path: DataStructure/SqrtDecomposition/test2.cpp
+      title: DataStructure/SqrtDecomposition/test2.cpp
   - name: Misc
     pages:
     - icon: ':warning:'
       path: Misc/Compress.h
       title: Misc/Compress.h
+    - icon: ':warning:'
+      path: Misc/Deque.h
+      title: Misc/Deque.h
   - name: NumberTheory/Math
     pages:
     - icon: ':heavy_check_mark:'
@@ -165,6 +182,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/Unionfind_with_potential.test.cpp
       title: DataStructure/Unionfind_with_potential.test.cpp
+  - name: DataStructure/SqrtDecomposition
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: DataStructure/SqrtDecomposition/Point_Add_Range_Sum.test.cpp
+      title: DataStructure/SqrtDecomposition/Point_Add_Range_Sum.test.cpp
   - name: NumberTheory
     pages:
     - icon: ':heavy_check_mark:'

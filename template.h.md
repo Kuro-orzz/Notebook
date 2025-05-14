@@ -60,8 +60,23 @@ data:
     path: DataStructure/SegTree/SparseSegTree.h
     title: DataStructure/SegTree/SparseSegTree.h
   - icon: ':warning:'
+    path: DataStructure/SqrtDecomposition/Mo.h
+    title: DataStructure/SqrtDecomposition/Mo.h
+  - icon: ':heavy_check_mark:'
+    path: DataStructure/SqrtDecomposition/Sqrt.h
+    title: DataStructure/SqrtDecomposition/Sqrt.h
+  - icon: ':warning:'
+    path: DataStructure/SqrtDecomposition/test1.cpp
+    title: DataStructure/SqrtDecomposition/test1.cpp
+  - icon: ':warning:'
+    path: DataStructure/SqrtDecomposition/test2.cpp
+    title: DataStructure/SqrtDecomposition/test2.cpp
+  - icon: ':warning:'
     path: Misc/Compress.h
     title: Misc/Compress.h
+  - icon: ':warning:'
+    path: Misc/Deque.h
+    title: Misc/Deque.h
   - icon: ':heavy_check_mark:'
     path: NumberTheory/Math/Binary_exponentiation.h
     title: NumberTheory/Math/Binary_exponentiation.h
@@ -120,6 +135,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/Range_chmin_chmax_add_range_sum.test.cpp
     title: DataStructure/Range_chmin_chmax_add_range_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: DataStructure/SqrtDecomposition/Point_Add_Range_Sum.test.cpp
+    title: DataStructure/SqrtDecomposition/Point_Add_Range_Sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: DataStructure/Static_RMQ.test.cpp
     title: DataStructure/Static_RMQ.test.cpp
@@ -192,6 +210,7 @@ data:
   path: template.h
   requiredBy:
   - Misc/Compress.h
+  - Misc/Deque.h
   - Big_Integer/BigInt.h
   - DataStructure/SegTree/SparseSegTree.h
   - DataStructure/SegTree/PersistentSegTree/test2.cpp
@@ -207,6 +226,10 @@ data:
   - DataStructure/SegTree/SegTreeBeats/SegTreeBeats1.h
   - DataStructure/SegTree/LazySegTree.h
   - DataStructure/RMQ/RMQ.h
+  - DataStructure/SqrtDecomposition/test2.cpp
+  - DataStructure/SqrtDecomposition/Mo.h
+  - DataStructure/SqrtDecomposition/test1.cpp
+  - DataStructure/SqrtDecomposition/Sqrt.h
   - DataStructure/Fenwick/Fenwick.h
   - DataStructure/DSU/Dsu_2D.h
   - DataStructure/DSU/Dsu.h
@@ -226,6 +249,7 @@ data:
   - Big_Integer/Addition_of_Big_Integers.test.cpp
   - DataStructure/Union_find.test.cpp
   - DataStructure/Point_add_range_sum.test.cpp
+  - DataStructure/SqrtDecomposition/Point_Add_Range_Sum.test.cpp
   - DataStructure/Unionfind_with_potential.test.cpp
   - DataStructure/Range_affine_range_sum.test.cpp
   - DataStructure/Range_chmin_chmax_add_range_sum.test.cpp
