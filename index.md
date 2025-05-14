@@ -43,6 +43,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/SegTree/SparseSegTree.h
       title: DataStructure/SegTree/SparseSegTree.h
+  - name: DataStructure/SegTree/PersistentSegTree
+    pages:
+    - icon: ':warning:'
+      path: DataStructure/SegTree/PersistentSegTree/PersistentSegTree.h
+      title: DataStructure/SegTree/PersistentSegTree/PersistentSegTree.h
+    - icon: ':warning:'
+      path: DataStructure/SegTree/PersistentSegTree/test1.cpp
+      title: DataStructure/SegTree/PersistentSegTree/test1.cpp
+    - icon: ':warning:'
+      path: DataStructure/SegTree/PersistentSegTree/test2.cpp
+      title: DataStructure/SegTree/PersistentSegTree/test2.cpp
   - name: DataStructure/SegTree/SegTreeBeats
     pages:
     - icon: ':warning:'

@@ -80,8 +80,8 @@ data:
   timestamp: '2025-05-07 22:18:34+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - DataStructure/Unionfind_with_potential.test.cpp
   - DataStructure/Union_find.test.cpp
+  - DataStructure/Unionfind_with_potential.test.cpp
 documentation_of: DataStructure/DSU/Dsu.h
 layout: document
 redirect_from:
