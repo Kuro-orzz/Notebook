@@ -11,16 +11,12 @@ struct Query{
  
 vector<Query> q;
  
-bool cmp1(Query a, Query b){
+bool cmp(Query a, Query b){
     if(a.l/block_sz != b.l/block_sz)
         return a.l/block_sz < b.l/block_sz;
     return a.r < b.r;
 }
- 
-bool cmp2(pair<ll, int> a, pair<ll, int> b){
-    return a.se < b.se;
-}
- 
+
 unordered_map<int, int> fre;
 int cnt = 0;
 
@@ -36,32 +32,19 @@ void remove(int i){
     if(fre[a[i]] == a[i]) cnt++;
 }
  
-void query(){
-    sort(q.begin(), q.end(), cmp1);
+vector<int> query(){
+    sort(q.begin(), q.end(), cmp);
     int curL = 0, curR = 0;
-    vector<pair<ll, int>> ans;
+    vector<int> ans((int)q.size());
     for(int i = 0; i < (int)q.size(); i++){
-        while(curL < q[i].l){
-            remove(curL);
-            curL++;
-        }
-        while(curL > q[i].l){
-            curL--;
-            insert(curL);
-        }
-        while(curR <= q[i].r){
-            insert(curR);
-            curR++;
-        }
-        while(curR > q[i].r+1){
-            curR--;
-            remove(curR);
-        }
-        ans.push_back({cnt, q[i].idx});
+        auto [L, R, idx] = q[i];
+        while(curL < L) remove(curL++);
+        while(curL > L) insert(--curL);
+        while(curR <= R) insert(curR++);
+        while(curR > R+1) remove(--curR);
+        ans[idx] = cnt;
     }
-    sort(ans.begin(), ans.end(), cmp2);
-    for(auto it : ans)
-        cout << it.fi << '\n';
+    return ans;
 }
  
 void solve(){
@@ -74,5 +57,6 @@ void solve(){
         q.push_back({l-1, r-1, i});
     }
     block_sz = sqrt(n);
-    query();
+    vector<int> ans = query();
+    for(auto it : ans) cout << it << '\n';
 }

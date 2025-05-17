@@ -9,11 +9,11 @@ void solve() {
 	for (int i = 1; i <= n; i++) cin >> a[i];
 
 	PersistentSegTree tree(n);
-    Node *root = new Node(0);
-    tree.build(root, 1, n, a);
+	Node *root = new Node(0);
+	tree.build(root, 1, n, a);
 
 	int cntVer = 0;
-    tree.ver[cntVer] = root;
+	tree.ver[cntVer] = root;
 
 	int q; cin >> q;
 	while (q--) {
