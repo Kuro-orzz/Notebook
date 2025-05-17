@@ -49,8 +49,8 @@ data:
     \ = (l + r) >> 1;\n\t    return getSum(cur->left, l, mid, u, v) + getSum(cur->right,\
     \ mid+1, r, u, v);\n\t}\n};\n#line 5 \"DataStructure/SegTree/PersistentSegTree/test2.cpp\"\
     \n\nvoid solve() {\n\tint n; cin >> n;\n\tvector<int> a(n+1);\n\tfor (int i =\
-    \ 1; i <= n; i++) cin >> a[i];\n\n\tPersistentSegTree tree(n);\n    Node *root\
-    \ = new Node(0);\n    tree.build(root, 1, n, a);\n\n\tint cntVer = 0;\n    tree.ver[cntVer]\
+    \ 1; i <= n; i++) cin >> a[i];\n\n\tPersistentSegTree tree(n);\n\tNode *root =\
+    \ new Node(0);\n\ttree.build(root, 1, n, a);\n\n\tint cntVer = 0;\n\ttree.ver[cntVer]\
     \ = root;\n\n\tint q; cin >> q;\n\twhile (q--) {\n\t\tint tv, idx; cin >> tv >>\
     \ idx;\n\t\tif (tv == 1) {\n\t\t\tint pos, v; cin >> pos >> v;\n\t\t\tint oldVal\
     \ = tree.getSum(tree.ver[idx], 1, n, pos, pos);\n\t\t\t\n\t\t\tNode *prev = tree.ver[idx];\n\
@@ -61,8 +61,8 @@ data:
   code: "// https://www.spoj.com/problems/PSEGTREE/\n\n#include \"../../../template.h\"\
     \n#include \"PersistentSegTree.h\"\n\nvoid solve() {\n\tint n; cin >> n;\n\tvector<int>\
     \ a(n+1);\n\tfor (int i = 1; i <= n; i++) cin >> a[i];\n\n\tPersistentSegTree\
-    \ tree(n);\n    Node *root = new Node(0);\n    tree.build(root, 1, n, a);\n\n\t\
-    int cntVer = 0;\n    tree.ver[cntVer] = root;\n\n\tint q; cin >> q;\n\twhile (q--)\
+    \ tree(n);\n\tNode *root = new Node(0);\n\ttree.build(root, 1, n, a);\n\n\tint\
+    \ cntVer = 0;\n\ttree.ver[cntVer] = root;\n\n\tint q; cin >> q;\n\twhile (q--)\
     \ {\n\t\tint tv, idx; cin >> tv >> idx;\n\t\tif (tv == 1) {\n\t\t\tint pos, v;\
     \ cin >> pos >> v;\n\t\t\tint oldVal = tree.getSum(tree.ver[idx], 1, n, pos, pos);\n\
     \t\t\t\n\t\t\tNode *prev = tree.ver[idx];\n\t\t\ttree.ver[++cntVer] = new Node(0);\n\
@@ -76,7 +76,7 @@ data:
   isVerificationFile: false
   path: DataStructure/SegTree/PersistentSegTree/test2.cpp
   requiredBy: []
-  timestamp: '2025-05-14 23:14:30+07:00'
+  timestamp: '2025-05-17 23:58:15+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: DataStructure/SegTree/PersistentSegTree/test2.cpp

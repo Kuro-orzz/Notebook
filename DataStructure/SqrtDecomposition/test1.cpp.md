@@ -24,52 +24,44 @@ data:
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 4 \"DataStructure/SqrtDecomposition/test1.cpp\"\n\nint block_sz;\n\
     vector<int> a;\n \nstruct Query{\n    int l, r, idx;\n};\n \nvector<Query> q;\n\
-    \ \nbool cmp1(Query a, Query b){\n    if(a.l/block_sz != b.l/block_sz)\n     \
-    \   return a.l/block_sz < b.l/block_sz;\n    return a.r < b.r;\n}\n \nbool cmp2(pair<ll,\
-    \ int> a, pair<ll, int> b){\n    return a.se < b.se;\n}\n \nunordered_map<int,\
+    \ \nbool cmp(Query a, Query b){\n    if(a.l/block_sz != b.l/block_sz)\n      \
+    \  return a.l/block_sz < b.l/block_sz;\n    return a.r < b.r;\n}\n\nunordered_map<int,\
     \ int> fre;\nint cnt = 0;\n\nvoid insert(int i){\n    if(fre[a[i]] == a[i]) cnt--;\n\
     \    fre[a[i]]++;\n    if(fre[a[i]] == a[i]) cnt++;\n}\n \nvoid remove(int i){\n\
     \    if(fre[a[i]] == a[i]) cnt--;\n    fre[a[i]]--;\n    if(fre[a[i]] == a[i])\
-    \ cnt++;\n}\n \nvoid query(){\n    sort(q.begin(), q.end(), cmp1);\n    int curL\
-    \ = 0, curR = 0;\n    vector<pair<ll, int>> ans;\n    for(int i = 0; i < (int)q.size();\
-    \ i++){\n        while(curL < q[i].l){\n            remove(curL);\n          \
-    \  curL++;\n        }\n        while(curL > q[i].l){\n            curL--;\n  \
-    \          insert(curL);\n        }\n        while(curR <= q[i].r){\n        \
-    \    insert(curR);\n            curR++;\n        }\n        while(curR > q[i].r+1){\n\
-    \            curR--;\n            remove(curR);\n        }\n        ans.push_back({cnt,\
-    \ q[i].idx});\n    }\n    sort(ans.begin(), ans.end(), cmp2);\n    for(auto it\
-    \ : ans)\n        cout << it.fi << '\\n';\n}\n \nvoid solve(){\n    int n, t;\
-    \ cin >> n >> t;\n    a.resize(n);\n    for(int i = 0; i < n; i++)\n        cin\
-    \ >> a[i];\n    for(int i = 0; i < t; i++){\n        int l, r; cin >> l >> r;\n\
-    \        q.push_back({l-1, r-1, i});\n    }\n    block_sz = sqrt(n);\n    query();\n\
-    }\n"
+    \ cnt++;\n}\n \nvector<int> query(){\n    sort(q.begin(), q.end(), cmp);\n   \
+    \ int curL = 0, curR = 0;\n    vector<int> ans((int)q.size());\n    for(int i\
+    \ = 0; i < (int)q.size(); i++){\n        auto [L, R, idx] = q[i];\n        while(curL\
+    \ < L) remove(curL++);\n        while(curL > L) insert(--curL);\n        while(curR\
+    \ <= R) insert(curR++);\n        while(curR > R+1) remove(--curR);\n        ans[idx]\
+    \ = cnt;\n    }\n    return ans;\n}\n \nvoid solve(){\n    int n, t; cin >> n\
+    \ >> t;\n    a.resize(n);\n    for(int i = 0; i < n; i++)\n        cin >> a[i];\n\
+    \    for(int i = 0; i < t; i++){\n        int l, r; cin >> l >> r;\n        q.push_back({l-1,\
+    \ r-1, i});\n    }\n    block_sz = sqrt(n);\n    vector<int> ans = query();\n\
+    \    for(auto it : ans) cout << it << '\\n';\n}\n"
   code: "// https://codeforces.com/contest/221/problem/D\n\n#include \"../../template.h\"\
     \n\nint block_sz;\nvector<int> a;\n \nstruct Query{\n    int l, r, idx;\n};\n\
-    \ \nvector<Query> q;\n \nbool cmp1(Query a, Query b){\n    if(a.l/block_sz !=\
-    \ b.l/block_sz)\n        return a.l/block_sz < b.l/block_sz;\n    return a.r <\
-    \ b.r;\n}\n \nbool cmp2(pair<ll, int> a, pair<ll, int> b){\n    return a.se <\
-    \ b.se;\n}\n \nunordered_map<int, int> fre;\nint cnt = 0;\n\nvoid insert(int i){\n\
-    \    if(fre[a[i]] == a[i]) cnt--;\n    fre[a[i]]++;\n    if(fre[a[i]] == a[i])\
-    \ cnt++;\n}\n \nvoid remove(int i){\n    if(fre[a[i]] == a[i]) cnt--;\n    fre[a[i]]--;\n\
-    \    if(fre[a[i]] == a[i]) cnt++;\n}\n \nvoid query(){\n    sort(q.begin(), q.end(),\
-    \ cmp1);\n    int curL = 0, curR = 0;\n    vector<pair<ll, int>> ans;\n    for(int\
-    \ i = 0; i < (int)q.size(); i++){\n        while(curL < q[i].l){\n           \
-    \ remove(curL);\n            curL++;\n        }\n        while(curL > q[i].l){\n\
-    \            curL--;\n            insert(curL);\n        }\n        while(curR\
-    \ <= q[i].r){\n            insert(curR);\n            curR++;\n        }\n   \
-    \     while(curR > q[i].r+1){\n            curR--;\n            remove(curR);\n\
-    \        }\n        ans.push_back({cnt, q[i].idx});\n    }\n    sort(ans.begin(),\
-    \ ans.end(), cmp2);\n    for(auto it : ans)\n        cout << it.fi << '\\n';\n\
-    }\n \nvoid solve(){\n    int n, t; cin >> n >> t;\n    a.resize(n);\n    for(int\
-    \ i = 0; i < n; i++)\n        cin >> a[i];\n    for(int i = 0; i < t; i++){\n\
-    \        int l, r; cin >> l >> r;\n        q.push_back({l-1, r-1, i});\n    }\n\
-    \    block_sz = sqrt(n);\n    query();\n}"
+    \ \nvector<Query> q;\n \nbool cmp(Query a, Query b){\n    if(a.l/block_sz != b.l/block_sz)\n\
+    \        return a.l/block_sz < b.l/block_sz;\n    return a.r < b.r;\n}\n\nunordered_map<int,\
+    \ int> fre;\nint cnt = 0;\n\nvoid insert(int i){\n    if(fre[a[i]] == a[i]) cnt--;\n\
+    \    fre[a[i]]++;\n    if(fre[a[i]] == a[i]) cnt++;\n}\n \nvoid remove(int i){\n\
+    \    if(fre[a[i]] == a[i]) cnt--;\n    fre[a[i]]--;\n    if(fre[a[i]] == a[i])\
+    \ cnt++;\n}\n \nvector<int> query(){\n    sort(q.begin(), q.end(), cmp);\n   \
+    \ int curL = 0, curR = 0;\n    vector<int> ans((int)q.size());\n    for(int i\
+    \ = 0; i < (int)q.size(); i++){\n        auto [L, R, idx] = q[i];\n        while(curL\
+    \ < L) remove(curL++);\n        while(curL > L) insert(--curL);\n        while(curR\
+    \ <= R) insert(curR++);\n        while(curR > R+1) remove(--curR);\n        ans[idx]\
+    \ = cnt;\n    }\n    return ans;\n}\n \nvoid solve(){\n    int n, t; cin >> n\
+    \ >> t;\n    a.resize(n);\n    for(int i = 0; i < n; i++)\n        cin >> a[i];\n\
+    \    for(int i = 0; i < t; i++){\n        int l, r; cin >> l >> r;\n        q.push_back({l-1,\
+    \ r-1, i});\n    }\n    block_sz = sqrt(n);\n    vector<int> ans = query();\n\
+    \    for(auto it : ans) cout << it << '\\n';\n}"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: DataStructure/SqrtDecomposition/test1.cpp
   requiredBy: []
-  timestamp: '2025-05-15 00:54:17+07:00'
+  timestamp: '2025-05-17 23:58:15+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: DataStructure/SqrtDecomposition/test1.cpp

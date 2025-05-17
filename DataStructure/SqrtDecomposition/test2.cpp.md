@@ -24,50 +24,42 @@ data:
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 4 \"DataStructure/SqrtDecomposition/test2.cpp\"\n\nint block_sz;\n\
     vector<int> a;\n\nstruct Query{\n    int l, r, idx;\n};\n\nvector<Query> q;\n\n\
-    bool cmp1(Query a, Query b){\n    if(a.l/block_sz != b.l/block_sz)\n        return\
-    \ a.l/block_sz < b.l/block_sz;\n    return a.r < b.r;\n}\n\nbool cmp2(pair<ll,\
-    \ int> a, pair<ll, int> b){\n    return a.se < b.se;\n}\n\nvector<int> fre;\n\
+    bool cmp(Query a, Query b){\n    if(a.l/block_sz != b.l/block_sz)\n        return\
+    \ a.l/block_sz < b.l/block_sz;\n    return a.r < b.r;\n}\n\nvector<int> fre;\n\
     ll sum = 0;\n\nvoid insert(int i) {\n\tsum += (2*fre[a[i]]+1)*a[i];\n\tfre[a[i]]++;\n\
     }\n\nvoid remove(int i) {\n\tsum -= (2*fre[a[i]]-1)*a[i];\n\tfre[a[i]]--;\n}\n\
-    \nvoid query(){\n    sort(q.begin(), q.end(), cmp1);\n    int curL = 0, curR =\
-    \ 0;\n    fre.resize(1e6+1, 0);\n    vector<pair<ll, int>> ans;\n    for(int i\
-    \ = 0; i < (int)q.size(); i++){\n        while(curL < q[i].l){\n        \tremove(curL);\n\
-    \            curL++;\n        }\n        while(curL > q[i].l){\n        \tcurL--;\n\
-    \            insert(curL);\n        }\n        while(curR <= q[i].r){\n      \
-    \  \tinsert(curR);\n            curR++;\n        }\n        while(curR > q[i].r+1){\n\
-    \            curR--;\n            remove(curR);\n        }\n        ans.push_back({sum,\
-    \ q[i].idx});\n    }\n    sort(ans.begin(), ans.end(), cmp2);\n    for(auto it\
-    \ : ans)\n        cout << it.fi << '\\n';\n}\n\nvoid solve(){\n    int n, t; cin\
-    \ >> n >> t;\n    a.resize(n);\n    for(int i = 0; i < n; i++)\n        cin >>\
-    \ a[i];\n    for(int i = 0; i < t; i++){\n        int l, r; cin >> l >> r;\n \
-    \       q.push_back({l-1, r-1, i});\n    }\n    block_sz = sqrt(n);\n    query();\n\
-    }\n"
+    \nvector<ll> query(){\n    sort(q.begin(), q.end(), cmp);\n    int curL = 0, curR\
+    \ = 0;\n    fre.resize(1e6+1, 0);\n    vector<ll> ans((int)q.size());\n    for(int\
+    \ i = 0; i < (int)q.size(); i++){\n        auto [L, R, idx] = q[i];\n        while(curL\
+    \ < L) remove(curL++);\n        while(curL > L) insert(--curL);\n        while(curR\
+    \ <= R) insert(curR++);\n        while(curR > R+1) remove(--curR);\n        ans[idx]\
+    \ = sum;\n    }\n    return ans;\n}\n\nvoid solve(){\n    int n, t; cin >> n >>\
+    \ t;\n    a.resize(n);\n    for(int i = 0; i < n; i++)\n        cin >> a[i];\n\
+    \    for(int i = 0; i < t; i++){\n        int l, r; cin >> l >> r;\n        q.push_back({l-1,\
+    \ r-1, i});\n    }\n    block_sz = sqrt(n);\n    vector<ll> ans = query();\n \
+    \   for(ll x : ans) cout << x << '\\n';\n}\n"
   code: "// https://codeforces.com/contest/86/problem/D\n\n#include \"../../template.h\"\
     \n\nint block_sz;\nvector<int> a;\n\nstruct Query{\n    int l, r, idx;\n};\n\n\
-    vector<Query> q;\n\nbool cmp1(Query a, Query b){\n    if(a.l/block_sz != b.l/block_sz)\n\
-    \        return a.l/block_sz < b.l/block_sz;\n    return a.r < b.r;\n}\n\nbool\
-    \ cmp2(pair<ll, int> a, pair<ll, int> b){\n    return a.se < b.se;\n}\n\nvector<int>\
+    vector<Query> q;\n\nbool cmp(Query a, Query b){\n    if(a.l/block_sz != b.l/block_sz)\n\
+    \        return a.l/block_sz < b.l/block_sz;\n    return a.r < b.r;\n}\n\nvector<int>\
     \ fre;\nll sum = 0;\n\nvoid insert(int i) {\n\tsum += (2*fre[a[i]]+1)*a[i];\n\t\
     fre[a[i]]++;\n}\n\nvoid remove(int i) {\n\tsum -= (2*fre[a[i]]-1)*a[i];\n\tfre[a[i]]--;\n\
-    }\n\nvoid query(){\n    sort(q.begin(), q.end(), cmp1);\n    int curL = 0, curR\
-    \ = 0;\n    fre.resize(1e6+1, 0);\n    vector<pair<ll, int>> ans;\n    for(int\
-    \ i = 0; i < (int)q.size(); i++){\n        while(curL < q[i].l){\n        \tremove(curL);\n\
-    \            curL++;\n        }\n        while(curL > q[i].l){\n        \tcurL--;\n\
-    \            insert(curL);\n        }\n        while(curR <= q[i].r){\n      \
-    \  \tinsert(curR);\n            curR++;\n        }\n        while(curR > q[i].r+1){\n\
-    \            curR--;\n            remove(curR);\n        }\n        ans.push_back({sum,\
-    \ q[i].idx});\n    }\n    sort(ans.begin(), ans.end(), cmp2);\n    for(auto it\
-    \ : ans)\n        cout << it.fi << '\\n';\n}\n\nvoid solve(){\n    int n, t; cin\
-    \ >> n >> t;\n    a.resize(n);\n    for(int i = 0; i < n; i++)\n        cin >>\
-    \ a[i];\n    for(int i = 0; i < t; i++){\n        int l, r; cin >> l >> r;\n \
-    \       q.push_back({l-1, r-1, i});\n    }\n    block_sz = sqrt(n);\n    query();\n\
-    }"
+    }\n\nvector<ll> query(){\n    sort(q.begin(), q.end(), cmp);\n    int curL = 0,\
+    \ curR = 0;\n    fre.resize(1e6+1, 0);\n    vector<ll> ans((int)q.size());\n \
+    \   for(int i = 0; i < (int)q.size(); i++){\n        auto [L, R, idx] = q[i];\n\
+    \        while(curL < L) remove(curL++);\n        while(curL > L) insert(--curL);\n\
+    \        while(curR <= R) insert(curR++);\n        while(curR > R+1) remove(--curR);\n\
+    \        ans[idx] = sum;\n    }\n    return ans;\n}\n\nvoid solve(){\n    int\
+    \ n, t; cin >> n >> t;\n    a.resize(n);\n    for(int i = 0; i < n; i++)\n   \
+    \     cin >> a[i];\n    for(int i = 0; i < t; i++){\n        int l, r; cin >>\
+    \ l >> r;\n        q.push_back({l-1, r-1, i});\n    }\n    block_sz = sqrt(n);\n\
+    \    vector<ll> ans = query();\n    for(ll x : ans) cout << x << '\\n';\n}"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: DataStructure/SqrtDecomposition/test2.cpp
   requiredBy: []
-  timestamp: '2025-05-15 00:54:17+07:00'
+  timestamp: '2025-05-17 23:58:15+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: DataStructure/SqrtDecomposition/test2.cpp
