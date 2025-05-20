@@ -12,6 +12,6 @@ void solve() {
 	}
 	while (q--) {
 		int l, r; cin >> l >> r;
-		cout << BIT.get(l, r) << '\n';
+		cout << BIT.get(l+1, r) << '\n';
 	}
 }

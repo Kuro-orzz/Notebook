@@ -7,7 +7,7 @@ struct Fenwick{
 
     Fenwick(int _n): n(_n), fen(_n+1) {}
 
-    void update(int pos, int val) {
+    void update(int pos, T val) {
         for (; pos <= n; pos += pos & -pos) {
             fen[pos] += val;
         }
@@ -22,8 +22,7 @@ struct Fenwick{
     }
 
     T get(int l, int r) {
-        if (l == r) return 0;
-        return get(r) - get(l);
+        return get(r) - get(l - 1);
     }
 
     void update_range(int l, int r, T val){
