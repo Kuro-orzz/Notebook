@@ -24,31 +24,37 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"DataStructure/SegTree/SegTree.h\"\n\ntemplate <typename T>\n\
-    struct SegTree {\n\tvector<T> sum;\n\n\tSegTree() {}\n\tSegTree(int n): sum(n*4)\
-    \ {}\n\n\tvoid update(int id, int l, int r, int pos, T val) {\n\t\tif (pos < l\
-    \ || pos > r) return;\n\t\tif (l == r) {\n\t\t\tsum[id] += val;\n\t\t\treturn;\n\
-    \t\t}\n\t\tint mid = (l + r) >> 1;\n\t\tupdate(id*2, l, mid, pos, val);\n\t\t\
-    update(id*2+1, mid+1, r, pos, val);\n\t\tsum[id] = sum[id*2] + sum[id*2+1];\n\t\
-    }\n\n\tT getSum(int id, int l, int r, int u, int v) {\n\t\tif (l > v || r < u)\
-    \ return 0;\n\t\tif (l >= u && r <= v) return sum[id];\n\t\tint mid = (l + r)\
-    \ >> 1;\n\t\tT t1 = getSum(id*2, l, mid, u, v);\n\t\tT t2 = getSum(id*2+1, mid+1,\
-    \ r, u, v);\n\t\treturn t1 + t2;\n\t}\n};\n"
+    struct SegTree {\n    int n;\n    vector<T> tree;\n\n    SegTree() {}\n    SegTree(int\
+    \ _n): n(_n), tree(_n*4) {}\n\n    void update(int pos, T val) {\n        update(1,\
+    \ 1, n, pos, val);\n    }\n\n    T getSum(int u, int v) {\n        return getSum(1,\
+    \ 1, n, u, v);\n    }\n\n    void update(int id, int l, int r, int pos, T val)\
+    \ {\n        if (pos < l || pos > r) return;\n        if (l == r) {\n        \
+    \    tree[id] += val;\n            return;\n        }\n        int mid = (l +\
+    \ r) >> 1;\n        update(id*2, l, mid, pos, val);\n        update(id*2+1, mid+1,\
+    \ r, pos, val);\n        tree[id] = tree[id*2] + tree[id*2+1];\n    }\n\n    T\
+    \ getSum(int id, int l, int r, int u, int v) {\n        if (l > v || r < u) return\
+    \ 0;\n        if (l >= u && r <= v) return tree[id];\n        int mid = (l + r)\
+    \ >> 1;\n        T t1 = getSum(id*2, l, mid, u, v);\n        T t2 = getSum(id*2+1,\
+    \ mid+1, r, u, v);\n        return t1 + t2;\n    }\n};\n"
   code: "#include \"../../template.h\"\n\ntemplate <typename T>\nstruct SegTree {\n\
-    \tvector<T> sum;\n\n\tSegTree() {}\n\tSegTree(int n): sum(n*4) {}\n\n\tvoid update(int\
-    \ id, int l, int r, int pos, T val) {\n\t\tif (pos < l || pos > r) return;\n\t\
-    \tif (l == r) {\n\t\t\tsum[id] += val;\n\t\t\treturn;\n\t\t}\n\t\tint mid = (l\
-    \ + r) >> 1;\n\t\tupdate(id*2, l, mid, pos, val);\n\t\tupdate(id*2+1, mid+1, r,\
-    \ pos, val);\n\t\tsum[id] = sum[id*2] + sum[id*2+1];\n\t}\n\n\tT getSum(int id,\
-    \ int l, int r, int u, int v) {\n\t\tif (l > v || r < u) return 0;\n\t\tif (l\
-    \ >= u && r <= v) return sum[id];\n\t\tint mid = (l + r) >> 1;\n\t\tT t1 = getSum(id*2,\
-    \ l, mid, u, v);\n\t\tT t2 = getSum(id*2+1, mid+1, r, u, v);\n\t\treturn t1 +\
-    \ t2;\n\t}\n};"
+    \    int n;\n    vector<T> tree;\n\n    SegTree() {}\n    SegTree(int _n): n(_n),\
+    \ tree(_n*4) {}\n\n    void update(int pos, T val) {\n        update(1, 1, n,\
+    \ pos, val);\n    }\n\n    T getSum(int u, int v) {\n        return getSum(1,\
+    \ 1, n, u, v);\n    }\n\n    void update(int id, int l, int r, int pos, T val)\
+    \ {\n        if (pos < l || pos > r) return;\n        if (l == r) {\n        \
+    \    tree[id] += val;\n            return;\n        }\n        int mid = (l +\
+    \ r) >> 1;\n        update(id*2, l, mid, pos, val);\n        update(id*2+1, mid+1,\
+    \ r, pos, val);\n        tree[id] = tree[id*2] + tree[id*2+1];\n    }\n\n    T\
+    \ getSum(int id, int l, int r, int u, int v) {\n        if (l > v || r < u) return\
+    \ 0;\n        if (l >= u && r <= v) return tree[id];\n        int mid = (l + r)\
+    \ >> 1;\n        T t1 = getSum(id*2, l, mid, u, v);\n        T t2 = getSum(id*2+1,\
+    \ mid+1, r, u, v);\n        return t1 + t2;\n    }\n};"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: DataStructure/SegTree/SegTree.h
   requiredBy: []
-  timestamp: '2025-05-07 22:18:34+07:00'
+  timestamp: '2025-05-20 14:35:59+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - DataStructure/Point_add_range_sum.test.cpp

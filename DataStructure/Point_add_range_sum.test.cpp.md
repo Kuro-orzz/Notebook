@@ -28,21 +28,25 @@ data:
     \    // cin.exceptions(cin.failbit);\n    // int t; cin >> t;\n    // while(t--)\n\
     \        solve();\n    cerr << \"\\nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC\
     \ << \"ms\" << '\\n';\n    return 0;\n}\n#line 2 \"DataStructure/SegTree/SegTree.h\"\
-    \n\ntemplate <typename T>\nstruct SegTree {\n\tvector<T> sum;\n\n\tSegTree() {}\n\
-    \tSegTree(int n): sum(n*4) {}\n\n\tvoid update(int id, int l, int r, int pos,\
-    \ T val) {\n\t\tif (pos < l || pos > r) return;\n\t\tif (l == r) {\n\t\t\tsum[id]\
-    \ += val;\n\t\t\treturn;\n\t\t}\n\t\tint mid = (l + r) >> 1;\n\t\tupdate(id*2,\
-    \ l, mid, pos, val);\n\t\tupdate(id*2+1, mid+1, r, pos, val);\n\t\tsum[id] = sum[id*2]\
-    \ + sum[id*2+1];\n\t}\n\n\tT getSum(int id, int l, int r, int u, int v) {\n\t\t\
-    if (l > v || r < u) return 0;\n\t\tif (l >= u && r <= v) return sum[id];\n\t\t\
-    int mid = (l + r) >> 1;\n\t\tT t1 = getSum(id*2, l, mid, u, v);\n\t\tT t2 = getSum(id*2+1,\
-    \ mid+1, r, u, v);\n\t\treturn t1 + t2;\n\t}\n};\n#line 5 \"DataStructure/Point_add_range_sum.test.cpp\"\
-    \n\nvoid solve() {\n\tint n, q; cin >> n >> q;\n\tSegTree<ll> segTree(n);\n\t\
-    for (int i = 1; i <= n; i++) {\n\t\tint x; cin >> x;\n\t\tsegTree.update(1, 1,\
-    \ n, i, x);\n\t}\n\twhile (q--) {\n\t\tint tv; cin >> tv;\n\t\tif (tv == 0) {\n\
-    \t\t\tint pos, val; cin >> pos >> val;\n\t\t\tsegTree.update(1, 1, n, pos+1, val);\n\
-    \t\t} else {\n\t\t\tint l, r; cin >> l >> r;\n\t\t\tcout << segTree.getSum(1,\
-    \ 1, n, l+1, r) << '\\n';\n\t\t}\n\t}\n}\n"
+    \n\ntemplate <typename T>\nstruct SegTree {\n    int n;\n    vector<T> tree;\n\
+    \n    SegTree() {}\n    SegTree(int _n): n(_n), tree(_n*4) {}\n\n    void update(int\
+    \ pos, T val) {\n        update(1, 1, n, pos, val);\n    }\n\n    T getSum(int\
+    \ u, int v) {\n        return getSum(1, 1, n, u, v);\n    }\n\n    void update(int\
+    \ id, int l, int r, int pos, T val) {\n        if (pos < l || pos > r) return;\n\
+    \        if (l == r) {\n            tree[id] += val;\n            return;\n  \
+    \      }\n        int mid = (l + r) >> 1;\n        update(id*2, l, mid, pos, val);\n\
+    \        update(id*2+1, mid+1, r, pos, val);\n        tree[id] = tree[id*2] +\
+    \ tree[id*2+1];\n    }\n\n    T getSum(int id, int l, int r, int u, int v) {\n\
+    \        if (l > v || r < u) return 0;\n        if (l >= u && r <= v) return tree[id];\n\
+    \        int mid = (l + r) >> 1;\n        T t1 = getSum(id*2, l, mid, u, v);\n\
+    \        T t2 = getSum(id*2+1, mid+1, r, u, v);\n        return t1 + t2;\n   \
+    \ }\n};\n#line 5 \"DataStructure/Point_add_range_sum.test.cpp\"\n\nvoid solve()\
+    \ {\n\tint n, q; cin >> n >> q;\n\tSegTree<ll> segTree(n);\n\tfor (int i = 1;\
+    \ i <= n; i++) {\n\t\tint x; cin >> x;\n\t\tsegTree.update(1, 1, n, i, x);\n\t\
+    }\n\twhile (q--) {\n\t\tint tv; cin >> tv;\n\t\tif (tv == 0) {\n\t\t\tint pos,\
+    \ val; cin >> pos >> val;\n\t\t\tsegTree.update(1, 1, n, pos+1, val);\n\t\t} else\
+    \ {\n\t\t\tint l, r; cin >> l >> r;\n\t\t\tcout << segTree.getSum(1, 1, n, l+1,\
+    \ r) << '\\n';\n\t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     \n#include \"../template.h\"\n#include \"SegTree/SegTree.h\"\n\nvoid solve() {\n\
     \tint n, q; cin >> n >> q;\n\tSegTree<ll> segTree(n);\n\tfor (int i = 1; i <=\
@@ -57,7 +61,7 @@ data:
   isVerificationFile: true
   path: DataStructure/Point_add_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2025-05-07 22:18:34+07:00'
+  timestamp: '2025-05-20 14:35:59+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: DataStructure/Point_add_range_sum.test.cpp

@@ -25,30 +25,29 @@ data:
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"DataStructure/Fenwick/Fenwick.h\"\n\ntemplate <typename T>\n\
     struct Fenwick{\n    int n;\n    vector<T> fen;\n\n    Fenwick(int _n): n(_n),\
-    \ fen(_n+1) {}\n\n    void update(int pos, int val) {\n        for (; pos <= n;\
+    \ fen(_n+1) {}\n\n    void update(int pos, T val) {\n        for (; pos <= n;\
     \ pos += pos & -pos) {\n            fen[pos] += val;\n        }\n    }\n\n   \
     \ T get(int pos) {\n        T ans = 0;\n        for (; pos > 0; pos -= pos & -pos)\
     \ {\n            ans += fen[pos];\n        }\n        return ans;\n    }\n\n \
-    \   T get(int l, int r) {\n        if (l == r) return 0;\n        return get(r)\
-    \ - get(l);\n    }\n\n    void update_range(int l, int r, T val){\n        update(l,\
-    \ val);\n        update(r+1, -val);\n    }\n\n    void reset() {\n        fill(all(fen),\
-    \ T(0));\n    }\n};\n"
+    \   T get(int l, int r) {\n        return get(r) - get(l - 1);\n    }\n\n    void\
+    \ update_range(int l, int r, T val){\n        update(l, val);\n        update(r+1,\
+    \ -val);\n    }\n\n    void reset() {\n        fill(all(fen), T(0));\n    }\n\
+    };\n"
   code: "#include \"../../template.h\"\n\ntemplate <typename T>\nstruct Fenwick{\n\
     \    int n;\n    vector<T> fen;\n\n    Fenwick(int _n): n(_n), fen(_n+1) {}\n\n\
-    \    void update(int pos, int val) {\n        for (; pos <= n; pos += pos & -pos)\
+    \    void update(int pos, T val) {\n        for (; pos <= n; pos += pos & -pos)\
     \ {\n            fen[pos] += val;\n        }\n    }\n\n    T get(int pos) {\n\
     \        T ans = 0;\n        for (; pos > 0; pos -= pos & -pos) {\n          \
     \  ans += fen[pos];\n        }\n        return ans;\n    }\n\n    T get(int l,\
-    \ int r) {\n        if (l == r) return 0;\n        return get(r) - get(l);\n \
-    \   }\n\n    void update_range(int l, int r, T val){\n        update(l, val);\n\
-    \        update(r+1, -val);\n    }\n\n    void reset() {\n        fill(all(fen),\
-    \ T(0));\n    }\n};"
+    \ int r) {\n        return get(r) - get(l - 1);\n    }\n\n    void update_range(int\
+    \ l, int r, T val){\n        update(l, val);\n        update(r+1, -val);\n   \
+    \ }\n\n    void reset() {\n        fill(all(fen), T(0));\n    }\n};"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: DataStructure/Fenwick/Fenwick.h
   requiredBy: []
-  timestamp: '2025-05-07 22:18:34+07:00'
+  timestamp: '2025-05-20 14:35:59+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - DataStructure/Static_range_sum.test.cpp
