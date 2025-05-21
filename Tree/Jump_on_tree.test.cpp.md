@@ -28,17 +28,17 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"Tree/Tree/BinaryLifting.h\"\n\nclass BinLift {\npublic:\n \
-    \   int n;\n    vector<vector<int>> tree, up;\n    vector<int> lg, h;\n    BinLift(int\
-    \ n): n(n), tree(n), up(n, vector<int>(20)), lg(20), h(n) {}\n\n    void dfs(int\
-    \ u, int p) {\n        for(int v : tree[u]) {\n            if(v == p) continue;\n\
-    \            up[v][0] = u;\n            h[v] = h[u] + 1;\n            for(int\
-    \ j = 1; j < 20; j++)\n                up[v][j] = up[up[v][j-1]][j-1];\n     \
-    \       dfs(v, u);\n        }\n    }\n\n    void addEdge(int u, int v) {\n   \
-    \     tree[u].emplace_back(v);\n        tree[v].emplace_back(u);\n    }\n\n  \
-    \  int jump(int u, int v, int i) {\n        int t = lca(u, v);\n        int diff1\
-    \ = h[u]-h[t];\n        int diff2 = h[v]-h[t];\n        if (i > diff1 + diff2)\
-    \ return -1;\n        if (i <= diff1) return ancestor_k(u, i);\n        else {\n\
-    \            int step = i-diff1;\n            return ancestor_k(v, diff2-step);\n\
+    \   int n;\n    vector<vector<int>> tree, up;\n    vector<int> lg, h;\n\n    BinLift()\
+    \ {}\n    BinLift(int n): n(n), tree(n), up(n, vector<int>(20)), lg(20), h(n)\
+    \ {}\n\n    void dfs(int u, int p) {\n        for(int v : tree[u]) {\n       \
+    \     if(v == p) continue;\n            up[v][0] = u;\n            h[v] = h[u]\
+    \ + 1;\n            for(int j = 1; j < 20; j++)\n                up[v][j] = up[up[v][j-1]][j-1];\n\
+    \            dfs(v, u);\n        }\n    }\n\n    void addEdge(int u, int v) {\n\
+    \        tree[u].emplace_back(v);\n        tree[v].emplace_back(u);\n    }\n\n\
+    \    int jump(int u, int v, int i) {\n        int t = lca(u, v);\n        int\
+    \ diff1 = h[u]-h[t];\n        int diff2 = h[v]-h[t];\n        if (i > diff1 +\
+    \ diff2) return -1;\n        if (i <= diff1) return ancestor_k(u, i);\n      \
+    \  else {\n            int step = i-diff1;\n            return ancestor_k(v, diff2-step);\n\
     \        }\n    }\n\n    int lca(int u, int v) {\n        if(h[u] < h[v]) swap(u,\
     \ v);\n        int k = h[u]-h[v];\n        u = ancestor_k(u, k);\n        if(u\
     \ == v) return u;\n\n        k = __lg(h[u]);\n        for(int j = k; j >= 0; j--)\
@@ -63,7 +63,7 @@ data:
   isVerificationFile: true
   path: Tree/Jump_on_tree.test.cpp
   requiredBy: []
-  timestamp: '2025-05-07 22:18:34+07:00'
+  timestamp: '2025-05-22 01:34:28+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Tree/Jump_on_tree.test.cpp

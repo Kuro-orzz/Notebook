@@ -29,14 +29,14 @@ data:
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"DataStructure/DSU/Dsu.h\"\n\n/* Diff: different between a[u]\
     \ and a[par[u]] */\n\nstruct Dsu {\n    vector<int> par, sz;\n    vector<ll> diff;\n\
-    \n    Dsu(int n): par(n+1), sz(n+1, 1), diff(n+1) {\n        iota(all(par), 0);\n\
-    \    }\n\n    int find(int v) {\n        if(v == par[v]) return v;\n        return\
-    \ par[v] = find(par[v]);\n    }\n    \n    void merge(int a, int b) {\n      \
-    \  a = find(a);\n        b = find(b);\n        if (a == b) return;\n        if(sz[a]\
-    \ < sz[b]) swap(a, b);\n        par[b] = a;\n        sz[a] += sz[b];\n    }\n\n\
-    \    bool same_component(int u, int v) {\n        return find(u) == find(v);\n\
-    \    }\n\n    int component_size(int u) {\n        u = find(u);\n        return\
-    \ sz[u];\n    }\n\n    /* https://judge.yosupo.jp/problem/unionfind_with_potential\
+    \n    Dsu() {}\n    Dsu(int n): par(n+1), sz(n+1, 1), diff(n+1) {\n        iota(all(par),\
+    \ 0);\n    }\n\n    int find(int v) {\n        if(v == par[v]) return v;\n   \
+    \     return par[v] = find(par[v]);\n    }\n    \n    void merge(int a, int b)\
+    \ {\n        a = find(a);\n        b = find(b);\n        if (a == b) return;\n\
+    \        if(sz[a] < sz[b]) swap(a, b);\n        par[b] = a;\n        sz[a] +=\
+    \ sz[b];\n    }\n\n    bool same_component(int u, int v) {\n        return find(u)\
+    \ == find(v);\n    }\n\n    int component_size(int u) {\n        u = find(u);\n\
+    \        return sz[u];\n    }\n\n    /* https://judge.yosupo.jp/problem/unionfind_with_potential\
     \ */\n    int findPotential(int v, int mod) {\n        if (v == par[v]) return\
     \ v;\n        int p = par[v];\n        int root = findPotential(p, mod);\n   \
     \     diff[v] = (diff[v] + diff[p]) % mod;\n        return par[v] = root;\n  \
@@ -51,33 +51,34 @@ data:
     \ mod);\n        if (pu != pv) return -1;\n        return (diff[u] - diff[v] +\
     \ mod) % mod;\n    }\n};\n"
   code: "#include \"../../template.h\"\n\n/* Diff: different between a[u] and a[par[u]]\
-    \ */\n\nstruct Dsu {\n    vector<int> par, sz;\n    vector<ll> diff;\n\n    Dsu(int\
-    \ n): par(n+1), sz(n+1, 1), diff(n+1) {\n        iota(all(par), 0);\n    }\n\n\
-    \    int find(int v) {\n        if(v == par[v]) return v;\n        return par[v]\
-    \ = find(par[v]);\n    }\n    \n    void merge(int a, int b) {\n        a = find(a);\n\
-    \        b = find(b);\n        if (a == b) return;\n        if(sz[a] < sz[b])\
-    \ swap(a, b);\n        par[b] = a;\n        sz[a] += sz[b];\n    }\n\n    bool\
-    \ same_component(int u, int v) {\n        return find(u) == find(v);\n    }\n\n\
-    \    int component_size(int u) {\n        u = find(u);\n        return sz[u];\n\
-    \    }\n\n    /* https://judge.yosupo.jp/problem/unionfind_with_potential */\n\
-    \    int findPotential(int v, int mod) {\n        if (v == par[v]) return v;\n\
-    \        int p = par[v];\n        int root = findPotential(p, mod);\n        diff[v]\
-    \ = (diff[v] + diff[p]) % mod;\n        return par[v] = root;\n    }\n\n    bool\
-    \ mergePotential(int u, int v, int x, int mod) {\n        int pu = findPotential(u,\
-    \ mod);\n        int pv = findPotential(v, mod);\n        if (pu == pv) {\n  \
-    \          return (diff[u] - diff[v] + mod) % mod == x;\n        }\n        if(sz[pu]\
-    \ < sz[pv]) {\n            swap(u, v);\n            swap(pu, pv);\n          \
-    \  x = (mod - x) % mod;\n        }\n        par[pv] = pu;\n        sz[pu] += sz[pv];\n\
-    \        diff[pv] = ((diff[u] - diff[v] - x) % mod + mod) % mod;\n        return\
-    \ true;\n    }\n\n    int getDiff(int u, int v, int mod) {\n        int pu = findPotential(u,\
-    \ mod);\n        int pv = findPotential(v, mod);\n        if (pu != pv) return\
-    \ -1;\n        return (diff[u] - diff[v] + mod) % mod;\n    }\n};"
+    \ */\n\nstruct Dsu {\n    vector<int> par, sz;\n    vector<ll> diff;\n\n    Dsu()\
+    \ {}\n    Dsu(int n): par(n+1), sz(n+1, 1), diff(n+1) {\n        iota(all(par),\
+    \ 0);\n    }\n\n    int find(int v) {\n        if(v == par[v]) return v;\n   \
+    \     return par[v] = find(par[v]);\n    }\n    \n    void merge(int a, int b)\
+    \ {\n        a = find(a);\n        b = find(b);\n        if (a == b) return;\n\
+    \        if(sz[a] < sz[b]) swap(a, b);\n        par[b] = a;\n        sz[a] +=\
+    \ sz[b];\n    }\n\n    bool same_component(int u, int v) {\n        return find(u)\
+    \ == find(v);\n    }\n\n    int component_size(int u) {\n        u = find(u);\n\
+    \        return sz[u];\n    }\n\n    /* https://judge.yosupo.jp/problem/unionfind_with_potential\
+    \ */\n    int findPotential(int v, int mod) {\n        if (v == par[v]) return\
+    \ v;\n        int p = par[v];\n        int root = findPotential(p, mod);\n   \
+    \     diff[v] = (diff[v] + diff[p]) % mod;\n        return par[v] = root;\n  \
+    \  }\n\n    bool mergePotential(int u, int v, int x, int mod) {\n        int pu\
+    \ = findPotential(u, mod);\n        int pv = findPotential(v, mod);\n        if\
+    \ (pu == pv) {\n            return (diff[u] - diff[v] + mod) % mod == x;\n   \
+    \     }\n        if(sz[pu] < sz[pv]) {\n            swap(u, v);\n            swap(pu,\
+    \ pv);\n            x = (mod - x) % mod;\n        }\n        par[pv] = pu;\n \
+    \       sz[pu] += sz[pv];\n        diff[pv] = ((diff[u] - diff[v] - x) % mod +\
+    \ mod) % mod;\n        return true;\n    }\n\n    int getDiff(int u, int v, int\
+    \ mod) {\n        int pu = findPotential(u, mod);\n        int pv = findPotential(v,\
+    \ mod);\n        if (pu != pv) return -1;\n        return (diff[u] - diff[v] +\
+    \ mod) % mod;\n    }\n};"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: DataStructure/DSU/Dsu.h
   requiredBy: []
-  timestamp: '2025-05-07 22:18:34+07:00'
+  timestamp: '2025-05-22 01:34:28+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - DataStructure/Union_find.test.cpp

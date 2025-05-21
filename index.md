@@ -116,6 +116,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: NumberTheory/Math/Sieve.h
       title: NumberTheory/Math/Sieve.h
+  - name: Tree/EulerTour
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: Tree/EulerTour/EulerTour.h
+      title: Tree/EulerTour/EulerTour.h
   - name: Tree/Tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -223,5 +228,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: Tree/Lowest_common_ancestor.test.cpp
       title: Tree/Lowest_common_ancestor.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: Tree/Vertex_add_subtree_sum.test.cpp
+      title: Tree/Vertex_add_subtree_sum.test.cpp
 layout: toppage
 ---

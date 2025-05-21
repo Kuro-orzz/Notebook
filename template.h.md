@@ -96,6 +96,9 @@ data:
     path: NumberTheory/Math/Sieve.h
     title: NumberTheory/Math/Sieve.h
   - icon: ':heavy_check_mark:'
+    path: Tree/EulerTour/EulerTour.h
+    title: Tree/EulerTour/EulerTour.h
+  - icon: ':heavy_check_mark:'
     path: Tree/Tree/BinaryLifting.h
     title: Tree/Tree/BinaryLifting.h
   - icon: ':heavy_check_mark:'
@@ -180,6 +183,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: Tree/Lowest_common_ancestor.test.cpp
     title: Tree/Lowest_common_ancestor.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: Tree/Vertex_add_subtree_sum.test.cpp
+    title: Tree/Vertex_add_subtree_sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: h
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -240,6 +246,7 @@ data:
   - NumberTheory/Math/MillerRabin.h
   - NumberTheory/Math/CheckPrime.h
   - NumberTheory/Math/Primality_test.h
+  - Tree/EulerTour/EulerTour.h
   - Tree/Tree/BinaryLifting.h
   - Tree/Tree/Lca.h
   - Tree/Tree/Tree.h
@@ -270,6 +277,7 @@ data:
   - Sample/Many_A_plus_B_128bit.test.cpp
   - Tree/Jump_on_tree.test.cpp
   - Tree/Diameter_tree.test.cpp
+  - Tree/Vertex_add_subtree_sum.test.cpp
   - Tree/Lowest_common_ancestor.test.cpp
 documentation_of: template.h
 layout: document

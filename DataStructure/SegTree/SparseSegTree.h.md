@@ -44,9 +44,9 @@ data:
     \ > v || r < u) return 0;\n\t\tif (u <= l && r <= v) return cur->val;\n\t\tpush(cur,\
     \ l, r);\n\t\tint mid = (l + r) >> 1;\n\t\tll t1 = query(cur->left, l, mid, u,\
     \ v) % mod;\n\t\tll t2 = query(cur->right, mid+1, r, u, v) % mod;\n\t\treturn\
-    \ (t1 + t2) % mod;\n\t}\n\npublic:\n\tSparseSegTree(int _n): n(_n) {}\n\n\tvoid\
-    \ update(int u, int v, pll val) { update(r, 1, n, u, v, val); }\n\t\n\tll query(int\
-    \ u, int v) { return query(r, 1, n, u, v); }\n};\n"
+    \ (t1 + t2) % mod;\n\t}\n\npublic:\n\tSparseSegTree() {}\n\tSparseSegTree(int\
+    \ _n): n(_n) {}\n\n\tvoid update(int u, int v, pll val) { update(r, 1, n, u, v,\
+    \ val); }\n\t\n\tll query(int u, int v) { return query(r, 1, n, u, v); }\n};\n"
   code: "#include \"../../template.h\"\n\n\nstruct Node {\n\tNode *left = nullptr,\
     \ *right = nullptr;\n\tll val;\n\tpll lazy = {1, 0};\n\t\n\tNode(): val(0), lazy({1,\
     \ 0}) {}\n\t\n\tNode operator+(const Node& b) const {\n\t\tNode res;\n\t\tres.val\
@@ -67,15 +67,16 @@ data:
     \ l, int r, int u, int v) {\n\t\tif (l > v || r < u) return 0;\n\t\tif (u <= l\
     \ && r <= v) return cur->val;\n\t\tpush(cur, l, r);\n\t\tint mid = (l + r) >>\
     \ 1;\n\t\tll t1 = query(cur->left, l, mid, u, v) % mod;\n\t\tll t2 = query(cur->right,\
-    \ mid+1, r, u, v) % mod;\n\t\treturn (t1 + t2) % mod;\n\t}\n\npublic:\n\tSparseSegTree(int\
-    \ _n): n(_n) {}\n\n\tvoid update(int u, int v, pll val) { update(r, 1, n, u, v,\
-    \ val); }\n\t\n\tll query(int u, int v) { return query(r, 1, n, u, v); }\n};"
+    \ mid+1, r, u, v) % mod;\n\t\treturn (t1 + t2) % mod;\n\t}\n\npublic:\n\tSparseSegTree()\
+    \ {}\n\tSparseSegTree(int _n): n(_n) {}\n\n\tvoid update(int u, int v, pll val)\
+    \ { update(r, 1, n, u, v, val); }\n\t\n\tll query(int u, int v) { return query(r,\
+    \ 1, n, u, v); }\n};"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: DataStructure/SegTree/SparseSegTree.h
   requiredBy: []
-  timestamp: '2025-05-08 02:01:24+07:00'
+  timestamp: '2025-05-22 01:34:28+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - DataStructure/Range_affine_range_sum_large_array.test.cpp

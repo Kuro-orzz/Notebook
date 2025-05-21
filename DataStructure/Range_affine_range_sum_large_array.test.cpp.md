@@ -49,13 +49,14 @@ data:
     \ > v || r < u) return 0;\n\t\tif (u <= l && r <= v) return cur->val;\n\t\tpush(cur,\
     \ l, r);\n\t\tint mid = (l + r) >> 1;\n\t\tll t1 = query(cur->left, l, mid, u,\
     \ v) % mod;\n\t\tll t2 = query(cur->right, mid+1, r, u, v) % mod;\n\t\treturn\
-    \ (t1 + t2) % mod;\n\t}\n\npublic:\n\tSparseSegTree(int _n): n(_n) {}\n\n\tvoid\
-    \ update(int u, int v, pll val) { update(r, 1, n, u, v, val); }\n\t\n\tll query(int\
-    \ u, int v) { return query(r, 1, n, u, v); }\n};\n#line 5 \"DataStructure/Range_affine_range_sum_large_array.test.cpp\"\
-    \n\nvoid solve() {\n\tint n, q; cin >> n >> q;\n\tSparseSegTree st(n);\n\twhile\
-    \ (q--) {\n\t\tint tv, l, r; cin >> tv >> l >> r;\n\t\tif (tv == 0) {\n\t\t\t\
-    ll b, c; cin >> b >> c;\n\t\t\tst.update(l+1, r, {b, c});\n\t\t} else if (tv ==\
-    \ 1) {\n\t\t\tcout << st.query(l+1, r) << '\\n';\n\t\t}\n\t}\n}\n"
+    \ (t1 + t2) % mod;\n\t}\n\npublic:\n\tSparseSegTree() {}\n\tSparseSegTree(int\
+    \ _n): n(_n) {}\n\n\tvoid update(int u, int v, pll val) { update(r, 1, n, u, v,\
+    \ val); }\n\t\n\tll query(int u, int v) { return query(r, 1, n, u, v); }\n};\n\
+    #line 5 \"DataStructure/Range_affine_range_sum_large_array.test.cpp\"\n\nvoid\
+    \ solve() {\n\tint n, q; cin >> n >> q;\n\tSparseSegTree st(n);\n\twhile (q--)\
+    \ {\n\t\tint tv, l, r; cin >> tv >> l >> r;\n\t\tif (tv == 0) {\n\t\t\tll b, c;\
+    \ cin >> b >> c;\n\t\t\tst.update(l+1, r, {b, c});\n\t\t} else if (tv == 1) {\n\
+    \t\t\tcout << st.query(l+1, r) << '\\n';\n\t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum_large_array\"\
     \n\n#include \"../template.h\"\n#include \"SegTree/SparseSegTree.h\"\n\nvoid solve()\
     \ {\n\tint n, q; cin >> n >> q;\n\tSparseSegTree st(n);\n\twhile (q--) {\n\t\t\
@@ -68,7 +69,7 @@ data:
   isVerificationFile: true
   path: DataStructure/Range_affine_range_sum_large_array.test.cpp
   requiredBy: []
-  timestamp: '2025-05-08 02:01:24+07:00'
+  timestamp: '2025-05-22 01:34:28+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: DataStructure/Range_affine_range_sum_large_array.test.cpp
