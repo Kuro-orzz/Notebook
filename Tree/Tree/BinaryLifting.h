@@ -5,6 +5,8 @@ public:
     int n;
     vector<vector<int>> tree, up;
     vector<int> lg, h;
+
+    BinLift() {}
     BinLift(int n): n(n), tree(n), up(n, vector<int>(20)), lg(20), h(n) {}
 
     void dfs(int u, int p) {

@@ -66,6 +66,7 @@ private:
 	}
 
 public:
+	SparseSegTree() {}
 	SparseSegTree(int _n): n(_n) {}
 
 	void update(int u, int v, pll val) { update(r, 1, n, u, v, val); }

@@ -5,6 +5,7 @@ struct Fenwick{
     int n;
     vector<T> fen;
 
+    Fenwick() {}
     Fenwick(int _n): n(_n), fen(_n+1) {}
 
     void update(int pos, T val) {

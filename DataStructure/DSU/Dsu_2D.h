@@ -4,6 +4,7 @@ struct Dsu_2D {
     vector<vector<pii>> par;
     vector<vector<int>> sz;
 
+    Dsu_2D() {}
     Dsu_2D(int n, int m): par(n+1, vector<pii>(m+1)), sz(n+1, vector<int>(m+1, 1)) {
         for(int i = 0; i <= n; i++)
             for(int j = 0; j <= m; j++)

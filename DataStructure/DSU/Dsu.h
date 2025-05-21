@@ -6,6 +6,7 @@ struct Dsu {
     vector<int> par, sz;
     vector<ll> diff;
 
+    Dsu() {}
     Dsu(int n): par(n+1), sz(n+1, 1), diff(n+1) {
         iota(all(par), 0);
     }
