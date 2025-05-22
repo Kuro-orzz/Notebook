@@ -74,20 +74,36 @@ data:
     - icon: ':warning:'
       path: DataStructure/SegTree/SegTreeBeats/test3.cpp
       title: DataStructure/SegTree/SegTreeBeats/test3.cpp
-  - name: DataStructure/SqrtDecomposition
+  - name: DataStructure/SqrtDecomposition/Mo
     pages:
     - icon: ':warning:'
-      path: DataStructure/SqrtDecomposition/Mo.h
-      title: DataStructure/SqrtDecomposition/Mo.h
+      path: DataStructure/SqrtDecomposition/Mo/Mo.h
+      title: DataStructure/SqrtDecomposition/Mo/Mo.h
+    - icon: ':warning:'
+      path: DataStructure/SqrtDecomposition/Mo/test1.cpp
+      title: DataStructure/SqrtDecomposition/Mo/test1.cpp
+    - icon: ':warning:'
+      path: DataStructure/SqrtDecomposition/Mo/test2.cpp
+      title: DataStructure/SqrtDecomposition/Mo/test2.cpp
+  - name: DataStructure/SqrtDecomposition/Split_Rebuild
+    pages:
+    - icon: ':warning:'
+      path: DataStructure/SqrtDecomposition/Split_Rebuild/Full_version.h
+      title: DataStructure/SqrtDecomposition/Split_Rebuild/Full_version.h
+    - icon: ':heavy_check_mark:'
+      path: DataStructure/SqrtDecomposition/Split_Rebuild/Simplified_version.h
+      title: DataStructure/SqrtDecomposition/Split_Rebuild/Simplified_version.h
+    - icon: ':warning:'
+      path: DataStructure/SqrtDecomposition/Split_Rebuild/test1.cpp
+      title: DataStructure/SqrtDecomposition/Split_Rebuild/test1.cpp
+    - icon: ':warning:'
+      path: DataStructure/SqrtDecomposition/Split_Rebuild/test2.cpp
+      title: DataStructure/SqrtDecomposition/Split_Rebuild/test2.cpp
+  - name: DataStructure/SqrtDecomposition
+    pages:
     - icon: ':heavy_check_mark:'
       path: DataStructure/SqrtDecomposition/Sqrt.h
       title: DataStructure/SqrtDecomposition/Sqrt.h
-    - icon: ':warning:'
-      path: DataStructure/SqrtDecomposition/test1.cpp
-      title: DataStructure/SqrtDecomposition/test1.cpp
-    - icon: ':warning:'
-      path: DataStructure/SqrtDecomposition/test2.cpp
-      title: DataStructure/SqrtDecomposition/test2.cpp
   - name: Misc
     pages:
     - icon: ':warning:'
@@ -175,6 +191,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/Range_chmin_chmax_add_range_sum.test.cpp
       title: DataStructure/Range_chmin_chmax_add_range_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: DataStructure/Range_reverse_range_sum.test.cpp
+      title: DataStructure/Range_reverse_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: DataStructure/Static_RMQ.test.cpp
       title: DataStructure/Static_RMQ.test.cpp

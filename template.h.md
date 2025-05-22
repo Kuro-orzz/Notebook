@@ -60,17 +60,20 @@ data:
     path: DataStructure/SegTree/SparseSegTree.h
     title: DataStructure/SegTree/SparseSegTree.h
   - icon: ':warning:'
-    path: DataStructure/SqrtDecomposition/Mo.h
-    title: DataStructure/SqrtDecomposition/Mo.h
+    path: DataStructure/SqrtDecomposition/Split_Rebuild/Full_version.h
+    title: DataStructure/SqrtDecomposition/Split_Rebuild/Full_version.h
+  - icon: ':heavy_check_mark:'
+    path: DataStructure/SqrtDecomposition/Split_Rebuild/Simplified_version.h
+    title: DataStructure/SqrtDecomposition/Split_Rebuild/Simplified_version.h
+  - icon: ':warning:'
+    path: DataStructure/SqrtDecomposition/Split_Rebuild/test1.cpp
+    title: DataStructure/SqrtDecomposition/Split_Rebuild/test1.cpp
+  - icon: ':warning:'
+    path: DataStructure/SqrtDecomposition/Split_Rebuild/test2.cpp
+    title: DataStructure/SqrtDecomposition/Split_Rebuild/test2.cpp
   - icon: ':heavy_check_mark:'
     path: DataStructure/SqrtDecomposition/Sqrt.h
     title: DataStructure/SqrtDecomposition/Sqrt.h
-  - icon: ':warning:'
-    path: DataStructure/SqrtDecomposition/test1.cpp
-    title: DataStructure/SqrtDecomposition/test1.cpp
-  - icon: ':warning:'
-    path: DataStructure/SqrtDecomposition/test2.cpp
-    title: DataStructure/SqrtDecomposition/test2.cpp
   - icon: ':warning:'
     path: Misc/Compress.h
     title: Misc/Compress.h
@@ -138,6 +141,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/Range_chmin_chmax_add_range_sum.test.cpp
     title: DataStructure/Range_chmin_chmax_add_range_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: DataStructure/Range_reverse_range_sum.test.cpp
+    title: DataStructure/Range_reverse_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: DataStructure/SqrtDecomposition/Point_Add_Range_Sum.test.cpp
     title: DataStructure/SqrtDecomposition/Point_Add_Range_Sum.test.cpp
@@ -232,9 +238,10 @@ data:
   - DataStructure/SegTree/SegTreeBeats/SegTreeBeats1.h
   - DataStructure/SegTree/LazySegTree.h
   - DataStructure/RMQ/RMQ.h
-  - DataStructure/SqrtDecomposition/test2.cpp
-  - DataStructure/SqrtDecomposition/Mo.h
-  - DataStructure/SqrtDecomposition/test1.cpp
+  - DataStructure/SqrtDecomposition/Split_Rebuild/Full_version.h
+  - DataStructure/SqrtDecomposition/Split_Rebuild/test2.cpp
+  - DataStructure/SqrtDecomposition/Split_Rebuild/Simplified_version.h
+  - DataStructure/SqrtDecomposition/Split_Rebuild/test1.cpp
   - DataStructure/SqrtDecomposition/Sqrt.h
   - DataStructure/Fenwick/Fenwick.h
   - DataStructure/DSU/Dsu_2D.h
@@ -258,6 +265,7 @@ data:
   - DataStructure/Point_add_range_sum.test.cpp
   - DataStructure/SqrtDecomposition/Point_Add_Range_Sum.test.cpp
   - DataStructure/Unionfind_with_potential.test.cpp
+  - DataStructure/Range_reverse_range_sum.test.cpp
   - DataStructure/Range_affine_range_sum.test.cpp
   - DataStructure/Range_chmin_chmax_add_range_sum.test.cpp
   - DataStructure/Static_RMQ.test.cpp
