@@ -15,7 +15,7 @@ public:
             up[v][0] = u;
             h[v] = h[u] + 1;
             for(int j = 1; j < 20; j++)
-                up[v][j] = up[up[v][j-1]][j-1];
+            up[v][j] = up[up[v][j-1]][j-1];
             dfs(v, u);
         }
     }

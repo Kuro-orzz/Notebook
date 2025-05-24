@@ -4,7 +4,7 @@
 #include "Simplified_version.h"
 
 void solve() {
-	int n, q; cin >> n >> q;
+    int n, q; cin >> n >> q;
     vector<int> a(n + 1);
     for (int i = 1; i <= n; i++) {
         cin >> a[i];

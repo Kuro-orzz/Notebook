@@ -96,7 +96,7 @@ public:
 		tree[id*2].add(tree[id].lazy);
 		tree[id*2+1].add(tree[id].lazy);
 		tree[id].lazy = 0;
-		
+
 		tree[id*2].setMax(tree[id].min1);
 		tree[id*2+1].setMax(tree[id].min1);
 
@@ -117,7 +117,7 @@ public:
 		updateChmax(id*2+1, mid+1, r, u, v, x);
 		tree[id] = tree[id*2] + tree[id*2+1];
 	}
-	
+
 	void updateChmin(int id, int l, int r, int u, int v, ll x) {
 		if (l > v || r < u) return;
 		if (tree[id].max1 <= x) return;

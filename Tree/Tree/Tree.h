@@ -9,7 +9,7 @@ pair<ll, vector<int>> tree_diameter(const vector<vector<pii>>& g) {
         d[u] = cur_d;
         p[u] = par;
         for (auto [v, w] : g[u]) {
-        	if (v == par) continue;
+            if (v == par) continue;
             dfs(v, u, cur_d + w);
         }
     };
@@ -22,7 +22,7 @@ pair<ll, vector<int>> tree_diameter(const vector<vector<pii>>& g) {
 
     vector<int> path;
     for (int x = s; x >= 0; x = p[x]) { 
-    	path.push_back(x);
+        path.push_back(x);
     }
     return {d[s], path};
 }

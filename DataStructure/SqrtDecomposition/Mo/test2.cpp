@@ -21,13 +21,13 @@ vector<int> fre;
 ll sum = 0;
 
 void insert(int i) {
-	sum += (2*fre[a[i]]+1)*a[i];
-	fre[a[i]]++;
+    sum += (2*fre[a[i]]+1)*a[i];
+    fre[a[i]]++;
 }
 
 void remove(int i) {
-	sum -= (2*fre[a[i]]-1)*a[i];
-	fre[a[i]]--;
+    sum -= (2*fre[a[i]]-1)*a[i];
+    fre[a[i]]--;
 }
 
 vector<ll> query(){

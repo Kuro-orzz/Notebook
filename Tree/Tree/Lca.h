@@ -5,17 +5,23 @@ struct Lca {
     vector<int> h;
 
     Lca() {}
-    Lca(int n): tree(n), up(n+1, vector<int>(20)), h(n+1, 0) {}
+    Lca(int n): tree(n+1), up(n+1, vector<int>(20)), h(n+1, 0) {}
 
     void dfs(int u, int p) {
         for(int v : tree[u]) {
             if(v == p) continue;
             up[v][0] = u;
             h[v] = h[u] + 1;
-            for(int j = 1; j < 20; j++)
+            for(int j = 1; j < 20; j++) {
                 up[v][j] = up[up[v][j-1]][j-1];
+            }
             dfs(v, u);
         }
+    }
+
+    void addEdge(int u, int v) {
+        tree[u].emplace_back(v);
+        tree[v].emplace_back(u);
     }
 
     int query(int u, int v) {
@@ -32,6 +38,11 @@ struct Lca {
             }
         }
         return up[u][0];
+    }
+
+    int dist(int u, int v) {
+        int node = query(u, v);
+        return h[u] + h[v] - 2 * h[node];
     }
 
     int ancestor_k(int u, int k) {

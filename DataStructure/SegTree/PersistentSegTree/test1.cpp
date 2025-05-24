@@ -11,12 +11,12 @@ void solve() {
     PersistentSegTree PST(n);
     Node *root = new Node(NULL, NULL, 0);
     PST.build(root, 1, n, a);
-    
+
     int cntVer = 1;
     PST.ver[cntVer] = root;
     
     vector<int> arr = {0, 1};
-    
+
     while (q--) {
         int tv; cin >> tv;
         if (tv == 1) {

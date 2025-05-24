@@ -173,7 +173,7 @@ public:
         BigInt z0 = karatsuba(a_low, b_low);
         BigInt z2 = karatsuba(a_high, b_high);
         BigInt z1 = karatsuba(a_low + a_high, b_low + b_high) - z0 - z2;
-    
+
         BigInt res = z2.shifted(2*k) + z1.shifted(k) + z0;
         res.neg = (a.neg != b.neg);
         res.trim();

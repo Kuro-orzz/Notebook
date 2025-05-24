@@ -28,8 +28,8 @@ void solve() {
 
 			tree.update(prev, newRoot, 1, n, pos, oldVal+v);
 		} else if (tv == 2) {
-            int l, r; cin >> l >> r;
-            cout << tree.getSum(tree.ver[idx], 1, n, l, r) << '\n';
-        }
+			int l, r; cin >> l >> r;
+			cout << tree.getSum(tree.ver[idx], 1, n, l, r) << '\n';
+		}
 	}
 }

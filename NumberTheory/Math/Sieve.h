@@ -12,16 +12,16 @@ vector<int> sieve(int n) {
 }
 
 vector<int> segmentSieve(int l, int r){
-    vector<int> prime(r-l+1, 1);
-    for(ll p = 2; p*p <= r; p++){
-    	ll lim = max(p*p, (l+p-1)/p*p);
-        for(ll j = lim; j <= r; j += p)
-            if (j-l >= 0) prime[j-l] = 0;
-    }
-    if (l == 0) prime[0] = 0;
-    if (l == 0 && r > l) prime[1] = 0;
-    if (l == 1) prime[1-l] = 0;
-    return prime;
+	vector<int> prime(r-l+1, 1);
+	for(ll p = 2; p*p <= r; p++){
+		ll lim = max(p*p, (l+p-1)/p*p);
+		for(ll j = lim; j <= r; j += p)
+			if (j-l >= 0) prime[j-l] = 0;
+	}
+	if (l == 0) prime[0] = 0;
+	if (l == 0 && r > l) prime[1] = 0;
+	if (l == 1) prime[1-l] = 0;
+	return prime;
 }
 
 vector<int> listPrime(int l, int r) {
