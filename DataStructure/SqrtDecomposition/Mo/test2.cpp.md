@@ -25,11 +25,11 @@ data:
     \n\nint block_sz;\nvector<int> a;\n\nstruct Query{\n    int l, r, idx;\n};\n\n\
     vector<Query> q;\n\nbool cmp(Query a, Query b){\n    if(a.l/block_sz != b.l/block_sz)\n\
     \        return a.l/block_sz < b.l/block_sz;\n    return a.r < b.r;\n}\n\nvector<int>\
-    \ fre;\nll sum = 0;\n\nvoid insert(int i) {\n\tsum += (2*fre[a[i]]+1)*a[i];\n\t\
-    fre[a[i]]++;\n}\n\nvoid remove(int i) {\n\tsum -= (2*fre[a[i]]-1)*a[i];\n\tfre[a[i]]--;\n\
-    }\n\nvector<ll> query(){\n    sort(q.begin(), q.end(), cmp);\n    int curL = 0,\
-    \ curR = 0;\n    fre.resize(1e6+1, 0);\n    vector<ll> ans((int)q.size());\n \
-    \   for(int i = 0; i < (int)q.size(); i++){\n        auto [L, R, idx] = q[i];\n\
+    \ fre;\nll sum = 0;\n\nvoid insert(int i) {\n    sum += (2*fre[a[i]]+1)*a[i];\n\
+    \    fre[a[i]]++;\n}\n\nvoid remove(int i) {\n    sum -= (2*fre[a[i]]-1)*a[i];\n\
+    \    fre[a[i]]--;\n}\n\nvector<ll> query(){\n    sort(q.begin(), q.end(), cmp);\n\
+    \    int curL = 0, curR = 0;\n    fre.resize(1e6+1, 0);\n    vector<ll> ans((int)q.size());\n\
+    \    for(int i = 0; i < (int)q.size(); i++){\n        auto [L, R, idx] = q[i];\n\
     \        while(curL < L) remove(curL++);\n        while(curL > L) insert(--curL);\n\
     \        while(curR <= R) insert(curR++);\n        while(curR > R+1) remove(--curR);\n\
     \        ans[idx] = sum;\n    }\n    return ans;\n}\n\nvoid solve(){\n    int\

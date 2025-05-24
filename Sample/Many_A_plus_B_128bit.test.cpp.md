@@ -92,7 +92,7 @@ data:
     \ b.digit.end());\n        b_low.neg = b_high.neg = false;\n        b_low.trim();\n\
     \        b_high.trim();\n\n        BigInt z0 = karatsuba(a_low, b_low);\n    \
     \    BigInt z2 = karatsuba(a_high, b_high);\n        BigInt z1 = karatsuba(a_low\
-    \ + a_high, b_low + b_high) - z0 - z2;\n    \n        BigInt res = z2.shifted(2*k)\
+    \ + a_high, b_low + b_high) - z0 - z2;\n\n        BigInt res = z2.shifted(2*k)\
     \ + z1.shifted(k) + z0;\n        res.neg = (a.neg != b.neg);\n        res.trim();\n\
     \        return res;\n    }\n\n    BigInt operator*(const BigInt &b) const {\n\
     \        return karatsuba(*this, b);\n    }\n};\n#line 5 \"Sample/Many_A_plus_B_128bit.test.cpp\"\
@@ -109,7 +109,7 @@ data:
   isVerificationFile: true
   path: Sample/Many_A_plus_B_128bit.test.cpp
   requiredBy: []
-  timestamp: '2025-05-07 22:18:34+07:00'
+  timestamp: '2025-05-25 00:26:18+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Sample/Many_A_plus_B_128bit.test.cpp

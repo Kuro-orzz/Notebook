@@ -20,7 +20,13 @@ data:
     , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
     )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: ../../template.h:\
     \ line -1: no such header\n"
-  code: "#include \"../../template.h\"\n\nclass Mo {\n\t\n};"
+  code: '#include "../../template.h"
+
+
+    class Mo {
+
+
+    };'
   dependsOn: []
   isVerificationFile: false
   path: DataStructure/SqrtDecomposition/Mo/Mo.h

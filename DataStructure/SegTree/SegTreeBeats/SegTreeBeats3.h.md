@@ -55,14 +55,14 @@ data:
     \ r) >> 1;\n\t\tbuild(id*2, l, mid, pos, val);\n\t\tbuild(id*2+1, mid+1, r, pos,\
     \ val);\n\t\ttree[id] = tree[id*2] + tree[id*2+1];\n\t}\t\n\n\tvoid push(int id)\
     \ {\n\t\ttree[id*2].add(tree[id].lazy);\n\t\ttree[id*2+1].add(tree[id].lazy);\n\
-    \t\ttree[id].lazy = 0;\n\t\t\n\t\ttree[id*2].setMax(tree[id].min1);\n\t\ttree[id*2+1].setMax(tree[id].min1);\n\
+    \t\ttree[id].lazy = 0;\n\n\t\ttree[id*2].setMax(tree[id].min1);\n\t\ttree[id*2+1].setMax(tree[id].min1);\n\
     \n\t\ttree[id*2].setMin(tree[id].max1);\n\t\ttree[id*2+1].setMin(tree[id].max1);\n\
     \t}\n\n\tvoid updateChmax(int id, int l, int r, int u, int v, ll x) {\n\t\tif\
     \ (l > v || r < u) return;\n\t\tif (tree[id].min1 >= x) return;\n\t\tif (u <=\
     \ l && r <= v && tree[id].min2 > x) {\n\t\t\ttree[id].setMax(x);\n\t\t\treturn;\n\
     \t\t}\n\t\tpush(id);\n\t\tint mid = (l + r) >> 1;\n\t\tupdateChmax(id*2, l, mid,\
     \ u, v, x);\n\t\tupdateChmax(id*2+1, mid+1, r, u, v, x);\n\t\ttree[id] = tree[id*2]\
-    \ + tree[id*2+1];\n\t}\n\t\n\tvoid updateChmin(int id, int l, int r, int u, int\
+    \ + tree[id*2+1];\n\t}\n\n\tvoid updateChmin(int id, int l, int r, int u, int\
     \ v, ll x) {\n\t\tif (l > v || r < u) return;\n\t\tif (tree[id].max1 <= x) return;\n\
     \t\tif (u <= l && r <= v && tree[id].max2 < x) {\n\t\t\ttree[id].setMin(x);\n\t\
     \t\treturn;\n\t\t}\n\t\tpush(id);\n\t\tint mid = (l + r) >> 1;\n\t\tupdateChmin(id*2,\
@@ -104,14 +104,14 @@ data:
     \t\t}\n\t\tint mid = (l + r) >> 1;\n\t\tbuild(id*2, l, mid, pos, val);\n\t\tbuild(id*2+1,\
     \ mid+1, r, pos, val);\n\t\ttree[id] = tree[id*2] + tree[id*2+1];\n\t}\t\n\n\t\
     void push(int id) {\n\t\ttree[id*2].add(tree[id].lazy);\n\t\ttree[id*2+1].add(tree[id].lazy);\n\
-    \t\ttree[id].lazy = 0;\n\t\t\n\t\ttree[id*2].setMax(tree[id].min1);\n\t\ttree[id*2+1].setMax(tree[id].min1);\n\
+    \t\ttree[id].lazy = 0;\n\n\t\ttree[id*2].setMax(tree[id].min1);\n\t\ttree[id*2+1].setMax(tree[id].min1);\n\
     \n\t\ttree[id*2].setMin(tree[id].max1);\n\t\ttree[id*2+1].setMin(tree[id].max1);\n\
     \t}\n\n\tvoid updateChmax(int id, int l, int r, int u, int v, ll x) {\n\t\tif\
     \ (l > v || r < u) return;\n\t\tif (tree[id].min1 >= x) return;\n\t\tif (u <=\
     \ l && r <= v && tree[id].min2 > x) {\n\t\t\ttree[id].setMax(x);\n\t\t\treturn;\n\
     \t\t}\n\t\tpush(id);\n\t\tint mid = (l + r) >> 1;\n\t\tupdateChmax(id*2, l, mid,\
     \ u, v, x);\n\t\tupdateChmax(id*2+1, mid+1, r, u, v, x);\n\t\ttree[id] = tree[id*2]\
-    \ + tree[id*2+1];\n\t}\n\t\n\tvoid updateChmin(int id, int l, int r, int u, int\
+    \ + tree[id*2+1];\n\t}\n\n\tvoid updateChmin(int id, int l, int r, int u, int\
     \ v, ll x) {\n\t\tif (l > v || r < u) return;\n\t\tif (tree[id].max1 <= x) return;\n\
     \t\tif (u <= l && r <= v && tree[id].max2 < x) {\n\t\t\ttree[id].setMin(x);\n\t\
     \t\treturn;\n\t\t}\n\t\tpush(id);\n\t\tint mid = (l + r) >> 1;\n\t\tupdateChmin(id*2,\
@@ -131,7 +131,7 @@ data:
   path: DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
   requiredBy:
   - DataStructure/SegTree/SegTreeBeats/test3.cpp
-  timestamp: '2025-05-07 22:18:34+07:00'
+  timestamp: '2025-05-25 00:26:18+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - DataStructure/Range_chmin_chmax_add_range_sum.test.cpp

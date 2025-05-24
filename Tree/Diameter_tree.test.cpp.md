@@ -31,15 +31,15 @@ data:
     \ vector<vector<pii>>& g) {\n    int n = g.size();\n    vector<ll> d(n); // dist\n\
     \    vector<int> p(n); // par\n\n    function<void(int, int, ll)> dfs = [&] (int\
     \ u, int par, ll cur_d) {\n        d[u] = cur_d;\n        p[u] = par;\n      \
-    \  for (auto [v, w] : g[u]) {\n        \tif (v == par) continue;\n           \
-    \ dfs(v, u, cur_d + w);\n        }\n    };\n    dfs(0, -1, 0);\n    // r = furthest\
+    \  for (auto [v, w] : g[u]) {\n            if (v == par) continue;\n         \
+    \   dfs(v, u, cur_d + w);\n        }\n    };\n    dfs(0, -1, 0);\n    // r = furthest\
     \ node from root\n    int r = max_element(d.begin(), d.end()) - d.begin();\n \
     \   dfs(r, -1, 0);\n    // r->s = longest path\n    int s = max_element(d.begin(),\
     \ d.end()) - d.begin();\n\n    vector<int> path;\n    for (int x = s; x >= 0;\
-    \ x = p[x]) { \n    \tpath.push_back(x);\n    }\n    return {d[s], path};\n}\n\
-    #line 5 \"Tree/Diameter_tree.test.cpp\"\n\nvoid solve() {\n\tint n; cin >> n;\n\
-    \tvector<vector<pii>> adj(n);\n\tfor (int i = 0; i < n-1; i++) {\n\t\tint u, v,\
-    \ w; cin >> u >> v >> w;\n\t\tadj[u].emplace_back(v, w);\n\t\tadj[v].emplace_back(u,\
+    \ x = p[x]) { \n        path.push_back(x);\n    }\n    return {d[s], path};\n\
+    }\n#line 5 \"Tree/Diameter_tree.test.cpp\"\n\nvoid solve() {\n\tint n; cin >>\
+    \ n;\n\tvector<vector<pii>> adj(n);\n\tfor (int i = 0; i < n-1; i++) {\n\t\tint\
+    \ u, v, w; cin >> u >> v >> w;\n\t\tadj[u].emplace_back(v, w);\n\t\tadj[v].emplace_back(u,\
     \ w);\n\t}\n\tauto [len, path] = tree_diameter(adj);\n\tcout << len << \" \" <<\
     \ path.size() << '\\n';\n\treverse(all(path));\n\tfor (int x : path) {\n\t\tcout\
     \ << x << \" \";\n\t}\n}\n"
@@ -56,7 +56,7 @@ data:
   isVerificationFile: true
   path: Tree/Diameter_tree.test.cpp
   requiredBy: []
-  timestamp: '2025-05-07 22:18:34+07:00'
+  timestamp: '2025-05-25 00:26:18+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Tree/Diameter_tree.test.cpp

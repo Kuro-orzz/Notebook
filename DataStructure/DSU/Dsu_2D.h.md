@@ -23,29 +23,29 @@ data:
     \ 0;\n}\n#line 2 \"DataStructure/DSU/Dsu_2D.h\"\n\nstruct Dsu_2D {\n    vector<vector<pii>>\
     \ par;\n    vector<vector<int>> sz;\n\n    Dsu_2D() {}\n    Dsu_2D(int n, int\
     \ m): par(n+1, vector<pii>(m+1)), sz(n+1, vector<int>(m+1, 1)) {\n        for(int\
-    \ i = 0; i <= n; i++)\n            for(int j = 0; j <= m; j++)\n             \
-    \   par[i][j] = {i, j};\n    }\n    pii find(pii v) {\n        if(v == par[v.fi][v.se])\n\
-    \            return v;\n        return par[v.fi][v.se] = find(par[v.fi][v.se]);\n\
-    \    }\n    void merge(pii a, pii b){\n        a = find(a);\n        b = find(b);\n\
-    \        if (a == b) return;\n        if(sz[a.fi][a.se] < sz[b.fi][b.se]) swap(a,\
-    \ b);\n        par[b.fi][b.se] = a;\n        sz[a.fi][a.se] += sz[b.fi][b.se];\n\
-    \    }\n};\n"
+    \ i = 0; i <= n; i++) {\n            for(int j = 0; j <= m; j++)\n           \
+    \     par[i][j] = {i, j};\n        }\n    }\n\n    pii find(pii v) {\n       \
+    \ if(v == par[v.fi][v.se])\n            return v;\n        return par[v.fi][v.se]\
+    \ = find(par[v.fi][v.se]);\n    }\n\n    void merge(pii a, pii b){\n        a\
+    \ = find(a);\n        b = find(b);\n        if (a == b) return;\n        if(sz[a.fi][a.se]\
+    \ < sz[b.fi][b.se]) swap(a, b);\n        par[b.fi][b.se] = a;\n        sz[a.fi][a.se]\
+    \ += sz[b.fi][b.se];\n    }\n};\n"
   code: "#include \"../../template.h\"\n\nstruct Dsu_2D {\n    vector<vector<pii>>\
     \ par;\n    vector<vector<int>> sz;\n\n    Dsu_2D() {}\n    Dsu_2D(int n, int\
     \ m): par(n+1, vector<pii>(m+1)), sz(n+1, vector<int>(m+1, 1)) {\n        for(int\
-    \ i = 0; i <= n; i++)\n            for(int j = 0; j <= m; j++)\n             \
-    \   par[i][j] = {i, j};\n    }\n    pii find(pii v) {\n        if(v == par[v.fi][v.se])\n\
-    \            return v;\n        return par[v.fi][v.se] = find(par[v.fi][v.se]);\n\
-    \    }\n    void merge(pii a, pii b){\n        a = find(a);\n        b = find(b);\n\
-    \        if (a == b) return;\n        if(sz[a.fi][a.se] < sz[b.fi][b.se]) swap(a,\
-    \ b);\n        par[b.fi][b.se] = a;\n        sz[a.fi][a.se] += sz[b.fi][b.se];\n\
-    \    }\n};"
+    \ i = 0; i <= n; i++) {\n            for(int j = 0; j <= m; j++)\n           \
+    \     par[i][j] = {i, j};\n        }\n    }\n\n    pii find(pii v) {\n       \
+    \ if(v == par[v.fi][v.se])\n            return v;\n        return par[v.fi][v.se]\
+    \ = find(par[v.fi][v.se]);\n    }\n\n    void merge(pii a, pii b){\n        a\
+    \ = find(a);\n        b = find(b);\n        if (a == b) return;\n        if(sz[a.fi][a.se]\
+    \ < sz[b.fi][b.se]) swap(a, b);\n        par[b.fi][b.se] = a;\n        sz[a.fi][a.se]\
+    \ += sz[b.fi][b.se];\n    }\n};"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: DataStructure/DSU/Dsu_2D.h
   requiredBy: []
-  timestamp: '2025-05-22 01:34:28+07:00'
+  timestamp: '2025-05-25 00:26:18+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: DataStructure/DSU/Dsu_2D.h

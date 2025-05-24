@@ -26,38 +26,37 @@ data:
     \    // cin.exceptions(cin.failbit);\n    // int t; cin >> t;\n    // while(t--)\n\
     \        solve();\n    cerr << \"\\nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC\
     \ << \"ms\" << '\\n';\n    return 0;\n}\n#line 2 \"DataStructure/SegTree/PersistentSegTree/PersistentSegTree.h\"\
-    \n\n// Tested:\n// - https://cses.fi/problemset/task/1737/\n// - https://www.spoj.com/problems/PSEGTREE/\n\
-    \nstruct Node {\n    Node *left, *right;\n    ll sum;\n    Node() {}\n    Node(ll\
-    \ _sum): left(NULL), right(NULL), sum(_sum) {}\n    Node(Node *l, Node *r, ll\
-    \ _sum): left(l), right(r), sum(_sum) {}\n    ~Node() {\n    \tdelete left;\n\
-    \    \tdelete right;\n    }\n};\n\nclass PersistentSegTree {\npublic:\n\tvector<Node*>\
-    \ ver;\n\n\tPersistentSegTree() {}\n\tPersistentSegTree(int n): ver(n+1) {}\n\n\
-    \tvoid build(Node *cur, int l, int r, const vector<int> &a) {\n\t    if (l ==\
-    \ r) {\n\t        cur->sum = a[l];\n\t        return;\n\t    }\n\t    int mid\
-    \ = (l + r) >> 1;\n\t    cur->left = new Node(NULL, NULL, 0);\n\t    cur->right\
-    \ = new Node(NULL, NULL, 0);\n\t    build(cur->left, l, mid, a);\n\t    build(cur->right,\
-    \ mid+1, r, a);\n\t    cur->sum = cur->left->sum + cur->right->sum;\n\t}\n\n\t\
-    void update(Node *prev, Node *cur, int l, int r, int pos, ll x) {\n\t    if (l\
-    \ == r) {\n\t        cur->sum = x;\n\t        return;\n\t    }\n\t    int mid\
-    \ = (l + r) >> 1;\n\t    if (pos <= mid) {\n\t        cur->right = prev->right;\n\
-    \t        cur->left = new Node(NULL, NULL, 0);\n\t        update(prev->left, cur->left,\
-    \ l, mid, pos, x);\n\t    } else {\n\t        cur->left = prev->left;\n\t    \
-    \    cur->right = new Node(NULL, NULL, 0);\n\t        update(prev->right, cur->right,\
-    \ mid+1, r, pos, x);\n\t    }\n\t    cur->sum = cur->left->sum + cur->right->sum;\n\
-    \t}\n\n\tll getSum(Node *cur, int l, int r, int u, int v) {\n\t    if (l > v ||\
-    \ r < u) return 0;\n\t    if (u <= l && r <= v) return cur->sum;\n\t    int mid\
-    \ = (l + r) >> 1;\n\t    return getSum(cur->left, l, mid, u, v) + getSum(cur->right,\
-    \ mid+1, r, u, v);\n\t}\n};\n#line 5 \"DataStructure/SegTree/PersistentSegTree/test2.cpp\"\
-    \n\nvoid solve() {\n\tint n; cin >> n;\n\tvector<int> a(n+1);\n\tfor (int i =\
-    \ 1; i <= n; i++) cin >> a[i];\n\n\tPersistentSegTree tree(n);\n\tNode *root =\
-    \ new Node(0);\n\ttree.build(root, 1, n, a);\n\n\tint cntVer = 0;\n\ttree.ver[cntVer]\
-    \ = root;\n\n\tint q; cin >> q;\n\twhile (q--) {\n\t\tint tv, idx; cin >> tv >>\
-    \ idx;\n\t\tif (tv == 1) {\n\t\t\tint pos, v; cin >> pos >> v;\n\t\t\tint oldVal\
-    \ = tree.getSum(tree.ver[idx], 1, n, pos, pos);\n\t\t\t\n\t\t\tNode *prev = tree.ver[idx];\n\
-    \t\t\ttree.ver[++cntVer] = new Node(0);\n\t\t\tNode *newRoot = tree.ver[cntVer];\n\
-    \n\t\t\ttree.update(prev, newRoot, 1, n, pos, oldVal+v);\n\t\t} else if (tv ==\
-    \ 2) {\n            int l, r; cin >> l >> r;\n            cout << tree.getSum(tree.ver[idx],\
-    \ 1, n, l, r) << '\\n';\n        }\n\t}\n}\n"
+    \n\n// Tested:\n// - AC: https://cses.fi/problemset/task/1737/\n// - AC: https://www.spoj.com/problems/PSEGTREE/\n\
+    \nstruct Node {\n\tNode *left, *right;\n\tll sum;\n\tNode() {}\n\tNode(ll _sum):\
+    \ left(NULL), right(NULL), sum(_sum) {}\n\tNode(Node *l, Node *r, ll _sum): left(l),\
+    \ right(r), sum(_sum) {}\n\t~Node() {\n\t\tdelete left;\n\t\tdelete right;\n\t\
+    }\n};\n\nclass PersistentSegTree {\npublic:\n\tvector<Node*> ver;\n\n\tPersistentSegTree()\
+    \ {}\n\tPersistentSegTree(int n): ver(n+1) {}\n\n\tvoid build(Node *cur, int l,\
+    \ int r, const vector<int> &a) {\n\t\tif (l == r) {\n\t\t\tcur->sum = a[l];\n\t\
+    \t\treturn;\n\t\t}\n\t\tint mid = (l + r) >> 1;\n\t\tcur->left = new Node(NULL,\
+    \ NULL, 0);\n\t\tcur->right = new Node(NULL, NULL, 0);\n\t\tbuild(cur->left, l,\
+    \ mid, a);\n\t\tbuild(cur->right, mid+1, r, a);\n\t\tcur->sum = cur->left->sum\
+    \ + cur->right->sum;\n\t}\n\n\tvoid update(Node *prev, Node *cur, int l, int r,\
+    \ int pos, ll x) {\n\t\tif (l == r) {\n\t\t\tcur->sum = x;\n\t\t\treturn;\n\t\t\
+    }\n\t\tint mid = (l + r) >> 1;\n\t\tif (pos <= mid) {\n\t\t\tcur->right = prev->right;\n\
+    \t\t\tcur->left = new Node(NULL, NULL, 0);\n\t\t\tupdate(prev->left, cur->left,\
+    \ l, mid, pos, x);\n\t\t} else {\n\t\t\tcur->left = prev->left;\n\t\t\tcur->right\
+    \ = new Node(NULL, NULL, 0);\n\t\t\tupdate(prev->right, cur->right, mid+1, r,\
+    \ pos, x);\n\t\t}\n\t\tcur->sum = cur->left->sum + cur->right->sum;\n\t}\n\n\t\
+    ll getSum(Node *cur, int l, int r, int u, int v) {\n\t\tif (l > v || r < u) return\
+    \ 0;\n\t\tif (u <= l && r <= v) return cur->sum;\n\t\tint mid = (l + r) >> 1;\n\
+    \t\treturn getSum(cur->left, l, mid, u, v) + getSum(cur->right, mid+1, r, u, v);\n\
+    \t}\n};\n#line 5 \"DataStructure/SegTree/PersistentSegTree/test2.cpp\"\n\nvoid\
+    \ solve() {\n\tint n; cin >> n;\n\tvector<int> a(n+1);\n\tfor (int i = 1; i <=\
+    \ n; i++) cin >> a[i];\n\n\tPersistentSegTree tree(n);\n\tNode *root = new Node(0);\n\
+    \ttree.build(root, 1, n, a);\n\n\tint cntVer = 0;\n\ttree.ver[cntVer] = root;\n\
+    \n\tint q; cin >> q;\n\twhile (q--) {\n\t\tint tv, idx; cin >> tv >> idx;\n\t\t\
+    if (tv == 1) {\n\t\t\tint pos, v; cin >> pos >> v;\n\t\t\tint oldVal = tree.getSum(tree.ver[idx],\
+    \ 1, n, pos, pos);\n\t\t\t\n\t\t\tNode *prev = tree.ver[idx];\n\t\t\ttree.ver[++cntVer]\
+    \ = new Node(0);\n\t\t\tNode *newRoot = tree.ver[cntVer];\n\n\t\t\ttree.update(prev,\
+    \ newRoot, 1, n, pos, oldVal+v);\n\t\t} else if (tv == 2) {\n\t\t\tint l, r; cin\
+    \ >> l >> r;\n\t\t\tcout << tree.getSum(tree.ver[idx], 1, n, l, r) << '\\n';\n\
+    \t\t}\n\t}\n}\n"
   code: "// https://www.spoj.com/problems/PSEGTREE/\n\n#include \"../../../template.h\"\
     \n#include \"PersistentSegTree.h\"\n\nvoid solve() {\n\tint n; cin >> n;\n\tvector<int>\
     \ a(n+1);\n\tfor (int i = 1; i <= n; i++) cin >> a[i];\n\n\tPersistentSegTree\
@@ -67,16 +66,15 @@ data:
     \ cin >> pos >> v;\n\t\t\tint oldVal = tree.getSum(tree.ver[idx], 1, n, pos, pos);\n\
     \t\t\t\n\t\t\tNode *prev = tree.ver[idx];\n\t\t\ttree.ver[++cntVer] = new Node(0);\n\
     \t\t\tNode *newRoot = tree.ver[cntVer];\n\n\t\t\ttree.update(prev, newRoot, 1,\
-    \ n, pos, oldVal+v);\n\t\t} else if (tv == 2) {\n            int l, r; cin >>\
-    \ l >> r;\n            cout << tree.getSum(tree.ver[idx], 1, n, l, r) << '\\n';\n\
-    \        }\n\t}\n}"
+    \ n, pos, oldVal+v);\n\t\t} else if (tv == 2) {\n\t\t\tint l, r; cin >> l >> r;\n\
+    \t\t\tcout << tree.getSum(tree.ver[idx], 1, n, l, r) << '\\n';\n\t\t}\n\t}\n}"
   dependsOn:
   - template.h
   - DataStructure/SegTree/PersistentSegTree/PersistentSegTree.h
   isVerificationFile: false
   path: DataStructure/SegTree/PersistentSegTree/test2.cpp
   requiredBy: []
-  timestamp: '2025-05-17 23:58:15+07:00'
+  timestamp: '2025-05-25 00:26:18+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: DataStructure/SegTree/PersistentSegTree/test2.cpp

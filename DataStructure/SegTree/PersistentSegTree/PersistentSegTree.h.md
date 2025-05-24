@@ -29,50 +29,48 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"DataStructure/SegTree/PersistentSegTree/PersistentSegTree.h\"\
-    \n\n// Tested:\n// - https://cses.fi/problemset/task/1737/\n// - https://www.spoj.com/problems/PSEGTREE/\n\
-    \nstruct Node {\n    Node *left, *right;\n    ll sum;\n    Node() {}\n    Node(ll\
-    \ _sum): left(NULL), right(NULL), sum(_sum) {}\n    Node(Node *l, Node *r, ll\
-    \ _sum): left(l), right(r), sum(_sum) {}\n    ~Node() {\n    \tdelete left;\n\
-    \    \tdelete right;\n    }\n};\n\nclass PersistentSegTree {\npublic:\n\tvector<Node*>\
-    \ ver;\n\n\tPersistentSegTree() {}\n\tPersistentSegTree(int n): ver(n+1) {}\n\n\
-    \tvoid build(Node *cur, int l, int r, const vector<int> &a) {\n\t    if (l ==\
-    \ r) {\n\t        cur->sum = a[l];\n\t        return;\n\t    }\n\t    int mid\
-    \ = (l + r) >> 1;\n\t    cur->left = new Node(NULL, NULL, 0);\n\t    cur->right\
-    \ = new Node(NULL, NULL, 0);\n\t    build(cur->left, l, mid, a);\n\t    build(cur->right,\
-    \ mid+1, r, a);\n\t    cur->sum = cur->left->sum + cur->right->sum;\n\t}\n\n\t\
-    void update(Node *prev, Node *cur, int l, int r, int pos, ll x) {\n\t    if (l\
-    \ == r) {\n\t        cur->sum = x;\n\t        return;\n\t    }\n\t    int mid\
-    \ = (l + r) >> 1;\n\t    if (pos <= mid) {\n\t        cur->right = prev->right;\n\
-    \t        cur->left = new Node(NULL, NULL, 0);\n\t        update(prev->left, cur->left,\
-    \ l, mid, pos, x);\n\t    } else {\n\t        cur->left = prev->left;\n\t    \
-    \    cur->right = new Node(NULL, NULL, 0);\n\t        update(prev->right, cur->right,\
-    \ mid+1, r, pos, x);\n\t    }\n\t    cur->sum = cur->left->sum + cur->right->sum;\n\
-    \t}\n\n\tll getSum(Node *cur, int l, int r, int u, int v) {\n\t    if (l > v ||\
-    \ r < u) return 0;\n\t    if (u <= l && r <= v) return cur->sum;\n\t    int mid\
-    \ = (l + r) >> 1;\n\t    return getSum(cur->left, l, mid, u, v) + getSum(cur->right,\
-    \ mid+1, r, u, v);\n\t}\n};\n"
-  code: "#include \"../../../template.h\"\n\n// Tested:\n// - https://cses.fi/problemset/task/1737/\n\
-    // - https://www.spoj.com/problems/PSEGTREE/\n\nstruct Node {\n    Node *left,\
-    \ *right;\n    ll sum;\n    Node() {}\n    Node(ll _sum): left(NULL), right(NULL),\
-    \ sum(_sum) {}\n    Node(Node *l, Node *r, ll _sum): left(l), right(r), sum(_sum)\
-    \ {}\n    ~Node() {\n    \tdelete left;\n    \tdelete right;\n    }\n};\n\nclass\
-    \ PersistentSegTree {\npublic:\n\tvector<Node*> ver;\n\n\tPersistentSegTree()\
+    \n\n// Tested:\n// - AC: https://cses.fi/problemset/task/1737/\n// - AC: https://www.spoj.com/problems/PSEGTREE/\n\
+    \nstruct Node {\n\tNode *left, *right;\n\tll sum;\n\tNode() {}\n\tNode(ll _sum):\
+    \ left(NULL), right(NULL), sum(_sum) {}\n\tNode(Node *l, Node *r, ll _sum): left(l),\
+    \ right(r), sum(_sum) {}\n\t~Node() {\n\t\tdelete left;\n\t\tdelete right;\n\t\
+    }\n};\n\nclass PersistentSegTree {\npublic:\n\tvector<Node*> ver;\n\n\tPersistentSegTree()\
     \ {}\n\tPersistentSegTree(int n): ver(n+1) {}\n\n\tvoid build(Node *cur, int l,\
-    \ int r, const vector<int> &a) {\n\t    if (l == r) {\n\t        cur->sum = a[l];\n\
-    \t        return;\n\t    }\n\t    int mid = (l + r) >> 1;\n\t    cur->left = new\
-    \ Node(NULL, NULL, 0);\n\t    cur->right = new Node(NULL, NULL, 0);\n\t    build(cur->left,\
-    \ l, mid, a);\n\t    build(cur->right, mid+1, r, a);\n\t    cur->sum = cur->left->sum\
+    \ int r, const vector<int> &a) {\n\t\tif (l == r) {\n\t\t\tcur->sum = a[l];\n\t\
+    \t\treturn;\n\t\t}\n\t\tint mid = (l + r) >> 1;\n\t\tcur->left = new Node(NULL,\
+    \ NULL, 0);\n\t\tcur->right = new Node(NULL, NULL, 0);\n\t\tbuild(cur->left, l,\
+    \ mid, a);\n\t\tbuild(cur->right, mid+1, r, a);\n\t\tcur->sum = cur->left->sum\
     \ + cur->right->sum;\n\t}\n\n\tvoid update(Node *prev, Node *cur, int l, int r,\
-    \ int pos, ll x) {\n\t    if (l == r) {\n\t        cur->sum = x;\n\t        return;\n\
-    \t    }\n\t    int mid = (l + r) >> 1;\n\t    if (pos <= mid) {\n\t        cur->right\
-    \ = prev->right;\n\t        cur->left = new Node(NULL, NULL, 0);\n\t        update(prev->left,\
-    \ cur->left, l, mid, pos, x);\n\t    } else {\n\t        cur->left = prev->left;\n\
-    \t        cur->right = new Node(NULL, NULL, 0);\n\t        update(prev->right,\
-    \ cur->right, mid+1, r, pos, x);\n\t    }\n\t    cur->sum = cur->left->sum + cur->right->sum;\n\
-    \t}\n\n\tll getSum(Node *cur, int l, int r, int u, int v) {\n\t    if (l > v ||\
-    \ r < u) return 0;\n\t    if (u <= l && r <= v) return cur->sum;\n\t    int mid\
-    \ = (l + r) >> 1;\n\t    return getSum(cur->left, l, mid, u, v) + getSum(cur->right,\
-    \ mid+1, r, u, v);\n\t}\n};"
+    \ int pos, ll x) {\n\t\tif (l == r) {\n\t\t\tcur->sum = x;\n\t\t\treturn;\n\t\t\
+    }\n\t\tint mid = (l + r) >> 1;\n\t\tif (pos <= mid) {\n\t\t\tcur->right = prev->right;\n\
+    \t\t\tcur->left = new Node(NULL, NULL, 0);\n\t\t\tupdate(prev->left, cur->left,\
+    \ l, mid, pos, x);\n\t\t} else {\n\t\t\tcur->left = prev->left;\n\t\t\tcur->right\
+    \ = new Node(NULL, NULL, 0);\n\t\t\tupdate(prev->right, cur->right, mid+1, r,\
+    \ pos, x);\n\t\t}\n\t\tcur->sum = cur->left->sum + cur->right->sum;\n\t}\n\n\t\
+    ll getSum(Node *cur, int l, int r, int u, int v) {\n\t\tif (l > v || r < u) return\
+    \ 0;\n\t\tif (u <= l && r <= v) return cur->sum;\n\t\tint mid = (l + r) >> 1;\n\
+    \t\treturn getSum(cur->left, l, mid, u, v) + getSum(cur->right, mid+1, r, u, v);\n\
+    \t}\n};\n"
+  code: "#include \"../../../template.h\"\n\n// Tested:\n// - AC: https://cses.fi/problemset/task/1737/\n\
+    // - AC: https://www.spoj.com/problems/PSEGTREE/\n\nstruct Node {\n\tNode *left,\
+    \ *right;\n\tll sum;\n\tNode() {}\n\tNode(ll _sum): left(NULL), right(NULL), sum(_sum)\
+    \ {}\n\tNode(Node *l, Node *r, ll _sum): left(l), right(r), sum(_sum) {}\n\t~Node()\
+    \ {\n\t\tdelete left;\n\t\tdelete right;\n\t}\n};\n\nclass PersistentSegTree {\n\
+    public:\n\tvector<Node*> ver;\n\n\tPersistentSegTree() {}\n\tPersistentSegTree(int\
+    \ n): ver(n+1) {}\n\n\tvoid build(Node *cur, int l, int r, const vector<int> &a)\
+    \ {\n\t\tif (l == r) {\n\t\t\tcur->sum = a[l];\n\t\t\treturn;\n\t\t}\n\t\tint\
+    \ mid = (l + r) >> 1;\n\t\tcur->left = new Node(NULL, NULL, 0);\n\t\tcur->right\
+    \ = new Node(NULL, NULL, 0);\n\t\tbuild(cur->left, l, mid, a);\n\t\tbuild(cur->right,\
+    \ mid+1, r, a);\n\t\tcur->sum = cur->left->sum + cur->right->sum;\n\t}\n\n\tvoid\
+    \ update(Node *prev, Node *cur, int l, int r, int pos, ll x) {\n\t\tif (l == r)\
+    \ {\n\t\t\tcur->sum = x;\n\t\t\treturn;\n\t\t}\n\t\tint mid = (l + r) >> 1;\n\t\
+    \tif (pos <= mid) {\n\t\t\tcur->right = prev->right;\n\t\t\tcur->left = new Node(NULL,\
+    \ NULL, 0);\n\t\t\tupdate(prev->left, cur->left, l, mid, pos, x);\n\t\t} else\
+    \ {\n\t\t\tcur->left = prev->left;\n\t\t\tcur->right = new Node(NULL, NULL, 0);\n\
+    \t\t\tupdate(prev->right, cur->right, mid+1, r, pos, x);\n\t\t}\n\t\tcur->sum\
+    \ = cur->left->sum + cur->right->sum;\n\t}\n\n\tll getSum(Node *cur, int l, int\
+    \ r, int u, int v) {\n\t\tif (l > v || r < u) return 0;\n\t\tif (u <= l && r <=\
+    \ v) return cur->sum;\n\t\tint mid = (l + r) >> 1;\n\t\treturn getSum(cur->left,\
+    \ l, mid, u, v) + getSum(cur->right, mid+1, r, u, v);\n\t}\n};"
   dependsOn:
   - template.h
   isVerificationFile: false
@@ -80,7 +78,7 @@ data:
   requiredBy:
   - DataStructure/SegTree/PersistentSegTree/test2.cpp
   - DataStructure/SegTree/PersistentSegTree/test1.cpp
-  timestamp: '2025-05-14 23:14:30+07:00'
+  timestamp: '2025-05-25 00:26:18+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: DataStructure/SegTree/PersistentSegTree/PersistentSegTree.h

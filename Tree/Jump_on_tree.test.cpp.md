@@ -32,7 +32,7 @@ data:
     \ {}\n    BinLift(int n): n(n), tree(n), up(n, vector<int>(20)), lg(20), h(n)\
     \ {}\n\n    void dfs(int u, int p) {\n        for(int v : tree[u]) {\n       \
     \     if(v == p) continue;\n            up[v][0] = u;\n            h[v] = h[u]\
-    \ + 1;\n            for(int j = 1; j < 20; j++)\n                up[v][j] = up[up[v][j-1]][j-1];\n\
+    \ + 1;\n            for(int j = 1; j < 20; j++)\n            up[v][j] = up[up[v][j-1]][j-1];\n\
     \            dfs(v, u);\n        }\n    }\n\n    void addEdge(int u, int v) {\n\
     \        tree[u].emplace_back(v);\n        tree[v].emplace_back(u);\n    }\n\n\
     \    int jump(int u, int v, int i) {\n        int t = lca(u, v);\n        int\
@@ -63,7 +63,7 @@ data:
   isVerificationFile: true
   path: Tree/Jump_on_tree.test.cpp
   requiredBy: []
-  timestamp: '2025-05-22 01:34:28+07:00'
+  timestamp: '2025-05-25 00:26:18+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Tree/Jump_on_tree.test.cpp

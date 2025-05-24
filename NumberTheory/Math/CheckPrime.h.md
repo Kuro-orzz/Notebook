@@ -28,21 +28,22 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"NumberTheory/Math/CheckPrime.h\"\n\n\nbool BruteForce(ll n)\
-    \ {\n\tif (n == 2 || n == 3) return true;\n\tif (n <= 1 || n % 2 == 0 || n % 3\
-    \ == 0) return false;\n\tfor (ll i = 5; i * i <= n; i += 6)\n\t\tif (n % i ==\
-    \ 0 || n % (i+2) == 0)\n\t\t\treturn false;\n\treturn true;\n}\n\n// https://codeforces.com/blog/entry/91632\n\
-    ll Meissel(ll n) {\n    vector<ll> v;\n    for (ll i = 1; i*i <= n; i++) {\n \
-    \       v.push_back(i);\n        v.push_back(n / i);\n    }\n    sort(all(v));\n\
-    \    unique(v);\n    ll sq = sqrt(n);\n    auto geti = [&](ll x) {\n        if\
-    \ (x <= sq) return x-1;\n        return (int)v.size() - n / x;\n    };\n    vector<ll>\
-    \ dp = v;\n    ll a = 0;\n    for (ll p = 2; p*p <= n; p++) {\n        if (dp[geti(p)]\
-    \ == dp[geti(p-1)]) continue;\n        a++;\n        for (int i = (int)v.size()-1;\
-    \ i >= 0; i--) {\n            if (v[i] < p * p) break;\n            dp[i] -= dp[geti(v[i]\
-    \ / p)] - a;\n        }\n    }\n    return dp[geti(n)] - 1;\n}\n"
-  code: "#include \"../../template.h\"\n\n\nbool BruteForce(ll n) {\n\tif (n == 2\
-    \ || n == 3) return true;\n\tif (n <= 1 || n % 2 == 0 || n % 3 == 0) return false;\n\
-    \tfor (ll i = 5; i * i <= n; i += 6)\n\t\tif (n % i == 0 || n % (i+2) == 0)\n\t\
-    \t\treturn false;\n\treturn true;\n}\n\n// https://codeforces.com/blog/entry/91632\n\
+    \ {\n    if (n == 2 || n == 3) return true;\n    if (n <= 1 || n % 2 == 0 || n\
+    \ % 3 == 0) return false;\n    for (ll i = 5; i * i <= n; i += 6)\n        if\
+    \ (n % i == 0 || n % (i+2) == 0)\n            return false;\n    return true;\n\
+    }\n\n// https://codeforces.com/blog/entry/91632\nll Meissel(ll n) {\n    vector<ll>\
+    \ v;\n    for (ll i = 1; i*i <= n; i++) {\n        v.push_back(i);\n        v.push_back(n\
+    \ / i);\n    }\n    sort(all(v));\n    unique(v);\n    ll sq = sqrt(n);\n    auto\
+    \ geti = [&](ll x) {\n        if (x <= sq) return x-1;\n        return (int)v.size()\
+    \ - n / x;\n    };\n    vector<ll> dp = v;\n    ll a = 0;\n    for (ll p = 2;\
+    \ p*p <= n; p++) {\n        if (dp[geti(p)] == dp[geti(p-1)]) continue;\n    \
+    \    a++;\n        for (int i = (int)v.size()-1; i >= 0; i--) {\n            if\
+    \ (v[i] < p * p) break;\n            dp[i] -= dp[geti(v[i] / p)] - a;\n      \
+    \  }\n    }\n    return dp[geti(n)] - 1;\n}\n"
+  code: "#include \"../../template.h\"\n\n\nbool BruteForce(ll n) {\n    if (n ==\
+    \ 2 || n == 3) return true;\n    if (n <= 1 || n % 2 == 0 || n % 3 == 0) return\
+    \ false;\n    for (ll i = 5; i * i <= n; i += 6)\n        if (n % i == 0 || n\
+    \ % (i+2) == 0)\n            return false;\n    return true;\n}\n\n// https://codeforces.com/blog/entry/91632\n\
     ll Meissel(ll n) {\n    vector<ll> v;\n    for (ll i = 1; i*i <= n; i++) {\n \
     \       v.push_back(i);\n        v.push_back(n / i);\n    }\n    sort(all(v));\n\
     \    unique(v);\n    ll sq = sqrt(n);\n    auto geti = [&](ll x) {\n        if\
@@ -56,7 +57,7 @@ data:
   isVerificationFile: false
   path: NumberTheory/Math/CheckPrime.h
   requiredBy: []
-  timestamp: '2025-05-12 18:52:18+07:00'
+  timestamp: '2025-05-25 00:26:18+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - NumberTheory/Enumerate_primes.test.cpp
