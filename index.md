@@ -132,6 +132,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: NumberTheory/Math/Sieve.h
       title: NumberTheory/Math/Sieve.h
+  - name: String
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: String/Z_Function.h
+      title: String/Z_Function.h
   - name: Tree/EulerTour
     pages:
     - icon: ':heavy_check_mark:'
@@ -236,6 +241,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: Sample/Many_A_plus_B_128bit.test.cpp
       title: Sample/Many_A_plus_B_128bit.test.cpp
+  - name: String
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: String/Z_Algorithm.test.cpp
+      title: String/Z_Algorithm.test.cpp
   - name: Tree
     pages:
     - icon: ':heavy_check_mark:'

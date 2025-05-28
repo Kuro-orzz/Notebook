@@ -99,6 +99,9 @@ data:
     path: NumberTheory/Math/Sieve.h
     title: NumberTheory/Math/Sieve.h
   - icon: ':heavy_check_mark:'
+    path: String/Z_Function.h
+    title: String/Z_Function.h
+  - icon: ':heavy_check_mark:'
     path: Tree/EulerTour/EulerTour.h
     title: Tree/EulerTour/EulerTour.h
   - icon: ':heavy_check_mark:'
@@ -181,6 +184,9 @@ data:
     path: Sample/Many_A_plus_B_128bit.test.cpp
     title: Sample/Many_A_plus_B_128bit.test.cpp
   - icon: ':heavy_check_mark:'
+    path: String/Z_Algorithm.test.cpp
+    title: String/Z_Algorithm.test.cpp
+  - icon: ':heavy_check_mark:'
     path: Tree/Diameter_tree.test.cpp
     title: Tree/Diameter_tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -221,6 +227,7 @@ data:
   isVerificationFile: false
   path: template.h
   requiredBy:
+  - String/Z_Function.h
   - Misc/Compress.h
   - Misc/Deque.h
   - Big_Integer/BigInt.h
@@ -260,6 +267,7 @@ data:
   timestamp: '2025-05-07 22:18:34+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - String/Z_Algorithm.test.cpp
   - Big_Integer/Addition_of_Big_Integers.test.cpp
   - DataStructure/Union_find.test.cpp
   - DataStructure/Point_add_range_sum.test.cpp
