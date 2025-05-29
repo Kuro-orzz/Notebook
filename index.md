@@ -132,6 +132,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: NumberTheory/Math/Sieve.h
       title: NumberTheory/Math/Sieve.h
+  - name: String/Hash
+    pages:
+    - icon: ':warning:'
+      path: String/Hash/Rolling_Hash.h
+      title: String/Hash/Rolling_Hash.h
+    - icon: ':warning:'
+      path: String/Hash/test_hash1.cpp
+      title: String/Hash/test_hash1.cpp
+    - icon: ':warning:'
+      path: String/Hash/test_hash2.cpp
+      title: String/Hash/test_hash2.cpp
   - name: String
     pages:
     - icon: ':heavy_check_mark:'

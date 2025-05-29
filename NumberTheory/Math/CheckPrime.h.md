@@ -60,8 +60,8 @@ data:
   timestamp: '2025-05-25 00:26:18+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - NumberTheory/Enumerate_primes.test.cpp
   - NumberTheory/Counting_primes.test.cpp
+  - NumberTheory/Enumerate_primes.test.cpp
 documentation_of: NumberTheory/Math/CheckPrime.h
 layout: document
 redirect_from:

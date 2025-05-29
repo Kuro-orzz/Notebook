@@ -46,8 +46,8 @@ data:
   isVerificationFile: false
   path: NumberTheory/Math/Binary_exponentiation.h
   requiredBy:
-  - NumberTheory/Math/MillerRabin.h
   - NumberTheory/Math/Primality_test.h
+  - NumberTheory/Math/MillerRabin.h
   timestamp: '2025-05-10 21:29:43+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

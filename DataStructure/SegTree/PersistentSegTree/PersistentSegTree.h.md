@@ -76,8 +76,8 @@ data:
   isVerificationFile: false
   path: DataStructure/SegTree/PersistentSegTree/PersistentSegTree.h
   requiredBy:
-  - DataStructure/SegTree/PersistentSegTree/test2.cpp
   - DataStructure/SegTree/PersistentSegTree/test1.cpp
+  - DataStructure/SegTree/PersistentSegTree/test2.cpp
   timestamp: '2025-05-25 00:26:18+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

@@ -98,6 +98,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: NumberTheory/Math/Sieve.h
     title: NumberTheory/Math/Sieve.h
+  - icon: ':warning:'
+    path: String/Hash/Rolling_Hash.h
+    title: String/Hash/Rolling_Hash.h
+  - icon: ':warning:'
+    path: String/Hash/test_hash1.cpp
+    title: String/Hash/test_hash1.cpp
+  - icon: ':warning:'
+    path: String/Hash/test_hash2.cpp
+    title: String/Hash/test_hash2.cpp
   - icon: ':heavy_check_mark:'
     path: String/Z_Function.h
     title: String/Z_Function.h
@@ -227,74 +236,77 @@ data:
   isVerificationFile: false
   path: template.h
   requiredBy:
-  - String/Z_Function.h
-  - Misc/Compress.h
-  - Misc/Deque.h
-  - Big_Integer/BigInt.h
+  - DataStructure/RMQ/RMQ.h
+  - DataStructure/DSU/Dsu_2D.h
+  - DataStructure/DSU/Dsu.h
+  - DataStructure/Fenwick/Fenwick.h
   - DataStructure/SegTree/SparseSegTree.h
+  - DataStructure/SegTree/Affline.h
+  - DataStructure/SegTree/SegTree.h
+  - DataStructure/SegTree/PersistentSegTree/test1.cpp
   - DataStructure/SegTree/PersistentSegTree/test2.cpp
   - DataStructure/SegTree/PersistentSegTree/PersistentSegTree.h
-  - DataStructure/SegTree/PersistentSegTree/test1.cpp
-  - DataStructure/SegTree/SegTree.h
-  - DataStructure/SegTree/Affline.h
-  - DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
-  - DataStructure/SegTree/SegTreeBeats/test2.cpp
+  - DataStructure/SegTree/SegTreeBeats/SegTreeBeats1.h
   - DataStructure/SegTree/SegTreeBeats/test3.cpp
   - DataStructure/SegTree/SegTreeBeats/test1.cpp
   - DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
-  - DataStructure/SegTree/SegTreeBeats/SegTreeBeats1.h
+  - DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
+  - DataStructure/SegTree/SegTreeBeats/test2.cpp
   - DataStructure/SegTree/LazySegTree.h
-  - DataStructure/RMQ/RMQ.h
-  - DataStructure/SqrtDecomposition/Split_Rebuild/Full_version.h
-  - DataStructure/SqrtDecomposition/Split_Rebuild/test2.cpp
-  - DataStructure/SqrtDecomposition/Split_Rebuild/Simplified_version.h
-  - DataStructure/SqrtDecomposition/Split_Rebuild/test1.cpp
-  - DataStructure/SqrtDecomposition/Sqrt.h
-  - DataStructure/Fenwick/Fenwick.h
-  - DataStructure/DSU/Dsu_2D.h
-  - DataStructure/DSU/Dsu.h
   - DataStructure/Point_set_range_composite.brute_force.cpp
+  - DataStructure/SqrtDecomposition/Split_Rebuild/Simplified_version.h
+  - DataStructure/SqrtDecomposition/Split_Rebuild/Full_version.h
+  - DataStructure/SqrtDecomposition/Split_Rebuild/test1.cpp
+  - DataStructure/SqrtDecomposition/Split_Rebuild/test2.cpp
+  - DataStructure/SqrtDecomposition/Sqrt.h
+  - Misc/Compress.h
+  - Misc/Deque.h
+  - String/Z_Function.h
+  - String/Hash/test_hash1.cpp
+  - String/Hash/Rolling_Hash.h
+  - String/Hash/test_hash2.cpp
   - NumberTheory/Math/Binary_exponentiation.h
-  - NumberTheory/Math/Sieve.h
-  - NumberTheory/Math/Factorization.h
-  - NumberTheory/Math/MillerRabin.h
   - NumberTheory/Math/CheckPrime.h
+  - NumberTheory/Math/Factorization.h
+  - NumberTheory/Math/Sieve.h
   - NumberTheory/Math/Primality_test.h
+  - NumberTheory/Math/MillerRabin.h
+  - Big_Integer/BigInt.h
   - Tree/EulerTour/EulerTour.h
+  - Tree/Tree/Tree.h
   - Tree/Tree/BinaryLifting.h
   - Tree/Tree/Lca.h
-  - Tree/Tree/Tree.h
   timestamp: '2025-05-07 22:18:34+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - String/Z_Algorithm.test.cpp
-  - Big_Integer/Addition_of_Big_Integers.test.cpp
-  - DataStructure/Union_find.test.cpp
   - DataStructure/Point_add_range_sum.test.cpp
-  - DataStructure/SqrtDecomposition/Point_Add_Range_Sum.test.cpp
-  - DataStructure/Unionfind_with_potential.test.cpp
-  - DataStructure/Range_reverse_range_sum.test.cpp
-  - DataStructure/Range_affine_range_sum.test.cpp
+  - DataStructure/Range_affine_range_sum_large_array.test.cpp
+  - DataStructure/Static_range_sum.test.cpp
   - DataStructure/Range_chmin_chmax_add_range_sum.test.cpp
-  - DataStructure/Static_RMQ.test.cpp
+  - DataStructure/Union_find.test.cpp
+  - DataStructure/Predecessor_problem.test.cpp
+  - DataStructure/Range_affine_range_sum.test.cpp
   - DataStructure/Ordered_set.test.cpp
   - DataStructure/Range_affine_point_get.test.cpp
-  - DataStructure/Double_end_priority_queue.test.cpp
+  - DataStructure/Unionfind_with_potential.test.cpp
+  - DataStructure/Static_RMQ.test.cpp
   - DataStructure/Associative_array.test.cpp
-  - DataStructure/Predecessor_problem.test.cpp
-  - DataStructure/Static_range_sum.test.cpp
-  - DataStructure/Range_affine_range_sum_large_array.test.cpp
-  - NumberTheory/Enumerate_primes.test.cpp
+  - DataStructure/Range_reverse_range_sum.test.cpp
+  - DataStructure/Double_end_priority_queue.test.cpp
+  - DataStructure/SqrtDecomposition/Point_Add_Range_Sum.test.cpp
+  - Sample/A_plus_B.test.cpp
+  - Sample/Many_A_plus_B_128bit.test.cpp
+  - Sample/Many_A_plus_B.test.cpp
+  - String/Z_Algorithm.test.cpp
+  - NumberTheory/Primality_test.test.cpp
   - NumberTheory/Counting_primes.test.cpp
   - NumberTheory/Enumerate_quotients.test.cpp
-  - NumberTheory/Primality_test.test.cpp
-  - Sample/A_plus_B.test.cpp
-  - Sample/Many_A_plus_B.test.cpp
-  - Sample/Many_A_plus_B_128bit.test.cpp
+  - NumberTheory/Enumerate_primes.test.cpp
+  - Big_Integer/Addition_of_Big_Integers.test.cpp
+  - Tree/Lowest_common_ancestor.test.cpp
+  - Tree/Vertex_add_subtree_sum.test.cpp
   - Tree/Jump_on_tree.test.cpp
   - Tree/Diameter_tree.test.cpp
-  - Tree/Vertex_add_subtree_sum.test.cpp
-  - Tree/Lowest_common_ancestor.test.cpp
 documentation_of: template.h
 layout: document
 redirect_from:
