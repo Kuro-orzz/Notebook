@@ -145,6 +145,9 @@ data:
       title: String/Hash/test_hash2.cpp
   - name: String
     pages:
+    - icon: ':warning:'
+      path: String/Kmp.h
+      title: String/Kmp.h
     - icon: ':heavy_check_mark:'
       path: String/Z_Function.h
       title: String/Z_Function.h

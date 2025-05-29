@@ -107,6 +107,9 @@ data:
   - icon: ':warning:'
     path: String/Hash/test_hash2.cpp
     title: String/Hash/test_hash2.cpp
+  - icon: ':warning:'
+    path: String/Kmp.h
+    title: String/Kmp.h
   - icon: ':heavy_check_mark:'
     path: String/Z_Function.h
     title: String/Z_Function.h
@@ -261,6 +264,7 @@ data:
   - DataStructure/SqrtDecomposition/Sqrt.h
   - Misc/Compress.h
   - Misc/Deque.h
+  - String/Kmp.h
   - String/Z_Function.h
   - String/Hash/test_hash1.cpp
   - String/Hash/Rolling_Hash.h
