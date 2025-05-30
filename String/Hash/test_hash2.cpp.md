@@ -29,14 +29,14 @@ data:
     \ int mod = 1'000'000'007;\n    vector<T> h, p;\n\n    Hash() {}\n\n    Hash(const\
     \ string &s) {\n        build(s);\n    }\n\n    void build(const string &s) {\n\
     \        int n = s.size();\n        h = hashStr(s, n);\n        p = calc_pow(n);\n\
-    \    }\n\n    T getHash(int l, int r) const {\n        ll x = (h[r] - 1ll * h[l-1]\
+    \    }\n\n    T getHash(int l, int r) const {\n        T x = (h[r] - 1ll * h[l-1]\
     \ * p[r-l+1]) % mod;\n        return T((x + mod) % mod);\n    }\n\nprivate:\n\
     \    vector<T> hashStr(const string &s, int n) {\n        vector<T> hash(n + 1);\n\
     \        for (int i = 1; i <= n; i++) {\n            int c = s[i - 1] - 'a' +\
-    \ 1;\n            hash[i] = (1ll * hash[i-1] * base + c) % MOD;\n        }\n \
+    \ 1;\n            hash[i] = (1ll * hash[i-1] * base + c) % mod;\n        }\n \
     \       return hash;\n    }\n\n    vector<T> calc_pow(int n) {\n        vector<T>\
     \ P;\n        P.emplace_back(1);\n        for (int i = 1; i <= n; i++) {\n   \
-    \         P.emplace_back((1ll * P[i-1] * base) % MOD);\n        }\n        return\
+    \         P.emplace_back((1ll * P[i-1] * base) % mod);\n        }\n        return\
     \ P;\n    }\n};\n#line 3 \"String/Hash/test_hash2.cpp\"\n\n/* AC: https://oj.vnoi.info/problem/paliny\
     \ */\n\nbool check_even(Hash<int> &h1, Hash<int> &h2, int n, int len) {\n    int\
     \ half = len/2;\n    for (int i = 1; i <= n-len+1; i++) {\n        int l1 = i,\
@@ -87,7 +87,7 @@ data:
   isVerificationFile: false
   path: String/Hash/test_hash2.cpp
   requiredBy: []
-  timestamp: '2025-05-30 02:35:07+07:00'
+  timestamp: '2025-05-30 22:12:29+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: String/Hash/test_hash2.cpp
