@@ -20,7 +20,7 @@ public:
     }
 
     T getHash(int l, int r) const {
-        ll x = (h[r] - 1ll * h[l-1] * p[r-l+1]) % mod;
+        T x = (h[r] - 1ll * h[l-1] * p[r-l+1]) % mod;
         return T((x + mod) % mod);
     }
 
@@ -29,7 +29,7 @@ private:
         vector<T> hash(n + 1);
         for (int i = 1; i <= n; i++) {
             int c = s[i - 1] - 'a' + 1;
-            hash[i] = (1ll * hash[i-1] * base + c) % MOD;
+            hash[i] = (1ll * hash[i-1] * base + c) % mod;
         }
         return hash;
     }
@@ -38,7 +38,7 @@ private:
         vector<T> P;
         P.emplace_back(1);
         for (int i = 1; i <= n; i++) {
-            P.emplace_back((1ll * P[i-1] * base) % MOD);
+            P.emplace_back((1ll * P[i-1] * base) % mod);
         }
         return P;
     }
