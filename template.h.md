@@ -11,6 +11,12 @@ data:
   - icon: ':warning:'
     path: DataStructure/DSU/Dsu_2D.h
     title: DataStructure/DSU/Dsu_2D.h
+  - icon: ':warning:'
+    path: DataStructure/DSU/test_dsu_2d.cpp
+    title: DataStructure/DSU/test_dsu_2d.cpp
+  - icon: ':warning:'
+    path: DataStructure/DSU/test_dsu_2d_2.cpp
+    title: DataStructure/DSU/test_dsu_2d_2.cpp
   - icon: ':heavy_check_mark:'
     path: DataStructure/Fenwick/Fenwick.h
     title: DataStructure/Fenwick/Fenwick.h
@@ -107,9 +113,6 @@ data:
   - icon: ':warning:'
     path: String/Hash/test_hash2.cpp
     title: String/Hash/test_hash2.cpp
-  - icon: ':warning:'
-    path: String/Kmp.h
-    title: String/Kmp.h
   - icon: ':heavy_check_mark:'
     path: String/Z_Function.h
     title: String/Z_Function.h
@@ -241,6 +244,8 @@ data:
   requiredBy:
   - DataStructure/RMQ/RMQ.h
   - DataStructure/DSU/Dsu_2D.h
+  - DataStructure/DSU/test_dsu_2d.cpp
+  - DataStructure/DSU/test_dsu_2d_2.cpp
   - DataStructure/DSU/Dsu.h
   - DataStructure/Fenwick/Fenwick.h
   - DataStructure/SegTree/SparseSegTree.h
@@ -264,7 +269,6 @@ data:
   - DataStructure/SqrtDecomposition/Sqrt.h
   - Misc/Compress.h
   - Misc/Deque.h
-  - String/Kmp.h
   - String/Z_Function.h
   - String/Hash/test_hash1.cpp
   - String/Hash/Rolling_Hash.h

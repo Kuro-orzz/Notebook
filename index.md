@@ -14,6 +14,12 @@ data:
     - icon: ':warning:'
       path: DataStructure/DSU/Dsu_2D.h
       title: DataStructure/DSU/Dsu_2D.h
+    - icon: ':warning:'
+      path: DataStructure/DSU/test_dsu_2d.cpp
+      title: DataStructure/DSU/test_dsu_2d.cpp
+    - icon: ':warning:'
+      path: DataStructure/DSU/test_dsu_2d_2.cpp
+      title: DataStructure/DSU/test_dsu_2d_2.cpp
   - name: DataStructure/Fenwick
     pages:
     - icon: ':heavy_check_mark:'
@@ -143,11 +149,16 @@ data:
     - icon: ':warning:'
       path: String/Hash/test_hash2.cpp
       title: String/Hash/test_hash2.cpp
-  - name: String
+  - name: String/KMP
     pages:
     - icon: ':warning:'
-      path: String/Kmp.h
-      title: String/Kmp.h
+      path: String/KMP/Kmp.h
+      title: String/KMP/Kmp.h
+    - icon: ':warning:'
+      path: String/KMP/test_kmp.cpp
+      title: String/KMP/test_kmp.cpp
+  - name: String
+    pages:
     - icon: ':heavy_check_mark:'
       path: String/Z_Function.h
       title: String/Z_Function.h
