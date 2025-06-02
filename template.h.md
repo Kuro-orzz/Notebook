@@ -116,6 +116,12 @@ data:
   - icon: ':warning:'
     path: String/Hash/test_hash2.cpp
     title: String/Hash/test_hash2.cpp
+  - icon: ':warning:'
+    path: String/Trie/Trie.h
+    title: String/Trie/Trie.h
+  - icon: ':warning:'
+    path: String/Trie/Trie_array_ver.h
+    title: String/Trie/Trie_array_ver.h
   - icon: ':heavy_check_mark:'
     path: String/Z_Function.h
     title: String/Z_Function.h
@@ -274,6 +280,8 @@ data:
   - Misc/Modint.h
   - Misc/Deque.h
   - String/Z_Function.h
+  - String/Trie/Trie_array_ver.h
+  - String/Trie/Trie.h
   - String/Hash/test_hash1.cpp
   - String/Hash/Rolling_Hash.h
   - String/Hash/test_hash2.cpp

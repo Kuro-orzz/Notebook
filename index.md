@@ -160,6 +160,14 @@ data:
     - icon: ':warning:'
       path: String/KMP/test_kmp.cpp
       title: String/KMP/test_kmp.cpp
+  - name: String/Trie
+    pages:
+    - icon: ':warning:'
+      path: String/Trie/Trie.h
+      title: String/Trie/Trie.h
+    - icon: ':warning:'
+      path: String/Trie/Trie_array_ver.h
+      title: String/Trie/Trie_array_ver.h
   - name: String
     pages:
     - icon: ':heavy_check_mark:'
