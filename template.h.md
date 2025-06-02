@@ -86,6 +86,9 @@ data:
   - icon: ':warning:'
     path: Misc/Deque.h
     title: Misc/Deque.h
+  - icon: ':warning:'
+    path: Misc/Modint.h
+    title: Misc/Modint.h
   - icon: ':heavy_check_mark:'
     path: NumberTheory/Math/Binary_exponentiation.h
     title: NumberTheory/Math/Binary_exponentiation.h
@@ -268,6 +271,7 @@ data:
   - DataStructure/SqrtDecomposition/Split_Rebuild/test2.cpp
   - DataStructure/SqrtDecomposition/Sqrt.h
   - Misc/Compress.h
+  - Misc/Modint.h
   - Misc/Deque.h
   - String/Z_Function.h
   - String/Hash/test_hash1.cpp

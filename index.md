@@ -118,6 +118,9 @@ data:
     - icon: ':warning:'
       path: Misc/Deque.h
       title: Misc/Deque.h
+    - icon: ':warning:'
+      path: Misc/Modint.h
+      title: Misc/Modint.h
   - name: NumberTheory/Math
     pages:
     - icon: ':heavy_check_mark:'
