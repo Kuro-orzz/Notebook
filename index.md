@@ -6,6 +6,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: Big_Integer/BigInt.h
       title: Big_Integer/BigInt.h
+    - icon: ':warning:'
+      path: Big_Integer/BigInt_full.h
+      title: Big_Integer/BigInt_full.h
   - name: DataStructure/DSU
     pages:
     - icon: ':heavy_check_mark:'

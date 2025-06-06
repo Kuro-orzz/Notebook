@@ -5,6 +5,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: Big_Integer/BigInt.h
     title: Big_Integer/BigInt.h
+  - icon: ':warning:'
+    path: Big_Integer/BigInt_full.h
+    title: Big_Integer/BigInt_full.h
   - icon: ':heavy_check_mark:'
     path: DataStructure/DSU/Dsu.h
     title: DataStructure/DSU/Dsu.h
@@ -303,6 +306,7 @@ data:
   - NumberTheory/Math/Sieve.h
   - NumberTheory/Math/Primality_test.h
   - NumberTheory/Math/MillerRabin.h
+  - Big_Integer/BigInt_full.h
   - Big_Integer/BigInt.h
   - Tree/EulerTour/EulerTour.h
   - Tree/Tree/Tree.h
