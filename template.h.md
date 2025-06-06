@@ -81,14 +81,23 @@ data:
     path: DataStructure/SqrtDecomposition/Sqrt.h
     title: DataStructure/SqrtDecomposition/Sqrt.h
   - icon: ':warning:'
+    path: Graph/Shortest_path/Floyd_warshall.h
+    title: Graph/Shortest_path/Floyd_warshall.h
+  - icon: ':warning:'
     path: Misc/Compress.h
     title: Misc/Compress.h
   - icon: ':warning:'
     path: Misc/Deque.h
     title: Misc/Deque.h
   - icon: ':warning:'
+    path: Misc/LIS.h
+    title: Misc/LIS.h
+  - icon: ':warning:'
     path: Misc/Modint.h
     title: Misc/Modint.h
+  - icon: ':warning:'
+    path: Misc/Small_to_large.h
+    title: Misc/Small_to_large.h
   - icon: ':heavy_check_mark:'
     path: NumberTheory/Math/Binary_exponentiation.h
     title: NumberTheory/Math/Binary_exponentiation.h
@@ -276,9 +285,12 @@ data:
   - DataStructure/SqrtDecomposition/Split_Rebuild/test1.cpp
   - DataStructure/SqrtDecomposition/Split_Rebuild/test2.cpp
   - DataStructure/SqrtDecomposition/Sqrt.h
+  - Graph/Shortest_path/Floyd_warshall.h
+  - Misc/LIS.h
   - Misc/Compress.h
   - Misc/Modint.h
   - Misc/Deque.h
+  - Misc/Small_to_large.h
   - String/Z_Function.h
   - String/Trie/Trie_array_ver.h
   - String/Trie/Trie.h

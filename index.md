@@ -110,6 +110,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/SqrtDecomposition/Sqrt.h
       title: DataStructure/SqrtDecomposition/Sqrt.h
+  - name: Graph/Shortest_path
+    pages:
+    - icon: ':warning:'
+      path: Graph/Shortest_path/Floyd_warshall.h
+      title: Graph/Shortest_path/Floyd_warshall.h
   - name: Misc
     pages:
     - icon: ':warning:'
@@ -119,8 +124,14 @@ data:
       path: Misc/Deque.h
       title: Misc/Deque.h
     - icon: ':warning:'
+      path: Misc/LIS.h
+      title: Misc/LIS.h
+    - icon: ':warning:'
       path: Misc/Modint.h
       title: Misc/Modint.h
+    - icon: ':warning:'
+      path: Misc/Small_to_large.h
+      title: Misc/Small_to_large.h
   - name: NumberTheory/Math
     pages:
     - icon: ':heavy_check_mark:'

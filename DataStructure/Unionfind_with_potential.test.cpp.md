@@ -31,10 +31,10 @@ data:
     \ 0;\n}\n#line 2 \"DataStructure/DSU/Dsu.h\"\n\n/* Diff: different between a[u]\
     \ and a[par[u]] */\n\nstruct Dsu {\n    vector<int> par, sz;\n    vector<ll> diff;\n\
     \n    Dsu() {}\n    Dsu(int n): par(n+1), sz(n+1, 1), diff(n+1) {\n        iota(all(par),\
-    \ 0);\n    }\n\n    int find(int v) {\n        if(v == par[v]) return v;\n   \
-    \     return par[v] = find(par[v]);\n    }\n    \n    void merge(int a, int b)\
+    \ 0);\n    }\n\n    int find(int v) {\n        if (v == par[v]) return v;\n  \
+    \      return par[v] = find(par[v]);\n    }\n    \n    void merge(int a, int b)\
     \ {\n        a = find(a);\n        b = find(b);\n        if (a == b) return;\n\
-    \        if(sz[a] < sz[b]) swap(a, b);\n        par[b] = a;\n        sz[a] +=\
+    \        if (sz[a] < sz[b]) swap(a, b);\n        par[b] = a;\n        sz[a] +=\
     \ sz[b];\n    }\n\n    bool same_component(int u, int v) {\n        return find(u)\
     \ == find(v);\n    }\n\n    int component_size(int u) {\n        u = find(u);\n\
     \        return sz[u];\n    }\n\n    /* https://judge.yosupo.jp/problem/unionfind_with_potential\
@@ -67,7 +67,7 @@ data:
   isVerificationFile: true
   path: DataStructure/Unionfind_with_potential.test.cpp
   requiredBy: []
-  timestamp: '2025-05-22 01:34:28+07:00'
+  timestamp: '2025-06-07 01:24:49+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: DataStructure/Unionfind_with_potential.test.cpp
