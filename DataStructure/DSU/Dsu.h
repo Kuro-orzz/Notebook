@@ -12,7 +12,7 @@ struct Dsu {
     }
 
     int find(int v) {
-        if(v == par[v]) return v;
+        if (v == par[v]) return v;
         return par[v] = find(par[v]);
     }
     
@@ -20,7 +20,7 @@ struct Dsu {
         a = find(a);
         b = find(b);
         if (a == b) return;
-        if(sz[a] < sz[b]) swap(a, b);
+        if (sz[a] < sz[b]) swap(a, b);
         par[b] = a;
         sz[a] += sz[b];
     }
