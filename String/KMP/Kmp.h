@@ -1,4 +1,4 @@
-#include "../template.h"
+#include "../../template.h"
 
 vector<int> lps(const string &s) {
 	int n = s.size();

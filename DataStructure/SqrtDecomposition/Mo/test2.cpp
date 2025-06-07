@@ -1,6 +1,6 @@
 // https://codeforces.com/contest/86/problem/D
 
-#include "../../template.h"
+#include "../../../template.h"
 
 int block_sz;
 vector<int> a;

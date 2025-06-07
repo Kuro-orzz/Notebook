@@ -1,4 +1,4 @@
-#include "../../template"
+#include "../../template.h"
 #include "Kmp.h"
 
 // AC: https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/
