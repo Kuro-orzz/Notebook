@@ -83,7 +83,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/SqrtDecomposition/Sqrt.h
     title: DataStructure/SqrtDecomposition/Sqrt.h
+  - icon: ':heavy_check_mark:'
+    path: Graph/Mst/Kruskal.h
+    title: Graph/Mst/Kruskal.h
   - icon: ':warning:'
+    path: Graph/Mst/Prim.h
+    title: Graph/Mst/Prim.h
+  - icon: ':heavy_check_mark:'
+    path: Graph/Shortest_path/Bellman_ford.h
+    title: Graph/Shortest_path/Bellman_ford.h
+  - icon: ':heavy_check_mark:'
+    path: Graph/Shortest_path/Dijkstra.h
+    title: Graph/Shortest_path/Dijkstra.h
+  - icon: ':heavy_check_mark:'
     path: Graph/Shortest_path/Floyd_warshall.h
     title: Graph/Shortest_path/Floyd_warshall.h
   - icon: ':warning:'
@@ -217,6 +229,18 @@ data:
     path: DataStructure/Unionfind_with_potential.test.cpp
     title: DataStructure/Unionfind_with_potential.test.cpp
   - icon: ':heavy_check_mark:'
+    path: Graph/test/aizu_grl_1_a_dijkstra.test.cpp
+    title: Graph/test/aizu_grl_1_a_dijkstra.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: Graph/test/aizu_grl_1_b_negative_cycle.test.cpp
+    title: Graph/test/aizu_grl_1_b_negative_cycle.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: Graph/test/aizu_grl_1_c_floyd_warshall.test.cpp
+    title: Graph/test/aizu_grl_1_c_floyd_warshall.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: Graph/test/aizu_grl_2_a_minimum_spanning_tree.test.cpp
+    title: Graph/test/aizu_grl_2_a_minimum_spanning_tree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: NumberTheory/Counting_primes.test.cpp
     title: NumberTheory/Counting_primes.test.cpp
   - icon: ':heavy_check_mark:'
@@ -306,7 +330,11 @@ data:
   - DataStructure/SqrtDecomposition/Split_Rebuild/test1.cpp
   - DataStructure/SqrtDecomposition/Split_Rebuild/test2.cpp
   - DataStructure/SqrtDecomposition/Sqrt.h
+  - Graph/Mst/Kruskal.h
+  - Graph/Mst/Prim.h
   - Graph/Shortest_path/Floyd_warshall.h
+  - Graph/Shortest_path/Dijkstra.h
+  - Graph/Shortest_path/Bellman_ford.h
   - Misc/LIS.h
   - Misc/Compress.h
   - Misc/Modint.h
@@ -348,6 +376,10 @@ data:
   - DataStructure/Range_reverse_range_sum.test.cpp
   - DataStructure/Double_end_priority_queue.test.cpp
   - DataStructure/SqrtDecomposition/Point_Add_Range_Sum.test.cpp
+  - Graph/test/aizu_grl_1_b_negative_cycle.test.cpp
+  - Graph/test/aizu_grl_1_c_floyd_warshall.test.cpp
+  - Graph/test/aizu_grl_2_a_minimum_spanning_tree.test.cpp
+  - Graph/test/aizu_grl_1_a_dijkstra.test.cpp
   - Sample/A_plus_B.test.cpp
   - Sample/Many_A_plus_B_128bit.test.cpp
   - Sample/Many_A_plus_B.test.cpp

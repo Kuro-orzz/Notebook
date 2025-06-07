@@ -113,9 +113,23 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/SqrtDecomposition/Sqrt.h
       title: DataStructure/SqrtDecomposition/Sqrt.h
+  - name: Graph/Mst
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: Graph/Mst/Kruskal.h
+      title: Graph/Mst/Kruskal.h
+    - icon: ':warning:'
+      path: Graph/Mst/Prim.h
+      title: Graph/Mst/Prim.h
   - name: Graph/Shortest_path
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
+      path: Graph/Shortest_path/Bellman_ford.h
+      title: Graph/Shortest_path/Bellman_ford.h
+    - icon: ':heavy_check_mark:'
+      path: Graph/Shortest_path/Dijkstra.h
+      title: Graph/Shortest_path/Dijkstra.h
+    - icon: ':heavy_check_mark:'
       path: Graph/Shortest_path/Floyd_warshall.h
       title: Graph/Shortest_path/Floyd_warshall.h
   - name: Misc
@@ -286,6 +300,20 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/SqrtDecomposition/Point_Add_Range_Sum.test.cpp
       title: DataStructure/SqrtDecomposition/Point_Add_Range_Sum.test.cpp
+  - name: Graph/test
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: Graph/test/aizu_grl_1_a_dijkstra.test.cpp
+      title: Graph/test/aizu_grl_1_a_dijkstra.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: Graph/test/aizu_grl_1_b_negative_cycle.test.cpp
+      title: Graph/test/aizu_grl_1_b_negative_cycle.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: Graph/test/aizu_grl_1_c_floyd_warshall.test.cpp
+      title: Graph/test/aizu_grl_1_c_floyd_warshall.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: Graph/test/aizu_grl_2_a_minimum_spanning_tree.test.cpp
+      title: Graph/test/aizu_grl_2_a_minimum_spanning_tree.test.cpp
   - name: NumberTheory
     pages:
     - icon: ':heavy_check_mark:'

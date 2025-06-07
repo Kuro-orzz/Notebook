@@ -5,10 +5,13 @@ data:
     path: template.h
     title: template.h
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: Graph/test/aizu_grl_1_c_floyd_warshall.test.cpp
+    title: Graph/test/aizu_grl_1_c_floyd_warshall.test.cpp
   _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -25,25 +28,27 @@ data:
     \ (int v = 1; v <= n; ++v) {\n\t\t\ttrace[u][v] = u;\n\t\t}\n\t}\n}\n\nvoid floyd_warshall(int\
     \ n, vector<vector<ll>> &dist, vector<vector<int>> &trace) {\n\tinitTrace(n, trace);\n\
     \tfor (int k = 1; k <= n; ++k) {\n\t\tfor (int u = 1; u <= n; ++u) {\n\t\t\tfor\
-    \ (int v = 1; v <= n; ++v) {\n\t\t\t\tif (dist[u][v] > dist[u][k] + dist[k][v])\
-    \ {\n\t\t\t\t\tdist[u][v] = dist[u][k] + dist[k][v];\n\t\t\t\t\ttrace[u][v] =\
-    \ trace[k][v];\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n"
+    \ (int v = 1; v <= n; ++v) {\n\t\t\t\tif (dist[u][k] != 1e18 && dist[k][v] !=\
+    \ 1e18 && dist[u][v] > dist[u][k] + dist[k][v]) {\n\t\t\t\t\tdist[u][v] = dist[u][k]\
+    \ + dist[k][v];\n\t\t\t\t\ttrace[u][v] = trace[k][v];\n\t\t\t\t}\n\t\t\t}\n\t\t\
+    }\n\t}\n}\n"
   code: "#include \"../../template.h\"\n\nvoid initTrace(int n, vector<vector<int>>\
     \ &trace) {\n\tfor (int u = 1; u <= n; ++u) {\n\t\tfor (int v = 1; v <= n; ++v)\
     \ {\n\t\t\ttrace[u][v] = u;\n\t\t}\n\t}\n}\n\nvoid floyd_warshall(int n, vector<vector<ll>>\
     \ &dist, vector<vector<int>> &trace) {\n\tinitTrace(n, trace);\n\tfor (int k =\
     \ 1; k <= n; ++k) {\n\t\tfor (int u = 1; u <= n; ++u) {\n\t\t\tfor (int v = 1;\
-    \ v <= n; ++v) {\n\t\t\t\tif (dist[u][v] > dist[u][k] + dist[k][v]) {\n\t\t\t\t\
-    \tdist[u][v] = dist[u][k] + dist[k][v];\n\t\t\t\t\ttrace[u][v] = trace[k][v];\n\
-    \t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+    \ v <= n; ++v) {\n\t\t\t\tif (dist[u][k] != 1e18 && dist[k][v] != 1e18 && dist[u][v]\
+    \ > dist[u][k] + dist[k][v]) {\n\t\t\t\t\tdist[u][v] = dist[u][k] + dist[k][v];\n\
+    \t\t\t\t\ttrace[u][v] = trace[k][v];\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: Graph/Shortest_path/Floyd_warshall.h
   requiredBy: []
-  timestamp: '2025-06-07 01:24:49+07:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2025-06-07 22:39:21+07:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - Graph/test/aizu_grl_1_c_floyd_warshall.test.cpp
 documentation_of: Graph/Shortest_path/Floyd_warshall.h
 layout: document
 redirect_from:
