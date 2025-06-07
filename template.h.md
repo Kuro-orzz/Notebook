@@ -5,7 +5,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: Big_Integer/BigInt.h
     title: Big_Integer/BigInt.h
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: Big_Integer/BigInt_full.h
     title: Big_Integer/BigInt_full.h
   - icon: ':heavy_check_mark:'
@@ -153,6 +153,24 @@ data:
   - icon: ':heavy_check_mark:'
     path: Big_Integer/Addition_of_Big_Integers.test.cpp
     title: Big_Integer/Addition_of_Big_Integers.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: Big_Integer/test/Addition_of_Big_Integers.test.cpp
+    title: Big_Integer/test/Addition_of_Big_Integers.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: Big_Integer/test/Difference_of_Big_Integers.test.cpp
+    title: Big_Integer/test/Difference_of_Big_Integers.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: Big_Integer/test/Division_of_Big_Integers.test.cpp
+    title: Big_Integer/test/Division_of_Big_Integers.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: Big_Integer/test/Multiplication_of_Big_Integers.test.cpp
+    title: Big_Integer/test/Multiplication_of_Big_Integers.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: Big_Integer/test/Multiplication_of_Big_Integers_II.test.cpp
+    title: Big_Integer/test/Multiplication_of_Big_Integers_II.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: Big_Integer/test/Remainder_of_Big_Integers.test.cpp
+    title: Big_Integer/test/Remainder_of_Big_Integers.test.cpp
   - icon: ':heavy_check_mark:'
     path: DataStructure/Associative_array.test.cpp
     title: DataStructure/Associative_array.test.cpp
@@ -338,6 +356,12 @@ data:
   - NumberTheory/Counting_primes.test.cpp
   - NumberTheory/Enumerate_quotients.test.cpp
   - NumberTheory/Enumerate_primes.test.cpp
+  - Big_Integer/test/Multiplication_of_Big_Integers.test.cpp
+  - Big_Integer/test/Remainder_of_Big_Integers.test.cpp
+  - Big_Integer/test/Difference_of_Big_Integers.test.cpp
+  - Big_Integer/test/Division_of_Big_Integers.test.cpp
+  - Big_Integer/test/Addition_of_Big_Integers.test.cpp
+  - Big_Integer/test/Multiplication_of_Big_Integers_II.test.cpp
   - Big_Integer/Addition_of_Big_Integers.test.cpp
   - Tree/Lowest_common_ancestor.test.cpp
   - Tree/Vertex_add_subtree_sum.test.cpp

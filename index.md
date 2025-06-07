@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: Big_Integer/BigInt.h
       title: Big_Integer/BigInt.h
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: Big_Integer/BigInt_full.h
       title: Big_Integer/BigInt_full.h
   - name: DataStructure/DSU
@@ -217,6 +217,26 @@ data:
     - icon: ':heavy_check_mark:'
       path: Big_Integer/Addition_of_Big_Integers.test.cpp
       title: Big_Integer/Addition_of_Big_Integers.test.cpp
+  - name: Big_Integer/test
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: Big_Integer/test/Addition_of_Big_Integers.test.cpp
+      title: Big_Integer/test/Addition_of_Big_Integers.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: Big_Integer/test/Difference_of_Big_Integers.test.cpp
+      title: Big_Integer/test/Difference_of_Big_Integers.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: Big_Integer/test/Division_of_Big_Integers.test.cpp
+      title: Big_Integer/test/Division_of_Big_Integers.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: Big_Integer/test/Multiplication_of_Big_Integers.test.cpp
+      title: Big_Integer/test/Multiplication_of_Big_Integers.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: Big_Integer/test/Multiplication_of_Big_Integers_II.test.cpp
+      title: Big_Integer/test/Multiplication_of_Big_Integers_II.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: Big_Integer/test/Remainder_of_Big_Integers.test.cpp
+      title: Big_Integer/test/Remainder_of_Big_Integers.test.cpp
   - name: DataStructure
     pages:
     - icon: ':heavy_check_mark:'
