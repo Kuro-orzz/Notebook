@@ -157,7 +157,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: NumberTheory/Math/CheckPrime.h
       title: NumberTheory/Math/CheckPrime.h
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
+      path: NumberTheory/Math/EulerPhi.h
+      title: NumberTheory/Math/EulerPhi.h
+    - icon: ':heavy_check_mark:'
+      path: NumberTheory/Math/Extended_euclid.h
+      title: NumberTheory/Math/Extended_euclid.h
+    - icon: ':heavy_check_mark:'
       path: NumberTheory/Math/Factorization.h
       title: NumberTheory/Math/Factorization.h
     - icon: ':heavy_check_mark:'
@@ -328,6 +334,23 @@ data:
     - icon: ':heavy_check_mark:'
       path: NumberTheory/Primality_test.test.cpp
       title: NumberTheory/Primality_test.test.cpp
+  - name: NumberTheory/Math/test
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: NumberTheory/Math/test/aizu_ntl_1_a_prime_factor.test.cpp
+      title: NumberTheory/Math/test/aizu_ntl_1_a_prime_factor.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: NumberTheory/Math/test/aizu_ntl_1_b_power_mod.test.cpp
+      title: NumberTheory/Math/test/aizu_ntl_1_b_power_mod.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: NumberTheory/Math/test/aizu_ntl_1_c_lcm.test.cpp
+      title: NumberTheory/Math/test/aizu_ntl_1_c_lcm.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: NumberTheory/Math/test/aizu_ntl_1_d_euler_phi.test.cpp
+      title: NumberTheory/Math/test/aizu_ntl_1_d_euler_phi.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: NumberTheory/Math/test/aizu_ntl_1_e_extended_euclid.test.cpp
+      title: NumberTheory/Math/test/aizu_ntl_1_e_extended_euclid.test.cpp
   - name: Sample
     pages:
     - icon: ':heavy_check_mark:'

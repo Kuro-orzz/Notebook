@@ -128,7 +128,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: NumberTheory/Math/CheckPrime.h
     title: NumberTheory/Math/CheckPrime.h
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
+    path: NumberTheory/Math/EulerPhi.h
+    title: NumberTheory/Math/EulerPhi.h
+  - icon: ':heavy_check_mark:'
+    path: NumberTheory/Math/Extended_euclid.h
+    title: NumberTheory/Math/Extended_euclid.h
+  - icon: ':heavy_check_mark:'
     path: NumberTheory/Math/Factorization.h
     title: NumberTheory/Math/Factorization.h
   - icon: ':heavy_check_mark:'
@@ -265,6 +271,21 @@ data:
     path: NumberTheory/Enumerate_quotients.test.cpp
     title: NumberTheory/Enumerate_quotients.test.cpp
   - icon: ':heavy_check_mark:'
+    path: NumberTheory/Math/test/aizu_ntl_1_a_prime_factor.test.cpp
+    title: NumberTheory/Math/test/aizu_ntl_1_a_prime_factor.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: NumberTheory/Math/test/aizu_ntl_1_b_power_mod.test.cpp
+    title: NumberTheory/Math/test/aizu_ntl_1_b_power_mod.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: NumberTheory/Math/test/aizu_ntl_1_c_lcm.test.cpp
+    title: NumberTheory/Math/test/aizu_ntl_1_c_lcm.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: NumberTheory/Math/test/aizu_ntl_1_d_euler_phi.test.cpp
+    title: NumberTheory/Math/test/aizu_ntl_1_d_euler_phi.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: NumberTheory/Math/test/aizu_ntl_1_e_extended_euclid.test.cpp
+    title: NumberTheory/Math/test/aizu_ntl_1_e_extended_euclid.test.cpp
+  - icon: ':heavy_check_mark:'
     path: NumberTheory/Primality_test.test.cpp
     title: NumberTheory/Primality_test.test.cpp
   - icon: ':heavy_check_mark:'
@@ -366,8 +387,10 @@ data:
   - String/Hash/test_hash1.cpp
   - String/Hash/Rolling_Hash.h
   - String/Hash/test_hash2.cpp
+  - NumberTheory/Math/EulerPhi.h
   - NumberTheory/Math/Binary_exponentiation.h
   - NumberTheory/Math/CheckPrime.h
+  - NumberTheory/Math/Extended_euclid.h
   - NumberTheory/Math/Factorization.h
   - NumberTheory/Math/Sieve.h
   - NumberTheory/Math/Primality_test.h
@@ -408,6 +431,11 @@ data:
   - NumberTheory/Counting_primes.test.cpp
   - NumberTheory/Enumerate_quotients.test.cpp
   - NumberTheory/Enumerate_primes.test.cpp
+  - NumberTheory/Math/test/aizu_ntl_1_b_power_mod.test.cpp
+  - NumberTheory/Math/test/aizu_ntl_1_c_lcm.test.cpp
+  - NumberTheory/Math/test/aizu_ntl_1_d_euler_phi.test.cpp
+  - NumberTheory/Math/test/aizu_ntl_1_a_prime_factor.test.cpp
+  - NumberTheory/Math/test/aizu_ntl_1_e_extended_euclid.test.cpp
   - Big_Integer/test/Multiplication_of_Big_Integers.test.cpp
   - Big_Integer/test/Remainder_of_Big_Integers.test.cpp
   - Big_Integer/test/Difference_of_Big_Integers.test.cpp

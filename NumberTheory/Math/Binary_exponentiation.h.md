@@ -13,6 +13,9 @@ data:
     title: NumberTheory/Math/Primality_test.h
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: NumberTheory/Math/test/aizu_ntl_1_b_power_mod.test.cpp
+    title: NumberTheory/Math/test/aizu_ntl_1_b_power_mod.test.cpp
+  - icon: ':heavy_check_mark:'
     path: NumberTheory/Primality_test.test.cpp
     title: NumberTheory/Primality_test.test.cpp
   _isVerificationFailed: false
@@ -52,6 +55,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - NumberTheory/Primality_test.test.cpp
+  - NumberTheory/Math/test/aizu_ntl_1_b_power_mod.test.cpp
 documentation_of: NumberTheory/Math/Binary_exponentiation.h
 layout: document
 redirect_from:
