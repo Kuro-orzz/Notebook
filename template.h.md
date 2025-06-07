@@ -69,6 +69,15 @@ data:
     path: DataStructure/SegTree/SparseSegTree.h
     title: DataStructure/SegTree/SparseSegTree.h
   - icon: ':warning:'
+    path: DataStructure/SqrtDecomposition/Mo/Mo.h
+    title: DataStructure/SqrtDecomposition/Mo/Mo.h
+  - icon: ':warning:'
+    path: DataStructure/SqrtDecomposition/Mo/test1.cpp
+    title: DataStructure/SqrtDecomposition/Mo/test1.cpp
+  - icon: ':warning:'
+    path: DataStructure/SqrtDecomposition/Mo/test2.cpp
+    title: DataStructure/SqrtDecomposition/Mo/test2.cpp
+  - icon: ':warning:'
     path: DataStructure/SqrtDecomposition/Split_Rebuild/Full_version.h
     title: DataStructure/SqrtDecomposition/Split_Rebuild/Full_version.h
   - icon: ':heavy_check_mark:'
@@ -140,6 +149,12 @@ data:
   - icon: ':warning:'
     path: String/Hash/test_hash2.cpp
     title: String/Hash/test_hash2.cpp
+  - icon: ':warning:'
+    path: String/KMP/Kmp.h
+    title: String/KMP/Kmp.h
+  - icon: ':warning:'
+    path: String/KMP/test_kmp.cpp
+    title: String/KMP/test_kmp.cpp
   - icon: ':warning:'
     path: String/Trie/Trie.h
     title: String/Trie/Trie.h
@@ -329,6 +344,9 @@ data:
   - DataStructure/SqrtDecomposition/Split_Rebuild/Full_version.h
   - DataStructure/SqrtDecomposition/Split_Rebuild/test1.cpp
   - DataStructure/SqrtDecomposition/Split_Rebuild/test2.cpp
+  - DataStructure/SqrtDecomposition/Mo/Mo.h
+  - DataStructure/SqrtDecomposition/Mo/test1.cpp
+  - DataStructure/SqrtDecomposition/Mo/test2.cpp
   - DataStructure/SqrtDecomposition/Sqrt.h
   - Graph/Mst/Kruskal.h
   - Graph/Mst/Prim.h
@@ -341,6 +359,8 @@ data:
   - Misc/Deque.h
   - Misc/Small_to_large.h
   - String/Z_Function.h
+  - String/KMP/Kmp.h
+  - String/KMP/test_kmp.cpp
   - String/Trie/Trie_array_ver.h
   - String/Trie/Trie.h
   - String/Hash/test_hash1.cpp
