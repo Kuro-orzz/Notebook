@@ -48,9 +48,9 @@ public:
         int carry = 0, len = (int)max(size(), b.size());
         for (int i = 0; i < len; i++) {
             int sum = carry;
-            if (i < size()) sum += digit[i];
-            if (i < b.size()) sum += b[i];
-            if (i < size()) digit[i] = sum % BASE;
+            if (i < (int)size()) sum += digit[i];
+            if (i < (int)b.size()) sum += b[i];
+            if (i < (int)size()) digit[i] = sum % BASE;
             else digit.push_back(sum % BASE);
             carry = sum / BASE;
         }
@@ -72,8 +72,8 @@ public:
         int borrow = 0, len = (int)max(size(), b.size());
         for (int i = 0; i < len; i++) {
             int sub = -borrow;
-            if (i < size()) sub += digit[i];
-            if (i < b.size()) sub -= b[i];
+            if (i < (int)size()) sub += digit[i];
+            if (i < (int)b.size()) sub -= b[i];
             if (sub < 0) sub += BASE, borrow = 1;
             else borrow = 0;
             digit[i] = sub;
@@ -155,8 +155,8 @@ public:
     friend BigInt operator / (int64_t t, const BigInt &b) { BigInt res(t); res /= b; return res; }
     friend BigInt operator % (int64_t t, const BigInt &b) { BigInt res(t); res %= b; return res;}
 
-    uint32_t operator [] (const int i) const { assert(i >= 0 && i < size()); return digit[i]; }
-    uint32_t &operator [] (const int i) { assert(i >= 0 && i < size()); return digit[i]; }
+    uint32_t operator [] (const int i) const { assert(i >= 0 && i < (int)size()); return digit[i]; }
+    uint32_t &operator [] (const int i) { assert(i >= 0 && i < (int)size()); return digit[i]; }
 
     // ------------------------- Comparison ---------------------
     bool operator < (const BigInt &b) const {
