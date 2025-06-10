@@ -2,6 +2,7 @@
 
 
 // Still slow ver, need optimize
+// This template only work for base <= 10
 
 const int BASE_DIGITS = 9;
 const int BASE = 1000000000;
@@ -313,6 +314,15 @@ public:
     }
 
     BigInt abs() const { BigInt res = *this; res.sign = 1; return res; }
+
+    string toString() {
+        if (isZero()) return "0";
+        string res = "";
+        for (int i = (int)digit.size() - 1; i >= 0; i--) {
+            res += static_cast<char>(digit[i]+'0');
+        }
+        return res;
+    }
 
     // only support b >= 0, if b < 0 need to implement modulo inverse
     friend BigInt pow(const BigInt &a, const BigInt &b, ll mod) { return pow(a, b, BigInt(mod)); }

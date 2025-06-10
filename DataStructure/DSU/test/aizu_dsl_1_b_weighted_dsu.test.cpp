@@ -1,11 +1,11 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/1/DSL_1_B"
 
 #include "../../../template.h"
-#include "../Dsu_weighted.h"
+#include "../Weighted_Dsu.h"
 
 void solve() {
 	int n, q; cin >> n >> q;
-	Dsu g(n);
+	WeightedDsu g(n);
 	while (q--) {
 		int type; cin >> type;
 		if (type == 0) {
