@@ -15,8 +15,8 @@ data:
     path: DataStructure/DSU/Dsu_2D.h
     title: DataStructure/DSU/Dsu_2D.h
   - icon: ':heavy_check_mark:'
-    path: DataStructure/DSU/Dsu_weighted.h
-    title: DataStructure/DSU/Dsu_weighted.h
+    path: DataStructure/DSU/Weighted_Dsu.h
+    title: DataStructure/DSU/Weighted_Dsu.h
   - icon: ':warning:'
     path: DataStructure/DSU/test/test_dsu_2d.cpp
     title: DataStructure/DSU/test/test_dsu_2d.cpp
@@ -351,10 +351,10 @@ data:
   path: template.h
   requiredBy:
   - DataStructure/RMQ/RMQ.h
-  - DataStructure/DSU/Dsu_weighted.h
   - DataStructure/DSU/test/test_dsu_2d.cpp
   - DataStructure/DSU/test/test_dsu_2d_2.cpp
   - DataStructure/DSU/Dsu_2D.h
+  - DataStructure/DSU/Weighted_Dsu.h
   - DataStructure/DSU/Dsu.h
   - DataStructure/Fenwick/Fenwick.h
   - DataStructure/SegTree/SparseSegTree.h

@@ -29,23 +29,23 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"Big_Integer/BigInt_full.h\"\n\n\n// Still slow ver, need optimize\n\
-    \nconst int BASE_DIGITS = 9;\nconst int BASE = 1000000000;\n\nclass BigInt {\n\
-    public:\n    int sign;\n    vector<uint32_t> digit;\n\n    BigInt(): sign(1) {}\n\
-    \n    BigInt(const string &s) { *this = s; }\n\n    BigInt(int64_t val) { *this\
-    \ = val; }\n\n    BigInt &operator = (const BigInt &b) {\n        sign = b.sign;\n\
-    \        digit = b.digit;\n        return *this;\n    }\n\n    BigInt &operator\
-    \ = (const string &s) {\n        read(s);\n        return *this;\n    }\n\n  \
-    \  BigInt &operator = (int64_t val) {\n        sign = val >= 0 ? 1 : -1;\n   \
-    \     val = llabs(val);\n        digit.clear();\n        for (; val; val /= BASE)\
-    \ {\n            digit.push_back(val % BASE);\n        }\n        trim();\n  \
-    \      return *this;\n    }\n\n    BigInt &operator += (const BigInt &b) {\n \
-    \       if (sign != b.sign) {\n            BigInt t = b;\n            t.sign *=\
-    \ -1;\n            return *this -= t;\n        }\n        int carry = 0, len =\
-    \ (int)max(size(), b.size());\n        for (int i = 0; i < len; i++) {\n     \
-    \       int sum = carry;\n            if (i < (int)size()) sum += digit[i];\n\
-    \            if (i < (int)b.size()) sum += b[i];\n            if (i < (int)size())\
-    \ digit[i] = sum % BASE;\n            else digit.push_back(sum % BASE);\n    \
-    \        carry = sum / BASE;\n        }\n        if (carry) digit.push_back(carry);\n\
+    // This template only work for base <= 10\n\nconst int BASE_DIGITS = 9;\nconst\
+    \ int BASE = 1000000000;\n\nclass BigInt {\npublic:\n    int sign;\n    vector<uint32_t>\
+    \ digit;\n\n    BigInt(): sign(1) {}\n\n    BigInt(const string &s) { *this =\
+    \ s; }\n\n    BigInt(int64_t val) { *this = val; }\n\n    BigInt &operator = (const\
+    \ BigInt &b) {\n        sign = b.sign;\n        digit = b.digit;\n        return\
+    \ *this;\n    }\n\n    BigInt &operator = (const string &s) {\n        read(s);\n\
+    \        return *this;\n    }\n\n    BigInt &operator = (int64_t val) {\n    \
+    \    sign = val >= 0 ? 1 : -1;\n        val = llabs(val);\n        digit.clear();\n\
+    \        for (; val; val /= BASE) {\n            digit.push_back(val % BASE);\n\
+    \        }\n        trim();\n        return *this;\n    }\n\n    BigInt &operator\
+    \ += (const BigInt &b) {\n        if (sign != b.sign) {\n            BigInt t\
+    \ = b;\n            t.sign *= -1;\n            return *this -= t;\n        }\n\
+    \        int carry = 0, len = (int)max(size(), b.size());\n        for (int i\
+    \ = 0; i < len; i++) {\n            int sum = carry;\n            if (i < (int)size())\
+    \ sum += digit[i];\n            if (i < (int)b.size()) sum += b[i];\n        \
+    \    if (i < (int)size()) digit[i] = sum % BASE;\n            else digit.push_back(sum\
+    \ % BASE);\n            carry = sum / BASE;\n        }\n        if (carry) digit.push_back(carry);\n\
     \        trim();\n        return *this;\n    }\n\n    BigInt &operator -= (const\
     \ BigInt &b) {\n        if (sign != b.sign) {\n            return *this += (-b);\n\
     \        }\n        if (__compare_abs(b) == -1) {\n            BigInt t = b;\n\
@@ -167,18 +167,21 @@ data:
     \ }\n\n    bool isZero() const { return digit.empty(); }\n\n    void trim() {\n\
     \        while (!digit.empty() && !digit.back()) {\n            digit.pop_back();\n\
     \        }\n        if (digit.empty()) sign = 1;\n    }\n\n    BigInt abs() const\
-    \ { BigInt res = *this; res.sign = 1; return res; }\n\n    // only support b >=\
-    \ 0, if b < 0 need to implement modulo inverse\n    friend BigInt pow(const BigInt\
-    \ &a, const BigInt &b, ll mod) { return pow(a, b, BigInt(mod)); }\n    friend\
-    \ BigInt pow(const BigInt &a, const BigInt &b, const BigInt &mod) {\n        BigInt\
-    \ x(a), y(b), res(1);\n        while (y != 0) {\n            if (y[0] % 2 == 1)\
-    \ res = res * x % mod;\n            x = x * x % mod;\n            y /= 2;\n  \
-    \      }\n        return res;\n    }\n\n    friend BigInt __gcd(const BigInt &a,\
-    \ const BigInt &b) {\n        if (b == 0) return a;\n        return __gcd(b, a\
-    \ % b);\n    }\n\n    friend BigInt __lcm(const BigInt &a, const BigInt &b) {\n\
-    \        return a / __gcd(a, b) * b;\n    }\n\n    // safe sqrt for long long\
-    \ and BigInt\n    friend BigInt sqrt(const BigInt &a1) {\n        BigInt a = a1;\n\
-    \        while (a.digit.empty() || a.size() % 2 == 1) {\n            a.digit.push_back(0);\n\
+    \ { BigInt res = *this; res.sign = 1; return res; }\n\n    string toString() {\n\
+    \        if (isZero()) return \"0\";\n        string res = \"\";\n        for\
+    \ (int i = (int)digit.size() - 1; i >= 0; i--) {\n            res += static_cast<char>(digit[i]+'0');\n\
+    \        }\n        return res;\n    }\n\n    // only support b >= 0, if b < 0\
+    \ need to implement modulo inverse\n    friend BigInt pow(const BigInt &a, const\
+    \ BigInt &b, ll mod) { return pow(a, b, BigInt(mod)); }\n    friend BigInt pow(const\
+    \ BigInt &a, const BigInt &b, const BigInt &mod) {\n        BigInt x(a), y(b),\
+    \ res(1);\n        while (y != 0) {\n            if (y[0] % 2 == 1) res = res\
+    \ * x % mod;\n            x = x * x % mod;\n            y /= 2;\n        }\n \
+    \       return res;\n    }\n\n    friend BigInt __gcd(const BigInt &a, const BigInt\
+    \ &b) {\n        if (b == 0) return a;\n        return __gcd(b, a % b);\n    }\n\
+    \n    friend BigInt __lcm(const BigInt &a, const BigInt &b) {\n        return\
+    \ a / __gcd(a, b) * b;\n    }\n\n    // safe sqrt for long long and BigInt\n \
+    \   friend BigInt sqrt(const BigInt &a1) {\n        BigInt a = a1;\n        while\
+    \ (a.digit.empty() || a.size() % 2 == 1) {\n            a.digit.push_back(0);\n\
     \        }\n\n        int n = a.size();\n        int firstDigit = (int) sqrt((double)\
     \ a[n - 1] * BASE + a[n - 2]);\n        int norm = BASE / (firstDigit + 1);\n\
     \        a = a * norm * norm;\n        while (a.digit.empty() || a.size() % 2\
@@ -221,7 +224,7 @@ data:
   isVerificationFile: true
   path: Big_Integer/test/Division_of_Big_Integers.test.cpp
   requiredBy: []
-  timestamp: '2025-06-07 22:39:21+07:00'
+  timestamp: '2025-06-11 00:40:56+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Big_Integer/test/Division_of_Big_Integers.test.cpp

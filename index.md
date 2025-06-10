@@ -18,8 +18,8 @@ data:
       path: DataStructure/DSU/Dsu_2D.h
       title: DataStructure/DSU/Dsu_2D.h
     - icon: ':heavy_check_mark:'
-      path: DataStructure/DSU/Dsu_weighted.h
-      title: DataStructure/DSU/Dsu_weighted.h
+      path: DataStructure/DSU/Weighted_Dsu.h
+      title: DataStructure/DSU/Weighted_Dsu.h
   - name: DataStructure/DSU/test
     pages:
     - icon: ':warning:'
