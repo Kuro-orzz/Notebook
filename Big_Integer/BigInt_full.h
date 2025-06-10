@@ -316,12 +316,9 @@ public:
     BigInt abs() const { BigInt res = *this; res.sign = 1; return res; }
 
     string toString() {
-        if (isZero()) return "0";
-        string res = "";
-        for (int i = (int)digit.size() - 1; i >= 0; i--) {
-            res += static_cast<char>(digit[i]+'0');
-        }
-        return res;
+        ostringstream oss;
+        oss << *this;
+        return oss.str();
     }
 
     // only support b >= 0, if b < 0 need to implement modulo inverse
