@@ -1,5 +1,5 @@
-#include "../../template.h"
-#include "Dsu_2D.h"
+#include "../../../template.h"
+#include "../Dsu_2D.h"
 
 // AC: https://leetcode.com/problems/making-a-large-island/description/
 

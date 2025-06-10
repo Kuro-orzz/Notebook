@@ -13,13 +13,13 @@ public:
 	}
 
 	SimpleSqrt(int _n, vector<ll> &arr): n(_n), a(arr) {
-    	block_sz = sqrt(n);
-    	block.resize(n / block_sz + 1);
-    	int cnt = -1;
-    	for(int i = 0; i < n; i++) {
-        	if(i % block_sz == 0) cnt++;
-        	block[cnt] += arr[i];
-    	}
+		block_sz = sqrt(n);
+		block.resize(n / block_sz + 1);
+		int cnt = -1;
+		for(int i = 0; i < n; i++) {
+			if(i % block_sz == 0) cnt++;
+			block[cnt] += arr[i];
+		}
 	}
 
 	ll query(int l, int r) {
@@ -38,7 +38,7 @@ public:
 
 	void add(int pos, int val) {
 		int idx = pos / block_sz;
-	    block[idx] += val;
-	    a[pos] += val;
+		block[idx] += val;
+		a[pos] += val;
 	}
 };
