@@ -78,7 +78,7 @@ data:
     \ == s.end()) {\n                        s.insert(v);\n                      \
     \  res += sz[v.fi][v.se];\n                    }   \n                }\n     \
     \       }\n        }\n        return res;\n    }\n    /*------------------------------------------------------------*/\n\
-    };\n#line 3 \"DataStructure/DSU/test_dsu_2d.cpp\"\n\n// AC: https://codeforces.com/contest/1985/problem/H1\n\
+    };\n#line 3 \"DataStructure/DSU/test/test_dsu_2d.cpp\"\n\n// AC: https://codeforces.com/contest/1985/problem/H1\n\
     \nvoid solve(){\n    int n, m; cin >> n >> m;\n    vector<vector<char>> a(n, vector<char>(m));\n\
     \    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < m; j++) {\n  \
     \          cin >> a[i][j];\n        }\n    }\n    Dsu_2D<char> g(n, m);\n    int\
@@ -91,7 +91,7 @@ data:
     \    for (int i = 0; i < n; i++) {\n        ans = max(ans, g.Try_Row(i, a));\n\
     \    }\n    for (int i = 0; i < m; i++) {\n        ans = max(ans, g.Try_Col(i,\
     \ a));\n    }\n    cout << ans << '\\n';\n}\n"
-  code: "#include \"../../template.h\"\n#include \"Dsu_2D.h\"\n\n// AC: https://codeforces.com/contest/1985/problem/H1\n\
+  code: "#include \"../../../template.h\"\n#include \"../Dsu_2D.h\"\n\n// AC: https://codeforces.com/contest/1985/problem/H1\n\
     \nvoid solve(){\n    int n, m; cin >> n >> m;\n    vector<vector<char>> a(n, vector<char>(m));\n\
     \    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < m; j++) {\n  \
     \          cin >> a[i][j];\n        }\n    }\n    Dsu_2D<char> g(n, m);\n    int\
@@ -108,15 +108,15 @@ data:
   - template.h
   - DataStructure/DSU/Dsu_2D.h
   isVerificationFile: false
-  path: DataStructure/DSU/test_dsu_2d.cpp
+  path: DataStructure/DSU/test/test_dsu_2d.cpp
   requiredBy: []
-  timestamp: '2025-05-31 00:13:26+07:00'
+  timestamp: '2025-06-10 22:27:06+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: DataStructure/DSU/test_dsu_2d.cpp
+documentation_of: DataStructure/DSU/test/test_dsu_2d.cpp
 layout: document
 redirect_from:
-- /library/DataStructure/DSU/test_dsu_2d.cpp
-- /library/DataStructure/DSU/test_dsu_2d.cpp.html
-title: DataStructure/DSU/test_dsu_2d.cpp
+- /library/DataStructure/DSU/test/test_dsu_2d.cpp
+- /library/DataStructure/DSU/test/test_dsu_2d.cpp.html
+title: DataStructure/DSU/test/test_dsu_2d.cpp
 ---

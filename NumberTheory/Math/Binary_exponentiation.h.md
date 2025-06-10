@@ -5,6 +5,9 @@ data:
     path: template.h
     title: template.h
   _extendedRequiredBy:
+  - icon: ':warning:'
+    path: NumberTheory/Math/Divisors.h
+    title: NumberTheory/Math/Divisors.h
   - icon: ':heavy_check_mark:'
     path: NumberTheory/Math/MillerRabin.h
     title: NumberTheory/Math/MillerRabin.h
@@ -49,6 +52,7 @@ data:
   isVerificationFile: false
   path: NumberTheory/Math/Binary_exponentiation.h
   requiredBy:
+  - NumberTheory/Math/Divisors.h
   - NumberTheory/Math/Primality_test.h
   - NumberTheory/Math/MillerRabin.h
   timestamp: '2025-05-10 21:29:43+07:00'

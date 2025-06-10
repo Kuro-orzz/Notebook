@@ -6,11 +6,11 @@ data:
     title: template.h
   _extendedRequiredBy:
   - icon: ':warning:'
-    path: DataStructure/DSU/test_dsu_2d.cpp
-    title: DataStructure/DSU/test_dsu_2d.cpp
+    path: DataStructure/DSU/test/test_dsu_2d.cpp
+    title: DataStructure/DSU/test/test_dsu_2d.cpp
   - icon: ':warning:'
-    path: DataStructure/DSU/test_dsu_2d_2.cpp
-    title: DataStructure/DSU/test_dsu_2d_2.cpp
+    path: DataStructure/DSU/test/test_dsu_2d_2.cpp
+    title: DataStructure/DSU/test/test_dsu_2d_2.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: h
@@ -141,8 +141,8 @@ data:
   isVerificationFile: false
   path: DataStructure/DSU/Dsu_2D.h
   requiredBy:
-  - DataStructure/DSU/test_dsu_2d.cpp
-  - DataStructure/DSU/test_dsu_2d_2.cpp
+  - DataStructure/DSU/test/test_dsu_2d.cpp
+  - DataStructure/DSU/test/test_dsu_2d_2.cpp
   timestamp: '2025-05-31 00:13:26+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

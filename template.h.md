@@ -14,12 +14,15 @@ data:
   - icon: ':warning:'
     path: DataStructure/DSU/Dsu_2D.h
     title: DataStructure/DSU/Dsu_2D.h
+  - icon: ':heavy_check_mark:'
+    path: DataStructure/DSU/Dsu_weighted.h
+    title: DataStructure/DSU/Dsu_weighted.h
   - icon: ':warning:'
-    path: DataStructure/DSU/test_dsu_2d.cpp
-    title: DataStructure/DSU/test_dsu_2d.cpp
+    path: DataStructure/DSU/test/test_dsu_2d.cpp
+    title: DataStructure/DSU/test/test_dsu_2d.cpp
   - icon: ':warning:'
-    path: DataStructure/DSU/test_dsu_2d_2.cpp
-    title: DataStructure/DSU/test_dsu_2d_2.cpp
+    path: DataStructure/DSU/test/test_dsu_2d_2.cpp
+    title: DataStructure/DSU/test/test_dsu_2d_2.cpp
   - icon: ':heavy_check_mark:'
     path: DataStructure/Fenwick/Fenwick.h
     title: DataStructure/Fenwick/Fenwick.h
@@ -128,6 +131,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: NumberTheory/Math/CheckPrime.h
     title: NumberTheory/Math/CheckPrime.h
+  - icon: ':warning:'
+    path: NumberTheory/Math/Divisors.h
+    title: NumberTheory/Math/Divisors.h
   - icon: ':heavy_check_mark:'
     path: NumberTheory/Math/EulerPhi.h
     title: NumberTheory/Math/EulerPhi.h
@@ -207,6 +213,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/Associative_array.test.cpp
     title: DataStructure/Associative_array.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: DataStructure/DSU/test/aizu_dsl_1_b_weighted_dsu.test.cpp
+    title: DataStructure/DSU/test/aizu_dsl_1_b_weighted_dsu.test.cpp
   - icon: ':heavy_check_mark:'
     path: DataStructure/Double_end_priority_queue.test.cpp
     title: DataStructure/Double_end_priority_queue.test.cpp
@@ -342,9 +351,10 @@ data:
   path: template.h
   requiredBy:
   - DataStructure/RMQ/RMQ.h
+  - DataStructure/DSU/Dsu_weighted.h
+  - DataStructure/DSU/test/test_dsu_2d.cpp
+  - DataStructure/DSU/test/test_dsu_2d_2.cpp
   - DataStructure/DSU/Dsu_2D.h
-  - DataStructure/DSU/test_dsu_2d.cpp
-  - DataStructure/DSU/test_dsu_2d_2.cpp
   - DataStructure/DSU/Dsu.h
   - DataStructure/Fenwick/Fenwick.h
   - DataStructure/SegTree/SparseSegTree.h
@@ -387,6 +397,7 @@ data:
   - String/Hash/test_hash1.cpp
   - String/Hash/Rolling_Hash.h
   - String/Hash/test_hash2.cpp
+  - NumberTheory/Math/Divisors.h
   - NumberTheory/Math/EulerPhi.h
   - NumberTheory/Math/Binary_exponentiation.h
   - NumberTheory/Math/CheckPrime.h
@@ -413,6 +424,7 @@ data:
   - DataStructure/Range_affine_range_sum.test.cpp
   - DataStructure/Ordered_set.test.cpp
   - DataStructure/Range_affine_point_get.test.cpp
+  - DataStructure/DSU/test/aizu_dsl_1_b_weighted_dsu.test.cpp
   - DataStructure/Unionfind_with_potential.test.cpp
   - DataStructure/Static_RMQ.test.cpp
   - DataStructure/Associative_array.test.cpp

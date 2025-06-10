@@ -7,7 +7,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: template.h
     title: template.h
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: NumberTheory/Math/Divisors.h
+    title: NumberTheory/Math/Divisors.h
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: NumberTheory/Primality_test.test.cpp
@@ -62,7 +65,8 @@ data:
   - NumberTheory/Math/Binary_exponentiation.h
   isVerificationFile: false
   path: NumberTheory/Math/MillerRabin.h
-  requiredBy: []
+  requiredBy:
+  - NumberTheory/Math/Divisors.h
   timestamp: '2025-05-10 21:29:43+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

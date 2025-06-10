@@ -17,12 +17,17 @@ data:
     - icon: ':warning:'
       path: DataStructure/DSU/Dsu_2D.h
       title: DataStructure/DSU/Dsu_2D.h
+    - icon: ':heavy_check_mark:'
+      path: DataStructure/DSU/Dsu_weighted.h
+      title: DataStructure/DSU/Dsu_weighted.h
+  - name: DataStructure/DSU/test
+    pages:
     - icon: ':warning:'
-      path: DataStructure/DSU/test_dsu_2d.cpp
-      title: DataStructure/DSU/test_dsu_2d.cpp
+      path: DataStructure/DSU/test/test_dsu_2d.cpp
+      title: DataStructure/DSU/test/test_dsu_2d.cpp
     - icon: ':warning:'
-      path: DataStructure/DSU/test_dsu_2d_2.cpp
-      title: DataStructure/DSU/test_dsu_2d_2.cpp
+      path: DataStructure/DSU/test/test_dsu_2d_2.cpp
+      title: DataStructure/DSU/test/test_dsu_2d_2.cpp
   - name: DataStructure/Fenwick
     pages:
     - icon: ':heavy_check_mark:'
@@ -157,6 +162,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: NumberTheory/Math/CheckPrime.h
       title: NumberTheory/Math/CheckPrime.h
+    - icon: ':warning:'
+      path: NumberTheory/Math/Divisors.h
+      title: NumberTheory/Math/Divisors.h
     - icon: ':heavy_check_mark:'
       path: NumberTheory/Math/EulerPhi.h
       title: NumberTheory/Math/EulerPhi.h
@@ -301,6 +309,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/Unionfind_with_potential.test.cpp
       title: DataStructure/Unionfind_with_potential.test.cpp
+  - name: DataStructure/DSU/test
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: DataStructure/DSU/test/aizu_dsl_1_b_weighted_dsu.test.cpp
+      title: DataStructure/DSU/test/aizu_dsl_1_b_weighted_dsu.test.cpp
   - name: DataStructure/SqrtDecomposition
     pages:
     - icon: ':heavy_check_mark:'

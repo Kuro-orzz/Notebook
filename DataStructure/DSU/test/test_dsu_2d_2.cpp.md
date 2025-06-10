@@ -78,7 +78,7 @@ data:
     \ == s.end()) {\n                        s.insert(v);\n                      \
     \  res += sz[v.fi][v.se];\n                    }   \n                }\n     \
     \       }\n        }\n        return res;\n    }\n    /*------------------------------------------------------------*/\n\
-    };\n#line 3 \"DataStructure/DSU/test_dsu_2d_2.cpp\"\n\n// AC: https://leetcode.com/problems/making-a-large-island/description/\n\
+    };\n#line 3 \"DataStructure/DSU/test/test_dsu_2d_2.cpp\"\n\n// AC: https://leetcode.com/problems/making-a-large-island/description/\n\
     \nclass Solution {\npublic:\n    int dx[4] = {-1, 0, 0, 1};\n    int dy[4] = {0,\
     \ -1, 1, 0};\n\n    int largestIsland(vector<vector<int>>& grid) {\n        int\
     \ n = grid.size();\n        Dsu_2D<int> g(n, n);    \n        for (int i = 0;\
@@ -88,7 +88,7 @@ data:
     \ n, u) && grid[u.fi][u.se]) {\n                        g.merge({i, j}, u);\n\
     \                    }\n                }\n            }\n        }\n        return\
     \ g.Try_all_cell(grid);\n    }\n};\n"
-  code: "#include \"../../template.h\"\n#include \"Dsu_2D.h\"\n\n// AC: https://leetcode.com/problems/making-a-large-island/description/\n\
+  code: "#include \"../../../template.h\"\n#include \"../Dsu_2D.h\"\n\n// AC: https://leetcode.com/problems/making-a-large-island/description/\n\
     \nclass Solution {\npublic:\n    int dx[4] = {-1, 0, 0, 1};\n    int dy[4] = {0,\
     \ -1, 1, 0};\n\n    int largestIsland(vector<vector<int>>& grid) {\n        int\
     \ n = grid.size();\n        Dsu_2D<int> g(n, n);    \n        for (int i = 0;\
@@ -102,15 +102,15 @@ data:
   - template.h
   - DataStructure/DSU/Dsu_2D.h
   isVerificationFile: false
-  path: DataStructure/DSU/test_dsu_2d_2.cpp
+  path: DataStructure/DSU/test/test_dsu_2d_2.cpp
   requiredBy: []
-  timestamp: '2025-05-31 00:13:26+07:00'
+  timestamp: '2025-06-10 22:27:06+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: DataStructure/DSU/test_dsu_2d_2.cpp
+documentation_of: DataStructure/DSU/test/test_dsu_2d_2.cpp
 layout: document
 redirect_from:
-- /library/DataStructure/DSU/test_dsu_2d_2.cpp
-- /library/DataStructure/DSU/test_dsu_2d_2.cpp.html
-title: DataStructure/DSU/test_dsu_2d_2.cpp
+- /library/DataStructure/DSU/test/test_dsu_2d_2.cpp
+- /library/DataStructure/DSU/test/test_dsu_2d_2.cpp.html
+title: DataStructure/DSU/test/test_dsu_2d_2.cpp
 ---

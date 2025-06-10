@@ -27,34 +27,33 @@ data:
     \ {\npublic:\n\tint n, block_sz;\n\tvector<ll> a, block;\n\n\tSimpleSqrt() {}\n\
     \n\tSimpleSqrt(int _n): n(_n), a(_n, 0) {\n\t\tblock_sz = sqrt(_n);\n\t\tblock.resize(n\
     \ / block_sz + 1);\n\t}\n\n\tSimpleSqrt(int _n, vector<ll> &arr): n(_n), a(arr)\
-    \ {\n    \tblock_sz = sqrt(n);\n    \tblock.resize(n / block_sz + 1);\n    \t\
-    int cnt = -1;\n    \tfor(int i = 0; i < n; i++) {\n        \tif(i % block_sz ==\
-    \ 0) cnt++;\n        \tblock[cnt] += arr[i];\n    \t}\n\t}\n\n\tll query(int l,\
-    \ int r) {\n\t    ll sum = 0;\n\t    for(int i = l; i <= r;) {\n\t        if(i\
-    \ % block_sz == 0 && i+block_sz-1 <= r) {\n\t            sum += block[i/block_sz];\n\
-    \t            i += block_sz;\n\t        } else {\n\t            sum += a[i];\n\
-    \t            i++;\n\t        }\n\t    }\n\t    return sum;\n\t}\n\n\tvoid add(int\
-    \ pos, int val) {\n\t\tint idx = pos / block_sz;\n\t    block[idx] += val;\n\t\
-    \    a[pos] += val;\n\t}\n};\n"
+    \ {\n\t\tblock_sz = sqrt(n);\n\t\tblock.resize(n / block_sz + 1);\n\t\tint cnt\
+    \ = -1;\n\t\tfor(int i = 0; i < n; i++) {\n\t\t\tif(i % block_sz == 0) cnt++;\n\
+    \t\t\tblock[cnt] += arr[i];\n\t\t}\n\t}\n\n\tll query(int l, int r) {\n\t    ll\
+    \ sum = 0;\n\t    for(int i = l; i <= r;) {\n\t        if(i % block_sz == 0 &&\
+    \ i+block_sz-1 <= r) {\n\t            sum += block[i/block_sz];\n\t          \
+    \  i += block_sz;\n\t        } else {\n\t            sum += a[i];\n\t        \
+    \    i++;\n\t        }\n\t    }\n\t    return sum;\n\t}\n\n\tvoid add(int pos,\
+    \ int val) {\n\t\tint idx = pos / block_sz;\n\t\tblock[idx] += val;\n\t\ta[pos]\
+    \ += val;\n\t}\n};\n"
   code: "#include \"../../template.h\"\n\nclass SimpleSqrt {\npublic:\n\tint n, block_sz;\n\
     \tvector<ll> a, block;\n\n\tSimpleSqrt() {}\n\n\tSimpleSqrt(int _n): n(_n), a(_n,\
     \ 0) {\n\t\tblock_sz = sqrt(_n);\n\t\tblock.resize(n / block_sz + 1);\n\t}\n\n\
-    \tSimpleSqrt(int _n, vector<ll> &arr): n(_n), a(arr) {\n    \tblock_sz = sqrt(n);\n\
-    \    \tblock.resize(n / block_sz + 1);\n    \tint cnt = -1;\n    \tfor(int i =\
-    \ 0; i < n; i++) {\n        \tif(i % block_sz == 0) cnt++;\n        \tblock[cnt]\
-    \ += arr[i];\n    \t}\n\t}\n\n\tll query(int l, int r) {\n\t    ll sum = 0;\n\t\
-    \    for(int i = l; i <= r;) {\n\t        if(i % block_sz == 0 && i+block_sz-1\
-    \ <= r) {\n\t            sum += block[i/block_sz];\n\t            i += block_sz;\n\
-    \t        } else {\n\t            sum += a[i];\n\t            i++;\n\t       \
-    \ }\n\t    }\n\t    return sum;\n\t}\n\n\tvoid add(int pos, int val) {\n\t\tint\
-    \ idx = pos / block_sz;\n\t    block[idx] += val;\n\t    a[pos] += val;\n\t}\n\
-    };"
+    \tSimpleSqrt(int _n, vector<ll> &arr): n(_n), a(arr) {\n\t\tblock_sz = sqrt(n);\n\
+    \t\tblock.resize(n / block_sz + 1);\n\t\tint cnt = -1;\n\t\tfor(int i = 0; i <\
+    \ n; i++) {\n\t\t\tif(i % block_sz == 0) cnt++;\n\t\t\tblock[cnt] += arr[i];\n\
+    \t\t}\n\t}\n\n\tll query(int l, int r) {\n\t    ll sum = 0;\n\t    for(int i =\
+    \ l; i <= r;) {\n\t        if(i % block_sz == 0 && i+block_sz-1 <= r) {\n\t  \
+    \          sum += block[i/block_sz];\n\t            i += block_sz;\n\t       \
+    \ } else {\n\t            sum += a[i];\n\t            i++;\n\t        }\n\t  \
+    \  }\n\t    return sum;\n\t}\n\n\tvoid add(int pos, int val) {\n\t\tint idx =\
+    \ pos / block_sz;\n\t\tblock[idx] += val;\n\t\ta[pos] += val;\n\t}\n};"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: DataStructure/SqrtDecomposition/Sqrt.h
   requiredBy: []
-  timestamp: '2025-05-15 00:54:17+07:00'
+  timestamp: '2025-06-10 22:27:06+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - DataStructure/SqrtDecomposition/Point_Add_Range_Sum.test.cpp

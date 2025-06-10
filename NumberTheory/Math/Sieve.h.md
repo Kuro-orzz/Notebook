@@ -4,7 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: template.h
     title: template.h
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: NumberTheory/Math/Divisors.h
+    title: NumberTheory/Math/Divisors.h
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: NumberTheory/Enumerate_primes.test.cpp
@@ -49,7 +52,8 @@ data:
   - template.h
   isVerificationFile: false
   path: NumberTheory/Math/Sieve.h
-  requiredBy: []
+  requiredBy:
+  - NumberTheory/Math/Divisors.h
   timestamp: '2025-05-25 00:26:18+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
