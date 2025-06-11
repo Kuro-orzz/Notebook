@@ -6,14 +6,14 @@
 // if C++ lower than 17, use x / __gcd(x, y) * y
 
 void solve() {
-	int n; cin >> n;
-	int a[n];
-	for (int i = 0; i < n; i++) {
-		cin >> a[i];
-	}
-	int ans = a[0];
-	for (int i = 1; i < n; i++) {
-		ans = lcm(ans, a[i]);
-	}
-	cout << ans << '\n';
+    int n; cin >> n;
+    int a[n];
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    int ans = a[0];
+    for (int i = 1; i < n; i++) {
+        ans = lcm(ans, a[i]);
+    }
+    cout << ans << '\n';
 }

@@ -4,7 +4,7 @@
 #include "Z_Function.h"
 
 void solve() {
-	string s; cin >> s;
-	vector<int> ans = Z_function(s);
-	for (int x : ans) cout << x << " ";
+    string s; cin >> s;
+    vector<int> ans = Z_function(s);
+    for (int x : ans) cout << x << " ";
 }

@@ -25,7 +25,7 @@ struct WeightedDsu {
         if(sz[pu] < sz[pv]) {
             swap(u, v);
             swap(pu, pv);
-        	x = -x;
+            x = -x;
         }
         par[pv] = pu;
         sz[pu] += sz[pv];

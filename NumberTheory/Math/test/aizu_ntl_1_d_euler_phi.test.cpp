@@ -4,6 +4,6 @@
 #include "../EulerPhi.h"
 
 void solve() {
-	ll n; cin >> n;
-	cout << eulerPhi(n) << '\n';
+    ll n; cin >> n;
+    cout << eulerPhi(n) << '\n';
 }

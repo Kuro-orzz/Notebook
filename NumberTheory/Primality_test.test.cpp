@@ -4,10 +4,10 @@
 #include "Math/MillerRabin.h"
 
 void solve() {
-	int q; cin >> q;
-	while (q--) {
-		ll n; cin >> n;
-		if (MillerRabin(n)) cout << "Yes\n";
-		else cout << "No\n";
-	}
+    int q; cin >> q;
+    while (q--) {
+        ll n; cin >> n;
+        if (MillerRabin(n)) cout << "Yes\n";
+        else cout << "No\n";
+    }
 }

@@ -4,11 +4,11 @@
 #include "../Factorization.h"
 
 void solve() {
-	int n; cin >> n;
-	vector<ll> v = primeFactor(n);
-	cout << n << ": ";
-	for (int i = 0; i < (int)v.size() - 1; i++) {
-		cout << v[i] << " ";
-	}
-	cout << v.back() << '\n';
+    int n; cin >> n;
+    vector<ll> v = primeFactor(n);
+    cout << n << ": ";
+    for (int i = 0; i < (int)v.size() - 1; i++) {
+        cout << v[i] << " ";
+    }
+    cout << v.back() << '\n';
 }

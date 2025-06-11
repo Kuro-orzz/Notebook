@@ -4,6 +4,6 @@
 #include "../Binary_exponentiation.h"
 
 void solve() {
-	int n, m; cin >> n >> m;
-	cout << binPow(n, m, MOD) << '\n';
+    int n, m; cin >> n >> m;
+    cout << binPow(n, m, MOD) << '\n';
 }

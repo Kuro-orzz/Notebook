@@ -4,11 +4,11 @@
 #include "../Mst/Kruskal.h"
 
 void solve() {
-	int n, m; cin >> n >> m;
-	vector<Edge> edges;
-	for (int i = 0; i < m; i++) {
-		int u, v, w; cin >> u >> v >> w;
-		edges.emplace_back(u, v, w);
-	}
-	cout << kruskal(n, edges) << '\n';
+    int n, m; cin >> n >> m;
+    vector<Edge> edges;
+    for (int i = 0; i < m; i++) {
+        int u, v, w; cin >> u >> v >> w;
+        edges.emplace_back(u, v, w);
+    }
+    cout << kruskal(n, edges) << '\n';
 }

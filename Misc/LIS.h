@@ -7,7 +7,7 @@ set<int> s[N];
 
 // AC: https://oj.vnoi.info/problem/lis
 int LIS(vector<int> &a) {
-	multiset<int> s;
+    multiset<int> s;
     for (int x : a) {
         auto it = s.lower_bound(x);
         if (it != s.end()) {
@@ -19,16 +19,16 @@ int LIS(vector<int> &a) {
 }
 
 int __LIS(vector<int> &a) {
-	vector<int> v;
-	for (int x : a) {
-		auto it = lower_bound(all(v), x);
-    	if (it != v.end()) {
-    		(*it) = min((*it), x);
-    	} else {
-    		v.push_back(x);
-		}
-	}
-	return v.size();
+    vector<int> v;
+    for (int x : a) {
+        auto it = lower_bound(all(v), x);
+        if (it != v.end()) {
+            (*it) = min((*it), x);
+        } else {
+            v.push_back(x);
+        }
+    }
+    return v.size();
 }
 
 // LIS on tree

@@ -4,6 +4,6 @@
 #include "../BigInt_full.h"
 
 void solve() {
-	BigInt a, b; cin >> a >> b;
-	cout << a * b << '\n';
+    BigInt a, b; cin >> a >> b;
+    cout << a * b << '\n';
 }

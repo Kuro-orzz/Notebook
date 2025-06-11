@@ -315,7 +315,7 @@ public:
 
     BigInt abs() const { BigInt res = *this; res.sign = 1; return res; }
 
-    string toString() {
+    string toString() const {
         ostringstream oss;
         oss << *this;
         return oss.str();

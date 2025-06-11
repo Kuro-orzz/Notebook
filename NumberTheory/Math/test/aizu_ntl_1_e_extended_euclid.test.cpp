@@ -4,8 +4,8 @@
 #include "../Extended_euclid.h"
 
 void solve() {
-	int a, b; cin >> a >> b;
-	int x, y;
-	int g = extended2(a, b, x, y);
-	cout << x << " " << y << '\n';
+    int a, b; cin >> a >> b;
+    int x, y;
+    int g = extended2(a, b, x, y);
+    cout << x << " " << y << '\n';
 }

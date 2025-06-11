@@ -4,6 +4,6 @@
 #include "Math/CheckPrime.h"
 
 void solve() {
-	ll n; cin >> n;
-	cout << Meissel(n);
+    ll n; cin >> n;
+    cout << Meissel(n);
 }
