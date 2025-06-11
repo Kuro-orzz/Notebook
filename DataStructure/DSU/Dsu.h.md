@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.h
     title: template.h
   _extendedRequiredBy:
@@ -92,9 +92,9 @@ data:
   timestamp: '2025-06-07 01:24:49+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - Graph/test/aizu_grl_2_a_minimum_spanning_tree.test.cpp
   - DataStructure/Union_find.test.cpp
   - DataStructure/Unionfind_with_potential.test.cpp
+  - Graph/test/aizu_grl_2_a_minimum_spanning_tree.test.cpp
 documentation_of: DataStructure/DSU/Dsu.h
 layout: document
 redirect_from:

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -9,12 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: NumberTheory/Counting_primes.test.cpp
     title: NumberTheory/Counting_primes.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: NumberTheory/Enumerate_primes.test.cpp
     title: NumberTheory/Enumerate_primes.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://codeforces.com/blog/entry/91632
@@ -58,7 +58,7 @@ data:
   path: NumberTheory/Math/CheckPrime.h
   requiredBy: []
   timestamp: '2025-05-25 00:26:18+07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - NumberTheory/Counting_primes.test.cpp
   - NumberTheory/Enumerate_primes.test.cpp
