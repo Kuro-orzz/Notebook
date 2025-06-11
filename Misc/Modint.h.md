@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -21,107 +21,111 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"Misc/Modint.h\"\n\ntemplate <int32_t mod>\nstruct ModInt {\n\
-    \tint32_t x;\n\n\tModInt(): x(0) {}\n\tModInt(int32_t _x): x(_x % mod) { x = x\
-    \ < 0 ? x + mod : x; }\n\n\tModInt &operator += (const ModInt &p) {\n\t\tx +=\
-    \ p.x;\n\t\tif (x >= mod) x -= mod;\n\t\treturn *this;\n\t}\n\n\tModInt &operator\
-    \ -= (const ModInt &p) {\n\t\tx -= p.x;\n\t\tif (x < 0) x += mod;\n\t\treturn\
-    \ *this;\n\t}\n\n\tModInt &operator *= (const ModInt &p) {\n\t\tx = (int32_t)(1ll\
-    \ * x * p.x % mod);\n\t\treturn *this; \n\t}\n\n\tModInt &operator /= (const ModInt\
-    \ &p) {\n\t\t*this *= p.inverse();\n\t\treturn *this;\n\t}\n\n\t// ModInt += Int\n\
-    \tModInt &operator += (int32_t t) { return *this += ModInt(t); }\n\tModInt &operator\
-    \ -= (int32_t t) { return *this -= ModInt(t); }\n\tModInt &operator *= (int32_t\
-    \ t) { return *this *= ModInt(t); }\n\tModInt &operator /= (int32_t t) { return\
-    \ *this /= ModInt(t); }\n\n\tModInt operator - () const { return ModInt(-x); }\
-    \ // -a;\n\tModInt operator + () const { return ModInt(*this); } // +a;\n\tModInt\
-    \ &operator ++ () { *this += 1; return *this; } // ++a;\n\tModInt &operator --\
-    \ () { *this -= 1; return *this; } // --a;\n\tModInt operator ++ (int) { ModInt\
-    \ res = *this; *this += 1; return res; } // a++;\n\tModInt operator -- (int) {\
-    \ ModInt res = *this; *this -= 1; return res; } // a--;\n\n\t// ModInt = ModInt\
-    \ + ModInt\n\tModInt operator + (const ModInt &p) const { return ModInt(*this)\
-    \ += p; }\n\tModInt operator - (const ModInt &p) const { return ModInt(*this)\
-    \ -= p; }\n\tModInt operator * (const ModInt &p) const { return ModInt(*this)\
-    \ *= p; }\n\tModInt operator / (const ModInt &p) const { return ModInt(*this)\
-    \ /= p; }\n\n\t// ModInt = ModInt + Int\n\tModInt operator + (int32_t t) const\
-    \ { return ModInt(*this) += t; }\n\tModInt operator - (int32_t t) const { return\
-    \ ModInt(*this) -= t; }\n\tModInt operator * (int32_t t) const { return ModInt(*this)\
-    \ *= t; }\n\tModInt operator / (int32_t t) const { return ModInt(*this) /= t;\
-    \ }\n\n\t// ModInt = Int + ModInt\n\tfriend ModInt operator + (int32_t t, const\
-    \ ModInt &p) { ModInt res(t); res += p; return res; }\n\tfriend ModInt operator\
-    \ - (int32_t t, const ModInt &p) { ModInt res(t); res -= p; return res; }\n\t\
-    friend ModInt operator * (int32_t t, const ModInt &p) { ModInt res(t); res *=\
-    \ p; return res; }\n\tfriend ModInt operator / (int32_t t, const ModInt &p) {\
-    \ ModInt res(t); res /= p; return res; }\n\n\tbool operator == (const ModInt &p)\
-    \ const { return x == p.x; }\n\tbool operator != (const ModInt &p) const { return\
-    \ x != p.x; }\n\tbool operator < (const ModInt &p) const { return x < p.x; }\n\
-    \tbool operator <= (const ModInt &p) const { return x <= p.x; }\n\tbool operator\
-    \ > (const ModInt &p) const { return x > p.x; }\n\tbool operator >= (const ModInt\
-    \ &p) const { return x >= p.x; }\n\n\tbool operator == (int32_t t) const { return\
-    \ x == t; }\n\tbool operator != (int32_t t) const { return x != t; }\n\tbool operator\
-    \ < (int32_t t) const { return x < t; }\n\tbool operator <= (int32_t t) const\
-    \ { return x <= t; }\n\tbool operator > (int32_t t) const { return x > t; }\n\t\
-    bool operator >= (int32_t t) const { return x >= t; }\n\n\tModInt inverse() const\
-    \ { return power(mod - 2); }\n\n\tModInt power(int32_t b) const {\n\t\tassert(b\
-    \ >= 0);\n\t\tModInt mul(x), ret(1);\n\t\twhile (b) {\n\t\t\tif (b & 1) ret *=\
-    \ mul;\n\t\t\tmul *= mul;\n\t\t\tb /= 2;\n\t\t}\n\t\treturn ret;\n\t}\n\n\tfriend\
-    \ istream &operator >> (istream &in, ModInt &p) { \n\t\tint32_t t;\n\t\tin >>\
-    \ t;\n\t\tp = ModInt<mod>(t);\n\t\treturn in;\n\t}\n\t\n\tfriend ostream &operator\
-    \ << (ostream &out, const ModInt &p) { return out << p.x; }\n\n\tint32_t get()\
-    \ const { return x; }\n\tstatic constexpr int32_t get_mod() { return mod; }\n\
-    };\n"
-  code: "#include \"../template.h\"\n\ntemplate <int32_t mod>\nstruct ModInt {\n\t\
-    int32_t x;\n\n\tModInt(): x(0) {}\n\tModInt(int32_t _x): x(_x % mod) { x = x <\
-    \ 0 ? x + mod : x; }\n\n\tModInt &operator += (const ModInt &p) {\n\t\tx += p.x;\n\
-    \t\tif (x >= mod) x -= mod;\n\t\treturn *this;\n\t}\n\n\tModInt &operator -= (const\
-    \ ModInt &p) {\n\t\tx -= p.x;\n\t\tif (x < 0) x += mod;\n\t\treturn *this;\n\t\
-    }\n\n\tModInt &operator *= (const ModInt &p) {\n\t\tx = (int32_t)(1ll * x * p.x\
-    \ % mod);\n\t\treturn *this; \n\t}\n\n\tModInt &operator /= (const ModInt &p)\
-    \ {\n\t\t*this *= p.inverse();\n\t\treturn *this;\n\t}\n\n\t// ModInt += Int\n\
-    \tModInt &operator += (int32_t t) { return *this += ModInt(t); }\n\tModInt &operator\
-    \ -= (int32_t t) { return *this -= ModInt(t); }\n\tModInt &operator *= (int32_t\
-    \ t) { return *this *= ModInt(t); }\n\tModInt &operator /= (int32_t t) { return\
-    \ *this /= ModInt(t); }\n\n\tModInt operator - () const { return ModInt(-x); }\
-    \ // -a;\n\tModInt operator + () const { return ModInt(*this); } // +a;\n\tModInt\
-    \ &operator ++ () { *this += 1; return *this; } // ++a;\n\tModInt &operator --\
-    \ () { *this -= 1; return *this; } // --a;\n\tModInt operator ++ (int) { ModInt\
-    \ res = *this; *this += 1; return res; } // a++;\n\tModInt operator -- (int) {\
-    \ ModInt res = *this; *this -= 1; return res; } // a--;\n\n\t// ModInt = ModInt\
-    \ + ModInt\n\tModInt operator + (const ModInt &p) const { return ModInt(*this)\
-    \ += p; }\n\tModInt operator - (const ModInt &p) const { return ModInt(*this)\
-    \ -= p; }\n\tModInt operator * (const ModInt &p) const { return ModInt(*this)\
-    \ *= p; }\n\tModInt operator / (const ModInt &p) const { return ModInt(*this)\
-    \ /= p; }\n\n\t// ModInt = ModInt + Int\n\tModInt operator + (int32_t t) const\
-    \ { return ModInt(*this) += t; }\n\tModInt operator - (int32_t t) const { return\
-    \ ModInt(*this) -= t; }\n\tModInt operator * (int32_t t) const { return ModInt(*this)\
-    \ *= t; }\n\tModInt operator / (int32_t t) const { return ModInt(*this) /= t;\
-    \ }\n\n\t// ModInt = Int + ModInt\n\tfriend ModInt operator + (int32_t t, const\
-    \ ModInt &p) { ModInt res(t); res += p; return res; }\n\tfriend ModInt operator\
-    \ - (int32_t t, const ModInt &p) { ModInt res(t); res -= p; return res; }\n\t\
-    friend ModInt operator * (int32_t t, const ModInt &p) { ModInt res(t); res *=\
-    \ p; return res; }\n\tfriend ModInt operator / (int32_t t, const ModInt &p) {\
-    \ ModInt res(t); res /= p; return res; }\n\n\tbool operator == (const ModInt &p)\
-    \ const { return x == p.x; }\n\tbool operator != (const ModInt &p) const { return\
-    \ x != p.x; }\n\tbool operator < (const ModInt &p) const { return x < p.x; }\n\
-    \tbool operator <= (const ModInt &p) const { return x <= p.x; }\n\tbool operator\
-    \ > (const ModInt &p) const { return x > p.x; }\n\tbool operator >= (const ModInt\
-    \ &p) const { return x >= p.x; }\n\n\tbool operator == (int32_t t) const { return\
-    \ x == t; }\n\tbool operator != (int32_t t) const { return x != t; }\n\tbool operator\
-    \ < (int32_t t) const { return x < t; }\n\tbool operator <= (int32_t t) const\
-    \ { return x <= t; }\n\tbool operator > (int32_t t) const { return x > t; }\n\t\
-    bool operator >= (int32_t t) const { return x >= t; }\n\n\tModInt inverse() const\
-    \ { return power(mod - 2); }\n\n\tModInt power(int32_t b) const {\n\t\tassert(b\
-    \ >= 0);\n\t\tModInt mul(x), ret(1);\n\t\twhile (b) {\n\t\t\tif (b & 1) ret *=\
-    \ mul;\n\t\t\tmul *= mul;\n\t\t\tb /= 2;\n\t\t}\n\t\treturn ret;\n\t}\n\n\tfriend\
-    \ istream &operator >> (istream &in, ModInt &p) { \n\t\tint32_t t;\n\t\tin >>\
-    \ t;\n\t\tp = ModInt<mod>(t);\n\t\treturn in;\n\t}\n\t\n\tfriend ostream &operator\
-    \ << (ostream &out, const ModInt &p) { return out << p.x; }\n\n\tint32_t get()\
-    \ const { return x; }\n\tstatic constexpr int32_t get_mod() { return mod; }\n\
-    };"
+    \    int32_t x;\n\n    ModInt(): x(0) {}\n    ModInt(int32_t _x): x(_x % mod)\
+    \ { x = x < 0 ? x + mod : x; }\n\n    ModInt &operator += (const ModInt &p) {\n\
+    \        x += p.x;\n        if (x >= mod) x -= mod;\n        return *this;\n \
+    \   }\n\n    ModInt &operator -= (const ModInt &p) {\n        x -= p.x;\n    \
+    \    if (x < 0) x += mod;\n        return *this;\n    }\n\n    ModInt &operator\
+    \ *= (const ModInt &p) {\n        x = (int32_t)(1ll * x * p.x % mod);\n      \
+    \  return *this; \n    }\n\n    ModInt &operator /= (const ModInt &p) {\n    \
+    \    *this *= p.inverse();\n        return *this;\n    }\n\n    // ModInt += Int\n\
+    \    ModInt &operator += (int32_t t) { return *this += ModInt(t); }\n    ModInt\
+    \ &operator -= (int32_t t) { return *this -= ModInt(t); }\n    ModInt &operator\
+    \ *= (int32_t t) { return *this *= ModInt(t); }\n    ModInt &operator /= (int32_t\
+    \ t) { return *this /= ModInt(t); }\n\n    ModInt operator - () const { return\
+    \ ModInt(-x); } // -a;\n    ModInt operator + () const { return ModInt(*this);\
+    \ } // +a;\n    ModInt &operator ++ () { *this += 1; return *this; } // ++a;\n\
+    \    ModInt &operator -- () { *this -= 1; return *this; } // --a;\n    ModInt\
+    \ operator ++ (int) { ModInt res = *this; *this += 1; return res; } // a++;\n\
+    \    ModInt operator -- (int) { ModInt res = *this; *this -= 1; return res; }\
+    \ // a--;\n\n    // ModInt = ModInt + ModInt\n    ModInt operator + (const ModInt\
+    \ &p) const { return ModInt(*this) += p; }\n    ModInt operator - (const ModInt\
+    \ &p) const { return ModInt(*this) -= p; }\n    ModInt operator * (const ModInt\
+    \ &p) const { return ModInt(*this) *= p; }\n    ModInt operator / (const ModInt\
+    \ &p) const { return ModInt(*this) /= p; }\n\n    // ModInt = ModInt + Int\n \
+    \   ModInt operator + (int32_t t) const { return ModInt(*this) += t; }\n    ModInt\
+    \ operator - (int32_t t) const { return ModInt(*this) -= t; }\n    ModInt operator\
+    \ * (int32_t t) const { return ModInt(*this) *= t; }\n    ModInt operator / (int32_t\
+    \ t) const { return ModInt(*this) /= t; }\n\n    // ModInt = Int + ModInt\n  \
+    \  friend ModInt operator + (int32_t t, const ModInt &p) { ModInt res(t); res\
+    \ += p; return res; }\n    friend ModInt operator - (int32_t t, const ModInt &p)\
+    \ { ModInt res(t); res -= p; return res; }\n    friend ModInt operator * (int32_t\
+    \ t, const ModInt &p) { ModInt res(t); res *= p; return res; }\n    friend ModInt\
+    \ operator / (int32_t t, const ModInt &p) { ModInt res(t); res /= p; return res;\
+    \ }\n\n    bool operator == (const ModInt &p) const { return x == p.x; }\n   \
+    \ bool operator != (const ModInt &p) const { return x != p.x; }\n    bool operator\
+    \ < (const ModInt &p) const { return x < p.x; }\n    bool operator <= (const ModInt\
+    \ &p) const { return x <= p.x; }\n    bool operator > (const ModInt &p) const\
+    \ { return x > p.x; }\n    bool operator >= (const ModInt &p) const { return x\
+    \ >= p.x; }\n\n    bool operator == (int32_t t) const { return x == t; }\n   \
+    \ bool operator != (int32_t t) const { return x != t; }\n    bool operator < (int32_t\
+    \ t) const { return x < t; }\n    bool operator <= (int32_t t) const { return\
+    \ x <= t; }\n    bool operator > (int32_t t) const { return x > t; }\n    bool\
+    \ operator >= (int32_t t) const { return x >= t; }\n\n    ModInt inverse() const\
+    \ { return power(mod - 2); }\n\n    ModInt power(int32_t b) const {\n        assert(b\
+    \ >= 0);\n        ModInt mul(x), ret(1);\n        while (b) {\n            if\
+    \ (b & 1) ret *= mul;\n            mul *= mul;\n            b /= 2;\n        }\n\
+    \        return ret;\n    }\n\n    friend istream &operator >> (istream &in, ModInt\
+    \ &p) { \n        int32_t t;\n        in >> t;\n        p = ModInt<mod>(t);\n\
+    \        return in;\n    }\n    \n    friend ostream &operator << (ostream &out,\
+    \ const ModInt &p) { return out << p.x; }\n\n    int32_t get() const { return\
+    \ x; }\n    static constexpr int32_t get_mod() { return mod; }\n};\n"
+  code: "#include \"../template.h\"\n\ntemplate <int32_t mod>\nstruct ModInt {\n \
+    \   int32_t x;\n\n    ModInt(): x(0) {}\n    ModInt(int32_t _x): x(_x % mod) {\
+    \ x = x < 0 ? x + mod : x; }\n\n    ModInt &operator += (const ModInt &p) {\n\
+    \        x += p.x;\n        if (x >= mod) x -= mod;\n        return *this;\n \
+    \   }\n\n    ModInt &operator -= (const ModInt &p) {\n        x -= p.x;\n    \
+    \    if (x < 0) x += mod;\n        return *this;\n    }\n\n    ModInt &operator\
+    \ *= (const ModInt &p) {\n        x = (int32_t)(1ll * x * p.x % mod);\n      \
+    \  return *this; \n    }\n\n    ModInt &operator /= (const ModInt &p) {\n    \
+    \    *this *= p.inverse();\n        return *this;\n    }\n\n    // ModInt += Int\n\
+    \    ModInt &operator += (int32_t t) { return *this += ModInt(t); }\n    ModInt\
+    \ &operator -= (int32_t t) { return *this -= ModInt(t); }\n    ModInt &operator\
+    \ *= (int32_t t) { return *this *= ModInt(t); }\n    ModInt &operator /= (int32_t\
+    \ t) { return *this /= ModInt(t); }\n\n    ModInt operator - () const { return\
+    \ ModInt(-x); } // -a;\n    ModInt operator + () const { return ModInt(*this);\
+    \ } // +a;\n    ModInt &operator ++ () { *this += 1; return *this; } // ++a;\n\
+    \    ModInt &operator -- () { *this -= 1; return *this; } // --a;\n    ModInt\
+    \ operator ++ (int) { ModInt res = *this; *this += 1; return res; } // a++;\n\
+    \    ModInt operator -- (int) { ModInt res = *this; *this -= 1; return res; }\
+    \ // a--;\n\n    // ModInt = ModInt + ModInt\n    ModInt operator + (const ModInt\
+    \ &p) const { return ModInt(*this) += p; }\n    ModInt operator - (const ModInt\
+    \ &p) const { return ModInt(*this) -= p; }\n    ModInt operator * (const ModInt\
+    \ &p) const { return ModInt(*this) *= p; }\n    ModInt operator / (const ModInt\
+    \ &p) const { return ModInt(*this) /= p; }\n\n    // ModInt = ModInt + Int\n \
+    \   ModInt operator + (int32_t t) const { return ModInt(*this) += t; }\n    ModInt\
+    \ operator - (int32_t t) const { return ModInt(*this) -= t; }\n    ModInt operator\
+    \ * (int32_t t) const { return ModInt(*this) *= t; }\n    ModInt operator / (int32_t\
+    \ t) const { return ModInt(*this) /= t; }\n\n    // ModInt = Int + ModInt\n  \
+    \  friend ModInt operator + (int32_t t, const ModInt &p) { ModInt res(t); res\
+    \ += p; return res; }\n    friend ModInt operator - (int32_t t, const ModInt &p)\
+    \ { ModInt res(t); res -= p; return res; }\n    friend ModInt operator * (int32_t\
+    \ t, const ModInt &p) { ModInt res(t); res *= p; return res; }\n    friend ModInt\
+    \ operator / (int32_t t, const ModInt &p) { ModInt res(t); res /= p; return res;\
+    \ }\n\n    bool operator == (const ModInt &p) const { return x == p.x; }\n   \
+    \ bool operator != (const ModInt &p) const { return x != p.x; }\n    bool operator\
+    \ < (const ModInt &p) const { return x < p.x; }\n    bool operator <= (const ModInt\
+    \ &p) const { return x <= p.x; }\n    bool operator > (const ModInt &p) const\
+    \ { return x > p.x; }\n    bool operator >= (const ModInt &p) const { return x\
+    \ >= p.x; }\n\n    bool operator == (int32_t t) const { return x == t; }\n   \
+    \ bool operator != (int32_t t) const { return x != t; }\n    bool operator < (int32_t\
+    \ t) const { return x < t; }\n    bool operator <= (int32_t t) const { return\
+    \ x <= t; }\n    bool operator > (int32_t t) const { return x > t; }\n    bool\
+    \ operator >= (int32_t t) const { return x >= t; }\n\n    ModInt inverse() const\
+    \ { return power(mod - 2); }\n\n    ModInt power(int32_t b) const {\n        assert(b\
+    \ >= 0);\n        ModInt mul(x), ret(1);\n        while (b) {\n            if\
+    \ (b & 1) ret *= mul;\n            mul *= mul;\n            b /= 2;\n        }\n\
+    \        return ret;\n    }\n\n    friend istream &operator >> (istream &in, ModInt\
+    \ &p) { \n        int32_t t;\n        in >> t;\n        p = ModInt<mod>(t);\n\
+    \        return in;\n    }\n    \n    friend ostream &operator << (ostream &out,\
+    \ const ModInt &p) { return out << p.x; }\n\n    int32_t get() const { return\
+    \ x; }\n    static constexpr int32_t get_mod() { return mod; }\n};"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: Misc/Modint.h
   requiredBy: []
-  timestamp: '2025-06-02 20:02:33+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: Misc/Modint.h

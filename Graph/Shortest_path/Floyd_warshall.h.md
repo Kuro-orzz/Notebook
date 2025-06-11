@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -24,28 +24,31 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"Graph/Shortest_path/Floyd_warshall.h\"\n\nvoid initTrace(int\
-    \ n, vector<vector<int>> &trace) {\n\tfor (int u = 1; u <= n; ++u) {\n\t\tfor\
-    \ (int v = 1; v <= n; ++v) {\n\t\t\ttrace[u][v] = u;\n\t\t}\n\t}\n}\n\nvoid floyd_warshall(int\
-    \ n, vector<vector<ll>> &dist, vector<vector<int>> &trace) {\n\tinitTrace(n, trace);\n\
-    \tfor (int k = 1; k <= n; ++k) {\n\t\tfor (int u = 1; u <= n; ++u) {\n\t\t\tfor\
-    \ (int v = 1; v <= n; ++v) {\n\t\t\t\tif (dist[u][k] != 1e18 && dist[k][v] !=\
-    \ 1e18 && dist[u][v] > dist[u][k] + dist[k][v]) {\n\t\t\t\t\tdist[u][v] = dist[u][k]\
-    \ + dist[k][v];\n\t\t\t\t\ttrace[u][v] = trace[k][v];\n\t\t\t\t}\n\t\t\t}\n\t\t\
-    }\n\t}\n}\n"
+    \ n, vector<vector<int>> &trace) {\n    for (int u = 1; u <= n; ++u) {\n     \
+    \   for (int v = 1; v <= n; ++v) {\n            trace[u][v] = u;\n        }\n\
+    \    }\n}\n\nvoid floyd_warshall(int n, vector<vector<ll>> &dist, vector<vector<int>>\
+    \ &trace) {\n    initTrace(n, trace);\n    for (int k = 1; k <= n; ++k) {\n  \
+    \      for (int u = 1; u <= n; ++u) {\n            for (int v = 1; v <= n; ++v)\
+    \ {\n                if (dist[u][k] != 1e18 && dist[k][v] != 1e18 && dist[u][v]\
+    \ > dist[u][k] + dist[k][v]) {\n                    dist[u][v] = dist[u][k] +\
+    \ dist[k][v];\n                    trace[u][v] = trace[k][v];\n              \
+    \  }\n            }\n        }\n    }\n}\n"
   code: "#include \"../../template.h\"\n\nvoid initTrace(int n, vector<vector<int>>\
-    \ &trace) {\n\tfor (int u = 1; u <= n; ++u) {\n\t\tfor (int v = 1; v <= n; ++v)\
-    \ {\n\t\t\ttrace[u][v] = u;\n\t\t}\n\t}\n}\n\nvoid floyd_warshall(int n, vector<vector<ll>>\
-    \ &dist, vector<vector<int>> &trace) {\n\tinitTrace(n, trace);\n\tfor (int k =\
-    \ 1; k <= n; ++k) {\n\t\tfor (int u = 1; u <= n; ++u) {\n\t\t\tfor (int v = 1;\
-    \ v <= n; ++v) {\n\t\t\t\tif (dist[u][k] != 1e18 && dist[k][v] != 1e18 && dist[u][v]\
-    \ > dist[u][k] + dist[k][v]) {\n\t\t\t\t\tdist[u][v] = dist[u][k] + dist[k][v];\n\
-    \t\t\t\t\ttrace[u][v] = trace[k][v];\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+    \ &trace) {\n    for (int u = 1; u <= n; ++u) {\n        for (int v = 1; v <=\
+    \ n; ++v) {\n            trace[u][v] = u;\n        }\n    }\n}\n\nvoid floyd_warshall(int\
+    \ n, vector<vector<ll>> &dist, vector<vector<int>> &trace) {\n    initTrace(n,\
+    \ trace);\n    for (int k = 1; k <= n; ++k) {\n        for (int u = 1; u <= n;\
+    \ ++u) {\n            for (int v = 1; v <= n; ++v) {\n                if (dist[u][k]\
+    \ != 1e18 && dist[k][v] != 1e18 && dist[u][v] > dist[u][k] + dist[k][v]) {\n \
+    \                   dist[u][v] = dist[u][k] + dist[k][v];\n                  \
+    \  trace[u][v] = trace[k][v];\n                }\n            }\n        }\n \
+    \   }\n}"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: Graph/Shortest_path/Floyd_warshall.h
   requiredBy: []
-  timestamp: '2025-06-07 22:39:21+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - Graph/test/aizu_grl_1_c_floyd_warshall.test.cpp

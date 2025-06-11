@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/SegTree/SegTree.h
     title: DataStructure/SegTree/SegTree.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -41,27 +41,29 @@ data:
     \        int mid = (l + r) >> 1;\n        T t1 = getSum(id*2, l, mid, u, v);\n\
     \        T t2 = getSum(id*2+1, mid+1, r, u, v);\n        return t1 + t2;\n   \
     \ }\n};\n#line 5 \"DataStructure/Point_add_range_sum.test.cpp\"\n\nvoid solve()\
-    \ {\n\tint n, q; cin >> n >> q;\n\tSegTree<ll> segTree(n);\n\tfor (int i = 1;\
-    \ i <= n; i++) {\n\t\tint x; cin >> x;\n\t\tsegTree.update(1, 1, n, i, x);\n\t\
-    }\n\twhile (q--) {\n\t\tint tv; cin >> tv;\n\t\tif (tv == 0) {\n\t\t\tint pos,\
-    \ val; cin >> pos >> val;\n\t\t\tsegTree.update(1, 1, n, pos+1, val);\n\t\t} else\
-    \ {\n\t\t\tint l, r; cin >> l >> r;\n\t\t\tcout << segTree.getSum(1, 1, n, l+1,\
-    \ r) << '\\n';\n\t\t}\n\t}\n}\n"
+    \ {\n    int n, q; cin >> n >> q;\n    SegTree<ll> segTree(n);\n    for (int i\
+    \ = 1; i <= n; i++) {\n        int x; cin >> x;\n        segTree.update(1, 1,\
+    \ n, i, x);\n    }\n    while (q--) {\n        int tv; cin >> tv;\n        if\
+    \ (tv == 0) {\n            int pos, val; cin >> pos >> val;\n            segTree.update(1,\
+    \ 1, n, pos+1, val);\n        } else {\n            int l, r; cin >> l >> r;\n\
+    \            cout << segTree.getSum(1, 1, n, l+1, r) << '\\n';\n        }\n  \
+    \  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     \n#include \"../template.h\"\n#include \"SegTree/SegTree.h\"\n\nvoid solve() {\n\
-    \tint n, q; cin >> n >> q;\n\tSegTree<ll> segTree(n);\n\tfor (int i = 1; i <=\
-    \ n; i++) {\n\t\tint x; cin >> x;\n\t\tsegTree.update(1, 1, n, i, x);\n\t}\n\t\
-    while (q--) {\n\t\tint tv; cin >> tv;\n\t\tif (tv == 0) {\n\t\t\tint pos, val;\
-    \ cin >> pos >> val;\n\t\t\tsegTree.update(1, 1, n, pos+1, val);\n\t\t} else {\n\
-    \t\t\tint l, r; cin >> l >> r;\n\t\t\tcout << segTree.getSum(1, 1, n, l+1, r)\
-    \ << '\\n';\n\t\t}\n\t}\n}"
+    \    int n, q; cin >> n >> q;\n    SegTree<ll> segTree(n);\n    for (int i = 1;\
+    \ i <= n; i++) {\n        int x; cin >> x;\n        segTree.update(1, 1, n, i,\
+    \ x);\n    }\n    while (q--) {\n        int tv; cin >> tv;\n        if (tv ==\
+    \ 0) {\n            int pos, val; cin >> pos >> val;\n            segTree.update(1,\
+    \ 1, n, pos+1, val);\n        } else {\n            int l, r; cin >> l >> r;\n\
+    \            cout << segTree.getSum(1, 1, n, l+1, r) << '\\n';\n        }\n  \
+    \  }\n}"
   dependsOn:
   - template.h
   - DataStructure/SegTree/SegTree.h
   isVerificationFile: true
   path: DataStructure/Point_add_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2025-05-20 14:35:59+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: DataStructure/Point_add_range_sum.test.cpp

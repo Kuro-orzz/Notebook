@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy:
@@ -24,50 +24,54 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"DataStructure/SegTree/SegTreeBeats/SegTreeBeats1.h\"\n\n\n\
-    struct Node {\n\tll Max, sum;\n\n\tNode() {}\n\n\tNode(int val) {\n\t\tMax = val;\n\
-    \t\tsum = val;\n\t}\n\n\tNode operator+(const Node &b) {\n\t\tNode res;\n\t\t\
-    res.Max = max(Max, b.Max);\n\t\tres.sum = sum + b.sum;\n\t\treturn res;\n\t}\n\
-    };\n\n// range mod, sum query\n// point assign query\nclass SegTreeBeats {\npublic:\n\
-    \tvector<Node> tree;\n\n\tSegTreeBeats(int n): tree(4*n) {}\n\n\tvoid build(int\
-    \ id, int l, int r, int u, int v, int val) {\n\t\tif (l > v || r < u) return;\n\
-    \t\tif (u <= l && r <= v) {\n\t\t\ttree[id] = Node(val);\n\t\t\treturn;\n\t\t\
-    }\n\t\tint mid = (l + r) >> 1;\n\t\tbuild(id*2, l, mid, u, v, val);\n\t\tbuild(id*2+1,\
-    \ mid+1, r, u, v, val);\n\t\ttree[id] = tree[id*2] + tree[id*2+1];\n\t}\t\n\n\t\
-    void updateMod(int id, int l, int r, int u, int v, int x) {\n\t\tif (l > v ||\
-    \ r < u) return;\n\t\tif (tree[id].Max < x) return;\n\t\tif (l == r) {\n\t\t\t\
-    tree[id].Max %= x;\n\t\t\ttree[id].sum = tree[id].Max;\n\t\t\treturn;\n\t\t}\n\
-    \t\tint mid = (l + r) >> 1;\n\t\tupdateMod(id*2, l, mid, u, v, x);\n\t\tupdateMod(id*2+1,\
-    \ mid+1, r, u, v, x);\n\t\ttree[id] = tree[id*2] + tree[id*2+1];\n\t}\n\n\tll\
-    \ getSum(int id, int l, int r, int u, int v) {\n\t\tif (l > v || r < u) return\
-    \ 0;\n\t\tif (u <= l && r <= v) return tree[id].sum;\n\t\tint mid = (l + r) >>\
-    \ 1;\n\t\tll t1 = getSum(id*2, l, mid, u, v);\n\t\tll t2 = getSum(id*2+1, mid+1,\
-    \ r, u, v);\n\t\treturn t1 + t2;\n\t}\n};\n"
-  code: "#include \"../../../template.h\"\n\n\nstruct Node {\n\tll Max, sum;\n\n\t\
-    Node() {}\n\n\tNode(int val) {\n\t\tMax = val;\n\t\tsum = val;\n\t}\n\n\tNode\
-    \ operator+(const Node &b) {\n\t\tNode res;\n\t\tres.Max = max(Max, b.Max);\n\t\
-    \tres.sum = sum + b.sum;\n\t\treturn res;\n\t}\n};\n\n// range mod, sum query\n\
-    // point assign query\nclass SegTreeBeats {\npublic:\n\tvector<Node> tree;\n\n\
-    \tSegTreeBeats(int n): tree(4*n) {}\n\n\tvoid build(int id, int l, int r, int\
-    \ u, int v, int val) {\n\t\tif (l > v || r < u) return;\n\t\tif (u <= l && r <=\
-    \ v) {\n\t\t\ttree[id] = Node(val);\n\t\t\treturn;\n\t\t}\n\t\tint mid = (l +\
-    \ r) >> 1;\n\t\tbuild(id*2, l, mid, u, v, val);\n\t\tbuild(id*2+1, mid+1, r, u,\
-    \ v, val);\n\t\ttree[id] = tree[id*2] + tree[id*2+1];\n\t}\t\n\n\tvoid updateMod(int\
-    \ id, int l, int r, int u, int v, int x) {\n\t\tif (l > v || r < u) return;\n\t\
-    \tif (tree[id].Max < x) return;\n\t\tif (l == r) {\n\t\t\ttree[id].Max %= x;\n\
-    \t\t\ttree[id].sum = tree[id].Max;\n\t\t\treturn;\n\t\t}\n\t\tint mid = (l + r)\
-    \ >> 1;\n\t\tupdateMod(id*2, l, mid, u, v, x);\n\t\tupdateMod(id*2+1, mid+1, r,\
-    \ u, v, x);\n\t\ttree[id] = tree[id*2] + tree[id*2+1];\n\t}\n\n\tll getSum(int\
-    \ id, int l, int r, int u, int v) {\n\t\tif (l > v || r < u) return 0;\n\t\tif\
-    \ (u <= l && r <= v) return tree[id].sum;\n\t\tint mid = (l + r) >> 1;\n\t\tll\
-    \ t1 = getSum(id*2, l, mid, u, v);\n\t\tll t2 = getSum(id*2+1, mid+1, r, u, v);\n\
-    \t\treturn t1 + t2;\n\t}\n};"
+    struct Node {\n    ll Max, sum;\n\n    Node() {}\n\n    Node(int val) {\n    \
+    \    Max = val;\n        sum = val;\n    }\n\n    Node operator+(const Node &b)\
+    \ {\n        Node res;\n        res.Max = max(Max, b.Max);\n        res.sum =\
+    \ sum + b.sum;\n        return res;\n    }\n};\n\n// range mod, sum query\n//\
+    \ point assign query\nclass SegTreeBeats {\npublic:\n    vector<Node> tree;\n\n\
+    \    SegTreeBeats(int n): tree(4*n) {}\n\n    void build(int id, int l, int r,\
+    \ int u, int v, int val) {\n        if (l > v || r < u) return;\n        if (u\
+    \ <= l && r <= v) {\n            tree[id] = Node(val);\n            return;\n\
+    \        }\n        int mid = (l + r) >> 1;\n        build(id*2, l, mid, u, v,\
+    \ val);\n        build(id*2+1, mid+1, r, u, v, val);\n        tree[id] = tree[id*2]\
+    \ + tree[id*2+1];\n    }   \n\n    void updateMod(int id, int l, int r, int u,\
+    \ int v, int x) {\n        if (l > v || r < u) return;\n        if (tree[id].Max\
+    \ < x) return;\n        if (l == r) {\n            tree[id].Max %= x;\n      \
+    \      tree[id].sum = tree[id].Max;\n            return;\n        }\n        int\
+    \ mid = (l + r) >> 1;\n        updateMod(id*2, l, mid, u, v, x);\n        updateMod(id*2+1,\
+    \ mid+1, r, u, v, x);\n        tree[id] = tree[id*2] + tree[id*2+1];\n    }\n\n\
+    \    ll getSum(int id, int l, int r, int u, int v) {\n        if (l > v || r <\
+    \ u) return 0;\n        if (u <= l && r <= v) return tree[id].sum;\n        int\
+    \ mid = (l + r) >> 1;\n        ll t1 = getSum(id*2, l, mid, u, v);\n        ll\
+    \ t2 = getSum(id*2+1, mid+1, r, u, v);\n        return t1 + t2;\n    }\n};\n"
+  code: "#include \"../../../template.h\"\n\n\nstruct Node {\n    ll Max, sum;\n\n\
+    \    Node() {}\n\n    Node(int val) {\n        Max = val;\n        sum = val;\n\
+    \    }\n\n    Node operator+(const Node &b) {\n        Node res;\n        res.Max\
+    \ = max(Max, b.Max);\n        res.sum = sum + b.sum;\n        return res;\n  \
+    \  }\n};\n\n// range mod, sum query\n// point assign query\nclass SegTreeBeats\
+    \ {\npublic:\n    vector<Node> tree;\n\n    SegTreeBeats(int n): tree(4*n) {}\n\
+    \n    void build(int id, int l, int r, int u, int v, int val) {\n        if (l\
+    \ > v || r < u) return;\n        if (u <= l && r <= v) {\n            tree[id]\
+    \ = Node(val);\n            return;\n        }\n        int mid = (l + r) >> 1;\n\
+    \        build(id*2, l, mid, u, v, val);\n        build(id*2+1, mid+1, r, u, v,\
+    \ val);\n        tree[id] = tree[id*2] + tree[id*2+1];\n    }   \n\n    void updateMod(int\
+    \ id, int l, int r, int u, int v, int x) {\n        if (l > v || r < u) return;\n\
+    \        if (tree[id].Max < x) return;\n        if (l == r) {\n            tree[id].Max\
+    \ %= x;\n            tree[id].sum = tree[id].Max;\n            return;\n     \
+    \   }\n        int mid = (l + r) >> 1;\n        updateMod(id*2, l, mid, u, v,\
+    \ x);\n        updateMod(id*2+1, mid+1, r, u, v, x);\n        tree[id] = tree[id*2]\
+    \ + tree[id*2+1];\n    }\n\n    ll getSum(int id, int l, int r, int u, int v)\
+    \ {\n        if (l > v || r < u) return 0;\n        if (u <= l && r <= v) return\
+    \ tree[id].sum;\n        int mid = (l + r) >> 1;\n        ll t1 = getSum(id*2,\
+    \ l, mid, u, v);\n        ll t2 = getSum(id*2+1, mid+1, r, u, v);\n        return\
+    \ t1 + t2;\n    }\n};"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: DataStructure/SegTree/SegTreeBeats/SegTreeBeats1.h
   requiredBy:
   - DataStructure/SegTree/SegTreeBeats/test1.cpp
-  timestamp: '2025-05-07 22:18:34+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: DataStructure/SegTree/SegTreeBeats/SegTreeBeats1.h

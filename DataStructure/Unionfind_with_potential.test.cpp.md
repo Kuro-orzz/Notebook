@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/DSU/Dsu.h
     title: DataStructure/DSU/Dsu.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -51,23 +51,25 @@ data:
     \ mod) {\n        int pu = findPotential(u, mod);\n        int pv = findPotential(v,\
     \ mod);\n        if (pu != pv) return -1;\n        return (diff[u] - diff[v] +\
     \ mod) % mod;\n    }\n};\n#line 5 \"DataStructure/Unionfind_with_potential.test.cpp\"\
-    \n\nvoid solve() {\n\tint n, q; cin >> n >> q;\n\tDsu g(n);\n\twhile (q--) {\n\
-    \t\tint tv, u, v; cin >> tv >> u >> v;\n\t\tif (tv == 0) {\n\t\t\tint x; cin >>\
-    \ x;\n\t\t\tcout << (g.mergePotential(u, v, x, mod) ? 1 : 0) << \"\\n\";\n\t\t\
-    } else {\n\t\t\tcout << g.getDiff(u, v, mod) << '\\n';\n\t\t}\n\t}\n}\n"
+    \n\nvoid solve() {\n    int n, q; cin >> n >> q;\n    Dsu g(n);\n    while (q--)\
+    \ {\n        int tv, u, v; cin >> tv >> u >> v;\n        if (tv == 0) {\n    \
+    \        int x; cin >> x;\n            cout << (g.mergePotential(u, v, x, mod)\
+    \ ? 1 : 0) << \"\\n\";\n        } else {\n            cout << g.getDiff(u, v,\
+    \ mod) << '\\n';\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind_with_potential\"\
-    \n\n#include \"../template.h\"\n#include \"DSU/Dsu.h\"\n\nvoid solve() {\n\tint\
-    \ n, q; cin >> n >> q;\n\tDsu g(n);\n\twhile (q--) {\n\t\tint tv, u, v; cin >>\
-    \ tv >> u >> v;\n\t\tif (tv == 0) {\n\t\t\tint x; cin >> x;\n\t\t\tcout << (g.mergePotential(u,\
-    \ v, x, mod) ? 1 : 0) << \"\\n\";\n\t\t} else {\n\t\t\tcout << g.getDiff(u, v,\
-    \ mod) << '\\n';\n\t\t}\n\t}\n}"
+    \n\n#include \"../template.h\"\n#include \"DSU/Dsu.h\"\n\nvoid solve() {\n   \
+    \ int n, q; cin >> n >> q;\n    Dsu g(n);\n    while (q--) {\n        int tv,\
+    \ u, v; cin >> tv >> u >> v;\n        if (tv == 0) {\n            int x; cin >>\
+    \ x;\n            cout << (g.mergePotential(u, v, x, mod) ? 1 : 0) << \"\\n\"\
+    ;\n        } else {\n            cout << g.getDiff(u, v, mod) << '\\n';\n    \
+    \    }\n    }\n}"
   dependsOn:
   - template.h
   - DataStructure/DSU/Dsu.h
   isVerificationFile: true
   path: DataStructure/Unionfind_with_potential.test.cpp
   requiredBy: []
-  timestamp: '2025-06-07 01:24:49+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: DataStructure/Unionfind_with_potential.test.cpp

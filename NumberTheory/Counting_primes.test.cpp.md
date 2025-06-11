@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: NumberTheory/Math/CheckPrime.h
     title: NumberTheory/Math/CheckPrime.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -40,17 +40,17 @@ data:
     \ == dp[geti(p-1)]) continue;\n        a++;\n        for (int i = (int)v.size()-1;\
     \ i >= 0; i--) {\n            if (v[i] < p * p) break;\n            dp[i] -= dp[geti(v[i]\
     \ / p)] - a;\n        }\n    }\n    return dp[geti(n)] - 1;\n}\n#line 5 \"NumberTheory/Counting_primes.test.cpp\"\
-    \n\nvoid solve() {\n\tll n; cin >> n;\n\tcout << Meissel(n);\n}\n"
+    \n\nvoid solve() {\n    ll n; cin >> n;\n    cout << Meissel(n);\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/counting_primes\"\n\n#include\
-    \ \"../template.h\"\n#include \"Math/CheckPrime.h\"\n\nvoid solve() {\n\tll n;\
-    \ cin >> n;\n\tcout << Meissel(n);\n}"
+    \ \"../template.h\"\n#include \"Math/CheckPrime.h\"\n\nvoid solve() {\n    ll\
+    \ n; cin >> n;\n    cout << Meissel(n);\n}"
   dependsOn:
   - template.h
   - NumberTheory/Math/CheckPrime.h
   isVerificationFile: true
   path: NumberTheory/Counting_primes.test.cpp
   requiredBy: []
-  timestamp: '2025-05-25 00:26:18+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: NumberTheory/Counting_primes.test.cpp

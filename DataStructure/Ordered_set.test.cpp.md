@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -27,39 +27,41 @@ data:
     \ << \"ms\" << '\\n';\n    return 0;\n}\n#line 4 \"DataStructure/Ordered_set.test.cpp\"\
     \n#include <ext/pb_ds/assoc_container.hpp>\n#include <ext/pb_ds/tree_policy.hpp>\n\
     using namespace __gnu_pbds;\nusing ordered_set = tree<int, null_type, less<int>,\
-    \ rb_tree_tag, tree_order_statistics_node_update>;\n\nvoid solve() {\n\tint n,\
-    \ q; cin >> n >> q;\n\tordered_set s;\n\tfor (int i = 0; i < n; i++) {\n\t\tint\
-    \ x; cin >> x;\n\t\ts.insert(x);\n\t}\n\twhile (q--) {\n\t\tint tv, x; cin >>\
-    \ tv >> x;\n\t\tif (tv == 0) {\n\t\t\ts.insert(x);\n\t\t} else if (tv == 1) {\n\
-    \t\t\ts.erase(x);\n\t\t} else if (tv == 2) {\n\t\t\tif (x > (int)s.size()) cout\
-    \ << \"-1\\n\";\n\t\t\telse cout << *s.find_by_order(x-1) << '\\n';\n\t\t} else\
-    \ if (tv == 3)\t{\n\t\t\tcout << s.order_of_key(x+1) << '\\n';\n\t\t} else if\
-    \ (tv == 4) {\n\t\t\tint idx = s.order_of_key(x+1);\n\t\t\tif (idx == 0) cout\
-    \ << \"-1\\n\";\n\t\t\telse cout << *s.find_by_order(idx-1) << '\\n';\n\t\t} else\
-    \ if (tv == 5) {\n\t\t\tint idx = s.order_of_key(x);\n\t\t\tif (idx == (int)s.size())\
-    \ cout << \"-1\\n\";\n\t\t\telse cout << *s.find_by_order(idx) << '\\n';\n\t\t\
-    }\n\t}\n}\n"
+    \ rb_tree_tag, tree_order_statistics_node_update>;\n\nvoid solve() {\n    int\
+    \ n, q; cin >> n >> q;\n    ordered_set s;\n    for (int i = 0; i < n; i++) {\n\
+    \        int x; cin >> x;\n        s.insert(x);\n    }\n    while (q--) {\n  \
+    \      int tv, x; cin >> tv >> x;\n        if (tv == 0) {\n            s.insert(x);\n\
+    \        } else if (tv == 1) {\n            s.erase(x);\n        } else if (tv\
+    \ == 2) {\n            if (x > (int)s.size()) cout << \"-1\\n\";\n           \
+    \ else cout << *s.find_by_order(x-1) << '\\n';\n        } else if (tv == 3) {\n\
+    \            cout << s.order_of_key(x+1) << '\\n';\n        } else if (tv == 4)\
+    \ {\n            int idx = s.order_of_key(x+1);\n            if (idx == 0) cout\
+    \ << \"-1\\n\";\n            else cout << *s.find_by_order(idx-1) << '\\n';\n\
+    \        } else if (tv == 5) {\n            int idx = s.order_of_key(x);\n   \
+    \         if (idx == (int)s.size()) cout << \"-1\\n\";\n            else cout\
+    \ << *s.find_by_order(idx) << '\\n';\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/ordered_set\"\n\n#include\
     \ \"../template.h\"\n#include <ext/pb_ds/assoc_container.hpp>\n#include <ext/pb_ds/tree_policy.hpp>\n\
     using namespace __gnu_pbds;\nusing ordered_set = tree<int, null_type, less<int>,\
-    \ rb_tree_tag, tree_order_statistics_node_update>;\n\nvoid solve() {\n\tint n,\
-    \ q; cin >> n >> q;\n\tordered_set s;\n\tfor (int i = 0; i < n; i++) {\n\t\tint\
-    \ x; cin >> x;\n\t\ts.insert(x);\n\t}\n\twhile (q--) {\n\t\tint tv, x; cin >>\
-    \ tv >> x;\n\t\tif (tv == 0) {\n\t\t\ts.insert(x);\n\t\t} else if (tv == 1) {\n\
-    \t\t\ts.erase(x);\n\t\t} else if (tv == 2) {\n\t\t\tif (x > (int)s.size()) cout\
-    \ << \"-1\\n\";\n\t\t\telse cout << *s.find_by_order(x-1) << '\\n';\n\t\t} else\
-    \ if (tv == 3)\t{\n\t\t\tcout << s.order_of_key(x+1) << '\\n';\n\t\t} else if\
-    \ (tv == 4) {\n\t\t\tint idx = s.order_of_key(x+1);\n\t\t\tif (idx == 0) cout\
-    \ << \"-1\\n\";\n\t\t\telse cout << *s.find_by_order(idx-1) << '\\n';\n\t\t} else\
-    \ if (tv == 5) {\n\t\t\tint idx = s.order_of_key(x);\n\t\t\tif (idx == (int)s.size())\
-    \ cout << \"-1\\n\";\n\t\t\telse cout << *s.find_by_order(idx) << '\\n';\n\t\t\
-    }\n\t}\n}"
+    \ rb_tree_tag, tree_order_statistics_node_update>;\n\nvoid solve() {\n    int\
+    \ n, q; cin >> n >> q;\n    ordered_set s;\n    for (int i = 0; i < n; i++) {\n\
+    \        int x; cin >> x;\n        s.insert(x);\n    }\n    while (q--) {\n  \
+    \      int tv, x; cin >> tv >> x;\n        if (tv == 0) {\n            s.insert(x);\n\
+    \        } else if (tv == 1) {\n            s.erase(x);\n        } else if (tv\
+    \ == 2) {\n            if (x > (int)s.size()) cout << \"-1\\n\";\n           \
+    \ else cout << *s.find_by_order(x-1) << '\\n';\n        } else if (tv == 3) {\n\
+    \            cout << s.order_of_key(x+1) << '\\n';\n        } else if (tv == 4)\
+    \ {\n            int idx = s.order_of_key(x+1);\n            if (idx == 0) cout\
+    \ << \"-1\\n\";\n            else cout << *s.find_by_order(idx-1) << '\\n';\n\
+    \        } else if (tv == 5) {\n            int idx = s.order_of_key(x);\n   \
+    \         if (idx == (int)s.size()) cout << \"-1\\n\";\n            else cout\
+    \ << *s.find_by_order(idx) << '\\n';\n        }\n    }\n}"
   dependsOn:
   - template.h
   isVerificationFile: true
   path: DataStructure/Ordered_set.test.cpp
   requiredBy: []
-  timestamp: '2025-05-08 23:54:53+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: DataStructure/Ordered_set.test.cpp

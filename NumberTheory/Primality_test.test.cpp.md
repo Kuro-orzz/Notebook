@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: NumberTheory/Math/Binary_exponentiation.h
     title: NumberTheory/Math/Binary_exponentiation.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: NumberTheory/Math/MillerRabin.h
     title: NumberTheory/Math/MillerRabin.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/primality_test
@@ -31,30 +31,32 @@ data:
     \    // cin.exceptions(cin.failbit);\n    // int t; cin >> t;\n    // while(t--)\n\
     \        solve();\n    cerr << \"\\nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC\
     \ << \"ms\" << '\\n';\n    return 0;\n}\n#line 2 \"NumberTheory/Math/Binary_exponentiation.h\"\
-    \n\nusing u128 = __uint128_t;\n\nll binMul(ll a, ll b, ll M) {\n\ta = a % M;\n\
-    \tll res = 0;\n\twhile (b) {\n\t\tif (b & 1) res = (res + a) % M;\n\t\ta = a *\
-    \ 2 % M;\n\t\tb /= 2;\n\t}\n\treturn res;\n}\n\nll binPow(ll a, ll b, ll M) {\n\
-    \ta %= M;\n\tll res = 1;\n\twhile (b) {\n\t\tif (b & 1) res = (u128)res * a %\
-    \ M;\n\t\ta = (u128)a * a % M;\n\t\tb /= 2;\n\t}\n\treturn res;\n}\n#line 3 \"\
-    NumberTheory/Math/MillerRabin.h\"\n\nbool test(ll a, ll n, ll k, ll m) {\n\tll\
-    \ mod = binPow(a, m, n);\n\tif (mod == 1 || mod == n - 1) return true;\n\tfor\
-    \ (int l = 1; l < k; l++) {\n\t\tmod = (u128)mod * mod % n;\n\t\tif (mod == n\
-    \ - 1) return true;\n\t}\n\treturn false;\n}\n\n// Miller rabin\nbool MillerRabin0(ll\
-    \ n) {\n\tif (n == 2) return true;\n\tif (n < 2 || n % 2 == 0) return false;\n\
-    \tll k = 0, m = n - 1;\n\twhile(m % 2 == 0) {\n\t\tm /= 2;\n\t\tk++;\n\t}\n\t\
-    for (int i = 0; i < 5; i++) {\n\t\tll a = rand() % (n - 3) + 2;\n\t\tif (!test(a,\
-    \ n, k, m)) return false;\n\t}\n\treturn true;\n}\n\n// Miller Rabin deterministic\
-    \ version\nbool MillerRabin(ll n) {\n\tif (n <= 1) return false;\n\tll k = 0,\
-    \ m = n-1;\n\twhile (m % 2 == 0) {\n\t\tm /= 2;\n\t\tk++;\n\t}\n\tfor (int a :\
-    \ {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37}) {\n\t\tif (n == a) return true;\n\
-    \t\tif (!test(a, n, k, m)) return false;\n\t}\n\treturn true;\n}\n#line 5 \"NumberTheory/Primality_test.test.cpp\"\
-    \n\nvoid solve() {\n\tint q; cin >> q;\n\twhile (q--) {\n\t\tll n; cin >> n;\n\
-    \t\tif (MillerRabin(n)) cout << \"Yes\\n\";\n\t\telse cout << \"No\\n\";\n\t}\n\
-    }\n"
+    \n\nusing u128 = __uint128_t;\n\nll binMul(ll a, ll b, ll M) {\n    a = a % M;\n\
+    \    ll res = 0;\n    while (b) {\n        if (b & 1) res = (res + a) % M;\n \
+    \       a = a * 2 % M;\n        b /= 2;\n    }\n    return res;\n}\n\nll binPow(ll\
+    \ a, ll b, ll M) {\n    a %= M;\n    ll res = 1;\n    while (b) {\n        if\
+    \ (b & 1) res = (u128)res * a % M;\n        a = (u128)a * a % M;\n        b /=\
+    \ 2;\n    }\n    return res;\n}\n#line 3 \"NumberTheory/Math/MillerRabin.h\"\n\
+    \nbool test(ll a, ll n, ll k, ll m) {\n    ll mod = binPow(a, m, n);\n    if (mod\
+    \ == 1 || mod == n - 1) return true;\n    for (int l = 1; l < k; l++) {\n    \
+    \    mod = (u128)mod * mod % n;\n        if (mod == n - 1) return true;\n    }\n\
+    \    return false;\n}\n\n// Miller rabin\nbool MillerRabin0(ll n) {\n    if (n\
+    \ == 2) return true;\n    if (n < 2 || n % 2 == 0) return false;\n    ll k = 0,\
+    \ m = n - 1;\n    while(m % 2 == 0) {\n        m /= 2;\n        k++;\n    }\n\
+    \    for (int i = 0; i < 5; i++) {\n        ll a = rand() % (n - 3) + 2;\n   \
+    \     if (!test(a, n, k, m)) return false;\n    }\n    return true;\n}\n\n// Miller\
+    \ Rabin deterministic version\nbool MillerRabin(ll n) {\n    if (n <= 1) return\
+    \ false;\n    ll k = 0, m = n-1;\n    while (m % 2 == 0) {\n        m /= 2;\n\
+    \        k++;\n    }\n    for (int a : {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31,\
+    \ 37}) {\n        if (n == a) return true;\n        if (!test(a, n, k, m)) return\
+    \ false;\n    }\n    return true;\n}\n#line 5 \"NumberTheory/Primality_test.test.cpp\"\
+    \n\nvoid solve() {\n    int q; cin >> q;\n    while (q--) {\n        ll n; cin\
+    \ >> n;\n        if (MillerRabin(n)) cout << \"Yes\\n\";\n        else cout <<\
+    \ \"No\\n\";\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/primality_test\"\n\n#include\
-    \ \"../template.h\"\n#include \"Math/MillerRabin.h\"\n\nvoid solve() {\n\tint\
-    \ q; cin >> q;\n\twhile (q--) {\n\t\tll n; cin >> n;\n\t\tif (MillerRabin(n))\
-    \ cout << \"Yes\\n\";\n\t\telse cout << \"No\\n\";\n\t}\n}"
+    \ \"../template.h\"\n#include \"Math/MillerRabin.h\"\n\nvoid solve() {\n    int\
+    \ q; cin >> q;\n    while (q--) {\n        ll n; cin >> n;\n        if (MillerRabin(n))\
+    \ cout << \"Yes\\n\";\n        else cout << \"No\\n\";\n    }\n}"
   dependsOn:
   - template.h
   - NumberTheory/Math/MillerRabin.h
@@ -62,8 +64,8 @@ data:
   isVerificationFile: true
   path: NumberTheory/Primality_test.test.cpp
   requiredBy: []
-  timestamp: '2025-05-10 21:29:43+07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-06-11 15:37:14+07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: NumberTheory/Primality_test.test.cpp
 layout: document

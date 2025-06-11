@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -24,40 +24,45 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"DataStructure/RMQ/RMQ.h\"\n\ntemplate <typename T>\nstruct\
-    \ RMQ {\n\tint n;\n\tvector<vector<T>> mn, mx, sum;\n\n\tRMQ() {}\n\tRMQ(int _n):\
-    \ n(_n) {\n\t\tmn = mx = sum = vector<vector<T>>(20, vector<T>(_n+1));\n\t}\n\n\
-    \tvoid preprocess(vector<T> &a) {\n\t\tfor (int i = 1; i <= n; i++) {\n\t\t\t\
-    mn[0][i] = mx[0][i] = sum[0][i] = a[i];\n\t\t}\n\t\tfor (int i = 1; i < 20; i++)\
-    \ {\n\t\t\tfor (int j = 1; j + (1 << i) - 1 <= n; j++) {\n\t\t\t\tmn[i][j] = min(mn[i-1][j],\
-    \ mn[i - 1][j + (1 << (i-1))]);\n\t\t\t\tmx[i][j] = max(mx[i-1][j], mx[i - 1][j\
-    \ + (1 << (i-1))]);\n\t\t\t\tsum[i][j] = sum[i-1][j] + sum[i - 1][j + (1 << (i-1))];\n\
-    \t\t\t}\n\t\t}\n\t}\n\n\tT queryMin(int l, int r) {\n\t\tint k = __lg(r-l+1);\n\
-    \t\treturn min(mn[k][l], mn[k][r - (1 << k) + 1]);\n\t}\n\n\tT queryMax(int l,\
-    \ int r) {\n\t\tint k = __lg(r-l+1);\n\t\treturn max(mx[k][l], mx[k][r - (1 <<\
-    \ k) + 1]);\n\t}\n\n\tT querySum(int l, int r) {\n\t\tint len = r-l+1;\n\t\tT\
-    \ ans = 0;\n\t\tfor (int i = 0; (1 << i) <= len; i++) {\n\t\t\tif (len >> i &\
-    \ 1) {\n\t\t\t\tans += sum[i][l];\n\t\t\t\tl += (1 << i);\n\t\t\t}\n\t\t}\n\t\t\
-    return ans;\n\t}\n};\n"
-  code: "#include \"../../template.h\"\n\ntemplate <typename T>\nstruct RMQ {\n\t\
-    int n;\n\tvector<vector<T>> mn, mx, sum;\n\n\tRMQ() {}\n\tRMQ(int _n): n(_n) {\n\
-    \t\tmn = mx = sum = vector<vector<T>>(20, vector<T>(_n+1));\n\t}\n\n\tvoid preprocess(vector<T>\
-    \ &a) {\n\t\tfor (int i = 1; i <= n; i++) {\n\t\t\tmn[0][i] = mx[0][i] = sum[0][i]\
-    \ = a[i];\n\t\t}\n\t\tfor (int i = 1; i < 20; i++) {\n\t\t\tfor (int j = 1; j\
-    \ + (1 << i) - 1 <= n; j++) {\n\t\t\t\tmn[i][j] = min(mn[i-1][j], mn[i - 1][j\
-    \ + (1 << (i-1))]);\n\t\t\t\tmx[i][j] = max(mx[i-1][j], mx[i - 1][j + (1 << (i-1))]);\n\
-    \t\t\t\tsum[i][j] = sum[i-1][j] + sum[i - 1][j + (1 << (i-1))];\n\t\t\t}\n\t\t\
-    }\n\t}\n\n\tT queryMin(int l, int r) {\n\t\tint k = __lg(r-l+1);\n\t\treturn min(mn[k][l],\
-    \ mn[k][r - (1 << k) + 1]);\n\t}\n\n\tT queryMax(int l, int r) {\n\t\tint k =\
-    \ __lg(r-l+1);\n\t\treturn max(mx[k][l], mx[k][r - (1 << k) + 1]);\n\t}\n\n\t\
-    T querySum(int l, int r) {\n\t\tint len = r-l+1;\n\t\tT ans = 0;\n\t\tfor (int\
-    \ i = 0; (1 << i) <= len; i++) {\n\t\t\tif (len >> i & 1) {\n\t\t\t\tans += sum[i][l];\n\
-    \t\t\t\tl += (1 << i);\n\t\t\t}\n\t\t}\n\t\treturn ans;\n\t}\n};"
+    \ RMQ {\n    int n;\n    vector<vector<T>> mn, mx, sum;\n\n    RMQ() {}\n    RMQ(int\
+    \ _n): n(_n) {\n        mn = mx = sum = vector<vector<T>>(20, vector<T>(_n+1));\n\
+    \    }\n\n    void preprocess(vector<T> &a) {\n        for (int i = 1; i <= n;\
+    \ i++) {\n            mn[0][i] = mx[0][i] = sum[0][i] = a[i];\n        }\n   \
+    \     for (int i = 1; i < 20; i++) {\n            for (int j = 1; j + (1 << i)\
+    \ - 1 <= n; j++) {\n                mn[i][j] = min(mn[i-1][j], mn[i - 1][j + (1\
+    \ << (i-1))]);\n                mx[i][j] = max(mx[i-1][j], mx[i - 1][j + (1 <<\
+    \ (i-1))]);\n                sum[i][j] = sum[i-1][j] + sum[i - 1][j + (1 << (i-1))];\n\
+    \            }\n        }\n    }\n\n    T queryMin(int l, int r) {\n        int\
+    \ k = __lg(r-l+1);\n        return min(mn[k][l], mn[k][r - (1 << k) + 1]);\n \
+    \   }\n\n    T queryMax(int l, int r) {\n        int k = __lg(r-l+1);\n      \
+    \  return max(mx[k][l], mx[k][r - (1 << k) + 1]);\n    }\n\n    T querySum(int\
+    \ l, int r) {\n        int len = r-l+1;\n        T ans = 0;\n        for (int\
+    \ i = 0; (1 << i) <= len; i++) {\n            if (len >> i & 1) {\n          \
+    \      ans += sum[i][l];\n                l += (1 << i);\n            }\n    \
+    \    }\n        return ans;\n    }\n};\n"
+  code: "#include \"../../template.h\"\n\ntemplate <typename T>\nstruct RMQ {\n  \
+    \  int n;\n    vector<vector<T>> mn, mx, sum;\n\n    RMQ() {}\n    RMQ(int _n):\
+    \ n(_n) {\n        mn = mx = sum = vector<vector<T>>(20, vector<T>(_n+1));\n \
+    \   }\n\n    void preprocess(vector<T> &a) {\n        for (int i = 1; i <= n;\
+    \ i++) {\n            mn[0][i] = mx[0][i] = sum[0][i] = a[i];\n        }\n   \
+    \     for (int i = 1; i < 20; i++) {\n            for (int j = 1; j + (1 << i)\
+    \ - 1 <= n; j++) {\n                mn[i][j] = min(mn[i-1][j], mn[i - 1][j + (1\
+    \ << (i-1))]);\n                mx[i][j] = max(mx[i-1][j], mx[i - 1][j + (1 <<\
+    \ (i-1))]);\n                sum[i][j] = sum[i-1][j] + sum[i - 1][j + (1 << (i-1))];\n\
+    \            }\n        }\n    }\n\n    T queryMin(int l, int r) {\n        int\
+    \ k = __lg(r-l+1);\n        return min(mn[k][l], mn[k][r - (1 << k) + 1]);\n \
+    \   }\n\n    T queryMax(int l, int r) {\n        int k = __lg(r-l+1);\n      \
+    \  return max(mx[k][l], mx[k][r - (1 << k) + 1]);\n    }\n\n    T querySum(int\
+    \ l, int r) {\n        int len = r-l+1;\n        T ans = 0;\n        for (int\
+    \ i = 0; (1 << i) <= len; i++) {\n            if (len >> i & 1) {\n          \
+    \      ans += sum[i][l];\n                l += (1 << i);\n            }\n    \
+    \    }\n        return ans;\n    }\n};"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: DataStructure/RMQ/RMQ.h
   requiredBy: []
-  timestamp: '2025-05-07 22:18:34+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - DataStructure/Static_RMQ.test.cpp

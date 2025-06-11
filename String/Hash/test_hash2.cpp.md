@@ -4,7 +4,7 @@ data:
   - icon: ':warning:'
     path: String/Hash/Rolling_Hash.h
     title: String/Hash/Rolling_Hash.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []

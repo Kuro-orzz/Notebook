@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -24,25 +24,27 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"Graph/Shortest_path/Dijkstra.h\"\n\nvector<ll> dijkstra(int\
-    \ s, int n, vector<vector<pii>> &g) {\n\tvector<int> vis(n + 1);\n\tvector<ll>\
-    \ d(n + 1, LLONG_MAX);\n\tpriority_queue<pii, vector<pii>, greater<pii>> pq;\n\
-    \tpq.push({d[s], s});\n\td[s] = 0;\n\twhile (!pq.empty()) {\n\t\tauto [dist, u]\
-    \ = pq.top(); pq.pop();\n\t\tif (vis[u]) continue;\n\t\tvis[u] = 1;\n\t\tfor (auto\
-    \ [v, w] : g[u]) {\n\t\t\tif (d[v] > d[u] + w) {\n\t\t\t\td[v] = d[u] + w;\n\t\
-    \t\t\tpq.push({d[v], v});\n\t\t\t}\n\t\t}\n\t}\n\treturn d;\n}\n"
+    \ s, int n, vector<vector<pii>> &g) {\n    vector<int> vis(n + 1);\n    vector<ll>\
+    \ d(n + 1, LLONG_MAX);\n    priority_queue<pii, vector<pii>, greater<pii>> pq;\n\
+    \    pq.push({d[s], s});\n    d[s] = 0;\n    while (!pq.empty()) {\n        auto\
+    \ [dist, u] = pq.top(); pq.pop();\n        if (vis[u]) continue;\n        vis[u]\
+    \ = 1;\n        for (auto [v, w] : g[u]) {\n            if (d[v] > d[u] + w) {\n\
+    \                d[v] = d[u] + w;\n                pq.push({d[v], v});\n     \
+    \       }\n        }\n    }\n    return d;\n}\n"
   code: "#include \"../../template.h\"\n\nvector<ll> dijkstra(int s, int n, vector<vector<pii>>\
-    \ &g) {\n\tvector<int> vis(n + 1);\n\tvector<ll> d(n + 1, LLONG_MAX);\n\tpriority_queue<pii,\
-    \ vector<pii>, greater<pii>> pq;\n\tpq.push({d[s], s});\n\td[s] = 0;\n\twhile\
-    \ (!pq.empty()) {\n\t\tauto [dist, u] = pq.top(); pq.pop();\n\t\tif (vis[u]) continue;\n\
-    \t\tvis[u] = 1;\n\t\tfor (auto [v, w] : g[u]) {\n\t\t\tif (d[v] > d[u] + w) {\n\
-    \t\t\t\td[v] = d[u] + w;\n\t\t\t\tpq.push({d[v], v});\n\t\t\t}\n\t\t}\n\t}\n\t\
-    return d;\n}"
+    \ &g) {\n    vector<int> vis(n + 1);\n    vector<ll> d(n + 1, LLONG_MAX);\n  \
+    \  priority_queue<pii, vector<pii>, greater<pii>> pq;\n    pq.push({d[s], s});\n\
+    \    d[s] = 0;\n    while (!pq.empty()) {\n        auto [dist, u] = pq.top();\
+    \ pq.pop();\n        if (vis[u]) continue;\n        vis[u] = 1;\n        for (auto\
+    \ [v, w] : g[u]) {\n            if (d[v] > d[u] + w) {\n                d[v] =\
+    \ d[u] + w;\n                pq.push({d[v], v});\n            }\n        }\n \
+    \   }\n    return d;\n}"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: Graph/Shortest_path/Dijkstra.h
   requiredBy: []
-  timestamp: '2025-06-07 22:39:21+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - Graph/test/aizu_grl_1_a_dijkstra.test.cpp

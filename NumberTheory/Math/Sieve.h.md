@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy:
@@ -9,12 +9,12 @@ data:
     path: NumberTheory/Math/Divisors.h
     title: NumberTheory/Math/Divisors.h
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: NumberTheory/Enumerate_primes.test.cpp
     title: NumberTheory/Enumerate_primes.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -27,26 +27,28 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"NumberTheory/Math/Sieve.h\"\n\nvector<int> sieve(int n) {\n\
-    \tvector<int> nt(n+1, 1);\n\tnt[0] = nt[1] = 0;\n\tfor (int i = 2; i * i <= n;\
-    \ i++) {\n\t\tif (!nt[i]) continue;\n\t\tfor (int j = i * i; j <= n; j += i)\n\
-    \t\t\tnt[j] = 0;\n\t}\n\treturn nt;\n}\n\nvector<int> segmentSieve(int l, int\
-    \ r){\n\tvector<int> prime(r-l+1, 1);\n\tfor(ll p = 2; p*p <= r; p++){\n\t\tll\
-    \ lim = max(p*p, (l+p-1)/p*p);\n\t\tfor(ll j = lim; j <= r; j += p)\n\t\t\tif\
-    \ (j-l >= 0) prime[j-l] = 0;\n\t}\n\tif (l == 0) prime[0] = 0;\n\tif (l == 0 &&\
-    \ r > l) prime[1] = 0;\n\tif (l == 1) prime[1-l] = 0;\n\treturn prime;\n}\n\n\
-    vector<int> listPrime(int l, int r) {\n\tvector<int> prime = segmentSieve(l, r);\n\
-    \tvector<int> listPi;\n\tfor (int i = l; i <= r; i++) {\n\t\tif (prime[i-l]) listPi.push_back(i);\n\
-    \t}\n\treturn listPi;\n}\n"
-  code: "#include \"../../template.h\"\n\nvector<int> sieve(int n) {\n\tvector<int>\
-    \ nt(n+1, 1);\n\tnt[0] = nt[1] = 0;\n\tfor (int i = 2; i * i <= n; i++) {\n\t\t\
-    if (!nt[i]) continue;\n\t\tfor (int j = i * i; j <= n; j += i)\n\t\t\tnt[j] =\
-    \ 0;\n\t}\n\treturn nt;\n}\n\nvector<int> segmentSieve(int l, int r){\n\tvector<int>\
-    \ prime(r-l+1, 1);\n\tfor(ll p = 2; p*p <= r; p++){\n\t\tll lim = max(p*p, (l+p-1)/p*p);\n\
-    \t\tfor(ll j = lim; j <= r; j += p)\n\t\t\tif (j-l >= 0) prime[j-l] = 0;\n\t}\n\
-    \tif (l == 0) prime[0] = 0;\n\tif (l == 0 && r > l) prime[1] = 0;\n\tif (l ==\
-    \ 1) prime[1-l] = 0;\n\treturn prime;\n}\n\nvector<int> listPrime(int l, int r)\
-    \ {\n\tvector<int> prime = segmentSieve(l, r);\n\tvector<int> listPi;\n\tfor (int\
-    \ i = l; i <= r; i++) {\n\t\tif (prime[i-l]) listPi.push_back(i);\n\t}\n\treturn\
+    \    vector<int> nt(n+1, 1);\n    nt[0] = nt[1] = 0;\n    for (int i = 2; i *\
+    \ i <= n; i++) {\n        if (!nt[i]) continue;\n        for (int j = i * i; j\
+    \ <= n; j += i)\n            nt[j] = 0;\n    }\n    return nt;\n}\n\nvector<int>\
+    \ segmentSieve(int l, int r){\n    vector<int> prime(r-l+1, 1);\n    for(ll p\
+    \ = 2; p*p <= r; p++){\n        ll lim = max(p*p, (l+p-1)/p*p);\n        for(ll\
+    \ j = lim; j <= r; j += p)\n            if (j-l >= 0) prime[j-l] = 0;\n    }\n\
+    \    if (l == 0) prime[0] = 0;\n    if (l == 0 && r > l) prime[1] = 0;\n    if\
+    \ (l == 1) prime[1-l] = 0;\n    return prime;\n}\n\nvector<int> listPrime(int\
+    \ l, int r) {\n    vector<int> prime = segmentSieve(l, r);\n    vector<int> listPi;\n\
+    \    for (int i = l; i <= r; i++) {\n        if (prime[i-l]) listPi.push_back(i);\n\
+    \    }\n    return listPi;\n}\n"
+  code: "#include \"../../template.h\"\n\nvector<int> sieve(int n) {\n    vector<int>\
+    \ nt(n+1, 1);\n    nt[0] = nt[1] = 0;\n    for (int i = 2; i * i <= n; i++) {\n\
+    \        if (!nt[i]) continue;\n        for (int j = i * i; j <= n; j += i)\n\
+    \            nt[j] = 0;\n    }\n    return nt;\n}\n\nvector<int> segmentSieve(int\
+    \ l, int r){\n    vector<int> prime(r-l+1, 1);\n    for(ll p = 2; p*p <= r; p++){\n\
+    \        ll lim = max(p*p, (l+p-1)/p*p);\n        for(ll j = lim; j <= r; j +=\
+    \ p)\n            if (j-l >= 0) prime[j-l] = 0;\n    }\n    if (l == 0) prime[0]\
+    \ = 0;\n    if (l == 0 && r > l) prime[1] = 0;\n    if (l == 1) prime[1-l] = 0;\n\
+    \    return prime;\n}\n\nvector<int> listPrime(int l, int r) {\n    vector<int>\
+    \ prime = segmentSieve(l, r);\n    vector<int> listPi;\n    for (int i = l; i\
+    \ <= r; i++) {\n        if (prime[i-l]) listPi.push_back(i);\n    }\n    return\
     \ listPi;\n}"
   dependsOn:
   - template.h
@@ -54,8 +56,8 @@ data:
   path: NumberTheory/Math/Sieve.h
   requiredBy:
   - NumberTheory/Math/Divisors.h
-  timestamp: '2025-05-25 00:26:18+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2025-06-11 15:37:14+07:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - NumberTheory/Enumerate_primes.test.cpp
 documentation_of: NumberTheory/Math/Sieve.h

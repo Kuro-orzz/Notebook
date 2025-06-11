@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: NumberTheory/Math/Factorization.h
     title: NumberTheory/Math/Factorization.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A
@@ -29,28 +29,28 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"NumberTheory/Math/Factorization.h\"\n\n\nvector<ll> primeFactor(ll\
-    \ n) {\n\tvector<ll> factor;\n\tfor (int i : {2, 3, 5}) {\n\t\twhile (n % i ==\
-    \ 0) {\n\t\t\tn /= i;\n\t\t\tfactor.push_back(i);\n\t\t}\n\t}\n\tint inc[] = {4,\
-    \ 2, 4, 2, 4, 6, 2, 6};\n\tint j = 0;\n\tfor (ll i = 7; i * i <= n; i += inc[j%8],\
-    \ j++) {\n\t\twhile(n % i == 0) {\n\t\t\tn /= i;\n\t\t\tfactor.push_back(i);\n\
-    \t\t}\n\t}\n\tif (n > 1) factor.push_back(n);\n\treturn factor;\n}\n#line 5 \"\
-    NumberTheory/Math/test/aizu_ntl_1_a_prime_factor.test.cpp\"\n\nvoid solve() {\n\
-    \tint n; cin >> n;\n\tvector<ll> v = primeFactor(n);\n\tcout << n << \": \";\n\
-    \tfor (int i = 0; i < (int)v.size() - 1; i++) {\n\t\tcout << v[i] << \" \";\n\t\
-    }\n\tcout << v.back() << '\\n';\n}\n"
+    \ n) {\n    vector<ll> factor;\n    for (int i : {2, 3, 5}) {\n        while (n\
+    \ % i == 0) {\n            n /= i;\n            factor.push_back(i);\n       \
+    \ }\n    }\n    int inc[] = {4, 2, 4, 2, 4, 6, 2, 6};\n    int j = 0;\n    for\
+    \ (ll i = 7; i * i <= n; i += inc[j%8], j++) {\n        while(n % i == 0) {\n\
+    \            n /= i;\n            factor.push_back(i);\n        }\n    }\n   \
+    \ if (n > 1) factor.push_back(n);\n    return factor;\n}\n#line 5 \"NumberTheory/Math/test/aizu_ntl_1_a_prime_factor.test.cpp\"\
+    \n\nvoid solve() {\n    int n; cin >> n;\n    vector<ll> v = primeFactor(n);\n\
+    \    cout << n << \": \";\n    for (int i = 0; i < (int)v.size() - 1; i++) {\n\
+    \        cout << v[i] << \" \";\n    }\n    cout << v.back() << '\\n';\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A\"\
     \n\n#include \"../../../template.h\"\n#include \"../Factorization.h\"\n\nvoid\
-    \ solve() {\n\tint n; cin >> n;\n\tvector<ll> v = primeFactor(n);\n\tcout << n\
-    \ << \": \";\n\tfor (int i = 0; i < (int)v.size() - 1; i++) {\n\t\tcout << v[i]\
-    \ << \" \";\n\t}\n\tcout << v.back() << '\\n';\n}"
+    \ solve() {\n    int n; cin >> n;\n    vector<ll> v = primeFactor(n);\n    cout\
+    \ << n << \": \";\n    for (int i = 0; i < (int)v.size() - 1; i++) {\n       \
+    \ cout << v[i] << \" \";\n    }\n    cout << v.back() << '\\n';\n}"
   dependsOn:
   - template.h
   - NumberTheory/Math/Factorization.h
   isVerificationFile: true
   path: NumberTheory/Math/test/aizu_ntl_1_a_prime_factor.test.cpp
   requiredBy: []
-  timestamp: '2025-06-08 06:31:53+07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-06-11 15:37:14+07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: NumberTheory/Math/test/aizu_ntl_1_a_prime_factor.test.cpp
 layout: document

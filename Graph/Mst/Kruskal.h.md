@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/DSU/Dsu.h
     title: DataStructure/DSU/Dsu.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -48,26 +48,27 @@ data:
     \ mod) % mod;\n        return true;\n    }\n\n    int getDiff(int u, int v, int\
     \ mod) {\n        int pu = findPotential(u, mod);\n        int pv = findPotential(v,\
     \ mod);\n        if (pu != pv) return -1;\n        return (diff[u] - diff[v] +\
-    \ mod) % mod;\n    }\n};\n#line 3 \"Graph/Mst/Kruskal.h\"\n\nstruct Edge {\n\t\
-    int u, v, w;\n\tEdge() {}\n\tEdge(int _u, int _v, int _w): u(_u), v(_v), w(_w)\
-    \ {}\n};\n\nll kruskal(int n, vector<Edge> &edges) {\n\tauto cmp = [&](Edge a,\
-    \ Edge b) {\n\t\treturn a.w < b.w;\n\t};\n\tsort(all(edges), cmp);\n\tDsu g(n);\n\
-    \tll ans = 0;\n\tfor (auto [u, v, w] : edges) {\n\t\tif (g.find(u) != g.find(v))\
-    \ {\n\t\t\tans += w;\n\t\t\tg.merge(u, v);\n\t\t}\n\t}\n\treturn ans;\n}\n"
+    \ mod) % mod;\n    }\n};\n#line 3 \"Graph/Mst/Kruskal.h\"\n\nstruct Edge {\n \
+    \   int u, v, w;\n    Edge() {}\n    Edge(int _u, int _v, int _w): u(_u), v(_v),\
+    \ w(_w) {}\n};\n\nll kruskal(int n, vector<Edge> &edges) {\n    auto cmp = [&](Edge\
+    \ a, Edge b) {\n        return a.w < b.w;\n    };\n    sort(all(edges), cmp);\n\
+    \    Dsu g(n);\n    ll ans = 0;\n    for (auto [u, v, w] : edges) {\n        if\
+    \ (g.find(u) != g.find(v)) {\n            ans += w;\n            g.merge(u, v);\n\
+    \        }\n    }\n    return ans;\n}\n"
   code: "#include \"../../template.h\"\n#include \"../../DataStructure/DSU/Dsu.h\"\
-    \n\nstruct Edge {\n\tint u, v, w;\n\tEdge() {}\n\tEdge(int _u, int _v, int _w):\
-    \ u(_u), v(_v), w(_w) {}\n};\n\nll kruskal(int n, vector<Edge> &edges) {\n\tauto\
-    \ cmp = [&](Edge a, Edge b) {\n\t\treturn a.w < b.w;\n\t};\n\tsort(all(edges),\
-    \ cmp);\n\tDsu g(n);\n\tll ans = 0;\n\tfor (auto [u, v, w] : edges) {\n\t\tif\
-    \ (g.find(u) != g.find(v)) {\n\t\t\tans += w;\n\t\t\tg.merge(u, v);\n\t\t}\n\t\
-    }\n\treturn ans;\n}"
+    \n\nstruct Edge {\n    int u, v, w;\n    Edge() {}\n    Edge(int _u, int _v, int\
+    \ _w): u(_u), v(_v), w(_w) {}\n};\n\nll kruskal(int n, vector<Edge> &edges) {\n\
+    \    auto cmp = [&](Edge a, Edge b) {\n        return a.w < b.w;\n    };\n   \
+    \ sort(all(edges), cmp);\n    Dsu g(n);\n    ll ans = 0;\n    for (auto [u, v,\
+    \ w] : edges) {\n        if (g.find(u) != g.find(v)) {\n            ans += w;\n\
+    \            g.merge(u, v);\n        }\n    }\n    return ans;\n}"
   dependsOn:
   - template.h
   - DataStructure/DSU/Dsu.h
   isVerificationFile: false
   path: Graph/Mst/Kruskal.h
   requiredBy: []
-  timestamp: '2025-06-07 22:39:21+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - Graph/test/aizu_grl_2_a_minimum_spanning_tree.test.cpp

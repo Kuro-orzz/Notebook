@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -177,8 +177,8 @@ data:
     \ }\n\n    bool isZero() const { return digit.empty(); }\n\n    void trim() {\n\
     \        while (!digit.empty() && !digit.back()) {\n            digit.pop_back();\n\
     \        }\n        if (digit.empty()) sign = 1;\n    }\n\n    BigInt abs() const\
-    \ { BigInt res = *this; res.sign = 1; return res; }\n\n    string toString() {\n\
-    \        ostringstream oss;\n        oss << *this;\n        return oss.str();\n\
+    \ { BigInt res = *this; res.sign = 1; return res; }\n\n    string toString() const\
+    \ {\n        ostringstream oss;\n        oss << *this;\n        return oss.str();\n\
     \    }\n\n    // only support b >= 0, if b < 0 need to implement modulo inverse\n\
     \    friend BigInt pow(const BigInt &a, const BigInt &b, ll mod) { return pow(a,\
     \ b, BigInt(mod)); }\n    friend BigInt pow(const BigInt &a, const BigInt &b,\
@@ -360,8 +360,8 @@ data:
     \ }\n\n    bool isZero() const { return digit.empty(); }\n\n    void trim() {\n\
     \        while (!digit.empty() && !digit.back()) {\n            digit.pop_back();\n\
     \        }\n        if (digit.empty()) sign = 1;\n    }\n\n    BigInt abs() const\
-    \ { BigInt res = *this; res.sign = 1; return res; }\n\n    string toString() {\n\
-    \        ostringstream oss;\n        oss << *this;\n        return oss.str();\n\
+    \ { BigInt res = *this; res.sign = 1; return res; }\n\n    string toString() const\
+    \ {\n        ostringstream oss;\n        oss << *this;\n        return oss.str();\n\
     \    }\n\n    // only support b >= 0, if b < 0 need to implement modulo inverse\n\
     \    friend BigInt pow(const BigInt &a, const BigInt &b, ll mod) { return pow(a,\
     \ b, BigInt(mod)); }\n    friend BigInt pow(const BigInt &a, const BigInt &b,\
@@ -409,14 +409,14 @@ data:
   isVerificationFile: false
   path: Big_Integer/BigInt_full.h
   requiredBy: []
-  timestamp: '2025-06-11 00:58:54+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - Big_Integer/test/Multiplication_of_Big_Integers.test.cpp
-  - Big_Integer/test/Remainder_of_Big_Integers.test.cpp
-  - Big_Integer/test/Difference_of_Big_Integers.test.cpp
   - Big_Integer/test/Division_of_Big_Integers.test.cpp
+  - Big_Integer/test/Multiplication_of_Big_Integers.test.cpp
   - Big_Integer/test/Addition_of_Big_Integers.test.cpp
+  - Big_Integer/test/Difference_of_Big_Integers.test.cpp
+  - Big_Integer/test/Remainder_of_Big_Integers.test.cpp
   - Big_Integer/test/Multiplication_of_Big_Integers_II.test.cpp
 documentation_of: Big_Integer/BigInt_full.h
 layout: document

@@ -4,7 +4,7 @@ data:
   - icon: ':warning:'
     path: DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
     title: DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -26,54 +26,59 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h\"\n\n\n\
-    struct Node {\n\tll max1, max2, cntMax, sum, lazy;\n\n\tNode() {}\n\n\tNode(int\
-    \ val) {\n\t\tmax1 = val;\n\t\tmax2 = -1;\n\t\tcntMax = 1;\n\t\tsum = val;\n\t\
-    \tlazy = -1;\n\t}\n\n\tNode operator+(const Node &b) {\n\t\tNode res;\n\t\tres.max1\
-    \ = max(max1, b.max1);\n\t\tres.max2 = max(max2, b.max2);\n\t\tif (res.max1 !=\
-    \ max1) res.max2 = max(res.max2, max1);\n\t\tif (res.max1 != b.max1) res.max2\
-    \ = max(res.max2, b.max1); \n\t\tres.cntMax = 0;\n\t\tif (res.max1 == max1) res.cntMax\
-    \ += cntMax;\n\t\tif (res.max1 == b.max1) res.cntMax += b.cntMax;\n\t\tres.sum\
-    \ = sum + b.sum;\n\t\tres.lazy = -1;\n\t\treturn res;\n\t}\n\n\tvoid setMin(int\
-    \ val) {\n\t\tif (val > max1) return;\n\t\tsum -= (max1 - val) * cntMax;\n\t\t\
-    max1 = val;\n\t\tlazy = val;\n\t}\n};\n\n// range chmin, sum\nclass SegTreeBeats\
-    \ {\npublic:\n\tvector<Node> tree;\n\n\tSegTreeBeats(int n): tree(4*n) {}\n\n\t\
-    void build(int id, int l, int r, int u, int v, int val) {\n\t\tif (l > v || r\
-    \ < u) return;\n\t\tif (u <= l && r <= v) {\n\t\t\ttree[id] = Node(val);\n\t\t\
-    \treturn;\n\t\t}\n\t\tint mid = (l + r) >> 1;\n\t\tbuild(id*2, l, mid, u, v, val);\n\
-    \t\tbuild(id*2+1, mid+1, r, u, v, val);\n\t\ttree[id] = tree[id*2] + tree[id*2+1];\n\
-    \t}\t\n\n\tvoid push(int id) {\n\t\tif (tree[id].lazy < 0) return;\n\t\ttree[id*2].setMin(tree[id].lazy);\n\
-    \t\ttree[id*2+1].setMin(tree[id].lazy);\n\t\ttree[id].lazy = -1;\n\t}\n\n\tvoid\
-    \ updateChmin(int id, int l, int r, int u, int v, int x) {\n\t\tif (l > v || r\
-    \ < u) return;\n\t\tif (tree[id].max1 <= x) return;\n\t\tif (u <= l && r <= v\
-    \ && tree[id].max2 < x) {\n\t\t\ttree[id].setMin(x);\n\t\t\treturn;\n\t\t}\n\t\
-    \tpush(id);\n\t\tint mid = (l + r) >> 1;\n\t\tupdateChmin(id*2, l, mid, u, v,\
-    \ x);\n\t\tupdateChmin(id*2+1, mid+1, r, u, v, x);\n\t\ttree[id] = tree[id*2]\
-    \ + tree[id*2+1];\n\t}\n\n\tll getSum(int id, int l, int r, int u, int v) {\n\t\
-    \tif (l > v || r < u) return 0;\n\t\tif (u <= l && r <= v) return tree[id].sum;\n\
-    \t\tpush(id);\n\t\tint mid = (l + r) >> 1;\n\t\tll t1 = getSum(id*2, l, mid, u,\
-    \ v);\n\t\tll t2 = getSum(id*2+1, mid+1, r, u, v);\n\t\treturn t1 + t2;\n\t}\n\
-    };\n#line 5 \"DataStructure/SegTree/SegTreeBeats/test2.cpp\"\n\nvoid solve() {\n\
-    \tint n; cin >> n;\n\tSegTreeBeats st(n+1);\n\tfor (int i = 1; i <= n; i++) {\n\
-    \t\tint x; cin >> x;\n\t\tst.build(1, 1, n, i, i, x);\n\t}\n\tint q; cin >> q;\n\
-    \twhile (q--) {\n\t\tint type; cin >> type;\n\t\tif (type == 1) {\n\t\t\tint l,\
-    \ r, x; cin >> l >> r >> x;\n\t\t\tst.updateChmin(1, 1, n, l, r, x);\n\t\t} else\
-    \ if (type == 2) {\n\t\t\tint l, r; cin >> l >> r;\n\t\t\tcout << st.getSum(1,\
-    \ 1, n, l, r) << '\\n';\n\t\t}\n\t}\n}\n"
+    struct Node {\n    ll max1, max2, cntMax, sum, lazy;\n\n    Node() {}\n\n    Node(int\
+    \ val) {\n        max1 = val;\n        max2 = -1;\n        cntMax = 1;\n     \
+    \   sum = val;\n        lazy = -1;\n    }\n\n    Node operator+(const Node &b)\
+    \ {\n        Node res;\n        res.max1 = max(max1, b.max1);\n        res.max2\
+    \ = max(max2, b.max2);\n        if (res.max1 != max1) res.max2 = max(res.max2,\
+    \ max1);\n        if (res.max1 != b.max1) res.max2 = max(res.max2, b.max1); \n\
+    \        res.cntMax = 0;\n        if (res.max1 == max1) res.cntMax += cntMax;\n\
+    \        if (res.max1 == b.max1) res.cntMax += b.cntMax;\n        res.sum = sum\
+    \ + b.sum;\n        res.lazy = -1;\n        return res;\n    }\n\n    void setMin(int\
+    \ val) {\n        if (val > max1) return;\n        sum -= (max1 - val) * cntMax;\n\
+    \        max1 = val;\n        lazy = val;\n    }\n};\n\n// range chmin, sum\n\
+    class SegTreeBeats {\npublic:\n    vector<Node> tree;\n\n    SegTreeBeats(int\
+    \ n): tree(4*n) {}\n\n    void build(int id, int l, int r, int u, int v, int val)\
+    \ {\n        if (l > v || r < u) return;\n        if (u <= l && r <= v) {\n  \
+    \          tree[id] = Node(val);\n            return;\n        }\n        int\
+    \ mid = (l + r) >> 1;\n        build(id*2, l, mid, u, v, val);\n        build(id*2+1,\
+    \ mid+1, r, u, v, val);\n        tree[id] = tree[id*2] + tree[id*2+1];\n    }\
+    \   \n\n    void push(int id) {\n        if (tree[id].lazy < 0) return;\n    \
+    \    tree[id*2].setMin(tree[id].lazy);\n        tree[id*2+1].setMin(tree[id].lazy);\n\
+    \        tree[id].lazy = -1;\n    }\n\n    void updateChmin(int id, int l, int\
+    \ r, int u, int v, int x) {\n        if (l > v || r < u) return;\n        if (tree[id].max1\
+    \ <= x) return;\n        if (u <= l && r <= v && tree[id].max2 < x) {\n      \
+    \      tree[id].setMin(x);\n            return;\n        }\n        push(id);\n\
+    \        int mid = (l + r) >> 1;\n        updateChmin(id*2, l, mid, u, v, x);\n\
+    \        updateChmin(id*2+1, mid+1, r, u, v, x);\n        tree[id] = tree[id*2]\
+    \ + tree[id*2+1];\n    }\n\n    ll getSum(int id, int l, int r, int u, int v)\
+    \ {\n        if (l > v || r < u) return 0;\n        if (u <= l && r <= v) return\
+    \ tree[id].sum;\n        push(id);\n        int mid = (l + r) >> 1;\n        ll\
+    \ t1 = getSum(id*2, l, mid, u, v);\n        ll t2 = getSum(id*2+1, mid+1, r, u,\
+    \ v);\n        return t1 + t2;\n    }\n};\n#line 5 \"DataStructure/SegTree/SegTreeBeats/test2.cpp\"\
+    \n\nvoid solve() {\n    int n; cin >> n;\n    SegTreeBeats st(n+1);\n    for (int\
+    \ i = 1; i <= n; i++) {\n        int x; cin >> x;\n        st.build(1, 1, n, i,\
+    \ i, x);\n    }\n    int q; cin >> q;\n    while (q--) {\n        int type; cin\
+    \ >> type;\n        if (type == 1) {\n            int l, r, x; cin >> l >> r >>\
+    \ x;\n            st.updateChmin(1, 1, n, l, r, x);\n        } else if (type ==\
+    \ 2) {\n            int l, r; cin >> l >> r;\n            cout << st.getSum(1,\
+    \ 1, n, l, r) << '\\n';\n        }\n    }\n}\n"
   code: "// https://codeforces.com/group/1rv4rhCsHp/contest/327313/problem/B\n\n#include\
-    \ \"../../../template.h\"\n#include \"SegTreeBeats2.h\"\n\nvoid solve() {\n\t\
-    int n; cin >> n;\n\tSegTreeBeats st(n+1);\n\tfor (int i = 1; i <= n; i++) {\n\t\
-    \tint x; cin >> x;\n\t\tst.build(1, 1, n, i, i, x);\n\t}\n\tint q; cin >> q;\n\
-    \twhile (q--) {\n\t\tint type; cin >> type;\n\t\tif (type == 1) {\n\t\t\tint l,\
-    \ r, x; cin >> l >> r >> x;\n\t\t\tst.updateChmin(1, 1, n, l, r, x);\n\t\t} else\
-    \ if (type == 2) {\n\t\t\tint l, r; cin >> l >> r;\n\t\t\tcout << st.getSum(1,\
-    \ 1, n, l, r) << '\\n';\n\t\t}\n\t}\n}"
+    \ \"../../../template.h\"\n#include \"SegTreeBeats2.h\"\n\nvoid solve() {\n  \
+    \  int n; cin >> n;\n    SegTreeBeats st(n+1);\n    for (int i = 1; i <= n; i++)\
+    \ {\n        int x; cin >> x;\n        st.build(1, 1, n, i, i, x);\n    }\n  \
+    \  int q; cin >> q;\n    while (q--) {\n        int type; cin >> type;\n     \
+    \   if (type == 1) {\n            int l, r, x; cin >> l >> r >> x;\n         \
+    \   st.updateChmin(1, 1, n, l, r, x);\n        } else if (type == 2) {\n     \
+    \       int l, r; cin >> l >> r;\n            cout << st.getSum(1, 1, n, l, r)\
+    \ << '\\n';\n        }\n    }\n}"
   dependsOn:
   - template.h
   - DataStructure/SegTree/SegTreeBeats/SegTreeBeats2.h
   isVerificationFile: false
   path: DataStructure/SegTree/SegTreeBeats/test2.cpp
   requiredBy: []
-  timestamp: '2025-05-07 22:18:34+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: DataStructure/SegTree/SegTreeBeats/test2.cpp

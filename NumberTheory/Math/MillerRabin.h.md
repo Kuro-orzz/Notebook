@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: NumberTheory/Math/Binary_exponentiation.h
     title: NumberTheory/Math/Binary_exponentiation.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy:
@@ -12,12 +12,12 @@ data:
     path: NumberTheory/Math/Divisors.h
     title: NumberTheory/Math/Divisors.h
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: NumberTheory/Primality_test.test.cpp
     title: NumberTheory/Primality_test.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -30,36 +30,39 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"NumberTheory/Math/Binary_exponentiation.h\"\n\nusing u128 =\
-    \ __uint128_t;\n\nll binMul(ll a, ll b, ll M) {\n\ta = a % M;\n\tll res = 0;\n\
-    \twhile (b) {\n\t\tif (b & 1) res = (res + a) % M;\n\t\ta = a * 2 % M;\n\t\tb\
-    \ /= 2;\n\t}\n\treturn res;\n}\n\nll binPow(ll a, ll b, ll M) {\n\ta %= M;\n\t\
-    ll res = 1;\n\twhile (b) {\n\t\tif (b & 1) res = (u128)res * a % M;\n\t\ta = (u128)a\
-    \ * a % M;\n\t\tb /= 2;\n\t}\n\treturn res;\n}\n#line 3 \"NumberTheory/Math/MillerRabin.h\"\
-    \n\nbool test(ll a, ll n, ll k, ll m) {\n\tll mod = binPow(a, m, n);\n\tif (mod\
-    \ == 1 || mod == n - 1) return true;\n\tfor (int l = 1; l < k; l++) {\n\t\tmod\
-    \ = (u128)mod * mod % n;\n\t\tif (mod == n - 1) return true;\n\t}\n\treturn false;\n\
-    }\n\n// Miller rabin\nbool MillerRabin0(ll n) {\n\tif (n == 2) return true;\n\t\
-    if (n < 2 || n % 2 == 0) return false;\n\tll k = 0, m = n - 1;\n\twhile(m % 2\
-    \ == 0) {\n\t\tm /= 2;\n\t\tk++;\n\t}\n\tfor (int i = 0; i < 5; i++) {\n\t\tll\
-    \ a = rand() % (n - 3) + 2;\n\t\tif (!test(a, n, k, m)) return false;\n\t}\n\t\
-    return true;\n}\n\n// Miller Rabin deterministic version\nbool MillerRabin(ll\
-    \ n) {\n\tif (n <= 1) return false;\n\tll k = 0, m = n-1;\n\twhile (m % 2 == 0)\
-    \ {\n\t\tm /= 2;\n\t\tk++;\n\t}\n\tfor (int a : {2, 3, 5, 7, 11, 13, 17, 19, 23,\
-    \ 29, 31, 37}) {\n\t\tif (n == a) return true;\n\t\tif (!test(a, n, k, m)) return\
-    \ false;\n\t}\n\treturn true;\n}\n"
+    \ __uint128_t;\n\nll binMul(ll a, ll b, ll M) {\n    a = a % M;\n    ll res =\
+    \ 0;\n    while (b) {\n        if (b & 1) res = (res + a) % M;\n        a = a\
+    \ * 2 % M;\n        b /= 2;\n    }\n    return res;\n}\n\nll binPow(ll a, ll b,\
+    \ ll M) {\n    a %= M;\n    ll res = 1;\n    while (b) {\n        if (b & 1) res\
+    \ = (u128)res * a % M;\n        a = (u128)a * a % M;\n        b /= 2;\n    }\n\
+    \    return res;\n}\n#line 3 \"NumberTheory/Math/MillerRabin.h\"\n\nbool test(ll\
+    \ a, ll n, ll k, ll m) {\n    ll mod = binPow(a, m, n);\n    if (mod == 1 || mod\
+    \ == n - 1) return true;\n    for (int l = 1; l < k; l++) {\n        mod = (u128)mod\
+    \ * mod % n;\n        if (mod == n - 1) return true;\n    }\n    return false;\n\
+    }\n\n// Miller rabin\nbool MillerRabin0(ll n) {\n    if (n == 2) return true;\n\
+    \    if (n < 2 || n % 2 == 0) return false;\n    ll k = 0, m = n - 1;\n    while(m\
+    \ % 2 == 0) {\n        m /= 2;\n        k++;\n    }\n    for (int i = 0; i < 5;\
+    \ i++) {\n        ll a = rand() % (n - 3) + 2;\n        if (!test(a, n, k, m))\
+    \ return false;\n    }\n    return true;\n}\n\n// Miller Rabin deterministic version\n\
+    bool MillerRabin(ll n) {\n    if (n <= 1) return false;\n    ll k = 0, m = n-1;\n\
+    \    while (m % 2 == 0) {\n        m /= 2;\n        k++;\n    }\n    for (int\
+    \ a : {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37}) {\n        if (n == a) return\
+    \ true;\n        if (!test(a, n, k, m)) return false;\n    }\n    return true;\n\
+    }\n"
   code: "#include \"../../template.h\"\n#include \"Binary_exponentiation.h\"\n\nbool\
-    \ test(ll a, ll n, ll k, ll m) {\n\tll mod = binPow(a, m, n);\n\tif (mod == 1\
-    \ || mod == n - 1) return true;\n\tfor (int l = 1; l < k; l++) {\n\t\tmod = (u128)mod\
-    \ * mod % n;\n\t\tif (mod == n - 1) return true;\n\t}\n\treturn false;\n}\n\n\
-    // Miller rabin\nbool MillerRabin0(ll n) {\n\tif (n == 2) return true;\n\tif (n\
-    \ < 2 || n % 2 == 0) return false;\n\tll k = 0, m = n - 1;\n\twhile(m % 2 == 0)\
-    \ {\n\t\tm /= 2;\n\t\tk++;\n\t}\n\tfor (int i = 0; i < 5; i++) {\n\t\tll a = rand()\
-    \ % (n - 3) + 2;\n\t\tif (!test(a, n, k, m)) return false;\n\t}\n\treturn true;\n\
-    }\n\n// Miller Rabin deterministic version\nbool MillerRabin(ll n) {\n\tif (n\
-    \ <= 1) return false;\n\tll k = 0, m = n-1;\n\twhile (m % 2 == 0) {\n\t\tm /=\
-    \ 2;\n\t\tk++;\n\t}\n\tfor (int a : {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37})\
-    \ {\n\t\tif (n == a) return true;\n\t\tif (!test(a, n, k, m)) return false;\n\t\
-    }\n\treturn true;\n}"
+    \ test(ll a, ll n, ll k, ll m) {\n    ll mod = binPow(a, m, n);\n    if (mod ==\
+    \ 1 || mod == n - 1) return true;\n    for (int l = 1; l < k; l++) {\n       \
+    \ mod = (u128)mod * mod % n;\n        if (mod == n - 1) return true;\n    }\n\
+    \    return false;\n}\n\n// Miller rabin\nbool MillerRabin0(ll n) {\n    if (n\
+    \ == 2) return true;\n    if (n < 2 || n % 2 == 0) return false;\n    ll k = 0,\
+    \ m = n - 1;\n    while(m % 2 == 0) {\n        m /= 2;\n        k++;\n    }\n\
+    \    for (int i = 0; i < 5; i++) {\n        ll a = rand() % (n - 3) + 2;\n   \
+    \     if (!test(a, n, k, m)) return false;\n    }\n    return true;\n}\n\n// Miller\
+    \ Rabin deterministic version\nbool MillerRabin(ll n) {\n    if (n <= 1) return\
+    \ false;\n    ll k = 0, m = n-1;\n    while (m % 2 == 0) {\n        m /= 2;\n\
+    \        k++;\n    }\n    for (int a : {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31,\
+    \ 37}) {\n        if (n == a) return true;\n        if (!test(a, n, k, m)) return\
+    \ false;\n    }\n    return true;\n}"
   dependsOn:
   - template.h
   - NumberTheory/Math/Binary_exponentiation.h
@@ -67,8 +70,8 @@ data:
   path: NumberTheory/Math/MillerRabin.h
   requiredBy:
   - NumberTheory/Math/Divisors.h
-  timestamp: '2025-05-10 21:29:43+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2025-06-11 15:37:14+07:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - NumberTheory/Primality_test.test.cpp
 documentation_of: NumberTheory/Math/MillerRabin.h

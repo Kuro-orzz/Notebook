@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: Tree/Tree/Tree.h
     title: Tree/Tree/Tree.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/tree_diameter
@@ -37,27 +37,27 @@ data:
     \   dfs(r, -1, 0);\n    // r->s = longest path\n    int s = max_element(d.begin(),\
     \ d.end()) - d.begin();\n\n    vector<int> path;\n    for (int x = s; x >= 0;\
     \ x = p[x]) { \n        path.push_back(x);\n    }\n    return {d[s], path};\n\
-    }\n#line 5 \"Tree/Diameter_tree.test.cpp\"\n\nvoid solve() {\n\tint n; cin >>\
-    \ n;\n\tvector<vector<pii>> adj(n);\n\tfor (int i = 0; i < n-1; i++) {\n\t\tint\
-    \ u, v, w; cin >> u >> v >> w;\n\t\tadj[u].emplace_back(v, w);\n\t\tadj[v].emplace_back(u,\
-    \ w);\n\t}\n\tauto [len, path] = tree_diameter(adj);\n\tcout << len << \" \" <<\
-    \ path.size() << '\\n';\n\treverse(all(path));\n\tfor (int x : path) {\n\t\tcout\
-    \ << x << \" \";\n\t}\n}\n"
+    }\n#line 5 \"Tree/Diameter_tree.test.cpp\"\n\nvoid solve() {\n    int n; cin >>\
+    \ n;\n    vector<vector<pii>> adj(n);\n    for (int i = 0; i < n-1; i++) {\n \
+    \       int u, v, w; cin >> u >> v >> w;\n        adj[u].emplace_back(v, w);\n\
+    \        adj[v].emplace_back(u, w);\n    }\n    auto [len, path] = tree_diameter(adj);\n\
+    \    cout << len << \" \" << path.size() << '\\n';\n    reverse(all(path));\n\
+    \    for (int x : path) {\n        cout << x << \" \";\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/tree_diameter\"\n\n#include\
-    \ \"../template.h\"\n#include \"Tree/Tree.h\"\n\nvoid solve() {\n\tint n; cin\
-    \ >> n;\n\tvector<vector<pii>> adj(n);\n\tfor (int i = 0; i < n-1; i++) {\n\t\t\
-    int u, v, w; cin >> u >> v >> w;\n\t\tadj[u].emplace_back(v, w);\n\t\tadj[v].emplace_back(u,\
-    \ w);\n\t}\n\tauto [len, path] = tree_diameter(adj);\n\tcout << len << \" \" <<\
-    \ path.size() << '\\n';\n\treverse(all(path));\n\tfor (int x : path) {\n\t\tcout\
-    \ << x << \" \";\n\t}\n}"
+    \ \"../template.h\"\n#include \"Tree/Tree.h\"\n\nvoid solve() {\n    int n; cin\
+    \ >> n;\n    vector<vector<pii>> adj(n);\n    for (int i = 0; i < n-1; i++) {\n\
+    \        int u, v, w; cin >> u >> v >> w;\n        adj[u].emplace_back(v, w);\n\
+    \        adj[v].emplace_back(u, w);\n    }\n    auto [len, path] = tree_diameter(adj);\n\
+    \    cout << len << \" \" << path.size() << '\\n';\n    reverse(all(path));\n\
+    \    for (int x : path) {\n        cout << x << \" \";\n    }\n}"
   dependsOn:
   - template.h
   - Tree/Tree/Tree.h
   isVerificationFile: true
   path: Tree/Diameter_tree.test.cpp
   requiredBy: []
-  timestamp: '2025-05-25 00:26:18+07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-06-11 15:37:14+07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: Tree/Diameter_tree.test.cpp
 layout: document

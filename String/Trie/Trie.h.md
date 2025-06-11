@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -20,32 +20,34 @@ data:
     \  ios_base::sync_with_stdio(false);cin.tie(NULL);\n    // cin.exceptions(cin.failbit);\n\
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
-    \ 0;\n}\n#line 2 \"String/Trie/Trie.h\"\n\nstruct Node {\n\tNode *child[26];\n\
-    \tbool isEnd;\n\n\tNode() {\n\t\tmemset(child, 0, sizeof child);\n\t\tisEnd =\
-    \ false;\n\t}\n};\n\nclass Trie {\n\tNode *r = new Node();\n\n\tTrie() {}\n\n\t\
-    void add(const string &s) {\n\t\tNode *u = r;\n\t\tfor (size_t i = 0; i < s.size();\
-    \ i++) {\n\t\t\tint k = s[i] - 'a';\n\t\t\tif (!u->child[k]) {\n\t\t\t\tu->child[k]\
-    \ = new Node();\n\t\t\t}\n\t\t\tu = u->child[k];\n\t\t}\n\t\tu->isEnd = true;\n\
-    \t}\n\n\tbool search(const string &s) {\n\t\tNode *u = r;\n\t\tfor (size_t i =\
-    \ 0; i < s.size(); i++) {\n\t\t\tint k = s[i] - 'a';\n\t\t\tif (!u->child[k])\
-    \ {\n\t\t\t\treturn false;\n\t\t\t}\n\t\t\tu = u->child[k];\n\t\t}\n\t\treturn\
-    \ u->isEnd;\n\t}\n};\n"
-  code: "#include \"../../template.h\"\n\nstruct Node {\n\tNode *child[26];\n\tbool\
-    \ isEnd;\n\n\tNode() {\n\t\tmemset(child, 0, sizeof child);\n\t\tisEnd = false;\n\
-    \t}\n};\n\nclass Trie {\n\tNode *r = new Node();\n\n\tTrie() {}\n\n\tvoid add(const\
-    \ string &s) {\n\t\tNode *u = r;\n\t\tfor (size_t i = 0; i < s.size(); i++) {\n\
-    \t\t\tint k = s[i] - 'a';\n\t\t\tif (!u->child[k]) {\n\t\t\t\tu->child[k] = new\
-    \ Node();\n\t\t\t}\n\t\t\tu = u->child[k];\n\t\t}\n\t\tu->isEnd = true;\n\t}\n\
-    \n\tbool search(const string &s) {\n\t\tNode *u = r;\n\t\tfor (size_t i = 0; i\
-    \ < s.size(); i++) {\n\t\t\tint k = s[i] - 'a';\n\t\t\tif (!u->child[k]) {\n\t\
-    \t\t\treturn false;\n\t\t\t}\n\t\t\tu = u->child[k];\n\t\t}\n\t\treturn u->isEnd;\n\
-    \t}\n};"
+    \ 0;\n}\n#line 2 \"String/Trie/Trie.h\"\n\nstruct Node {\n    Node *child[26];\n\
+    \    bool isEnd;\n\n    Node() {\n        memset(child, 0, sizeof child);\n  \
+    \      isEnd = false;\n    }\n};\n\nclass Trie {\n    Node *r = new Node();\n\n\
+    \    Trie() {}\n\n    void add(const string &s) {\n        Node *u = r;\n    \
+    \    for (size_t i = 0; i < s.size(); i++) {\n            int k = s[i] - 'a';\n\
+    \            if (!u->child[k]) {\n                u->child[k] = new Node();\n\
+    \            }\n            u = u->child[k];\n        }\n        u->isEnd = true;\n\
+    \    }\n\n    bool search(const string &s) {\n        Node *u = r;\n        for\
+    \ (size_t i = 0; i < s.size(); i++) {\n            int k = s[i] - 'a';\n     \
+    \       if (!u->child[k]) {\n                return false;\n            }\n  \
+    \          u = u->child[k];\n        }\n        return u->isEnd;\n    }\n};\n"
+  code: "#include \"../../template.h\"\n\nstruct Node {\n    Node *child[26];\n  \
+    \  bool isEnd;\n\n    Node() {\n        memset(child, 0, sizeof child);\n    \
+    \    isEnd = false;\n    }\n};\n\nclass Trie {\n    Node *r = new Node();\n\n\
+    \    Trie() {}\n\n    void add(const string &s) {\n        Node *u = r;\n    \
+    \    for (size_t i = 0; i < s.size(); i++) {\n            int k = s[i] - 'a';\n\
+    \            if (!u->child[k]) {\n                u->child[k] = new Node();\n\
+    \            }\n            u = u->child[k];\n        }\n        u->isEnd = true;\n\
+    \    }\n\n    bool search(const string &s) {\n        Node *u = r;\n        for\
+    \ (size_t i = 0; i < s.size(); i++) {\n            int k = s[i] - 'a';\n     \
+    \       if (!u->child[k]) {\n                return false;\n            }\n  \
+    \          u = u->child[k];\n        }\n        return u->isEnd;\n    }\n};"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: String/Trie/Trie.h
   requiredBy: []
-  timestamp: '2025-06-02 20:04:33+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: String/Trie/Trie.h

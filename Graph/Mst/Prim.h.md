@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/DSU/Dsu.h
     title: DataStructure/DSU/Dsu.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -45,35 +45,37 @@ data:
     \ mod) % mod;\n        return true;\n    }\n\n    int getDiff(int u, int v, int\
     \ mod) {\n        int pu = findPotential(u, mod);\n        int pv = findPotential(v,\
     \ mod);\n        if (pu != pv) return -1;\n        return (diff[u] - diff[v] +\
-    \ mod) % mod;\n    }\n};\n#line 3 \"Graph/Mst/Prim.h\"\n\nstruct Edge {\n\tint\
-    \ u, v, w;\n\tEdge() {}\n\tEdge(int _u, int _v, int _w): u(_u), v(_v), w(_w) {}\n\
-    };\n\npair<ll, vector<Edge>> prim(int s, int n, vector<vector<pii>> &g) {\n\t\
-    ll ans = 0;\n\tvector<int> par(n+1);\n\tvector<Edge> MST;\n\tvector<int> vis(n+1);\n\
-    \tvector<ll> d(n+1, 1e18);\n\tpriority_queue<pii, vector<pii>, greater<pii>> pq;\n\
-    \td[s] = 0;\n\tpq.push({d[s], s});\n\twhile (!pq.empty()) {\n\t\tauto [dist, u]\
-    \ = pq.top(); pq.pop();\n\t\tif (vis[u]) continue;\n\t\tvis[u] = 1;\n\t\tans +=\
-    \ dist;\n\t\tif (s != u) {\n\t\t\tMST.emplace_back(u, par[u], dist);\n\t\t}\n\t\
-    \tfor (auto [v, w] : g[u]) {\n\t\t\tif (!vis[v] && d[v] > w) {\n\t\t\t\td[v] =\
-    \ w;\n\t\t\t\tpq.push({d[v], v});\n\t\t\t}\n\t\t}\n\t}\n\treturn {ans, MST};\n\
-    }\n"
+    \ mod) % mod;\n    }\n};\n#line 3 \"Graph/Mst/Prim.h\"\n\nstruct Edge {\n    int\
+    \ u, v, w;\n    Edge() {}\n    Edge(int _u, int _v, int _w): u(_u), v(_v), w(_w)\
+    \ {}\n};\n\npair<ll, vector<Edge>> prim(int s, int n, vector<vector<pii>> &g)\
+    \ {\n    ll ans = 0;\n    vector<int> par(n+1);\n    vector<Edge> MST;\n    vector<int>\
+    \ vis(n+1);\n    vector<ll> d(n+1, 1e18);\n    priority_queue<pii, vector<pii>,\
+    \ greater<pii>> pq;\n    d[s] = 0;\n    pq.push({d[s], s});\n    while (!pq.empty())\
+    \ {\n        auto [dist, u] = pq.top(); pq.pop();\n        if (vis[u]) continue;\n\
+    \        vis[u] = 1;\n        ans += dist;\n        if (s != u) {\n          \
+    \  MST.emplace_back(u, par[u], dist);\n        }\n        for (auto [v, w] : g[u])\
+    \ {\n            if (!vis[v] && d[v] > w) {\n                d[v] = w;\n     \
+    \           pq.push({d[v], v});\n            }\n        }\n    }\n    return {ans,\
+    \ MST};\n}\n"
   code: "#include \"../../template.h\"\n#include \"../../DataStructure/DSU/Dsu.h\"\
-    \n\nstruct Edge {\n\tint u, v, w;\n\tEdge() {}\n\tEdge(int _u, int _v, int _w):\
-    \ u(_u), v(_v), w(_w) {}\n};\n\npair<ll, vector<Edge>> prim(int s, int n, vector<vector<pii>>\
-    \ &g) {\n\tll ans = 0;\n\tvector<int> par(n+1);\n\tvector<Edge> MST;\n\tvector<int>\
-    \ vis(n+1);\n\tvector<ll> d(n+1, 1e18);\n\tpriority_queue<pii, vector<pii>, greater<pii>>\
-    \ pq;\n\td[s] = 0;\n\tpq.push({d[s], s});\n\twhile (!pq.empty()) {\n\t\tauto [dist,\
-    \ u] = pq.top(); pq.pop();\n\t\tif (vis[u]) continue;\n\t\tvis[u] = 1;\n\t\tans\
-    \ += dist;\n\t\tif (s != u) {\n\t\t\tMST.emplace_back(u, par[u], dist);\n\t\t\
-    }\n\t\tfor (auto [v, w] : g[u]) {\n\t\t\tif (!vis[v] && d[v] > w) {\n\t\t\t\t\
-    d[v] = w;\n\t\t\t\tpq.push({d[v], v});\n\t\t\t}\n\t\t}\n\t}\n\treturn {ans, MST};\n\
-    }"
+    \n\nstruct Edge {\n    int u, v, w;\n    Edge() {}\n    Edge(int _u, int _v, int\
+    \ _w): u(_u), v(_v), w(_w) {}\n};\n\npair<ll, vector<Edge>> prim(int s, int n,\
+    \ vector<vector<pii>> &g) {\n    ll ans = 0;\n    vector<int> par(n+1);\n    vector<Edge>\
+    \ MST;\n    vector<int> vis(n+1);\n    vector<ll> d(n+1, 1e18);\n    priority_queue<pii,\
+    \ vector<pii>, greater<pii>> pq;\n    d[s] = 0;\n    pq.push({d[s], s});\n   \
+    \ while (!pq.empty()) {\n        auto [dist, u] = pq.top(); pq.pop();\n      \
+    \  if (vis[u]) continue;\n        vis[u] = 1;\n        ans += dist;\n        if\
+    \ (s != u) {\n            MST.emplace_back(u, par[u], dist);\n        }\n    \
+    \    for (auto [v, w] : g[u]) {\n            if (!vis[v] && d[v] > w) {\n    \
+    \            d[v] = w;\n                pq.push({d[v], v});\n            }\n \
+    \       }\n    }\n    return {ans, MST};\n}"
   dependsOn:
   - template.h
   - DataStructure/DSU/Dsu.h
   isVerificationFile: false
   path: Graph/Mst/Prim.h
   requiredBy: []
-  timestamp: '2025-06-07 22:39:21+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: Graph/Mst/Prim.h

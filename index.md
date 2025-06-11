@@ -30,7 +30,7 @@ data:
       title: DataStructure/DSU/test/test_dsu_2d_2.cpp
   - name: DataStructure/Fenwick
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: DataStructure/Fenwick/Fenwick.h
       title: DataStructure/Fenwick/Fenwick.h
   - name: DataStructure
@@ -156,31 +156,31 @@ data:
       title: Misc/Small_to_large.h
   - name: NumberTheory/Math
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: NumberTheory/Math/Binary_exponentiation.h
       title: NumberTheory/Math/Binary_exponentiation.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: NumberTheory/Math/CheckPrime.h
       title: NumberTheory/Math/CheckPrime.h
     - icon: ':warning:'
       path: NumberTheory/Math/Divisors.h
       title: NumberTheory/Math/Divisors.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: NumberTheory/Math/EulerPhi.h
       title: NumberTheory/Math/EulerPhi.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: NumberTheory/Math/Extended_euclid.h
       title: NumberTheory/Math/Extended_euclid.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: NumberTheory/Math/Factorization.h
       title: NumberTheory/Math/Factorization.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: NumberTheory/Math/MillerRabin.h
       title: NumberTheory/Math/MillerRabin.h
     - icon: ':warning:'
       path: NumberTheory/Math/Primality_test.h
       title: NumberTheory/Math/Primality_test.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: NumberTheory/Math/Sieve.h
       title: NumberTheory/Math/Sieve.h
   - name: String/Hash
@@ -212,23 +212,23 @@ data:
       title: String/Trie/Trie_array_ver.h
   - name: String
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: String/Z_Function.h
       title: String/Z_Function.h
   - name: Tree/EulerTour
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: Tree/EulerTour/EulerTour.h
       title: Tree/EulerTour/EulerTour.h
   - name: Tree/Tree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: Tree/Tree/BinaryLifting.h
       title: Tree/Tree/BinaryLifting.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: Tree/Tree/Lca.h
       title: Tree/Tree/Lca.h
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: Tree/Tree/Tree.h
       title: Tree/Tree/Tree.h
   - name: .
@@ -236,7 +236,7 @@ data:
     - icon: ':warning:'
       path: setup.py
       title: setup.py
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template.h
       title: template.h
   verificationCategories:
@@ -338,30 +338,30 @@ data:
     - icon: ':heavy_check_mark:'
       path: NumberTheory/Counting_primes.test.cpp
       title: NumberTheory/Counting_primes.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: NumberTheory/Enumerate_primes.test.cpp
       title: NumberTheory/Enumerate_primes.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: NumberTheory/Enumerate_quotients.test.cpp
       title: NumberTheory/Enumerate_quotients.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: NumberTheory/Primality_test.test.cpp
       title: NumberTheory/Primality_test.test.cpp
   - name: NumberTheory/Math/test
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: NumberTheory/Math/test/aizu_ntl_1_a_prime_factor.test.cpp
       title: NumberTheory/Math/test/aizu_ntl_1_a_prime_factor.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: NumberTheory/Math/test/aizu_ntl_1_b_power_mod.test.cpp
       title: NumberTheory/Math/test/aizu_ntl_1_b_power_mod.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: NumberTheory/Math/test/aizu_ntl_1_c_lcm.test.cpp
       title: NumberTheory/Math/test/aizu_ntl_1_c_lcm.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: NumberTheory/Math/test/aizu_ntl_1_d_euler_phi.test.cpp
       title: NumberTheory/Math/test/aizu_ntl_1_d_euler_phi.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: NumberTheory/Math/test/aizu_ntl_1_e_extended_euclid.test.cpp
       title: NumberTheory/Math/test/aizu_ntl_1_e_extended_euclid.test.cpp
   - name: Sample
@@ -377,21 +377,21 @@ data:
       title: Sample/Many_A_plus_B_128bit.test.cpp
   - name: String
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: String/Z_Algorithm.test.cpp
       title: String/Z_Algorithm.test.cpp
   - name: Tree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: Tree/Diameter_tree.test.cpp
       title: Tree/Diameter_tree.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: Tree/Jump_on_tree.test.cpp
       title: Tree/Jump_on_tree.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: Tree/Lowest_common_ancestor.test.cpp
       title: Tree/Lowest_common_ancestor.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: Tree/Vertex_add_subtree_sum.test.cpp
       title: Tree/Vertex_add_subtree_sum.test.cpp
 layout: toppage

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/SqrtDecomposition/Split_Rebuild/Simplified_version.h
     title: DataStructure/SqrtDecomposition/Split_Rebuild/Simplified_version.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -77,27 +77,29 @@ data:
     \   } else {\n                for (int i = 0; i < blocks[it].sz; i++)\n      \
     \              a.push_back(blocks[it].assigned);\n            }\n        }\n \
     \       n = a.size() - 1;\n        rebuild();\n    }\n};\n#line 5 \"DataStructure/Range_reverse_range_sum.test.cpp\"\
-    \n\nvoid solve() {\n\tint n, q; cin >> n >> q;\n\tvector<int> a(n + 1);\n\tfor\
-    \ (int i = 1; i <= n; i++) {\n\t\tcin >> a[i];\n\t}\n\tSqrt sqrt(n, a);\n    sqrt.rebuild();\n\
-    \    while (q--) {\n        if (sqrt.blockId.size() > 3000) sqrt.rebuild_if_need();\n\
-    \        int type, l, r; cin >> type >> l >> r;\n        l++;\n        if (type\
-    \ == 0) {\n            sqrt.Reverse(l, r);\n        } else if (type == 1) {\n\
-    \            cout << sqrt.sum(l, r) << '\\n';\n        }\n    }\n}\n"
+    \n\nvoid solve() {\n    int n, q; cin >> n >> q;\n    vector<int> a(n + 1);\n\
+    \    for (int i = 1; i <= n; i++) {\n        cin >> a[i];\n    }\n    Sqrt sqrt(n,\
+    \ a);\n    sqrt.rebuild();\n    while (q--) {\n        if (sqrt.blockId.size()\
+    \ > 3000) sqrt.rebuild_if_need();\n        int type, l, r; cin >> type >> l >>\
+    \ r;\n        l++;\n        if (type == 0) {\n            sqrt.Reverse(l, r);\n\
+    \        } else if (type == 1) {\n            cout << sqrt.sum(l, r) << '\\n';\n\
+    \        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_reverse_range_sum\"\
     \n\n#include \"../template.h\"\n#include \"SqrtDecomposition/Split_Rebuild/Simplified_version.h\"\
-    \n\nvoid solve() {\n\tint n, q; cin >> n >> q;\n\tvector<int> a(n + 1);\n\tfor\
-    \ (int i = 1; i <= n; i++) {\n\t\tcin >> a[i];\n\t}\n\tSqrt sqrt(n, a);\n    sqrt.rebuild();\n\
-    \    while (q--) {\n        if (sqrt.blockId.size() > 3000) sqrt.rebuild_if_need();\n\
-    \        int type, l, r; cin >> type >> l >> r;\n        l++;\n        if (type\
-    \ == 0) {\n            sqrt.Reverse(l, r);\n        } else if (type == 1) {\n\
-    \            cout << sqrt.sum(l, r) << '\\n';\n        }\n    }\n}"
+    \n\nvoid solve() {\n    int n, q; cin >> n >> q;\n    vector<int> a(n + 1);\n\
+    \    for (int i = 1; i <= n; i++) {\n        cin >> a[i];\n    }\n    Sqrt sqrt(n,\
+    \ a);\n    sqrt.rebuild();\n    while (q--) {\n        if (sqrt.blockId.size()\
+    \ > 3000) sqrt.rebuild_if_need();\n        int type, l, r; cin >> type >> l >>\
+    \ r;\n        l++;\n        if (type == 0) {\n            sqrt.Reverse(l, r);\n\
+    \        } else if (type == 1) {\n            cout << sqrt.sum(l, r) << '\\n';\n\
+    \        }\n    }\n}"
   dependsOn:
   - template.h
   - DataStructure/SqrtDecomposition/Split_Rebuild/Simplified_version.h
   isVerificationFile: true
   path: DataStructure/Range_reverse_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2025-05-22 16:09:02+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: DataStructure/Range_reverse_range_sum.test.cpp

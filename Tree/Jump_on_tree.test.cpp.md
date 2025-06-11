@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: Tree/Tree/BinaryLifting.h
     title: Tree/Tree/BinaryLifting.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/jump_on_tree
@@ -47,24 +47,25 @@ data:
     \    }\n\n    int ancestor_k(int u, int k) {\n        for(int j = 0; (1 << j)\
     \ <= k; j++) {\n            if(k >> j & 1)\n                u = up[u][j];\n  \
     \      }\n        return u;\n    }\n};\n#line 5 \"Tree/Jump_on_tree.test.cpp\"\
-    \n\nvoid solve() {\n\tint n, q; cin >> n >> q;\n\tBinLift binLift(n);\n\tfor (int\
-    \ i = 0; i < n-1; i++) {\n\t\tint u, v; cin >> u >> v;\n\t\tbinLift.addEdge(u,\
-    \ v);\n\t}\n\tbinLift.dfs(0, -1);\n\twhile (q--) {\n\t\tint s, t, i; cin >> s\
-    \ >> t >> i;\n\t\tcout << binLift.jump(s, t, i) << '\\n';\n\t}\n}\n"
+    \n\nvoid solve() {\n    int n, q; cin >> n >> q;\n    BinLift binLift(n);\n  \
+    \  for (int i = 0; i < n-1; i++) {\n        int u, v; cin >> u >> v;\n       \
+    \ binLift.addEdge(u, v);\n    }\n    binLift.dfs(0, -1);\n    while (q--) {\n\
+    \        int s, t, i; cin >> s >> t >> i;\n        cout << binLift.jump(s, t,\
+    \ i) << '\\n';\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/jump_on_tree\"\n\n#include\
-    \ \"../template.h\"\n#include \"Tree/BinaryLifting.h\"\n\nvoid solve() {\n\tint\
-    \ n, q; cin >> n >> q;\n\tBinLift binLift(n);\n\tfor (int i = 0; i < n-1; i++)\
-    \ {\n\t\tint u, v; cin >> u >> v;\n\t\tbinLift.addEdge(u, v);\n\t}\n\tbinLift.dfs(0,\
-    \ -1);\n\twhile (q--) {\n\t\tint s, t, i; cin >> s >> t >> i;\n\t\tcout << binLift.jump(s,\
-    \ t, i) << '\\n';\n\t}\n}"
+    \ \"../template.h\"\n#include \"Tree/BinaryLifting.h\"\n\nvoid solve() {\n   \
+    \ int n, q; cin >> n >> q;\n    BinLift binLift(n);\n    for (int i = 0; i < n-1;\
+    \ i++) {\n        int u, v; cin >> u >> v;\n        binLift.addEdge(u, v);\n \
+    \   }\n    binLift.dfs(0, -1);\n    while (q--) {\n        int s, t, i; cin >>\
+    \ s >> t >> i;\n        cout << binLift.jump(s, t, i) << '\\n';\n    }\n}"
   dependsOn:
   - template.h
   - Tree/Tree/BinaryLifting.h
   isVerificationFile: true
   path: Tree/Jump_on_tree.test.cpp
   requiredBy: []
-  timestamp: '2025-05-25 00:26:18+07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-06-11 15:37:14+07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: Tree/Jump_on_tree.test.cpp
 layout: document

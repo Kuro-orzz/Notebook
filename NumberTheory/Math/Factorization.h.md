@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: NumberTheory/Math/test/aizu_ntl_1_a_prime_factor.test.cpp
     title: NumberTheory/Math/test/aizu_ntl_1_a_prime_factor.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -24,24 +24,26 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"NumberTheory/Math/Factorization.h\"\n\n\nvector<ll> primeFactor(ll\
-    \ n) {\n\tvector<ll> factor;\n\tfor (int i : {2, 3, 5}) {\n\t\twhile (n % i ==\
-    \ 0) {\n\t\t\tn /= i;\n\t\t\tfactor.push_back(i);\n\t\t}\n\t}\n\tint inc[] = {4,\
-    \ 2, 4, 2, 4, 6, 2, 6};\n\tint j = 0;\n\tfor (ll i = 7; i * i <= n; i += inc[j%8],\
-    \ j++) {\n\t\twhile(n % i == 0) {\n\t\t\tn /= i;\n\t\t\tfactor.push_back(i);\n\
-    \t\t}\n\t}\n\tif (n > 1) factor.push_back(n);\n\treturn factor;\n}\n"
-  code: "#include \"../../template.h\"\n\n\nvector<ll> primeFactor(ll n) {\n\tvector<ll>\
-    \ factor;\n\tfor (int i : {2, 3, 5}) {\n\t\twhile (n % i == 0) {\n\t\t\tn /= i;\n\
-    \t\t\tfactor.push_back(i);\n\t\t}\n\t}\n\tint inc[] = {4, 2, 4, 2, 4, 6, 2, 6};\n\
-    \tint j = 0;\n\tfor (ll i = 7; i * i <= n; i += inc[j%8], j++) {\n\t\twhile(n\
-    \ % i == 0) {\n\t\t\tn /= i;\n\t\t\tfactor.push_back(i);\n\t\t}\n\t}\n\tif (n\
-    \ > 1) factor.push_back(n);\n\treturn factor;\n}"
+    \ n) {\n    vector<ll> factor;\n    for (int i : {2, 3, 5}) {\n        while (n\
+    \ % i == 0) {\n            n /= i;\n            factor.push_back(i);\n       \
+    \ }\n    }\n    int inc[] = {4, 2, 4, 2, 4, 6, 2, 6};\n    int j = 0;\n    for\
+    \ (ll i = 7; i * i <= n; i += inc[j%8], j++) {\n        while(n % i == 0) {\n\
+    \            n /= i;\n            factor.push_back(i);\n        }\n    }\n   \
+    \ if (n > 1) factor.push_back(n);\n    return factor;\n}\n"
+  code: "#include \"../../template.h\"\n\n\nvector<ll> primeFactor(ll n) {\n    vector<ll>\
+    \ factor;\n    for (int i : {2, 3, 5}) {\n        while (n % i == 0) {\n     \
+    \       n /= i;\n            factor.push_back(i);\n        }\n    }\n    int inc[]\
+    \ = {4, 2, 4, 2, 4, 6, 2, 6};\n    int j = 0;\n    for (ll i = 7; i * i <= n;\
+    \ i += inc[j%8], j++) {\n        while(n % i == 0) {\n            n /= i;\n  \
+    \          factor.push_back(i);\n        }\n    }\n    if (n > 1) factor.push_back(n);\n\
+    \    return factor;\n}"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: NumberTheory/Math/Factorization.h
   requiredBy: []
-  timestamp: '2025-05-12 18:52:18+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2025-06-11 15:37:14+07:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - NumberTheory/Math/test/aizu_ntl_1_a_prime_factor.test.cpp
 documentation_of: NumberTheory/Math/Factorization.h

@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: DataStructure/Fenwick/Fenwick.h
     title: DataStructure/Fenwick/Fenwick.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -37,22 +37,23 @@ data:
     \ get(r) - get(l - 1);\n    }\n\n    void update_range(int l, int r, T val){\n\
     \        update(l, val);\n        update(r+1, -val);\n    }\n\n    void reset()\
     \ {\n        fill(all(fen), T(0));\n    }\n};\n#line 5 \"DataStructure/Static_range_sum.test.cpp\"\
-    \n\nvoid solve() {\n\tint n, q; cin >> n >> q;\n\tFenwick<ll> BIT(n);\n\tfor (int\
-    \ i = 1; i <= n; i++) {\n\t\tint x; cin >> x;\n\t\tBIT.update(i, x);\n\t}\n\t\
-    while (q--) {\n\t\tint l, r; cin >> l >> r;\n\t\tcout << BIT.get(l+1, r) << '\\\
-    n';\n\t}\n}\n"
+    \n\nvoid solve() {\n    int n, q; cin >> n >> q;\n    Fenwick<ll> BIT(n);\n  \
+    \  for (int i = 1; i <= n; i++) {\n        int x; cin >> x;\n        BIT.update(i,\
+    \ x);\n    }\n    while (q--) {\n        int l, r; cin >> l >> r;\n        cout\
+    \ << BIT.get(l+1, r) << '\\n';\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n\
     #include \"../template.h\"\n#include \"Fenwick/Fenwick.h\"\n\nvoid solve() {\n\
-    \tint n, q; cin >> n >> q;\n\tFenwick<ll> BIT(n);\n\tfor (int i = 1; i <= n; i++)\
-    \ {\n\t\tint x; cin >> x;\n\t\tBIT.update(i, x);\n\t}\n\twhile (q--) {\n\t\tint\
-    \ l, r; cin >> l >> r;\n\t\tcout << BIT.get(l+1, r) << '\\n';\n\t}\n}"
+    \    int n, q; cin >> n >> q;\n    Fenwick<ll> BIT(n);\n    for (int i = 1; i\
+    \ <= n; i++) {\n        int x; cin >> x;\n        BIT.update(i, x);\n    }\n \
+    \   while (q--) {\n        int l, r; cin >> l >> r;\n        cout << BIT.get(l+1,\
+    \ r) << '\\n';\n    }\n}"
   dependsOn:
   - template.h
   - DataStructure/Fenwick/Fenwick.h
   isVerificationFile: true
   path: DataStructure/Static_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2025-05-22 01:34:28+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: DataStructure/Static_range_sum.test.cpp

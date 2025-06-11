@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_C
@@ -27,22 +27,23 @@ data:
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 4 \"NumberTheory/Math/test/aizu_ntl_1_c_lcm.test.cpp\"\n\n// lcm\
     \ support C++17 and above only\n// if C++ lower than 17, use x / __gcd(x, y) *\
-    \ y\n\nvoid solve() {\n\tint n; cin >> n;\n\tint a[n];\n\tfor (int i = 0; i <\
-    \ n; i++) {\n\t\tcin >> a[i];\n\t}\n\tint ans = a[0];\n\tfor (int i = 1; i < n;\
-    \ i++) {\n\t\tans = lcm(ans, a[i]);\n\t}\n\tcout << ans << '\\n';\n}\n"
+    \ y\n\nvoid solve() {\n    int n; cin >> n;\n    int a[n];\n    for (int i = 0;\
+    \ i < n; i++) {\n        cin >> a[i];\n    }\n    int ans = a[0];\n    for (int\
+    \ i = 1; i < n; i++) {\n        ans = lcm(ans, a[i]);\n    }\n    cout << ans\
+    \ << '\\n';\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_C\"\
     \n\n#include \"../../../template.h\"\n\n// lcm support C++17 and above only\n\
-    // if C++ lower than 17, use x / __gcd(x, y) * y\n\nvoid solve() {\n\tint n; cin\
-    \ >> n;\n\tint a[n];\n\tfor (int i = 0; i < n; i++) {\n\t\tcin >> a[i];\n\t}\n\
-    \tint ans = a[0];\n\tfor (int i = 1; i < n; i++) {\n\t\tans = lcm(ans, a[i]);\n\
-    \t}\n\tcout << ans << '\\n';\n}"
+    // if C++ lower than 17, use x / __gcd(x, y) * y\n\nvoid solve() {\n    int n;\
+    \ cin >> n;\n    int a[n];\n    for (int i = 0; i < n; i++) {\n        cin >>\
+    \ a[i];\n    }\n    int ans = a[0];\n    for (int i = 1; i < n; i++) {\n     \
+    \   ans = lcm(ans, a[i]);\n    }\n    cout << ans << '\\n';\n}"
   dependsOn:
   - template.h
   isVerificationFile: true
   path: NumberTheory/Math/test/aizu_ntl_1_c_lcm.test.cpp
   requiredBy: []
-  timestamp: '2025-06-08 06:31:53+07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-06-11 15:37:14+07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: NumberTheory/Math/test/aizu_ntl_1_c_lcm.test.cpp
 layout: document

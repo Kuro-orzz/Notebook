@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: Graph/Shortest_path/Dijkstra.h
     title: Graph/Shortest_path/Dijkstra.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -29,31 +29,34 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"Graph/Shortest_path/Dijkstra.h\"\n\nvector<ll> dijkstra(int\
-    \ s, int n, vector<vector<pii>> &g) {\n\tvector<int> vis(n + 1);\n\tvector<ll>\
-    \ d(n + 1, LLONG_MAX);\n\tpriority_queue<pii, vector<pii>, greater<pii>> pq;\n\
-    \tpq.push({d[s], s});\n\td[s] = 0;\n\twhile (!pq.empty()) {\n\t\tauto [dist, u]\
-    \ = pq.top(); pq.pop();\n\t\tif (vis[u]) continue;\n\t\tvis[u] = 1;\n\t\tfor (auto\
-    \ [v, w] : g[u]) {\n\t\t\tif (d[v] > d[u] + w) {\n\t\t\t\td[v] = d[u] + w;\n\t\
-    \t\t\tpq.push({d[v], v});\n\t\t\t}\n\t\t}\n\t}\n\treturn d;\n}\n#line 5 \"Graph/test/aizu_grl_1_a_dijkstra.test.cpp\"\
-    \n\nvoid solve() {\n\tint n, m, s; cin >> n >> m >> s;\n\tvector<vector<pii>>\
-    \ adj(n+1);\n\tfor (int i = 0; i < m; i++) {\n\t\tint u, v, w; cin >> u >> v >>\
-    \ w;\n\t\tadj[u].push_back({v, w});\n\t}\n\tvector<ll> d = dijkstra(s, n, adj);\n\
-    \tfor (int i = 0; i < n; i++) {\n\t\tif (d[i] == LLONG_MAX) {\n\t\t\tcout << \"\
-    INF\\n\";\n\t\t} else {\n\t\t\tcout << d[i] << '\\n';\n\t\t}\n\t}\n}\n"
+    \ s, int n, vector<vector<pii>> &g) {\n    vector<int> vis(n + 1);\n    vector<ll>\
+    \ d(n + 1, LLONG_MAX);\n    priority_queue<pii, vector<pii>, greater<pii>> pq;\n\
+    \    pq.push({d[s], s});\n    d[s] = 0;\n    while (!pq.empty()) {\n        auto\
+    \ [dist, u] = pq.top(); pq.pop();\n        if (vis[u]) continue;\n        vis[u]\
+    \ = 1;\n        for (auto [v, w] : g[u]) {\n            if (d[v] > d[u] + w) {\n\
+    \                d[v] = d[u] + w;\n                pq.push({d[v], v});\n     \
+    \       }\n        }\n    }\n    return d;\n}\n#line 5 \"Graph/test/aizu_grl_1_a_dijkstra.test.cpp\"\
+    \n\nvoid solve() {\n    int n, m, s; cin >> n >> m >> s;\n    vector<vector<pii>>\
+    \ adj(n+1);\n    for (int i = 0; i < m; i++) {\n        int u, v, w; cin >> u\
+    \ >> v >> w;\n        adj[u].push_back({v, w});\n    }\n    vector<ll> d = dijkstra(s,\
+    \ n, adj);\n    for (int i = 0; i < n; i++) {\n        if (d[i] == LLONG_MAX)\
+    \ {\n            cout << \"INF\\n\";\n        } else {\n            cout << d[i]\
+    \ << '\\n';\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A\"\
     \n\n#include \"../../template.h\"\n#include \"../Shortest_path/Dijkstra.h\"\n\n\
-    void solve() {\n\tint n, m, s; cin >> n >> m >> s;\n\tvector<vector<pii>> adj(n+1);\n\
-    \tfor (int i = 0; i < m; i++) {\n\t\tint u, v, w; cin >> u >> v >> w;\n\t\tadj[u].push_back({v,\
-    \ w});\n\t}\n\tvector<ll> d = dijkstra(s, n, adj);\n\tfor (int i = 0; i < n; i++)\
-    \ {\n\t\tif (d[i] == LLONG_MAX) {\n\t\t\tcout << \"INF\\n\";\n\t\t} else {\n\t\
-    \t\tcout << d[i] << '\\n';\n\t\t}\n\t}\n}"
+    void solve() {\n    int n, m, s; cin >> n >> m >> s;\n    vector<vector<pii>>\
+    \ adj(n+1);\n    for (int i = 0; i < m; i++) {\n        int u, v, w; cin >> u\
+    \ >> v >> w;\n        adj[u].push_back({v, w});\n    }\n    vector<ll> d = dijkstra(s,\
+    \ n, adj);\n    for (int i = 0; i < n; i++) {\n        if (d[i] == LLONG_MAX)\
+    \ {\n            cout << \"INF\\n\";\n        } else {\n            cout << d[i]\
+    \ << '\\n';\n        }\n    }\n}"
   dependsOn:
   - template.h
   - Graph/Shortest_path/Dijkstra.h
   isVerificationFile: true
   path: Graph/test/aizu_grl_1_a_dijkstra.test.cpp
   requiredBy: []
-  timestamp: '2025-06-07 22:39:21+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Graph/test/aizu_grl_1_a_dijkstra.test.cpp

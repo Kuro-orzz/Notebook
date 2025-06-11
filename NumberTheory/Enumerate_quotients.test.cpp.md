@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/enumerate_quotients
@@ -25,20 +25,21 @@ data:
     \    // cin.exceptions(cin.failbit);\n    // int t; cin >> t;\n    // while(t--)\n\
     \        solve();\n    cerr << \"\\nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC\
     \ << \"ms\" << '\\n';\n    return 0;\n}\n#line 4 \"NumberTheory/Enumerate_quotients.test.cpp\"\
-    \n\nvoid solve() {\n\tll n; cin >> n;\n\tset<ll> s;\n\tfor (ll i = 1; i*i <= n;\
-    \ i++) {\n\t\ts.insert(i);\n\t\ts.insert(n / i);\n\t}\n\tcout << s.size() << '\\\
-    n';\n\tfor (ll x : s) cout << x << \" \";\n}\n"
+    \n\nvoid solve() {\n    ll n; cin >> n;\n    set<ll> s;\n    for (ll i = 1; i*i\
+    \ <= n; i++) {\n        s.insert(i);\n        s.insert(n / i);\n    }\n    cout\
+    \ << s.size() << '\\n';\n    for (ll x : s) cout << x << \" \";\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_quotients\"\n\
-    \n#include \"../template.h\"\n\nvoid solve() {\n\tll n; cin >> n;\n\tset<ll> s;\n\
-    \tfor (ll i = 1; i*i <= n; i++) {\n\t\ts.insert(i);\n\t\ts.insert(n / i);\n\t\
-    }\n\tcout << s.size() << '\\n';\n\tfor (ll x : s) cout << x << \" \";\n}"
+    \n#include \"../template.h\"\n\nvoid solve() {\n    ll n; cin >> n;\n    set<ll>\
+    \ s;\n    for (ll i = 1; i*i <= n; i++) {\n        s.insert(i);\n        s.insert(n\
+    \ / i);\n    }\n    cout << s.size() << '\\n';\n    for (ll x : s) cout << x <<\
+    \ \" \";\n}"
   dependsOn:
   - template.h
   isVerificationFile: true
   path: NumberTheory/Enumerate_quotients.test.cpp
   requiredBy: []
-  timestamp: '2025-05-08 21:29:20+07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-06-11 15:37:14+07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: NumberTheory/Enumerate_quotients.test.cpp
 layout: document

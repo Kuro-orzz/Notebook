@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -21,21 +21,23 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"Misc/Compress.h\"\n\ntemplate <typename T>\nstruct Compress\
-    \ {\n\tint cnt = 1;\n\tmap<T, int> compressed;\n\tvector<T> decompress;\n\n\t\
-    Compress(const vector<T> &a) {\n\t\tdecompress.push_back(T(0));\n\t\tvector<T>\
-    \ b = a;\n\t\tsort(all(b));\n\t\tunique(b);\n\t\tfor (T x : b) {\n\t\t\tcompressed[x]\
-    \ = cnt++;\n\t\t\tdecompress.push_back(x);\n\t\t}\n\t}\n};\n"
-  code: "#include \"../template.h\"\n\ntemplate <typename T>\nstruct Compress {\n\t\
-    int cnt = 1;\n\tmap<T, int> compressed;\n\tvector<T> decompress;\n\n\tCompress(const\
-    \ vector<T> &a) {\n\t\tdecompress.push_back(T(0));\n\t\tvector<T> b = a;\n\t\t\
-    sort(all(b));\n\t\tunique(b);\n\t\tfor (T x : b) {\n\t\t\tcompressed[x] = cnt++;\n\
-    \t\t\tdecompress.push_back(x);\n\t\t}\n\t}\n};"
+    \ {\n    int cnt = 1;\n    map<T, int> compressed;\n    vector<T> decompress;\n\
+    \n    Compress(const vector<T> &a) {\n        decompress.push_back(T(0));\n  \
+    \      vector<T> b = a;\n        sort(all(b));\n        unique(b);\n        for\
+    \ (T x : b) {\n            compressed[x] = cnt++;\n            decompress.push_back(x);\n\
+    \        }\n    }\n};\n"
+  code: "#include \"../template.h\"\n\ntemplate <typename T>\nstruct Compress {\n\
+    \    int cnt = 1;\n    map<T, int> compressed;\n    vector<T> decompress;\n\n\
+    \    Compress(const vector<T> &a) {\n        decompress.push_back(T(0));\n   \
+    \     vector<T> b = a;\n        sort(all(b));\n        unique(b);\n        for\
+    \ (T x : b) {\n            compressed[x] = cnt++;\n            decompress.push_back(x);\n\
+    \        }\n    }\n};"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: Misc/Compress.h
   requiredBy: []
-  timestamp: '2025-05-08 02:12:25+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: Misc/Compress.h

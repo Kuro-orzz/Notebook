@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: NumberTheory/Math/Binary_exponentiation.h
     title: NumberTheory/Math/Binary_exponentiation.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -24,27 +24,28 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"NumberTheory/Math/Binary_exponentiation.h\"\n\nusing u128 =\
-    \ __uint128_t;\n\nll binMul(ll a, ll b, ll M) {\n\ta = a % M;\n\tll res = 0;\n\
-    \twhile (b) {\n\t\tif (b & 1) res = (res + a) % M;\n\t\ta = a * 2 % M;\n\t\tb\
-    \ /= 2;\n\t}\n\treturn res;\n}\n\nll binPow(ll a, ll b, ll M) {\n\ta %= M;\n\t\
-    ll res = 1;\n\twhile (b) {\n\t\tif (b & 1) res = (u128)res * a % M;\n\t\ta = (u128)a\
-    \ * a % M;\n\t\tb /= 2;\n\t}\n\treturn res;\n}\n#line 3 \"NumberTheory/Math/Primality_test.h\"\
-    \n\n// Fermat's little theorem\nbool isPrime(ll n) {\n\tif (n < 7) return n ==\
-    \ 2 || n == 3 || n == 5;\n\tfor (int i = 0; i < 5; i++) {\n\t\tll a = rand() %\
-    \ (n-3) + 2;\n\t\tif (binPow(a, n-1, n) != 1) \n\t\t\treturn false;\n\t}\n\treturn\
-    \ true;\n}\n"
+    \ __uint128_t;\n\nll binMul(ll a, ll b, ll M) {\n    a = a % M;\n    ll res =\
+    \ 0;\n    while (b) {\n        if (b & 1) res = (res + a) % M;\n        a = a\
+    \ * 2 % M;\n        b /= 2;\n    }\n    return res;\n}\n\nll binPow(ll a, ll b,\
+    \ ll M) {\n    a %= M;\n    ll res = 1;\n    while (b) {\n        if (b & 1) res\
+    \ = (u128)res * a % M;\n        a = (u128)a * a % M;\n        b /= 2;\n    }\n\
+    \    return res;\n}\n#line 3 \"NumberTheory/Math/Primality_test.h\"\n\n// Fermat's\
+    \ little theorem\nbool isPrime(ll n) {\n    if (n < 7) return n == 2 || n == 3\
+    \ || n == 5;\n    for (int i = 0; i < 5; i++) {\n        ll a = rand() % (n-3)\
+    \ + 2;\n        if (binPow(a, n-1, n) != 1) \n            return false;\n    }\n\
+    \    return true;\n}\n"
   code: "#include \"../../template.h\"\n#include \"Binary_exponentiation.h\"\n\n//\
-    \ Fermat's little theorem\nbool isPrime(ll n) {\n\tif (n < 7) return n == 2 ||\
-    \ n == 3 || n == 5;\n\tfor (int i = 0; i < 5; i++) {\n\t\tll a = rand() % (n-3)\
-    \ + 2;\n\t\tif (binPow(a, n-1, n) != 1) \n\t\t\treturn false;\n\t}\n\treturn true;\n\
-    }"
+    \ Fermat's little theorem\nbool isPrime(ll n) {\n    if (n < 7) return n == 2\
+    \ || n == 3 || n == 5;\n    for (int i = 0; i < 5; i++) {\n        ll a = rand()\
+    \ % (n-3) + 2;\n        if (binPow(a, n-1, n) != 1) \n            return false;\n\
+    \    }\n    return true;\n}"
   dependsOn:
   - template.h
   - NumberTheory/Math/Binary_exponentiation.h
   isVerificationFile: false
   path: NumberTheory/Math/Primality_test.h
   requiredBy: []
-  timestamp: '2025-05-10 21:29:43+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: NumberTheory/Math/Primality_test.h

@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: String/Z_Function.h
     title: String/Z_Function.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/zalgorithm
@@ -28,25 +28,26 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"String/Z_Function.h\"\n\nvector<int> Z_function(const string\
-    \ &s) {\n\tint n = s.size();\n\tvector<int> z(n);\n\tz[0] = (int)s.size();\n\t\
-    int l = 0, r = 0;\n\tfor (int i = 1; i < n; i++) {\n\t\tif (i <= r) {\n\t\t\t\
-    z[i] = min(r-i+1, z[i-l]);\n\t\t}\n\t\twhile (i + z[i] < n && s[z[i]] == s[i +\
-    \ z[i]]) {\n\t\t\tz[i]++;\n\t\t}\n\t\tif (i + z[i] - 1 > r) {\n\t\t\tl = i;\n\t\
-    \t\tr = i + z[i] - 1;\n\t\t}\n\t}\n\treturn z;\n}\n#line 5 \"String/Z_Algorithm.test.cpp\"\
-    \n\nvoid solve() {\n\tstring s; cin >> s;\n\tvector<int> ans = Z_function(s);\n\
-    \tfor (int x : ans) cout << x << \" \";\n}\n"
+    \ &s) {\n    int n = s.size();\n    vector<int> z(n);\n    z[0] = (int)s.size();\n\
+    \    int l = 0, r = 0;\n    for (int i = 1; i < n; i++) {\n        if (i <= r)\
+    \ {\n            z[i] = min(r-i+1, z[i-l]);\n        }\n        while (i + z[i]\
+    \ < n && s[z[i]] == s[i + z[i]]) {\n            z[i]++;\n        }\n        if\
+    \ (i + z[i] - 1 > r) {\n            l = i;\n            r = i + z[i] - 1;\n  \
+    \      }\n    }\n    return z;\n}\n#line 5 \"String/Z_Algorithm.test.cpp\"\n\n\
+    void solve() {\n    string s; cin >> s;\n    vector<int> ans = Z_function(s);\n\
+    \    for (int x : ans) cout << x << \" \";\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/zalgorithm\"\n\n#include\
-    \ \"../template.h\"\n#include \"Z_Function.h\"\n\nvoid solve() {\n\tstring s;\
-    \ cin >> s;\n\tvector<int> ans = Z_function(s);\n\tfor (int x : ans) cout << x\
-    \ << \" \";\n}"
+    \ \"../template.h\"\n#include \"Z_Function.h\"\n\nvoid solve() {\n    string s;\
+    \ cin >> s;\n    vector<int> ans = Z_function(s);\n    for (int x : ans) cout\
+    \ << x << \" \";\n}"
   dependsOn:
   - template.h
   - String/Z_Function.h
   isVerificationFile: true
   path: String/Z_Algorithm.test.cpp
   requiredBy: []
-  timestamp: '2025-05-29 01:30:55+07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-06-11 15:37:14+07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: String/Z_Algorithm.test.cpp
 layout: document

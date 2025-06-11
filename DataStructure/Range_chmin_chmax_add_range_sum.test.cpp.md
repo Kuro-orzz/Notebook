@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
     title: DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -29,80 +29,89 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h\"\n\n\n\
-    struct Node {\n\tll max1, max2, cntMax, min1, min2, cntMin, sum, lazy, sz;\n\n\
-    \tNode() {\n\t\tmax1 = max2 = -inf;\n\t\tmin1 = min2 = inf;\n\t\tcntMax = cntMin\
-    \ = 0;\n\t\tsum = lazy = sz = 0;\n\t}\n\n\tNode(ll val) {\n\t\tmax1 = min1 = val;\n\
-    \t\tmax2 = -inf;\n\t\tmin2 = inf;\n\t\tcntMax = cntMin = 1;\n\t\tsum = val;\n\t\
-    \tlazy = 0;\n\t\tsz = 1;\n\t}\n\n\tNode operator+(const Node &b) {\n\t\tNode res;\n\
-    \n\t\tres.max1 = max(max1, b.max1);\n\t\tres.max2 = max(max2, b.max2);\n\t\tif\
-    \ (res.max1 != max1) res.max2 = max(res.max2, max1);\n\t\tif (res.max1 != b.max1)\
-    \ res.max2 = max(res.max2, b.max1); \n\t\tres.cntMax = 0;\n\t\tif (res.max1 ==\
-    \ max1) res.cntMax += cntMax;\n\t\tif (res.max1 == b.max1) res.cntMax += b.cntMax;\n\
-    \n\t\tres.min1 = min(min1, b.min1);\n\t\tres.min2 = min(min2, b.min2);\n\t\tif\
-    \ (res.min1 != min1) res.min2 = min(res.min2, min1);\n\t\tif (res.min1 != b.min1)\
-    \ res.min2 = min(res.min2, b.min1);\n\t\tres.cntMin = 0;\n\t\tif (res.min1 ==\
-    \ min1) res.cntMin += cntMin;\n\t\tif (res.min1 == b.min1) res.cntMin += b.cntMin;\n\
-    \n\t\tres.sum = sum + b.sum;\n\t\tres.lazy = 0;\n\t\tres.sz = sz + b.sz;\n\n\t\
-    \treturn res;\n\t}\n\n\tvoid setMin(ll x) {\n\t\tif (x >= max1) return;\n\t\t\
-    sum -= (max1 - x) * cntMax;\n\t\tmax1 = x;\n\t\tmin1 = min(min1, x);\n\t\tif (min2\
-    \ != inf) min2 = min(min2, x);\n\t}\n\n\tvoid setMax(ll x) {\n\t\tif (x <= min1)\
-    \ return;\n\t\tsum += (x-min1) * cntMin;\n\t\tmin1 = x;\n\t\tmax1 = max(max1,\
-    \ x);\n\t\tif (max2 != -inf) max2 = max(max2, x);\n\t}\n\n\tvoid add(ll x) {\n\
-    \t\tmax1 += x;\n\t\tmin1 += x;\n\t\tif (max2 != -inf) max2 += x;\n\t\tif (min2\
-    \ != inf) min2 += x;\n\t\tsum += x * sz;\n\t\tlazy += x;\n\t}\n};\n\n// range\
-    \ chmin, chmax, update range, sum\nclass SegTreeBeats {\npublic:\n\tvector<Node>\
-    \ tree;\n\n\tSegTreeBeats(int n): tree(4*n+6) {}\n\n\tvoid build(int id, int l,\
-    \ int r, int pos, ll val) {\n\t\tif (pos < l || pos > r) return;\n\t\tif (l ==\
-    \ r) {\n\t\t\ttree[id] = Node(val);\n\t\t\treturn;\n\t\t}\n\t\tint mid = (l +\
-    \ r) >> 1;\n\t\tbuild(id*2, l, mid, pos, val);\n\t\tbuild(id*2+1, mid+1, r, pos,\
-    \ val);\n\t\ttree[id] = tree[id*2] + tree[id*2+1];\n\t}\t\n\n\tvoid push(int id)\
-    \ {\n\t\ttree[id*2].add(tree[id].lazy);\n\t\ttree[id*2+1].add(tree[id].lazy);\n\
-    \t\ttree[id].lazy = 0;\n\n\t\ttree[id*2].setMax(tree[id].min1);\n\t\ttree[id*2+1].setMax(tree[id].min1);\n\
-    \n\t\ttree[id*2].setMin(tree[id].max1);\n\t\ttree[id*2+1].setMin(tree[id].max1);\n\
-    \t}\n\n\tvoid updateChmax(int id, int l, int r, int u, int v, ll x) {\n\t\tif\
-    \ (l > v || r < u) return;\n\t\tif (tree[id].min1 >= x) return;\n\t\tif (u <=\
-    \ l && r <= v && tree[id].min2 > x) {\n\t\t\ttree[id].setMax(x);\n\t\t\treturn;\n\
-    \t\t}\n\t\tpush(id);\n\t\tint mid = (l + r) >> 1;\n\t\tupdateChmax(id*2, l, mid,\
-    \ u, v, x);\n\t\tupdateChmax(id*2+1, mid+1, r, u, v, x);\n\t\ttree[id] = tree[id*2]\
-    \ + tree[id*2+1];\n\t}\n\n\tvoid updateChmin(int id, int l, int r, int u, int\
-    \ v, ll x) {\n\t\tif (l > v || r < u) return;\n\t\tif (tree[id].max1 <= x) return;\n\
-    \t\tif (u <= l && r <= v && tree[id].max2 < x) {\n\t\t\ttree[id].setMin(x);\n\t\
-    \t\treturn;\n\t\t}\n\t\tpush(id);\n\t\tint mid = (l + r) >> 1;\n\t\tupdateChmin(id*2,\
-    \ l, mid, u, v, x);\n\t\tupdateChmin(id*2+1, mid+1, r, u, v, x);\n\t\ttree[id]\
-    \ = tree[id*2] + tree[id*2+1];\n\t}\n\n\tvoid updateRange(int id, int l, int r,\
-    \ int u, int v, ll x) {\n\t\tif (l > v || r < u) return;\n\t\tif (u <= l && r\
-    \ <= v) {\n\t\t\ttree[id].add(x);\n\t\t\treturn;\n\t\t}\n\t\tpush(id);\n\t\tint\
-    \ mid = (l + r) >> 1;\n\t\tupdateRange(id*2, l, mid, u, v, x);\n\t\tupdateRange(id*2+1,\
-    \ mid+1, r, u, v, x);\n\t\ttree[id] = tree[id*2] + tree[id*2+1];\n\t}\n\n\tll\
-    \ getSum(int id, int l, int r, int u, int v) {\n\t\tif (l > v || r < u) return\
-    \ 0;\n\t\tif (u <= l && r <= v) return tree[id].sum;\n\t\tpush(id);\n\t\tint mid\
-    \ = (l + r) >> 1;\n\t\tll t1 = getSum(id*2, l, mid, u, v);\n\t\tll t2 = getSum(id*2+1,\
-    \ mid+1, r, u, v);\n\t\treturn t1 + t2;\n\t}\n};\n#line 5 \"DataStructure/Range_chmin_chmax_add_range_sum.test.cpp\"\
-    \n\nvoid solve() {\n\tint n, q; cin >> n >> q;\n\tSegTreeBeats st(n);\n\tfor (int\
-    \ i = 1; i <= n; i++) {\n\t\tll x; cin >> x;\n\t\tst.build(1, 1, n, i, x);\n\t\
-    }\n\twhile (q--) {\n\t\tint type, l, r; cin >> type >> l >> r;\n\t\tif (type ==\
-    \ 0) {\n\t\t\tll b; cin >> b;\n\t\t\tst.updateChmin(1, 1, n, l+1, r, b);\n\t\t\
-    } else if (type == 1) {\n\t\t\tll b; cin >> b;\n\t\t\tst.updateChmax(1, 1, n,\
-    \ l+1, r, b);\n\t\t} else if (type == 2) {\n\t\t\tll b; cin >> b;\n\t\t\tst.updateRange(1,\
-    \ 1, n, l+1, r, b);\n\t\t} else if (type == 3) {\n\t\t\tcout << st.getSum(1, 1,\
-    \ n, l+1, r) << '\\n';\n\t\t}\t\t\n\t}\n}\n"
+    struct Node {\n    ll max1, max2, cntMax, min1, min2, cntMin, sum, lazy, sz;\n\
+    \n    Node() {\n        max1 = max2 = -inf;\n        min1 = min2 = inf;\n    \
+    \    cntMax = cntMin = 0;\n        sum = lazy = sz = 0;\n    }\n\n    Node(ll\
+    \ val) {\n        max1 = min1 = val;\n        max2 = -inf;\n        min2 = inf;\n\
+    \        cntMax = cntMin = 1;\n        sum = val;\n        lazy = 0;\n       \
+    \ sz = 1;\n    }\n\n    Node operator+(const Node &b) {\n        Node res;\n\n\
+    \        res.max1 = max(max1, b.max1);\n        res.max2 = max(max2, b.max2);\n\
+    \        if (res.max1 != max1) res.max2 = max(res.max2, max1);\n        if (res.max1\
+    \ != b.max1) res.max2 = max(res.max2, b.max1); \n        res.cntMax = 0;\n   \
+    \     if (res.max1 == max1) res.cntMax += cntMax;\n        if (res.max1 == b.max1)\
+    \ res.cntMax += b.cntMax;\n\n        res.min1 = min(min1, b.min1);\n        res.min2\
+    \ = min(min2, b.min2);\n        if (res.min1 != min1) res.min2 = min(res.min2,\
+    \ min1);\n        if (res.min1 != b.min1) res.min2 = min(res.min2, b.min1);\n\
+    \        res.cntMin = 0;\n        if (res.min1 == min1) res.cntMin += cntMin;\n\
+    \        if (res.min1 == b.min1) res.cntMin += b.cntMin;\n\n        res.sum =\
+    \ sum + b.sum;\n        res.lazy = 0;\n        res.sz = sz + b.sz;\n\n       \
+    \ return res;\n    }\n\n    void setMin(ll x) {\n        if (x >= max1) return;\n\
+    \        sum -= (max1 - x) * cntMax;\n        max1 = x;\n        min1 = min(min1,\
+    \ x);\n        if (min2 != inf) min2 = min(min2, x);\n    }\n\n    void setMax(ll\
+    \ x) {\n        if (x <= min1) return;\n        sum += (x-min1) * cntMin;\n  \
+    \      min1 = x;\n        max1 = max(max1, x);\n        if (max2 != -inf) max2\
+    \ = max(max2, x);\n    }\n\n    void add(ll x) {\n        max1 += x;\n       \
+    \ min1 += x;\n        if (max2 != -inf) max2 += x;\n        if (min2 != inf) min2\
+    \ += x;\n        sum += x * sz;\n        lazy += x;\n    }\n};\n\n// range chmin,\
+    \ chmax, update range, sum\nclass SegTreeBeats {\npublic:\n    vector<Node> tree;\n\
+    \n    SegTreeBeats(int n): tree(4*n+6) {}\n\n    void build(int id, int l, int\
+    \ r, int pos, ll val) {\n        if (pos < l || pos > r) return;\n        if (l\
+    \ == r) {\n            tree[id] = Node(val);\n            return;\n        }\n\
+    \        int mid = (l + r) >> 1;\n        build(id*2, l, mid, pos, val);\n   \
+    \     build(id*2+1, mid+1, r, pos, val);\n        tree[id] = tree[id*2] + tree[id*2+1];\n\
+    \    }   \n\n    void push(int id) {\n        tree[id*2].add(tree[id].lazy);\n\
+    \        tree[id*2+1].add(tree[id].lazy);\n        tree[id].lazy = 0;\n\n    \
+    \    tree[id*2].setMax(tree[id].min1);\n        tree[id*2+1].setMax(tree[id].min1);\n\
+    \n        tree[id*2].setMin(tree[id].max1);\n        tree[id*2+1].setMin(tree[id].max1);\n\
+    \    }\n\n    void updateChmax(int id, int l, int r, int u, int v, ll x) {\n \
+    \       if (l > v || r < u) return;\n        if (tree[id].min1 >= x) return;\n\
+    \        if (u <= l && r <= v && tree[id].min2 > x) {\n            tree[id].setMax(x);\n\
+    \            return;\n        }\n        push(id);\n        int mid = (l + r)\
+    \ >> 1;\n        updateChmax(id*2, l, mid, u, v, x);\n        updateChmax(id*2+1,\
+    \ mid+1, r, u, v, x);\n        tree[id] = tree[id*2] + tree[id*2+1];\n    }\n\n\
+    \    void updateChmin(int id, int l, int r, int u, int v, ll x) {\n        if\
+    \ (l > v || r < u) return;\n        if (tree[id].max1 <= x) return;\n        if\
+    \ (u <= l && r <= v && tree[id].max2 < x) {\n            tree[id].setMin(x);\n\
+    \            return;\n        }\n        push(id);\n        int mid = (l + r)\
+    \ >> 1;\n        updateChmin(id*2, l, mid, u, v, x);\n        updateChmin(id*2+1,\
+    \ mid+1, r, u, v, x);\n        tree[id] = tree[id*2] + tree[id*2+1];\n    }\n\n\
+    \    void updateRange(int id, int l, int r, int u, int v, ll x) {\n        if\
+    \ (l > v || r < u) return;\n        if (u <= l && r <= v) {\n            tree[id].add(x);\n\
+    \            return;\n        }\n        push(id);\n        int mid = (l + r)\
+    \ >> 1;\n        updateRange(id*2, l, mid, u, v, x);\n        updateRange(id*2+1,\
+    \ mid+1, r, u, v, x);\n        tree[id] = tree[id*2] + tree[id*2+1];\n    }\n\n\
+    \    ll getSum(int id, int l, int r, int u, int v) {\n        if (l > v || r <\
+    \ u) return 0;\n        if (u <= l && r <= v) return tree[id].sum;\n        push(id);\n\
+    \        int mid = (l + r) >> 1;\n        ll t1 = getSum(id*2, l, mid, u, v);\n\
+    \        ll t2 = getSum(id*2+1, mid+1, r, u, v);\n        return t1 + t2;\n  \
+    \  }\n};\n#line 5 \"DataStructure/Range_chmin_chmax_add_range_sum.test.cpp\"\n\
+    \nvoid solve() {\n    int n, q; cin >> n >> q;\n    SegTreeBeats st(n);\n    for\
+    \ (int i = 1; i <= n; i++) {\n        ll x; cin >> x;\n        st.build(1, 1,\
+    \ n, i, x);\n    }\n    while (q--) {\n        int type, l, r; cin >> type >>\
+    \ l >> r;\n        if (type == 0) {\n            ll b; cin >> b;\n           \
+    \ st.updateChmin(1, 1, n, l+1, r, b);\n        } else if (type == 1) {\n     \
+    \       ll b; cin >> b;\n            st.updateChmax(1, 1, n, l+1, r, b);\n   \
+    \     } else if (type == 2) {\n            ll b; cin >> b;\n            st.updateRange(1,\
+    \ 1, n, l+1, r, b);\n        } else if (type == 3) {\n            cout << st.getSum(1,\
+    \ 1, n, l+1, r) << '\\n';\n        }       \n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_chmin_chmax_add_range_sum\"\
     \n\n#include \"../template.h\"\n#include \"SegTree/SegTreeBeats/SegTreeBeats3.h\"\
-    \n\nvoid solve() {\n\tint n, q; cin >> n >> q;\n\tSegTreeBeats st(n);\n\tfor (int\
-    \ i = 1; i <= n; i++) {\n\t\tll x; cin >> x;\n\t\tst.build(1, 1, n, i, x);\n\t\
-    }\n\twhile (q--) {\n\t\tint type, l, r; cin >> type >> l >> r;\n\t\tif (type ==\
-    \ 0) {\n\t\t\tll b; cin >> b;\n\t\t\tst.updateChmin(1, 1, n, l+1, r, b);\n\t\t\
-    } else if (type == 1) {\n\t\t\tll b; cin >> b;\n\t\t\tst.updateChmax(1, 1, n,\
-    \ l+1, r, b);\n\t\t} else if (type == 2) {\n\t\t\tll b; cin >> b;\n\t\t\tst.updateRange(1,\
-    \ 1, n, l+1, r, b);\n\t\t} else if (type == 3) {\n\t\t\tcout << st.getSum(1, 1,\
-    \ n, l+1, r) << '\\n';\n\t\t}\t\t\n\t}\n}"
+    \n\nvoid solve() {\n    int n, q; cin >> n >> q;\n    SegTreeBeats st(n);\n  \
+    \  for (int i = 1; i <= n; i++) {\n        ll x; cin >> x;\n        st.build(1,\
+    \ 1, n, i, x);\n    }\n    while (q--) {\n        int type, l, r; cin >> type\
+    \ >> l >> r;\n        if (type == 0) {\n            ll b; cin >> b;\n        \
+    \    st.updateChmin(1, 1, n, l+1, r, b);\n        } else if (type == 1) {\n  \
+    \          ll b; cin >> b;\n            st.updateChmax(1, 1, n, l+1, r, b);\n\
+    \        } else if (type == 2) {\n            ll b; cin >> b;\n            st.updateRange(1,\
+    \ 1, n, l+1, r, b);\n        } else if (type == 3) {\n            cout << st.getSum(1,\
+    \ 1, n, l+1, r) << '\\n';\n        }       \n    }\n}"
   dependsOn:
   - template.h
   - DataStructure/SegTree/SegTreeBeats/SegTreeBeats3.h
   isVerificationFile: true
   path: DataStructure/Range_chmin_chmax_add_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2025-05-25 00:26:18+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: DataStructure/Range_chmin_chmax_add_range_sum.test.cpp

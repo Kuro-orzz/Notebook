@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: Big_Integer/BigInt_full.h
     title: Big_Integer/BigInt_full.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -167,8 +167,8 @@ data:
     \ }\n\n    bool isZero() const { return digit.empty(); }\n\n    void trim() {\n\
     \        while (!digit.empty() && !digit.back()) {\n            digit.pop_back();\n\
     \        }\n        if (digit.empty()) sign = 1;\n    }\n\n    BigInt abs() const\
-    \ { BigInt res = *this; res.sign = 1; return res; }\n\n    string toString() {\n\
-    \        ostringstream oss;\n        oss << *this;\n        return oss.str();\n\
+    \ { BigInt res = *this; res.sign = 1; return res; }\n\n    string toString() const\
+    \ {\n        ostringstream oss;\n        oss << *this;\n        return oss.str();\n\
     \    }\n\n    // only support b >= 0, if b < 0 need to implement modulo inverse\n\
     \    friend BigInt pow(const BigInt &a, const BigInt &b, ll mod) { return pow(a,\
     \ b, BigInt(mod)); }\n    friend BigInt pow(const BigInt &a, const BigInt &b,\
@@ -211,18 +211,18 @@ data:
     \ ? 0 : a.digit.back());\n        for (int i = (int)a.size() - 2; i >= 0; i--)\n\
     \            out << setw(BASE_DIGITS) << setfill('0') << a[i];\n        return\
     \ out;\n    }\n};\n#line 5 \"Big_Integer/test/Multiplication_of_Big_Integers.test.cpp\"\
-    \n\nvoid solve() {\n\tBigInt a, b; cin >> a >> b;\n\tcout << a * b << '\\n';\n\
-    }\n"
+    \n\nvoid solve() {\n    BigInt a, b; cin >> a >> b;\n    cout << a * b << '\\\
+    n';\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/2/NTL_2_C\"\
     \n\n#include \"../../template.h\"\n#include \"../BigInt_full.h\"\n\nvoid solve()\
-    \ {\n\tBigInt a, b; cin >> a >> b;\n\tcout << a * b << '\\n';\n}"
+    \ {\n    BigInt a, b; cin >> a >> b;\n    cout << a * b << '\\n';\n}"
   dependsOn:
   - template.h
   - Big_Integer/BigInt_full.h
   isVerificationFile: true
   path: Big_Integer/test/Multiplication_of_Big_Integers.test.cpp
   requiredBy: []
-  timestamp: '2025-06-11 00:58:54+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Big_Integer/test/Multiplication_of_Big_Integers.test.cpp

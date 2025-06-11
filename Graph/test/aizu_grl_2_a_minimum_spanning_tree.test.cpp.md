@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: Graph/Mst/Kruskal.h
     title: Graph/Mst/Kruskal.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -53,21 +53,22 @@ data:
     \ mod) % mod;\n        return true;\n    }\n\n    int getDiff(int u, int v, int\
     \ mod) {\n        int pu = findPotential(u, mod);\n        int pv = findPotential(v,\
     \ mod);\n        if (pu != pv) return -1;\n        return (diff[u] - diff[v] +\
-    \ mod) % mod;\n    }\n};\n#line 3 \"Graph/Mst/Kruskal.h\"\n\nstruct Edge {\n\t\
-    int u, v, w;\n\tEdge() {}\n\tEdge(int _u, int _v, int _w): u(_u), v(_v), w(_w)\
-    \ {}\n};\n\nll kruskal(int n, vector<Edge> &edges) {\n\tauto cmp = [&](Edge a,\
-    \ Edge b) {\n\t\treturn a.w < b.w;\n\t};\n\tsort(all(edges), cmp);\n\tDsu g(n);\n\
-    \tll ans = 0;\n\tfor (auto [u, v, w] : edges) {\n\t\tif (g.find(u) != g.find(v))\
-    \ {\n\t\t\tans += w;\n\t\t\tg.merge(u, v);\n\t\t}\n\t}\n\treturn ans;\n}\n#line\
-    \ 5 \"Graph/test/aizu_grl_2_a_minimum_spanning_tree.test.cpp\"\n\nvoid solve()\
-    \ {\n\tint n, m; cin >> n >> m;\n\tvector<Edge> edges;\n\tfor (int i = 0; i <\
-    \ m; i++) {\n\t\tint u, v, w; cin >> u >> v >> w;\n\t\tedges.emplace_back(u, v,\
-    \ w);\n\t}\n\tcout << kruskal(n, edges) << '\\n';\n}\n"
+    \ mod) % mod;\n    }\n};\n#line 3 \"Graph/Mst/Kruskal.h\"\n\nstruct Edge {\n \
+    \   int u, v, w;\n    Edge() {}\n    Edge(int _u, int _v, int _w): u(_u), v(_v),\
+    \ w(_w) {}\n};\n\nll kruskal(int n, vector<Edge> &edges) {\n    auto cmp = [&](Edge\
+    \ a, Edge b) {\n        return a.w < b.w;\n    };\n    sort(all(edges), cmp);\n\
+    \    Dsu g(n);\n    ll ans = 0;\n    for (auto [u, v, w] : edges) {\n        if\
+    \ (g.find(u) != g.find(v)) {\n            ans += w;\n            g.merge(u, v);\n\
+    \        }\n    }\n    return ans;\n}\n#line 5 \"Graph/test/aizu_grl_2_a_minimum_spanning_tree.test.cpp\"\
+    \n\nvoid solve() {\n    int n, m; cin >> n >> m;\n    vector<Edge> edges;\n  \
+    \  for (int i = 0; i < m; i++) {\n        int u, v, w; cin >> u >> v >> w;\n \
+    \       edges.emplace_back(u, v, w);\n    }\n    cout << kruskal(n, edges) <<\
+    \ '\\n';\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A\"\
     \n\n#include \"../../template.h\"\n#include \"../Mst/Kruskal.h\"\n\nvoid solve()\
-    \ {\n\tint n, m; cin >> n >> m;\n\tvector<Edge> edges;\n\tfor (int i = 0; i <\
-    \ m; i++) {\n\t\tint u, v, w; cin >> u >> v >> w;\n\t\tedges.emplace_back(u, v,\
-    \ w);\n\t}\n\tcout << kruskal(n, edges) << '\\n';\n}"
+    \ {\n    int n, m; cin >> n >> m;\n    vector<Edge> edges;\n    for (int i = 0;\
+    \ i < m; i++) {\n        int u, v, w; cin >> u >> v >> w;\n        edges.emplace_back(u,\
+    \ v, w);\n    }\n    cout << kruskal(n, edges) << '\\n';\n}"
   dependsOn:
   - template.h
   - Graph/Mst/Kruskal.h
@@ -75,7 +76,7 @@ data:
   isVerificationFile: true
   path: Graph/test/aizu_grl_2_a_minimum_spanning_tree.test.cpp
   requiredBy: []
-  timestamp: '2025-06-07 22:39:21+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Graph/test/aizu_grl_2_a_minimum_spanning_tree.test.cpp

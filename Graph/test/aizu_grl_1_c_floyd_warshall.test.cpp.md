@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: Graph/Shortest_path/Floyd_warshall.h
     title: Graph/Shortest_path/Floyd_warshall.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -29,41 +29,46 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"Graph/Shortest_path/Floyd_warshall.h\"\n\nvoid initTrace(int\
-    \ n, vector<vector<int>> &trace) {\n\tfor (int u = 1; u <= n; ++u) {\n\t\tfor\
-    \ (int v = 1; v <= n; ++v) {\n\t\t\ttrace[u][v] = u;\n\t\t}\n\t}\n}\n\nvoid floyd_warshall(int\
-    \ n, vector<vector<ll>> &dist, vector<vector<int>> &trace) {\n\tinitTrace(n, trace);\n\
-    \tfor (int k = 1; k <= n; ++k) {\n\t\tfor (int u = 1; u <= n; ++u) {\n\t\t\tfor\
-    \ (int v = 1; v <= n; ++v) {\n\t\t\t\tif (dist[u][k] != 1e18 && dist[k][v] !=\
-    \ 1e18 && dist[u][v] > dist[u][k] + dist[k][v]) {\n\t\t\t\t\tdist[u][v] = dist[u][k]\
-    \ + dist[k][v];\n\t\t\t\t\ttrace[u][v] = trace[k][v];\n\t\t\t\t}\n\t\t\t}\n\t\t\
-    }\n\t}\n}\n#line 5 \"Graph/test/aizu_grl_1_c_floyd_warshall.test.cpp\"\n\nvoid\
-    \ solve() {\n\tint n, m; cin >> n >> m;\n\tvector<vector<ll>> d(n+1, vector<ll>(n+1,\
-    \ 1e18));\n\tvector<vector<int>> trace(n+1, vector<int>(n+1));\n\tfor (int i =\
-    \ 1; i <= n; i++) {\n\t\td[i][i] = 0;\n\t}\n\tfor (int i = 0; i < m; i++) {\n\t\
-    \tll u, v, w; cin >> u >> v >> w;\n\t\td[u+1][v+1] = min(d[u+1][v+1], w);\n\t\
-    }\n\tfloyd_warshall(n, d, trace);\n\tfor (int i = 1; i <= n; i++) {\n\t\tif (d[i][i]\
-    \ < 0) {\n\t\t\tcout << \"NEGATIVE CYCLE\\n\";\n\t\t\treturn;\n\t\t}\n\t}\n\t\
-    for (int i = 0; i < n; i++) {\n\t\tfor (int j = 0; j < n; j++) {\n\t\t\tif (d[i+1][j+1]\
-    \ == 1e18) {\n\t\t\t\tcout << \"INF\";\n\t\t\t} else {\n\t\t\t\tcout << d[i+1][j+1];\n\
-    \t\t\t}\n\t\t\tcout << (j == n - 1 ? '\\n' : ' ');\n\t\t}\n\t}\n}\n"
+    \ n, vector<vector<int>> &trace) {\n    for (int u = 1; u <= n; ++u) {\n     \
+    \   for (int v = 1; v <= n; ++v) {\n            trace[u][v] = u;\n        }\n\
+    \    }\n}\n\nvoid floyd_warshall(int n, vector<vector<ll>> &dist, vector<vector<int>>\
+    \ &trace) {\n    initTrace(n, trace);\n    for (int k = 1; k <= n; ++k) {\n  \
+    \      for (int u = 1; u <= n; ++u) {\n            for (int v = 1; v <= n; ++v)\
+    \ {\n                if (dist[u][k] != 1e18 && dist[k][v] != 1e18 && dist[u][v]\
+    \ > dist[u][k] + dist[k][v]) {\n                    dist[u][v] = dist[u][k] +\
+    \ dist[k][v];\n                    trace[u][v] = trace[k][v];\n              \
+    \  }\n            }\n        }\n    }\n}\n#line 5 \"Graph/test/aizu_grl_1_c_floyd_warshall.test.cpp\"\
+    \n\nvoid solve() {\n    int n, m; cin >> n >> m;\n    vector<vector<ll>> d(n+1,\
+    \ vector<ll>(n+1, 1e18));\n    vector<vector<int>> trace(n+1, vector<int>(n+1));\n\
+    \    for (int i = 1; i <= n; i++) {\n        d[i][i] = 0;\n    }\n    for (int\
+    \ i = 0; i < m; i++) {\n        ll u, v, w; cin >> u >> v >> w;\n        d[u+1][v+1]\
+    \ = min(d[u+1][v+1], w);\n    }\n    floyd_warshall(n, d, trace);\n    for (int\
+    \ i = 1; i <= n; i++) {\n        if (d[i][i] < 0) {\n            cout << \"NEGATIVE\
+    \ CYCLE\\n\";\n            return;\n        }\n    }\n    for (int i = 0; i <\
+    \ n; i++) {\n        for (int j = 0; j < n; j++) {\n            if (d[i+1][j+1]\
+    \ == 1e18) {\n                cout << \"INF\";\n            } else {\n       \
+    \         cout << d[i+1][j+1];\n            }\n            cout << (j == n - 1\
+    \ ? '\\n' : ' ');\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_C\"\
     \n\n#include \"../../template.h\"\n#include \"../Shortest_path/Floyd_warshall.h\"\
-    \n\nvoid solve() {\n\tint n, m; cin >> n >> m;\n\tvector<vector<ll>> d(n+1, vector<ll>(n+1,\
-    \ 1e18));\n\tvector<vector<int>> trace(n+1, vector<int>(n+1));\n\tfor (int i =\
-    \ 1; i <= n; i++) {\n\t\td[i][i] = 0;\n\t}\n\tfor (int i = 0; i < m; i++) {\n\t\
-    \tll u, v, w; cin >> u >> v >> w;\n\t\td[u+1][v+1] = min(d[u+1][v+1], w);\n\t\
-    }\n\tfloyd_warshall(n, d, trace);\n\tfor (int i = 1; i <= n; i++) {\n\t\tif (d[i][i]\
-    \ < 0) {\n\t\t\tcout << \"NEGATIVE CYCLE\\n\";\n\t\t\treturn;\n\t\t}\n\t}\n\t\
-    for (int i = 0; i < n; i++) {\n\t\tfor (int j = 0; j < n; j++) {\n\t\t\tif (d[i+1][j+1]\
-    \ == 1e18) {\n\t\t\t\tcout << \"INF\";\n\t\t\t} else {\n\t\t\t\tcout << d[i+1][j+1];\n\
-    \t\t\t}\n\t\t\tcout << (j == n - 1 ? '\\n' : ' ');\n\t\t}\n\t}\n}"
+    \n\nvoid solve() {\n    int n, m; cin >> n >> m;\n    vector<vector<ll>> d(n+1,\
+    \ vector<ll>(n+1, 1e18));\n    vector<vector<int>> trace(n+1, vector<int>(n+1));\n\
+    \    for (int i = 1; i <= n; i++) {\n        d[i][i] = 0;\n    }\n    for (int\
+    \ i = 0; i < m; i++) {\n        ll u, v, w; cin >> u >> v >> w;\n        d[u+1][v+1]\
+    \ = min(d[u+1][v+1], w);\n    }\n    floyd_warshall(n, d, trace);\n    for (int\
+    \ i = 1; i <= n; i++) {\n        if (d[i][i] < 0) {\n            cout << \"NEGATIVE\
+    \ CYCLE\\n\";\n            return;\n        }\n    }\n    for (int i = 0; i <\
+    \ n; i++) {\n        for (int j = 0; j < n; j++) {\n            if (d[i+1][j+1]\
+    \ == 1e18) {\n                cout << \"INF\";\n            } else {\n       \
+    \         cout << d[i+1][j+1];\n            }\n            cout << (j == n - 1\
+    \ ? '\\n' : ' ');\n        }\n    }\n}"
   dependsOn:
   - template.h
   - Graph/Shortest_path/Floyd_warshall.h
   isVerificationFile: true
   path: Graph/test/aizu_grl_1_c_floyd_warshall.test.cpp
   requiredBy: []
-  timestamp: '2025-06-07 22:39:21+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Graph/test/aizu_grl_1_c_floyd_warshall.test.cpp

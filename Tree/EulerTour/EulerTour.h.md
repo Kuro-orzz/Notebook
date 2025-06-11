@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: Tree/Vertex_add_subtree_sum.test.cpp
     title: Tree/Vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -24,30 +24,32 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"Tree/EulerTour/EulerTour.h\"\n\nvector<int> EulerTour(vector<int>\
-    \ &st, vector<int> &en, \n\t\t\t\tvector<vector<int>> &adj, int root = 0, int\
-    \ type = 0) {\n\tint n = adj.size();\n\tst.assign(n, 0);\n\ten.assign(n, 0);\n\
-    \tvector<int> tour;\n\tif (type == 0) tour.reserve(n);\n\telse if (type == 1)\
-    \ tour.reserve(2 * n);\n\tint pos = 0;\n\tfunction<void(int, int)> dfs = [&] (int\
-    \ u, int par) {\n\t\ttour.push_back(u);\n\t\tst[u] = ++pos;\n\t\tfor (int v :\
-    \ adj[u]) {\n\t\t\tif (v == par) continue;\n\t\t\tdfs(v, u);\n\t\t}\n\t\tif (type\
-    \ == 1) {\n\t\t\ttour.push_back(u);\n\t\t\tpos++;\n\t\t}\n\t\ten[u] = pos;\n\t\
-    };\n\tdfs(root, -1);\n\treturn tour;\n}\n"
+    \ &st, vector<int> &en, \n                vector<vector<int>> &adj, int root =\
+    \ 0, int type = 0) {\n    int n = adj.size();\n    st.assign(n, 0);\n    en.assign(n,\
+    \ 0);\n    vector<int> tour;\n    if (type == 0) tour.reserve(n);\n    else if\
+    \ (type == 1) tour.reserve(2 * n);\n    int pos = 0;\n    function<void(int, int)>\
+    \ dfs = [&] (int u, int par) {\n        tour.push_back(u);\n        st[u] = ++pos;\n\
+    \        for (int v : adj[u]) {\n            if (v == par) continue;\n       \
+    \     dfs(v, u);\n        }\n        if (type == 1) {\n            tour.push_back(u);\n\
+    \            pos++;\n        }\n        en[u] = pos;\n    };\n    dfs(root, -1);\n\
+    \    return tour;\n}\n"
   code: "#include \"../../template.h\"\n\nvector<int> EulerTour(vector<int> &st, vector<int>\
-    \ &en, \n\t\t\t\tvector<vector<int>> &adj, int root = 0, int type = 0) {\n\tint\
-    \ n = adj.size();\n\tst.assign(n, 0);\n\ten.assign(n, 0);\n\tvector<int> tour;\n\
-    \tif (type == 0) tour.reserve(n);\n\telse if (type == 1) tour.reserve(2 * n);\n\
-    \tint pos = 0;\n\tfunction<void(int, int)> dfs = [&] (int u, int par) {\n\t\t\
-    tour.push_back(u);\n\t\tst[u] = ++pos;\n\t\tfor (int v : adj[u]) {\n\t\t\tif (v\
-    \ == par) continue;\n\t\t\tdfs(v, u);\n\t\t}\n\t\tif (type == 1) {\n\t\t\ttour.push_back(u);\n\
-    \t\t\tpos++;\n\t\t}\n\t\ten[u] = pos;\n\t};\n\tdfs(root, -1);\n\treturn tour;\n\
-    }"
+    \ &en, \n                vector<vector<int>> &adj, int root = 0, int type = 0)\
+    \ {\n    int n = adj.size();\n    st.assign(n, 0);\n    en.assign(n, 0);\n   \
+    \ vector<int> tour;\n    if (type == 0) tour.reserve(n);\n    else if (type ==\
+    \ 1) tour.reserve(2 * n);\n    int pos = 0;\n    function<void(int, int)> dfs\
+    \ = [&] (int u, int par) {\n        tour.push_back(u);\n        st[u] = ++pos;\n\
+    \        for (int v : adj[u]) {\n            if (v == par) continue;\n       \
+    \     dfs(v, u);\n        }\n        if (type == 1) {\n            tour.push_back(u);\n\
+    \            pos++;\n        }\n        en[u] = pos;\n    };\n    dfs(root, -1);\n\
+    \    return tour;\n}"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: Tree/EulerTour/EulerTour.h
   requiredBy: []
-  timestamp: '2025-05-25 00:26:18+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2025-06-11 15:37:14+07:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - Tree/Vertex_add_subtree_sum.test.cpp
 documentation_of: Tree/EulerTour/EulerTour.h

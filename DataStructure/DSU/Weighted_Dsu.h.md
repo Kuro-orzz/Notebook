@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -31,7 +31,7 @@ data:
     \ = root;\n    }\n\n    // diff[v] - diff[u] = x\n    void merge(int u, int v,\
     \ int x) {\n        int pu = find(u);\n        int pv = find(v);\n        if (pu\
     \ == pv) return;\n        if(sz[pu] < sz[pv]) {\n            swap(u, v);\n   \
-    \         swap(pu, pv);\n        \tx = -x;\n        }\n        par[pv] = pu;\n\
+    \         swap(pu, pv);\n            x = -x;\n        }\n        par[pv] = pu;\n\
     \        sz[pu] += sz[pv];\n        diff[pv] = diff[u] - diff[v] + x;\n    }\n\
     \n    // diff[v] - diff[u]\n    int getDiff(int u, int v) {\n        int pu =\
     \ find(u);\n        int pv = find(v);\n        if (pu != pv) return INT_MAX;\n\
@@ -44,8 +44,8 @@ data:
     \    }\n\n    // diff[v] - diff[u] = x\n    void merge(int u, int v, int x) {\n\
     \        int pu = find(u);\n        int pv = find(v);\n        if (pu == pv) return;\n\
     \        if(sz[pu] < sz[pv]) {\n            swap(u, v);\n            swap(pu,\
-    \ pv);\n        \tx = -x;\n        }\n        par[pv] = pu;\n        sz[pu] +=\
-    \ sz[pv];\n        diff[pv] = diff[u] - diff[v] + x;\n    }\n\n    // diff[v]\
+    \ pv);\n            x = -x;\n        }\n        par[pv] = pu;\n        sz[pu]\
+    \ += sz[pv];\n        diff[pv] = diff[u] - diff[v] + x;\n    }\n\n    // diff[v]\
     \ - diff[u]\n    int getDiff(int u, int v) {\n        int pu = find(u);\n    \
     \    int pv = find(v);\n        if (pu != pv) return INT_MAX;\n        return\
     \ diff[v] - diff[u];\n    }\n};"
@@ -54,7 +54,7 @@ data:
   isVerificationFile: false
   path: DataStructure/DSU/Weighted_Dsu.h
   requiredBy: []
-  timestamp: '2025-06-11 00:40:56+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - DataStructure/DSU/test/aizu_dsl_1_b_weighted_dsu.test.cpp

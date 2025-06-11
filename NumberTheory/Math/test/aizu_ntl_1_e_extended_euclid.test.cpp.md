@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: NumberTheory/Math/Extended_euclid.h
     title: NumberTheory/Math/Extended_euclid.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E
@@ -37,20 +37,20 @@ data:
     \ b1;\n        tie(x, x1) = make_tuple(x1, x - q * x1);\n        tie(y, y1) =\
     \ make_tuple(y1, y - q * y1);\n        tie(a1, b1) = make_tuple(b1, a1 - q * b1);\n\
     \    }\n    return a1;\n}\n#line 5 \"NumberTheory/Math/test/aizu_ntl_1_e_extended_euclid.test.cpp\"\
-    \n\nvoid solve() {\n\tint a, b; cin >> a >> b;\n\tint x, y;\n\tint g = extended2(a,\
-    \ b, x, y);\n\tcout << x << \" \" << y << '\\n';\n}\n"
+    \n\nvoid solve() {\n    int a, b; cin >> a >> b;\n    int x, y;\n    int g = extended2(a,\
+    \ b, x, y);\n    cout << x << \" \" << y << '\\n';\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E\"\
     \n\n#include \"../../../template.h\"\n#include \"../Extended_euclid.h\"\n\nvoid\
-    \ solve() {\n\tint a, b; cin >> a >> b;\n\tint x, y;\n\tint g = extended2(a, b,\
-    \ x, y);\n\tcout << x << \" \" << y << '\\n';\n}"
+    \ solve() {\n    int a, b; cin >> a >> b;\n    int x, y;\n    int g = extended2(a,\
+    \ b, x, y);\n    cout << x << \" \" << y << '\\n';\n}"
   dependsOn:
   - template.h
   - NumberTheory/Math/Extended_euclid.h
   isVerificationFile: true
   path: NumberTheory/Math/test/aizu_ntl_1_e_extended_euclid.test.cpp
   requiredBy: []
-  timestamp: '2025-06-08 06:31:53+07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-06-11 15:37:14+07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: NumberTheory/Math/test/aizu_ntl_1_e_extended_euclid.test.cpp
 layout: document

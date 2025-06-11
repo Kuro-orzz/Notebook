@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: Graph/Shortest_path/Bellman_ford.h
     title: Graph/Shortest_path/Bellman_ford.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -39,27 +39,29 @@ data:
     \   if (d[u] != 1e18 && d[v] > d[u] + w) {\n                    d[S] = 1e18;\n\
     \                    return d;\n                }\n            }\n        }\n\
     \    }\n    return d;\n}\n#line 5 \"Graph/test/aizu_grl_1_b_negative_cycle.test.cpp\"\
-    \n\nvoid solve() {\n\tint n, m, s; cin >> n >> m >> s;\n\tvector<vector<pii>>\
-    \ adj(n+1);\n\tfor (int i = 0; i < m; i++) {\n\t\tint u, v, w; cin >> u >> v >>\
-    \ w;\n\t\tadj[u].push_back({v, w});\n\t}\n\tvector<ll> d = negativeCycle(s, n,\
-    \ adj);\n\tif (d[s] == 1e18) {\n\t\tcout << \"NEGATIVE CYCLE\\n\";\n\t\treturn;\n\
-    \t}\n\tfor (int i = 0; i < n; i++) {\n\t\tif (d[i] == 1e18) {\n\t\t\tcout << \"\
-    INF\\n\";\n\t\t} else {\n\t\t\tcout << d[i] << '\\n';\n\t\t}\n\t}\n}\n"
+    \n\nvoid solve() {\n    int n, m, s; cin >> n >> m >> s;\n    vector<vector<pii>>\
+    \ adj(n+1);\n    for (int i = 0; i < m; i++) {\n        int u, v, w; cin >> u\
+    \ >> v >> w;\n        adj[u].push_back({v, w});\n    }\n    vector<ll> d = negativeCycle(s,\
+    \ n, adj);\n    if (d[s] == 1e18) {\n        cout << \"NEGATIVE CYCLE\\n\";\n\
+    \        return;\n    }\n    for (int i = 0; i < n; i++) {\n        if (d[i] ==\
+    \ 1e18) {\n            cout << \"INF\\n\";\n        } else {\n            cout\
+    \ << d[i] << '\\n';\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_B\"\
     \n\n#include \"../../template.h\"\n#include \"../Shortest_path/Bellman_ford.h\"\
-    \n\nvoid solve() {\n\tint n, m, s; cin >> n >> m >> s;\n\tvector<vector<pii>>\
-    \ adj(n+1);\n\tfor (int i = 0; i < m; i++) {\n\t\tint u, v, w; cin >> u >> v >>\
-    \ w;\n\t\tadj[u].push_back({v, w});\n\t}\n\tvector<ll> d = negativeCycle(s, n,\
-    \ adj);\n\tif (d[s] == 1e18) {\n\t\tcout << \"NEGATIVE CYCLE\\n\";\n\t\treturn;\n\
-    \t}\n\tfor (int i = 0; i < n; i++) {\n\t\tif (d[i] == 1e18) {\n\t\t\tcout << \"\
-    INF\\n\";\n\t\t} else {\n\t\t\tcout << d[i] << '\\n';\n\t\t}\n\t}\n}"
+    \n\nvoid solve() {\n    int n, m, s; cin >> n >> m >> s;\n    vector<vector<pii>>\
+    \ adj(n+1);\n    for (int i = 0; i < m; i++) {\n        int u, v, w; cin >> u\
+    \ >> v >> w;\n        adj[u].push_back({v, w});\n    }\n    vector<ll> d = negativeCycle(s,\
+    \ n, adj);\n    if (d[s] == 1e18) {\n        cout << \"NEGATIVE CYCLE\\n\";\n\
+    \        return;\n    }\n    for (int i = 0; i < n; i++) {\n        if (d[i] ==\
+    \ 1e18) {\n            cout << \"INF\\n\";\n        } else {\n            cout\
+    \ << d[i] << '\\n';\n        }\n    }\n}"
   dependsOn:
   - template.h
   - Graph/Shortest_path/Bellman_ford.h
   isVerificationFile: true
   path: Graph/test/aizu_grl_1_b_negative_cycle.test.cpp
   requiredBy: []
-  timestamp: '2025-06-07 22:39:21+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Graph/test/aizu_grl_1_b_negative_cycle.test.cpp

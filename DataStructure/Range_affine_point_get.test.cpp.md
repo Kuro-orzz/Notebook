@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/SegTree/Affline.h
     title: DataStructure/SegTree/Affline.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -51,27 +51,29 @@ data:
     \  int mid = (l + r) >> 1;\n        push(id, l, r);\n        T t1 = getSumMod(id*2,\
     \ l, mid, u, v) % mod;\n        T t2 = getSumMod(id*2+1, mid+1, r, u, v) % mod;\n\
     \        return (t1 + t2) % mod;\n    }\n};\n#line 5 \"DataStructure/Range_affine_point_get.test.cpp\"\
-    \n\nvoid solve() {\n\tint n, q; cin >> n >> q;\n\tvector<ll> a(n+1);\n\tfor (int\
-    \ i = 1; i <= n; i++) {\n\t\tcin >> a[i];\n\t}\n\tAfflineSegTree<ll> st(n);\n\t\
-    st.build(1, 1, n, a);\n\twhile (q--) {\n\t\tint tv; cin >> tv;\n\t\tif (tv ==\
-    \ 0) {\n\t\t\tll l, r, b, c; cin >> l >> r >> b >> c;\n\t\t\tst.update(1, 1, n,\
-    \ l+1, r, make_pair(b, c));\n\t\t} else if (tv == 1) {\n\t\t\tint i; cin >> i;\n\
-    \t\t\tcout << st.getSumMod(1, 1, n, i+1, i+1) << '\\n';\n\t\t}\n\t}\n}\n"
+    \n\nvoid solve() {\n    int n, q; cin >> n >> q;\n    vector<ll> a(n+1);\n   \
+    \ for (int i = 1; i <= n; i++) {\n        cin >> a[i];\n    }\n    AfflineSegTree<ll>\
+    \ st(n);\n    st.build(1, 1, n, a);\n    while (q--) {\n        int tv; cin >>\
+    \ tv;\n        if (tv == 0) {\n            ll l, r, b, c; cin >> l >> r >> b >>\
+    \ c;\n            st.update(1, 1, n, l+1, r, make_pair(b, c));\n        } else\
+    \ if (tv == 1) {\n            int i; cin >> i;\n            cout << st.getSumMod(1,\
+    \ 1, n, i+1, i+1) << '\\n';\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_point_get\"\
     \n\n#include \"../template.h\"\n#include \"SegTree/Affline.h\"\n\nvoid solve()\
-    \ {\n\tint n, q; cin >> n >> q;\n\tvector<ll> a(n+1);\n\tfor (int i = 1; i <=\
-    \ n; i++) {\n\t\tcin >> a[i];\n\t}\n\tAfflineSegTree<ll> st(n);\n\tst.build(1,\
-    \ 1, n, a);\n\twhile (q--) {\n\t\tint tv; cin >> tv;\n\t\tif (tv == 0) {\n\t\t\
-    \tll l, r, b, c; cin >> l >> r >> b >> c;\n\t\t\tst.update(1, 1, n, l+1, r, make_pair(b,\
-    \ c));\n\t\t} else if (tv == 1) {\n\t\t\tint i; cin >> i;\n\t\t\tcout << st.getSumMod(1,\
-    \ 1, n, i+1, i+1) << '\\n';\n\t\t}\n\t}\n}"
+    \ {\n    int n, q; cin >> n >> q;\n    vector<ll> a(n+1);\n    for (int i = 1;\
+    \ i <= n; i++) {\n        cin >> a[i];\n    }\n    AfflineSegTree<ll> st(n);\n\
+    \    st.build(1, 1, n, a);\n    while (q--) {\n        int tv; cin >> tv;\n  \
+    \      if (tv == 0) {\n            ll l, r, b, c; cin >> l >> r >> b >> c;\n \
+    \           st.update(1, 1, n, l+1, r, make_pair(b, c));\n        } else if (tv\
+    \ == 1) {\n            int i; cin >> i;\n            cout << st.getSumMod(1, 1,\
+    \ n, i+1, i+1) << '\\n';\n        }\n    }\n}"
   dependsOn:
   - template.h
   - DataStructure/SegTree/Affline.h
   isVerificationFile: true
   path: DataStructure/Range_affine_point_get.test.cpp
   requiredBy: []
-  timestamp: '2025-05-08 02:01:24+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: DataStructure/Range_affine_point_get.test.cpp

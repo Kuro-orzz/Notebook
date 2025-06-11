@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -24,59 +24,64 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"DataStructure/SegTree/SparseSegTree.h\"\n\n\nstruct Node {\n\
-    \tNode *left = nullptr, *right = nullptr;\n\tll val;\n\tpll lazy = {1, 0};\n\t\
-    \n\tNode(): val(0), lazy({1, 0}) {}\n\t\n\tNode operator+(const Node& b) const\
-    \ {\n\t\tNode res;\n\t\tres.val = (val + b.val) % mod;\n\t\treturn res;\n\t}\n\
-    \n\t~Node() {\n\t\tdelete left;\n\t\tdelete right;\n\t}\n};\n\nclass SparseSegTree\
-    \ {\nprivate:\n\tNode *r = new Node();\n\tint n;\n\n\tvoid push(Node *cur, int\
-    \ l, int r) {\n\t\tint m = (l + r) >> 1;\n\t\tif (!cur->left) cur->left = new\
-    \ Node();\n\t\tif (!cur->right) cur->right = new Node();\n\t\tapply(cur->left,\
-    \ l, m, cur->lazy);\n\t\tapply(cur->right, m+1, r, cur->lazy);\n\t\tcur->lazy\
-    \ = {1, 0};\n\t}\n\n\tvoid apply(Node *cur, int l, int r, pll x) {\n\t\tll b =\
-    \ x.fi, c = x.se;\n\t\tint len = r-l+1;\n\t\tcur->val = (cur->val * b % mod +\
-    \ c * len % mod) % mod;\n\t\tcur->lazy.fi = cur->lazy.fi * b % mod;\n\t\tcur->lazy.se\
-    \ = (cur->lazy.se * b % mod + c) % mod;\n\t}\n\n\tvoid update(Node *cur, int l,\
-    \ int r, int u, int v, pll x) {\n\t\tif (l > v || r < u) return;\n\t\tif (u <=\
-    \ l && r <= v) {\n\t\t\tapply(cur, l, r, x);\n\t\t\treturn;\n\t\t}\n\t\tpush(cur,\
-    \ l, r);\n\t\tll mid = (l + r) >> 1;\n\t\tupdate(cur->left, l, mid, u, v, x);\n\
-    \t\tupdate(cur->right, mid+1, r, u, v, x);\n\t\tcur->val = (cur->left->val + cur->right->val)\
-    \ % mod;\n\t}\n\n\tll query(Node *cur, int l, int r, int u, int v) {\n\t\tif (l\
-    \ > v || r < u) return 0;\n\t\tif (u <= l && r <= v) return cur->val;\n\t\tpush(cur,\
-    \ l, r);\n\t\tint mid = (l + r) >> 1;\n\t\tll t1 = query(cur->left, l, mid, u,\
-    \ v) % mod;\n\t\tll t2 = query(cur->right, mid+1, r, u, v) % mod;\n\t\treturn\
-    \ (t1 + t2) % mod;\n\t}\n\npublic:\n\tSparseSegTree() {}\n\tSparseSegTree(int\
-    \ _n): n(_n) {}\n\n\tvoid update(int u, int v, pll val) { update(r, 1, n, u, v,\
-    \ val); }\n\t\n\tll query(int u, int v) { return query(r, 1, n, u, v); }\n};\n"
-  code: "#include \"../../template.h\"\n\n\nstruct Node {\n\tNode *left = nullptr,\
-    \ *right = nullptr;\n\tll val;\n\tpll lazy = {1, 0};\n\t\n\tNode(): val(0), lazy({1,\
-    \ 0}) {}\n\t\n\tNode operator+(const Node& b) const {\n\t\tNode res;\n\t\tres.val\
-    \ = (val + b.val) % mod;\n\t\treturn res;\n\t}\n\n\t~Node() {\n\t\tdelete left;\n\
-    \t\tdelete right;\n\t}\n};\n\nclass SparseSegTree {\nprivate:\n\tNode *r = new\
-    \ Node();\n\tint n;\n\n\tvoid push(Node *cur, int l, int r) {\n\t\tint m = (l\
-    \ + r) >> 1;\n\t\tif (!cur->left) cur->left = new Node();\n\t\tif (!cur->right)\
-    \ cur->right = new Node();\n\t\tapply(cur->left, l, m, cur->lazy);\n\t\tapply(cur->right,\
-    \ m+1, r, cur->lazy);\n\t\tcur->lazy = {1, 0};\n\t}\n\n\tvoid apply(Node *cur,\
-    \ int l, int r, pll x) {\n\t\tll b = x.fi, c = x.se;\n\t\tint len = r-l+1;\n\t\
-    \tcur->val = (cur->val * b % mod + c * len % mod) % mod;\n\t\tcur->lazy.fi = cur->lazy.fi\
-    \ * b % mod;\n\t\tcur->lazy.se = (cur->lazy.se * b % mod + c) % mod;\n\t}\n\n\t\
-    void update(Node *cur, int l, int r, int u, int v, pll x) {\n\t\tif (l > v ||\
-    \ r < u) return;\n\t\tif (u <= l && r <= v) {\n\t\t\tapply(cur, l, r, x);\n\t\t\
-    \treturn;\n\t\t}\n\t\tpush(cur, l, r);\n\t\tll mid = (l + r) >> 1;\n\t\tupdate(cur->left,\
-    \ l, mid, u, v, x);\n\t\tupdate(cur->right, mid+1, r, u, v, x);\n\t\tcur->val\
-    \ = (cur->left->val + cur->right->val) % mod;\n\t}\n\n\tll query(Node *cur, int\
-    \ l, int r, int u, int v) {\n\t\tif (l > v || r < u) return 0;\n\t\tif (u <= l\
-    \ && r <= v) return cur->val;\n\t\tpush(cur, l, r);\n\t\tint mid = (l + r) >>\
-    \ 1;\n\t\tll t1 = query(cur->left, l, mid, u, v) % mod;\n\t\tll t2 = query(cur->right,\
-    \ mid+1, r, u, v) % mod;\n\t\treturn (t1 + t2) % mod;\n\t}\n\npublic:\n\tSparseSegTree()\
-    \ {}\n\tSparseSegTree(int _n): n(_n) {}\n\n\tvoid update(int u, int v, pll val)\
-    \ { update(r, 1, n, u, v, val); }\n\t\n\tll query(int u, int v) { return query(r,\
-    \ 1, n, u, v); }\n};"
+    \    Node *left = nullptr, *right = nullptr;\n    ll val;\n    pll lazy = {1,\
+    \ 0};\n    \n    Node(): val(0), lazy({1, 0}) {}\n    \n    Node operator+(const\
+    \ Node& b) const {\n        Node res;\n        res.val = (val + b.val) % mod;\n\
+    \        return res;\n    }\n\n    ~Node() {\n        delete left;\n        delete\
+    \ right;\n    }\n};\n\nclass SparseSegTree {\nprivate:\n    Node *r = new Node();\n\
+    \    int n;\n\n    void push(Node *cur, int l, int r) {\n        int m = (l +\
+    \ r) >> 1;\n        if (!cur->left) cur->left = new Node();\n        if (!cur->right)\
+    \ cur->right = new Node();\n        apply(cur->left, l, m, cur->lazy);\n     \
+    \   apply(cur->right, m+1, r, cur->lazy);\n        cur->lazy = {1, 0};\n    }\n\
+    \n    void apply(Node *cur, int l, int r, pll x) {\n        ll b = x.fi, c = x.se;\n\
+    \        int len = r-l+1;\n        cur->val = (cur->val * b % mod + c * len %\
+    \ mod) % mod;\n        cur->lazy.fi = cur->lazy.fi * b % mod;\n        cur->lazy.se\
+    \ = (cur->lazy.se * b % mod + c) % mod;\n    }\n\n    void update(Node *cur, int\
+    \ l, int r, int u, int v, pll x) {\n        if (l > v || r < u) return;\n    \
+    \    if (u <= l && r <= v) {\n            apply(cur, l, r, x);\n            return;\n\
+    \        }\n        push(cur, l, r);\n        ll mid = (l + r) >> 1;\n       \
+    \ update(cur->left, l, mid, u, v, x);\n        update(cur->right, mid+1, r, u,\
+    \ v, x);\n        cur->val = (cur->left->val + cur->right->val) % mod;\n    }\n\
+    \n    ll query(Node *cur, int l, int r, int u, int v) {\n        if (l > v ||\
+    \ r < u) return 0;\n        if (u <= l && r <= v) return cur->val;\n        push(cur,\
+    \ l, r);\n        int mid = (l + r) >> 1;\n        ll t1 = query(cur->left, l,\
+    \ mid, u, v) % mod;\n        ll t2 = query(cur->right, mid+1, r, u, v) % mod;\n\
+    \        return (t1 + t2) % mod;\n    }\n\npublic:\n    SparseSegTree() {}\n \
+    \   SparseSegTree(int _n): n(_n) {}\n\n    void update(int u, int v, pll val)\
+    \ { update(r, 1, n, u, v, val); }\n    \n    ll query(int u, int v) { return query(r,\
+    \ 1, n, u, v); }\n};\n"
+  code: "#include \"../../template.h\"\n\n\nstruct Node {\n    Node *left = nullptr,\
+    \ *right = nullptr;\n    ll val;\n    pll lazy = {1, 0};\n    \n    Node(): val(0),\
+    \ lazy({1, 0}) {}\n    \n    Node operator+(const Node& b) const {\n        Node\
+    \ res;\n        res.val = (val + b.val) % mod;\n        return res;\n    }\n\n\
+    \    ~Node() {\n        delete left;\n        delete right;\n    }\n};\n\nclass\
+    \ SparseSegTree {\nprivate:\n    Node *r = new Node();\n    int n;\n\n    void\
+    \ push(Node *cur, int l, int r) {\n        int m = (l + r) >> 1;\n        if (!cur->left)\
+    \ cur->left = new Node();\n        if (!cur->right) cur->right = new Node();\n\
+    \        apply(cur->left, l, m, cur->lazy);\n        apply(cur->right, m+1, r,\
+    \ cur->lazy);\n        cur->lazy = {1, 0};\n    }\n\n    void apply(Node *cur,\
+    \ int l, int r, pll x) {\n        ll b = x.fi, c = x.se;\n        int len = r-l+1;\n\
+    \        cur->val = (cur->val * b % mod + c * len % mod) % mod;\n        cur->lazy.fi\
+    \ = cur->lazy.fi * b % mod;\n        cur->lazy.se = (cur->lazy.se * b % mod +\
+    \ c) % mod;\n    }\n\n    void update(Node *cur, int l, int r, int u, int v, pll\
+    \ x) {\n        if (l > v || r < u) return;\n        if (u <= l && r <= v) {\n\
+    \            apply(cur, l, r, x);\n            return;\n        }\n        push(cur,\
+    \ l, r);\n        ll mid = (l + r) >> 1;\n        update(cur->left, l, mid, u,\
+    \ v, x);\n        update(cur->right, mid+1, r, u, v, x);\n        cur->val = (cur->left->val\
+    \ + cur->right->val) % mod;\n    }\n\n    ll query(Node *cur, int l, int r, int\
+    \ u, int v) {\n        if (l > v || r < u) return 0;\n        if (u <= l && r\
+    \ <= v) return cur->val;\n        push(cur, l, r);\n        int mid = (l + r)\
+    \ >> 1;\n        ll t1 = query(cur->left, l, mid, u, v) % mod;\n        ll t2\
+    \ = query(cur->right, mid+1, r, u, v) % mod;\n        return (t1 + t2) % mod;\n\
+    \    }\n\npublic:\n    SparseSegTree() {}\n    SparseSegTree(int _n): n(_n) {}\n\
+    \n    void update(int u, int v, pll val) { update(r, 1, n, u, v, val); }\n   \
+    \ \n    ll query(int u, int v) { return query(r, 1, n, u, v); }\n};"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: DataStructure/SegTree/SparseSegTree.h
   requiredBy: []
-  timestamp: '2025-05-22 01:34:28+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - DataStructure/Range_affine_range_sum_large_array.test.cpp

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: DataStructure/DSU/Weighted_Dsu.h
     title: DataStructure/DSU/Weighted_Dsu.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
@@ -36,32 +36,34 @@ data:
     \ = root;\n    }\n\n    // diff[v] - diff[u] = x\n    void merge(int u, int v,\
     \ int x) {\n        int pu = find(u);\n        int pv = find(v);\n        if (pu\
     \ == pv) return;\n        if(sz[pu] < sz[pv]) {\n            swap(u, v);\n   \
-    \         swap(pu, pv);\n        \tx = -x;\n        }\n        par[pv] = pu;\n\
+    \         swap(pu, pv);\n            x = -x;\n        }\n        par[pv] = pu;\n\
     \        sz[pu] += sz[pv];\n        diff[pv] = diff[u] - diff[v] + x;\n    }\n\
     \n    // diff[v] - diff[u]\n    int getDiff(int u, int v) {\n        int pu =\
     \ find(u);\n        int pv = find(v);\n        if (pu != pv) return INT_MAX;\n\
     \        return diff[v] - diff[u];\n    }\n};\n#line 5 \"DataStructure/DSU/test/aizu_dsl_1_b_weighted_dsu.test.cpp\"\
-    \n\nvoid solve() {\n\tint n, q; cin >> n >> q;\n\tWeightedDsu g(n);\n\twhile (q--)\
-    \ {\n\t\tint type; cin >> type;\n\t\tif (type == 0) {\n\t\t\tint x, y, z; cin\
-    \ >> x >> y >> z;\n\t\t\tg.merge(x, y, z);\n\t\t} else if (type == 1) {\n\t\t\t\
-    int x, y; cin >> x >> y;\n\t\t\tint res = g.getDiff(x, y);\n\t\t\tif (res != INT_MAX)\
-    \ {\n\t\t\t\tcout << res << '\\n';\n\t\t\t} else {\n\t\t\t\tcout << \"?\\n\";\n\
-    \t\t\t}\n\t\t}\n\t}\n}\n"
+    \n\nvoid solve() {\n    int n, q; cin >> n >> q;\n    WeightedDsu g(n);\n    while\
+    \ (q--) {\n        int type; cin >> type;\n        if (type == 0) {\n        \
+    \    int x, y, z; cin >> x >> y >> z;\n            g.merge(x, y, z);\n       \
+    \ } else if (type == 1) {\n            int x, y; cin >> x >> y;\n            int\
+    \ res = g.getDiff(x, y);\n            if (res != INT_MAX) {\n                cout\
+    \ << res << '\\n';\n            } else {\n                cout << \"?\\n\";\n\
+    \            }\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/1/DSL_1_B\"\
     \n\n#include \"../../../template.h\"\n#include \"../Weighted_Dsu.h\"\n\nvoid solve()\
-    \ {\n\tint n, q; cin >> n >> q;\n\tWeightedDsu g(n);\n\twhile (q--) {\n\t\tint\
-    \ type; cin >> type;\n\t\tif (type == 0) {\n\t\t\tint x, y, z; cin >> x >> y >>\
-    \ z;\n\t\t\tg.merge(x, y, z);\n\t\t} else if (type == 1) {\n\t\t\tint x, y; cin\
-    \ >> x >> y;\n\t\t\tint res = g.getDiff(x, y);\n\t\t\tif (res != INT_MAX) {\n\t\
-    \t\t\tcout << res << '\\n';\n\t\t\t} else {\n\t\t\t\tcout << \"?\\n\";\n\t\t\t\
-    }\n\t\t}\n\t}\n}"
+    \ {\n    int n, q; cin >> n >> q;\n    WeightedDsu g(n);\n    while (q--) {\n\
+    \        int type; cin >> type;\n        if (type == 0) {\n            int x,\
+    \ y, z; cin >> x >> y >> z;\n            g.merge(x, y, z);\n        } else if\
+    \ (type == 1) {\n            int x, y; cin >> x >> y;\n            int res = g.getDiff(x,\
+    \ y);\n            if (res != INT_MAX) {\n                cout << res << '\\n';\n\
+    \            } else {\n                cout << \"?\\n\";\n            }\n    \
+    \    }\n    }\n}"
   dependsOn:
   - template.h
   - DataStructure/DSU/Weighted_Dsu.h
   isVerificationFile: true
   path: DataStructure/DSU/test/aizu_dsl_1_b_weighted_dsu.test.cpp
   requiredBy: []
-  timestamp: '2025-06-11 00:40:56+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: DataStructure/DSU/test/aizu_dsl_1_b_weighted_dsu.test.cpp

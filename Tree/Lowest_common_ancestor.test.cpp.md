@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: Tree/Tree/Lca.h
     title: Tree/Tree/Lca.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/lca
@@ -44,24 +44,25 @@ data:
     \    return h[u] + h[v] - 2 * h[node];\n    }\n\n    int ancestor_k(int u, int\
     \ k) {\n        for(int j = 0; (1 << j) <= k; j++) {\n            if(k >> j &\
     \ 1)\n                u = up[u][j];\n        }\n        return u;\n    }\n};\n\
-    #line 5 \"Tree/Lowest_common_ancestor.test.cpp\"\n\nvoid solve() {\n\tint n, q;\
-    \ cin >> n >> q;\n\tLca lca(n);\n\tfor (int i = 1; i <= n-1; i++) {\n\t\tint x;\
-    \ cin >> x;\n\t\tlca.tree[i].emplace_back(x);\n\t\tlca.tree[x].emplace_back(i);\n\
-    \t}\n\tlca.dfs(0, -1);\n\twhile (q--) {\n\t\tint u, v; cin >> u >> v;\n\t\tcout\
-    \ << lca.query(u, v) << '\\n';\n\t}\n}\n"
+    #line 5 \"Tree/Lowest_common_ancestor.test.cpp\"\n\nvoid solve() {\n    int n,\
+    \ q; cin >> n >> q;\n    Lca lca(n);\n    for (int i = 1; i <= n-1; i++) {\n \
+    \       int x; cin >> x;\n        lca.tree[i].emplace_back(x);\n        lca.tree[x].emplace_back(i);\n\
+    \    }\n    lca.dfs(0, -1);\n    while (q--) {\n        int u, v; cin >> u >>\
+    \ v;\n        cout << lca.query(u, v) << '\\n';\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n\n#include \"../template.h\"\
-    \n#include \"Tree/Lca.h\"\n\nvoid solve() {\n\tint n, q; cin >> n >> q;\n\tLca\
-    \ lca(n);\n\tfor (int i = 1; i <= n-1; i++) {\n\t\tint x; cin >> x;\n\t\tlca.tree[i].emplace_back(x);\n\
-    \t\tlca.tree[x].emplace_back(i);\n\t}\n\tlca.dfs(0, -1);\n\twhile (q--) {\n\t\t\
-    int u, v; cin >> u >> v;\n\t\tcout << lca.query(u, v) << '\\n';\n\t}\n}"
+    \n#include \"Tree/Lca.h\"\n\nvoid solve() {\n    int n, q; cin >> n >> q;\n  \
+    \  Lca lca(n);\n    for (int i = 1; i <= n-1; i++) {\n        int x; cin >> x;\n\
+    \        lca.tree[i].emplace_back(x);\n        lca.tree[x].emplace_back(i);\n\
+    \    }\n    lca.dfs(0, -1);\n    while (q--) {\n        int u, v; cin >> u >>\
+    \ v;\n        cout << lca.query(u, v) << '\\n';\n    }\n}"
   dependsOn:
   - template.h
   - Tree/Tree/Lca.h
   isVerificationFile: true
   path: Tree/Lowest_common_ancestor.test.cpp
   requiredBy: []
-  timestamp: '2025-05-25 00:26:18+07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-06-11 15:37:14+07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: Tree/Lowest_common_ancestor.test.cpp
 layout: document

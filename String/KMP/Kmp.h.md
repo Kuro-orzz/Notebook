@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy:
@@ -23,31 +23,35 @@ data:
     \  ios_base::sync_with_stdio(false);cin.tie(NULL);\n    // cin.exceptions(cin.failbit);\n\
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
-    \ 0;\n}\n#line 2 \"String/KMP/Kmp.h\"\n\nvector<int> lps(const string &s) {\n\t\
-    int n = s.size();\n\tvector<int> pi(n);\n\tfor (int i = 1; i < n; i++) {\n\t\t\
-    int j = pi[i-1];\n\t\twhile (j > 0 && s[i] != s[j]) {\n\t\t\tj = pi[j - 1];\n\t\
-    \t}\n\t\tif (s[i] == s[j]) j++;\n\t\tpi[i] = j;\n\t}\n\treturn pi;\n}\n\nvector<int>\
-    \ __KMP(const string &s, const string &t) {\n\tint n = s.size(), m = t.size();\n\
-    \tif (n == 0) return {};\n\tvector<int> pi = lps(s);\n\tint j = 0;\n\tvector<int>\
-    \ ans(m);\n\tfor (int i = 0; i < m; i++) {\n\t\twhile (j > 0 && t[i] != s[j])\
-    \ {\n\t\t\tj = pi[j - 1];\n\t\t}\n\t\tif (t[i] == s[j]) j++;\n\t\tans[i] = j;\n\
-    \t\tif (j == n) {\n\t\t\tj = pi[j - 1];\n\t\t}\n\t}\n\treturn ans;\n}\n"
-  code: "#include \"../../template.h\"\n\nvector<int> lps(const string &s) {\n\tint\
-    \ n = s.size();\n\tvector<int> pi(n);\n\tfor (int i = 1; i < n; i++) {\n\t\tint\
-    \ j = pi[i-1];\n\t\twhile (j > 0 && s[i] != s[j]) {\n\t\t\tj = pi[j - 1];\n\t\t\
-    }\n\t\tif (s[i] == s[j]) j++;\n\t\tpi[i] = j;\n\t}\n\treturn pi;\n}\n\nvector<int>\
-    \ __KMP(const string &s, const string &t) {\n\tint n = s.size(), m = t.size();\n\
-    \tif (n == 0) return {};\n\tvector<int> pi = lps(s);\n\tint j = 0;\n\tvector<int>\
-    \ ans(m);\n\tfor (int i = 0; i < m; i++) {\n\t\twhile (j > 0 && t[i] != s[j])\
-    \ {\n\t\t\tj = pi[j - 1];\n\t\t}\n\t\tif (t[i] == s[j]) j++;\n\t\tans[i] = j;\n\
-    \t\tif (j == n) {\n\t\t\tj = pi[j - 1];\n\t\t}\n\t}\n\treturn ans;\n}"
+    \ 0;\n}\n#line 2 \"String/KMP/Kmp.h\"\n\nvector<int> lps(const string &s) {\n\
+    \    int n = s.size();\n    vector<int> pi(n);\n    for (int i = 1; i < n; i++)\
+    \ {\n        int j = pi[i-1];\n        while (j > 0 && s[i] != s[j]) {\n     \
+    \       j = pi[j - 1];\n        }\n        if (s[i] == s[j]) j++;\n        pi[i]\
+    \ = j;\n    }\n    return pi;\n}\n\nvector<int> __KMP(const string &s, const string\
+    \ &t) {\n    int n = s.size(), m = t.size();\n    if (n == 0) return {};\n   \
+    \ vector<int> pi = lps(s);\n    int j = 0;\n    vector<int> ans(m);\n    for (int\
+    \ i = 0; i < m; i++) {\n        while (j > 0 && t[i] != s[j]) {\n            j\
+    \ = pi[j - 1];\n        }\n        if (t[i] == s[j]) j++;\n        ans[i] = j;\n\
+    \        if (j == n) {\n            j = pi[j - 1];\n        }\n    }\n    return\
+    \ ans;\n}\n"
+  code: "#include \"../../template.h\"\n\nvector<int> lps(const string &s) {\n   \
+    \ int n = s.size();\n    vector<int> pi(n);\n    for (int i = 1; i < n; i++) {\n\
+    \        int j = pi[i-1];\n        while (j > 0 && s[i] != s[j]) {\n         \
+    \   j = pi[j - 1];\n        }\n        if (s[i] == s[j]) j++;\n        pi[i] =\
+    \ j;\n    }\n    return pi;\n}\n\nvector<int> __KMP(const string &s, const string\
+    \ &t) {\n    int n = s.size(), m = t.size();\n    if (n == 0) return {};\n   \
+    \ vector<int> pi = lps(s);\n    int j = 0;\n    vector<int> ans(m);\n    for (int\
+    \ i = 0; i < m; i++) {\n        while (j > 0 && t[i] != s[j]) {\n            j\
+    \ = pi[j - 1];\n        }\n        if (t[i] == s[j]) j++;\n        ans[i] = j;\n\
+    \        if (j == n) {\n            j = pi[j - 1];\n        }\n    }\n    return\
+    \ ans;\n}"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: String/KMP/Kmp.h
   requiredBy:
   - String/KMP/test_kmp.cpp
-  timestamp: '2025-06-07 22:48:02+07:00'
+  timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: String/KMP/Kmp.h
