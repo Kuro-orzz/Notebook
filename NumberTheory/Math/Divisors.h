@@ -26,7 +26,7 @@ int count_divisor(ll n) {
     vector<int> prime = listPrime(1, 1e6+5);
     int ans = 1;
     for (int p : prime) {
-        if (p * p * p > n) break;
+        if (1ll * p * p * p > n) break;
         int cnt = 0;
         while (n % p == 0) {
             n /= p;
@@ -35,7 +35,7 @@ int count_divisor(ll n) {
         ans *= cnt + 1;
     }
     auto isSqrt = [&](ll n)->bool {
-        ll c = sqrt(n);
+        ll c = sqrtl(n);
         return c * c == n;
     };
     if (n == 1) return ans;
