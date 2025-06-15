@@ -70,12 +70,12 @@ data:
     \ number of divisor up to n <= 1e18\n// AC: https://codeforces.com/gym/100753\
     \ (Probblem F)\nint count_divisor(ll n) {\n    if (n == 1) return 1;\n    vector<int>\
     \ prime = listPrime(1, 1e6+5);\n    int ans = 1;\n    for (int p : prime) {\n\
-    \        if (p * p * p > n) break;\n        int cnt = 0;\n        while (n % p\
-    \ == 0) {\n            n /= p;\n            cnt++;\n        }\n        ans *=\
-    \ cnt + 1;\n    }\n    auto isSqrt = [&](ll n)->bool {\n        ll c = sqrt(n);\n\
-    \        return c * c == n;\n    };\n    if (n == 1) return ans;\n    if (MillerRabin(n))\
-    \ ans *= 2;\n    else if (isSqrt(n)) ans *= 3;\n    else ans *= 4;\n    return\
-    \ ans;\n}\n"
+    \        if (1ll * p * p * p > n) break;\n        int cnt = 0;\n        while\
+    \ (n % p == 0) {\n            n /= p;\n            cnt++;\n        }\n       \
+    \ ans *= cnt + 1;\n    }\n    auto isSqrt = [&](ll n)->bool {\n        ll c =\
+    \ sqrtl(n);\n        return c * c == n;\n    };\n    if (n == 1) return ans;\n\
+    \    if (MillerRabin(n)) ans *= 2;\n    else if (isSqrt(n)) ans *= 3;\n    else\
+    \ ans *= 4;\n    return ans;\n}\n"
   code: "#include \"../../template.h\"\n#include \"MillerRabin.h\"\n#include \"Sieve.h\"\
     \n\nusing u128 = __uint128_t;\n\n// sum of all divisor [1, n]\n// https://usaco.guide/problems/cses-1082-sum-of-divisors/solution\n\
     ll sum_of_divisor(ll n) {\n    ll res = 0, i = 1;\n    while (i <= n) {\n    \
@@ -85,12 +85,12 @@ data:
     \ number of divisor up to n <= 1e18\n// AC: https://codeforces.com/gym/100753\
     \ (Probblem F)\nint count_divisor(ll n) {\n    if (n == 1) return 1;\n    vector<int>\
     \ prime = listPrime(1, 1e6+5);\n    int ans = 1;\n    for (int p : prime) {\n\
-    \        if (p * p * p > n) break;\n        int cnt = 0;\n        while (n % p\
-    \ == 0) {\n            n /= p;\n            cnt++;\n        }\n        ans *=\
-    \ cnt + 1;\n    }\n    auto isSqrt = [&](ll n)->bool {\n        ll c = sqrt(n);\n\
-    \        return c * c == n;\n    };\n    if (n == 1) return ans;\n    if (MillerRabin(n))\
-    \ ans *= 2;\n    else if (isSqrt(n)) ans *= 3;\n    else ans *= 4;\n    return\
-    \ ans;\n}"
+    \        if (1ll * p * p * p > n) break;\n        int cnt = 0;\n        while\
+    \ (n % p == 0) {\n            n /= p;\n            cnt++;\n        }\n       \
+    \ ans *= cnt + 1;\n    }\n    auto isSqrt = [&](ll n)->bool {\n        ll c =\
+    \ sqrtl(n);\n        return c * c == n;\n    };\n    if (n == 1) return ans;\n\
+    \    if (MillerRabin(n)) ans *= 2;\n    else if (isSqrt(n)) ans *= 3;\n    else\
+    \ ans *= 4;\n    return ans;\n}"
   dependsOn:
   - template.h
   - NumberTheory/Math/MillerRabin.h
@@ -99,7 +99,7 @@ data:
   isVerificationFile: false
   path: NumberTheory/Math/Divisors.h
   requiredBy: []
-  timestamp: '2025-06-11 15:37:14+07:00'
+  timestamp: '2025-06-15 17:27:37+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: NumberTheory/Math/Divisors.h
