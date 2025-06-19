@@ -8,7 +8,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links:
-    - https://github.com/Kuro-orzz/verification-helper.git
+    - https://github.com/Kuro-orzz/verification-helper
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
@@ -17,7 +17,7 @@ data:
     , line 96, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: "#!/usr/bin/env python3\nfrom setuptools import find_packages, setup\n\nsetup(\n\
     \    name='online-judge-verify-helper',\n    version='5.6.0',\n    author='Kuro-orzz',\n\
-    \    author_email='hungdotuan05@gmail.com',\n    url='https://github.com/Kuro-orzz/verification-helper.git',\n\
+    \    author_email='hungdotuan05@gmail.com',\n    url='https://github.com/Kuro-orzz/verification-helper',\n\
     \    license='MIT License',\n    description='',\n    python_requires='>=3.8',\n\
     \    install_requires=[\n        'colorlog',\n        'pyyaml',\n        'online-judge-tools\
     \ >= 11.3.0',\n        'setuptools',\n        'toml',\n        'importlab',\n\
@@ -30,7 +30,7 @@ data:
   isVerificationFile: false
   path: setup.py
   requiredBy: []
-  timestamp: '2025-06-20 03:23:43+07:00'
+  timestamp: '2025-06-20 03:26:42+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: setup.py
