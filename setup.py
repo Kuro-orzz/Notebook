@@ -4,9 +4,9 @@ from setuptools import find_packages, setup
 setup(
     name='online-judge-verify-helper',
     version='5.6.0',
-    author='Kimiyuki Onaka',
-    author_email='kimiyuki95@gmail.com',
-    url='https://github.com/kmyk/online-judge-verify-helper',
+    author='Kuro-orzz',
+    author_email='hungdotuan05@gmail.com',
+    url='https://github.com/Kuro-orzz/verification-helper.git',
     license='MIT License',
     description='',
     python_requires='>=3.8',
@@ -18,4 +18,14 @@ setup(
         'toml',
         'importlab',
     ],
+    packages=find_packages(exclude=('tests', 'docs')),
+    package_data={
+        'onlinejudge_verify_resources': ['*', '_layouts/*', '_includes/*', 'assets/*', 'assets/css/*', 'assets/js/*'],
+    },
+    entry_points={
+        'console_scripts': [
+            'oj-verify = onlinejudge_verify.main:main',
+            'oj-bundle = onlinejudge_bundle.main:main',
+        ],
+    },
 )
