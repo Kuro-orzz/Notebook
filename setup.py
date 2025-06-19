@@ -6,7 +6,7 @@ setup(
     version='5.6.0',
     author='Kuro-orzz',
     author_email='hungdotuan05@gmail.com',
-    url='https://github.com/Kuro-orzz/verification-helper.git',
+    url='https://github.com/Kuro-orzz/verification-helper',
     license='MIT License',
     description='',
     python_requires='>=3.8',
