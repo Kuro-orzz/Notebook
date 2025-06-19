@@ -132,8 +132,8 @@ public:
     BigInt operator + () const { return BigInt(*this); } // +a;
     BigInt &operator ++ () { *this += 1; return *this; } // ++a;
     BigInt &operator -- () { *this -= 1; return *this; } // --a;
-    BigInt operator ++ (int) {BigInt res = *this; *this += 1; return res;} // a++;
-    BigInt operator -- (int) {BigInt res = *this; *this -= 1; return res;} // a--;
+    BigInt operator ++ (int) { BigInt res = *this; *this += 1; return res; } // a++;
+    BigInt operator -- (int) { BigInt res = *this; *this -= 1; return res; } // a--;
 
     // BigInt = BigInt + BigInt
     BigInt operator + (const BigInt &b) const { return BigInt(*this) += b; }
@@ -154,7 +154,7 @@ public:
     friend BigInt operator - (int64_t t, const BigInt &b) { BigInt res(t); res -= b; return res; }
     friend BigInt operator * (int64_t t, const BigInt &b) { BigInt res(t); res *= b; return res; }
     friend BigInt operator / (int64_t t, const BigInt &b) { BigInt res(t); res /= b; return res; }
-    friend BigInt operator % (int64_t t, const BigInt &b) { BigInt res(t); res %= b; return res;}
+    friend BigInt operator % (int64_t t, const BigInt &b) { BigInt res(t); res %= b; return res; }
 
     uint32_t operator [] (const int i) const { assert(i >= 0 && i < (int)size()); return digit[i]; }
     uint32_t &operator [] (const int i) { assert(i >= 0 && i < (int)size()); return digit[i]; }
@@ -387,7 +387,7 @@ public:
     }
 
     // ---------------------- Input Output ---------------------
-    /* only use for decim number */
+    /* only use for decimal number */
     void read(const string &s) {
         sign = (s[0] == '-' ? -1 : 1);
         digit.clear();
