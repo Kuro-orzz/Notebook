@@ -76,10 +76,10 @@ data:
     \ BigInt operator - () const { BigInt res = *this; res *= -1; return res; } //\
     \ -a;\n    BigInt operator + () const { return BigInt(*this); } // +a;\n    BigInt\
     \ &operator ++ () { *this += 1; return *this; } // ++a;\n    BigInt &operator\
-    \ -- () { *this -= 1; return *this; } // --a;\n    BigInt operator ++ (int) {BigInt\
-    \ res = *this; *this += 1; return res;} // a++;\n    BigInt operator -- (int)\
-    \ {BigInt res = *this; *this -= 1; return res;} // a--;\n\n    // BigInt = BigInt\
-    \ + BigInt\n    BigInt operator + (const BigInt &b) const { return BigInt(*this)\
+    \ -- () { *this -= 1; return *this; } // --a;\n    BigInt operator ++ (int) {\
+    \ BigInt res = *this; *this += 1; return res; } // a++;\n    BigInt operator --\
+    \ (int) { BigInt res = *this; *this -= 1; return res; } // a--;\n\n    // BigInt\
+    \ = BigInt + BigInt\n    BigInt operator + (const BigInt &b) const { return BigInt(*this)\
     \ += b; }\n    BigInt operator - (const BigInt &b) const { return BigInt(*this)\
     \ -= b; }\n    BigInt operator * (const BigInt &b) const { return BigInt(*this)\
     \ *= b; }\n    BigInt operator / (const BigInt &b) const { return BigInt(*this)\
@@ -95,7 +95,7 @@ data:
     \  friend BigInt operator * (int64_t t, const BigInt &b) { BigInt res(t); res\
     \ *= b; return res; }\n    friend BigInt operator / (int64_t t, const BigInt &b)\
     \ { BigInt res(t); res /= b; return res; }\n    friend BigInt operator % (int64_t\
-    \ t, const BigInt &b) { BigInt res(t); res %= b; return res;}\n\n    uint32_t\
+    \ t, const BigInt &b) { BigInt res(t); res %= b; return res; }\n\n    uint32_t\
     \ operator [] (const int i) const { assert(i >= 0 && i < (int)size()); return\
     \ digit[i]; }\n    uint32_t &operator [] (const int i) { assert(i >= 0 && i <\
     \ (int)size()); return digit[i]; }\n\n    // ------------------------- Comparison\
@@ -198,12 +198,12 @@ data:
     \ 0;\n                q = (1ll * d1 * BASE * BASE + 1ll * d2 * BASE + d3) / (firstDigit\
     \ * 2);\n            }\n        }\n\n        res.trim();\n        return res /\
     \ norm;\n    }\n\n    // ---------------------- Input Output ---------------------\n\
-    \    /* only use for decim number */\n    void read(const string &s) {\n     \
-    \   sign = (s[0] == '-' ? -1 : 1);\n        digit.clear();\n        int pos =\
-    \ (s[0] == '-' ? 1 : 0);\n        for (int i = (int)s.size() - 1; i >= pos; i\
-    \ -= BASE_DIGITS) {\n            int x = 0;\n            int k = max(pos, i -\
-    \ BASE_DIGITS + 1);\n            for (int j = k; j <= i; j++) {\n            \
-    \    x = x * 10 + (s[j] - '0');\n            }\n            digit.push_back(x);\n\
+    \    /* only use for decimal number */\n    void read(const string &s) {\n   \
+    \     sign = (s[0] == '-' ? -1 : 1);\n        digit.clear();\n        int pos\
+    \ = (s[0] == '-' ? 1 : 0);\n        for (int i = (int)s.size() - 1; i >= pos;\
+    \ i -= BASE_DIGITS) {\n            int x = 0;\n            int k = max(pos, i\
+    \ - BASE_DIGITS + 1);\n            for (int j = k; j <= i; j++) {\n          \
+    \      x = x * 10 + (s[j] - '0');\n            }\n            digit.push_back(x);\n\
     \        }\n        trim();\n    }\n\n    friend istream &operator >> (istream\
     \ &in, BigInt &a) {\n        string s; in >> s;\n        a.read(s);\n        return\
     \ in;\n    }\n\n    friend ostream &operator << (ostream &out, const BigInt &a)\
@@ -222,7 +222,7 @@ data:
   isVerificationFile: true
   path: Big_Integer/test/Addition_of_Big_Integers.test.cpp
   requiredBy: []
-  timestamp: '2025-06-11 15:37:14+07:00'
+  timestamp: '2025-06-20 02:19:32+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Big_Integer/test/Addition_of_Big_Integers.test.cpp

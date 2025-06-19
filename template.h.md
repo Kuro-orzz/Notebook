@@ -120,6 +120,9 @@ data:
     path: Misc/LIS.h
     title: Misc/LIS.h
   - icon: ':warning:'
+    path: Misc/Matrix.h
+    title: Misc/Matrix.h
+  - icon: ':warning:'
     path: Misc/Modint.h
     title: Misc/Modint.h
   - icon: ':warning:'
@@ -399,6 +402,7 @@ data:
   - Misc/Modint.h
   - Misc/Compress.h
   - Misc/Deque.h
+  - Misc/Matrix.h
   - NumberTheory/Math/Binary_exponentiation.h
   - NumberTheory/Math/CheckPrime.h
   - NumberTheory/Math/MillerRabin.h
