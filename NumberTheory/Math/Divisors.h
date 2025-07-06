@@ -9,7 +9,7 @@ using u128 = __uint128_t;
 ll sum_of_divisor(ll n) {
     ll res = 0, i = 1;
     while (i <= n) {
-        ll l = i;          
+        ll l = i;
         ll r = n / (n / i);
         ll val = n / l;
         ll csc = (u128)(r - l + 1) * (l + r) / 2 % MOD;
