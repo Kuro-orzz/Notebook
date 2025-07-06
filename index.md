@@ -146,6 +146,9 @@ data:
       path: Misc/Deque.h
       title: Misc/Deque.h
     - icon: ':warning:'
+      path: Misc/Formula.h
+      title: Misc/Formula.h
+    - icon: ':warning:'
       path: Misc/LIS.h
       title: Misc/LIS.h
     - icon: ':warning:'
@@ -166,6 +169,9 @@ data:
       path: NumberTheory/Math/CheckPrime.h
       title: NumberTheory/Math/CheckPrime.h
     - icon: ':warning:'
+      path: NumberTheory/Math/Combination.h
+      title: NumberTheory/Math/Combination.h
+    - icon: ':warning:'
       path: NumberTheory/Math/Divisors.h
       title: NumberTheory/Math/Divisors.h
     - icon: ':heavy_check_mark:'
@@ -180,6 +186,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: NumberTheory/Math/MillerRabin.h
       title: NumberTheory/Math/MillerRabin.h
+    - icon: ':warning:'
+      path: NumberTheory/Math/Misc.h
+      title: NumberTheory/Math/Misc.h
     - icon: ':warning:'
       path: NumberTheory/Math/Primality_test.h
       title: NumberTheory/Math/Primality_test.h

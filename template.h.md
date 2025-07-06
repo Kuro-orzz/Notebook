@@ -117,6 +117,9 @@ data:
     path: Misc/Deque.h
     title: Misc/Deque.h
   - icon: ':warning:'
+    path: Misc/Formula.h
+    title: Misc/Formula.h
+  - icon: ':warning:'
     path: Misc/LIS.h
     title: Misc/LIS.h
   - icon: ':warning:'
@@ -149,6 +152,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: NumberTheory/Math/MillerRabin.h
     title: NumberTheory/Math/MillerRabin.h
+  - icon: ':warning:'
+    path: NumberTheory/Math/Misc.h
+    title: NumberTheory/Math/Misc.h
   - icon: ':warning:'
     path: NumberTheory/Math/Primality_test.h
     title: NumberTheory/Math/Primality_test.h
@@ -401,6 +407,7 @@ data:
   - Misc/LIS.h
   - Misc/Modint.h
   - Misc/Compress.h
+  - Misc/Formula.h
   - Misc/Deque.h
   - Misc/Matrix.h
   - NumberTheory/Math/Binary_exponentiation.h
@@ -410,6 +417,7 @@ data:
   - NumberTheory/Math/Divisors.h
   - NumberTheory/Math/Primality_test.h
   - NumberTheory/Math/Factorization.h
+  - NumberTheory/Math/Misc.h
   - NumberTheory/Math/Extended_euclid.h
   - NumberTheory/Math/EulerPhi.h
   - Tree/EulerTour/EulerTour.h
