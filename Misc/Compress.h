@@ -16,4 +16,8 @@ struct Compress {
             decompress.push_back(x);
         }
     }
+
+    int operator[] (const T &x) const { assert(compressed.count(x)); return compressed[x]; }
+
+    T getDecomp(int i) const { return decompress[i]; }
 };

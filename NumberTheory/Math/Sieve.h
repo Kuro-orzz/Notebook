@@ -32,3 +32,25 @@ vector<int> listPrime(int l, int r) {
     }
     return listPi;
 }
+
+vector<int> sieve_count_divisors(int n) {
+    vector<int> divisors(n+1, 0);
+    for (int i = 1; i*i <= n; i++) {
+        for (int j = i; j <= n; j += i) {
+            divisors[j]++;
+        }
+        divisors[i*i]--;
+    }
+    return divisors;
+}
+
+vector<int> sieve_sum_divisors(int n) {
+    vector<int> sumDiv(n+1, 0);
+    for (int i = 1; i*i <= n; i++) {
+        for (int j = i; j <= n; j += i) {
+            sumDiv[j] += i;
+            if (i*i != j) sumDiv[j] += j/i;
+        }
+    }
+    return sumDiv;
+}
