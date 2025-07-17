@@ -25,19 +25,23 @@ data:
     \n    Compress(const vector<T> &a) {\n        decompress.push_back(T(0));\n  \
     \      vector<T> b = a;\n        sort(all(b));\n        unique(b);\n        for\
     \ (T x : b) {\n            compressed[x] = cnt++;\n            decompress.push_back(x);\n\
-    \        }\n    }\n};\n"
+    \        }\n    }\n\n    int operator[] (const T &x) const { assert(compressed.count(x));\
+    \ return compressed[x]; }\n\n    T getDecomp(int i) const { return decompress[i];\
+    \ }\n};\n"
   code: "#include \"../template.h\"\n\ntemplate <typename T>\nstruct Compress {\n\
     \    int cnt = 1;\n    map<T, int> compressed;\n    vector<T> decompress;\n\n\
     \    Compress(const vector<T> &a) {\n        decompress.push_back(T(0));\n   \
     \     vector<T> b = a;\n        sort(all(b));\n        unique(b);\n        for\
     \ (T x : b) {\n            compressed[x] = cnt++;\n            decompress.push_back(x);\n\
-    \        }\n    }\n};"
+    \        }\n    }\n\n    int operator[] (const T &x) const { assert(compressed.count(x));\
+    \ return compressed[x]; }\n\n    T getDecomp(int i) const { return decompress[i];\
+    \ }\n};"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: Misc/Compress.h
   requiredBy: []
-  timestamp: '2025-06-11 15:37:14+07:00'
+  timestamp: '2025-07-18 00:55:12+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: Misc/Compress.h

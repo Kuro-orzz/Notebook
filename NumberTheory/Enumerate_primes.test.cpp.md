@@ -53,23 +53,29 @@ data:
     \ && r > l) prime[1] = 0;\n    if (l == 1) prime[1-l] = 0;\n    return prime;\n\
     }\n\nvector<int> listPrime(int l, int r) {\n    vector<int> prime = segmentSieve(l,\
     \ r);\n    vector<int> listPi;\n    for (int i = l; i <= r; i++) {\n        if\
-    \ (prime[i-l]) listPi.push_back(i);\n    }\n    return listPi;\n}\n#line 6 \"\
-    NumberTheory/Enumerate_primes.test.cpp\"\n\nvoid solve() {\n    int n, a, b; cin\
-    \ >> n >> a >> b;\n    ll cnt_pi = Meissel(n);\n    \n    int lim = 1e6;\n   \
-    \ vector<int> need;\n    int i = 0;\n    while (a*i + b <= n && (int)need.size()\
-    \ < lim) {\n        need.push_back(a*i+b);\n        i++;\n    }\n\n    vector<int>\
-    \ prime = listPrime(0, lim);\n    vector<int> res;\n    int cnt = 0, idx = 0;\n\
-    \    for (int l = 2; l <= n; l += lim) {\n        int r = min(l + lim - 1, n);\n\
-    \        vector<int> isPrime(r - l + 1, 1);\n        for (int p : prime) {\n \
-    \           ll low = max(1ll*p*p, 1ll*(l+p-1)/p*p);\n            for (ll j = low;\
-    \ j <= r; j += p) {\n                if (j-l >= 0) isPrime[j-l] = 0;\n       \
-    \     }\n        }\n        // vector<int> isPrime = segmentSieve(l, r);\n\n \
-    \       for (int p = l; p <= min(r, n); p++) {\n            if (!isPrime[p-l])\
-    \ continue;\n            if (cnt == need[idx]) {\n                res.push_back(p);\n\
-    \                idx++;\n            }\n            cnt++;\n            if (idx\
-    \ == (int)need.size()) break;\n        }\n\n        if (idx == (int)need.size())\
-    \ break;\n    }\n\n    cout << cnt_pi << ' ' << res.size() << '\\n';\n    for\
-    \ (int x : res) cout << x << ' ';\n}\n"
+    \ (prime[i-l]) listPi.push_back(i);\n    }\n    return listPi;\n}\n\nvector<int>\
+    \ sieve_count_divisors(int n) {\n    vector<int> divisors(n+1, 0);\n    for (int\
+    \ i = 1; i*i <= n; i++) {\n        for (int j = i; j <= n; j += i) {\n       \
+    \     divisors[j]++;\n        }\n        divisors[i*i]--;\n    }\n    return divisors;\n\
+    }\n\nvector<int> sieve_sum_divisors(int n) {\n    vector<int> sumDiv(n+1, 0);\n\
+    \    for (int i = 1; i*i <= n; i++) {\n        for (int j = i; j <= n; j += i)\
+    \ {\n            sumDiv[j] += i;\n            if (i*i != j) sumDiv[j] += j/i;\n\
+    \        }\n    }\n    return sumDiv;\n}\n#line 6 \"NumberTheory/Enumerate_primes.test.cpp\"\
+    \n\nvoid solve() {\n    int n, a, b; cin >> n >> a >> b;\n    ll cnt_pi = Meissel(n);\n\
+    \    \n    int lim = 1e6;\n    vector<int> need;\n    int i = 0;\n    while (a*i\
+    \ + b <= n && (int)need.size() < lim) {\n        need.push_back(a*i+b);\n    \
+    \    i++;\n    }\n\n    vector<int> prime = listPrime(0, lim);\n    vector<int>\
+    \ res;\n    int cnt = 0, idx = 0;\n    for (int l = 2; l <= n; l += lim) {\n \
+    \       int r = min(l + lim - 1, n);\n        vector<int> isPrime(r - l + 1, 1);\n\
+    \        for (int p : prime) {\n            ll low = max(1ll*p*p, 1ll*(l+p-1)/p*p);\n\
+    \            for (ll j = low; j <= r; j += p) {\n                if (j-l >= 0)\
+    \ isPrime[j-l] = 0;\n            }\n        }\n        // vector<int> isPrime\
+    \ = segmentSieve(l, r);\n\n        for (int p = l; p <= min(r, n); p++) {\n  \
+    \          if (!isPrime[p-l]) continue;\n            if (cnt == need[idx]) {\n\
+    \                res.push_back(p);\n                idx++;\n            }\n  \
+    \          cnt++;\n            if (idx == (int)need.size()) break;\n        }\n\
+    \n        if (idx == (int)need.size()) break;\n    }\n\n    cout << cnt_pi <<\
+    \ ' ' << res.size() << '\\n';\n    for (int x : res) cout << x << ' ';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_primes\"\n\n\
     #include \"../template.h\"\n#include \"Math/CheckPrime.h\"\n#include \"Math/Sieve.h\"\
     \n\nvoid solve() {\n    int n, a, b; cin >> n >> a >> b;\n    ll cnt_pi = Meissel(n);\n\
@@ -94,7 +100,7 @@ data:
   isVerificationFile: true
   path: NumberTheory/Enumerate_primes.test.cpp
   requiredBy: []
-  timestamp: '2025-06-11 15:37:14+07:00'
+  timestamp: '2025-07-18 00:55:12+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: NumberTheory/Enumerate_primes.test.cpp

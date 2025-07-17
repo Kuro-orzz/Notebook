@@ -29,12 +29,12 @@ data:
     \    // int t; cin >> t;\n    // while(t--)\n        solve();\n    cerr << \"\\\
     nTime run: \" << 1000 * clock() / CLOCKS_PER_SEC << \"ms\" << '\\n';\n    return\
     \ 0;\n}\n#line 2 \"NumberTheory/Math/Binary_exponentiation.h\"\n\nusing u128 =\
-    \ __uint128_t;\n\nll binMul(ll a, ll b, ll M) {\n    a = a % M;\n    ll res =\
-    \ 0;\n    while (b) {\n        if (b & 1) res = (res + a) % M;\n        a = a\
-    \ * 2 % M;\n        b /= 2;\n    }\n    return res;\n}\n\nll binPow(ll a, ll b,\
-    \ ll M) {\n    a %= M;\n    ll res = 1;\n    while (b) {\n        if (b & 1) res\
-    \ = (u128)res * a % M;\n        a = (u128)a * a % M;\n        b /= 2;\n    }\n\
-    \    return res;\n}\n#line 5 \"NumberTheory/Math/test/aizu_ntl_1_b_power_mod.test.cpp\"\
+    \ __uint128_t;\nusing i128 = __int128;\n\nll binMul(ll a, ll b, ll M) {\n    a\
+    \ = a % M;\n    ll res = 0;\n    while (b) {\n        if (b & 1) res = (res +\
+    \ a) % M;\n        a = a * 2 % M;\n        b /= 2;\n    }\n    return res;\n}\n\
+    \nll binPow(ll a, ll b, ll M) {\n    a %= M;\n    ll res = 1;\n    while (b) {\n\
+    \        if (b & 1) res = (i128)res * a % M;\n        a = (i128)a * a % M;\n \
+    \       b /= 2;\n    }\n    return res;\n}\n#line 5 \"NumberTheory/Math/test/aizu_ntl_1_b_power_mod.test.cpp\"\
     \n\nvoid solve() {\n    int n, m; cin >> n >> m;\n    cout << binPow(n, m, MOD)\
     \ << '\\n';\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B\"\
@@ -47,7 +47,7 @@ data:
   isVerificationFile: true
   path: NumberTheory/Math/test/aizu_ntl_1_b_power_mod.test.cpp
   requiredBy: []
-  timestamp: '2025-06-11 15:37:14+07:00'
+  timestamp: '2025-07-18 00:55:12+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: NumberTheory/Math/test/aizu_ntl_1_b_power_mod.test.cpp

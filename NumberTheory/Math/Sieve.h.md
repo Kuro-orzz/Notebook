@@ -37,7 +37,14 @@ data:
     \ (l == 1) prime[1-l] = 0;\n    return prime;\n}\n\nvector<int> listPrime(int\
     \ l, int r) {\n    vector<int> prime = segmentSieve(l, r);\n    vector<int> listPi;\n\
     \    for (int i = l; i <= r; i++) {\n        if (prime[i-l]) listPi.push_back(i);\n\
-    \    }\n    return listPi;\n}\n"
+    \    }\n    return listPi;\n}\n\nvector<int> sieve_count_divisors(int n) {\n \
+    \   vector<int> divisors(n+1, 0);\n    for (int i = 1; i*i <= n; i++) {\n    \
+    \    for (int j = i; j <= n; j += i) {\n            divisors[j]++;\n        }\n\
+    \        divisors[i*i]--;\n    }\n    return divisors;\n}\n\nvector<int> sieve_sum_divisors(int\
+    \ n) {\n    vector<int> sumDiv(n+1, 0);\n    for (int i = 1; i*i <= n; i++) {\n\
+    \        for (int j = i; j <= n; j += i) {\n            sumDiv[j] += i;\n    \
+    \        if (i*i != j) sumDiv[j] += j/i;\n        }\n    }\n    return sumDiv;\n\
+    }\n"
   code: "#include \"../../template.h\"\n\nvector<int> sieve(int n) {\n    vector<int>\
     \ nt(n+1, 1);\n    nt[0] = nt[1] = 0;\n    for (int i = 2; i * i <= n; i++) {\n\
     \        if (!nt[i]) continue;\n        for (int j = i * i; j <= n; j += i)\n\
@@ -49,14 +56,20 @@ data:
     \    return prime;\n}\n\nvector<int> listPrime(int l, int r) {\n    vector<int>\
     \ prime = segmentSieve(l, r);\n    vector<int> listPi;\n    for (int i = l; i\
     \ <= r; i++) {\n        if (prime[i-l]) listPi.push_back(i);\n    }\n    return\
-    \ listPi;\n}"
+    \ listPi;\n}\n\nvector<int> sieve_count_divisors(int n) {\n    vector<int> divisors(n+1,\
+    \ 0);\n    for (int i = 1; i*i <= n; i++) {\n        for (int j = i; j <= n; j\
+    \ += i) {\n            divisors[j]++;\n        }\n        divisors[i*i]--;\n \
+    \   }\n    return divisors;\n}\n\nvector<int> sieve_sum_divisors(int n) {\n  \
+    \  vector<int> sumDiv(n+1, 0);\n    for (int i = 1; i*i <= n; i++) {\n       \
+    \ for (int j = i; j <= n; j += i) {\n            sumDiv[j] += i;\n           \
+    \ if (i*i != j) sumDiv[j] += j/i;\n        }\n    }\n    return sumDiv;\n}"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: NumberTheory/Math/Sieve.h
   requiredBy:
   - NumberTheory/Math/Divisors.h
-  timestamp: '2025-06-11 15:37:14+07:00'
+  timestamp: '2025-07-18 00:55:12+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - NumberTheory/Enumerate_primes.test.cpp

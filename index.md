@@ -180,6 +180,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: NumberTheory/Math/Extended_euclid.h
       title: NumberTheory/Math/Extended_euclid.h
+    - icon: ':warning:'
+      path: NumberTheory/Math/Factorial.h
+      title: NumberTheory/Math/Factorial.h
     - icon: ':heavy_check_mark:'
       path: NumberTheory/Math/Factorization.h
       title: NumberTheory/Math/Factorization.h
