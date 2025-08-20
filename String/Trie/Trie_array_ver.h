@@ -68,7 +68,7 @@ public:
     }
 
     vector<string> sort_string() {
-        vecor<int> res;
+        vector<int> res;
         string s = "";
         dfs(0, s, res);
         return res;

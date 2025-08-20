@@ -11,6 +11,7 @@ struct Node {
 };
 
 class Trie {
+public:
     Node *r = new Node();
 
     Trie() {}
