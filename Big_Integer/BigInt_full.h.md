@@ -412,12 +412,12 @@ data:
   timestamp: '2025-06-20 02:19:32+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - Big_Integer/test/Multiplication_of_Big_Integers.test.cpp
-  - Big_Integer/test/Multiplication_of_Big_Integers_II.test.cpp
-  - Big_Integer/test/Addition_of_Big_Integers.test.cpp
   - Big_Integer/test/Division_of_Big_Integers.test.cpp
-  - Big_Integer/test/Remainder_of_Big_Integers.test.cpp
   - Big_Integer/test/Difference_of_Big_Integers.test.cpp
+  - Big_Integer/test/Addition_of_Big_Integers.test.cpp
+  - Big_Integer/test/Multiplication_of_Big_Integers_II.test.cpp
+  - Big_Integer/test/Remainder_of_Big_Integers.test.cpp
+  - Big_Integer/test/Multiplication_of_Big_Integers.test.cpp
 documentation_of: Big_Integer/BigInt_full.h
 layout: document
 redirect_from:

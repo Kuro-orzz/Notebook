@@ -35,13 +35,32 @@ data:
     \ [dist, u] = pq.top(); pq.pop();\n        if (vis[u]) continue;\n        vis[u]\
     \ = 1;\n        for (auto [v, w] : g[u]) {\n            if (d[v] > d[u] + w) {\n\
     \                d[v] = d[u] + w;\n                pq.push({d[v], v});\n     \
-    \       }\n        }\n    }\n    return d;\n}\n#line 5 \"Graph/test/aizu_grl_1_a_dijkstra.test.cpp\"\
-    \n\nvoid solve() {\n    int n, m, s; cin >> n >> m >> s;\n    vector<vector<pii>>\
-    \ adj(n+1);\n    for (int i = 0; i < m; i++) {\n        int u, v, w; cin >> u\
-    \ >> v >> w;\n        adj[u].push_back({v, w});\n    }\n    vector<ll> d = dijkstra(s,\
-    \ n, adj);\n    for (int i = 0; i < n; i++) {\n        if (d[i] == LLONG_MAX)\
-    \ {\n            cout << \"INF\\n\";\n        } else {\n            cout << d[i]\
-    \ << '\\n';\n        }\n    }\n}\n"
+    \       }\n        }\n    }\n    return d;\n}\n\n\n\nstruct Oxyz {\n    int x,\
+    \ y, z;\n\n    Oxyz(int _x, int _y, int _z): x(_x), y(_y), z(_z) {}\n\n    bool\
+    \ operator < (Oxyz other) const {\n        if (x != other.x) return x < other.x;\n\
+    \        if (y != other.y) return y < other.y;\n        return z < other.z;\n\
+    \    }\n};\n\nusing plO = pair<ll, Oxyz>;\n\nint dijkstra(Oxyz s, int n, vector<vector<vector<int>>>\
+    \ &a) {\n    vector<vector<vector<int>>> vis(n+1, vector<vector<int>>(n+1, vector<int>(n+1,\
+    \ 0)));\n    vector<vector<vector<ll>>> d(n+1, vector<vector<ll>>(n+1, vector<ll>(n+1,\
+    \ 1e9)));\n    priority_queue<plO, vector<plO>, greater<plO>> pq;\n    d[s.x][s.y][s.z]\
+    \ = 0;\n    pq.push({d[s.x][s.y][s.z], s});\n    while (!pq.empty()) {\n     \
+    \   plO u = pq.top(); pq.pop();\n        auto [dist, pos] = u;\n        auto [x,\
+    \ y, z] = pos;\n        if (vis[x][y][z]) continue;\n        vis[x][y][z] = 1;\n\
+    \        for (int i = -1; i <= 1; i++) {\n            for (int j = -1; j <= 1;\
+    \ j++) {\n                for (int k = -1; k <= 1; k++) {\n                  \
+    \  Oxyz v(x+i, y+j, z+k);\n                    if (abs(v.x-x)+abs(v.y-y)+abs(v.z-z)\
+    \ != 1) continue;\n                    if (v.x < 1 || v.y < 1 || v.z < 1) continue;\n\
+    \                    if (v.x > n || v.y > n || v.z > n) continue;\n          \
+    \          ll w = a[x+i][y+j][z+k];\n                    if (d[v.x][v.y][v.z]\
+    \ > dist + w) {\n                        d[v.x][v.y][v.z] = dist + w;\n      \
+    \                  pq.push({d[v.x][v.y][v.z], v});\n                    }\n  \
+    \              }\n            }\n        }\n    }\n    return d[n][n][n];\n}\n\
+    #line 5 \"Graph/test/aizu_grl_1_a_dijkstra.test.cpp\"\n\nvoid solve() {\n    int\
+    \ n, m, s; cin >> n >> m >> s;\n    vector<vector<pii>> adj(n+1);\n    for (int\
+    \ i = 0; i < m; i++) {\n        int u, v, w; cin >> u >> v >> w;\n        adj[u].push_back({v,\
+    \ w});\n    }\n    vector<ll> d = dijkstra(s, n, adj);\n    for (int i = 0; i\
+    \ < n; i++) {\n        if (d[i] == LLONG_MAX) {\n            cout << \"INF\\n\"\
+    ;\n        } else {\n            cout << d[i] << '\\n';\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A\"\
     \n\n#include \"../../template.h\"\n#include \"../Shortest_path/Dijkstra.h\"\n\n\
     void solve() {\n    int n, m, s; cin >> n >> m >> s;\n    vector<vector<pii>>\
@@ -56,7 +75,7 @@ data:
   isVerificationFile: true
   path: Graph/test/aizu_grl_1_a_dijkstra.test.cpp
   requiredBy: []
-  timestamp: '2025-06-11 15:37:14+07:00'
+  timestamp: '2025-08-20 16:22:54+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: Graph/test/aizu_grl_1_a_dijkstra.test.cpp

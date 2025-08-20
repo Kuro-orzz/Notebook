@@ -54,14 +54,14 @@ data:
   isVerificationFile: false
   path: NumberTheory/Math/Binary_exponentiation.h
   requiredBy:
-  - NumberTheory/Math/MillerRabin.h
-  - NumberTheory/Math/Divisors.h
   - NumberTheory/Math/Primality_test.h
+  - NumberTheory/Math/Divisors.h
+  - NumberTheory/Math/MillerRabin.h
   timestamp: '2025-07-18 00:55:12+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - NumberTheory/Math/test/aizu_ntl_1_b_power_mod.test.cpp
   - NumberTheory/Primality_test.test.cpp
+  - NumberTheory/Math/test/aizu_ntl_1_b_power_mod.test.cpp
 documentation_of: NumberTheory/Math/Binary_exponentiation.h
 layout: document
 redirect_from:

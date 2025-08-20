@@ -158,6 +158,9 @@ data:
       path: Misc/Modint.h
       title: Misc/Modint.h
     - icon: ':warning:'
+      path: Misc/Prefix_sum.cpp
+      title: Misc/Prefix_sum.cpp
+    - icon: ':warning:'
       path: Misc/Small_to_large.h
       title: Misc/Small_to_large.h
   - name: NumberTheory/Math

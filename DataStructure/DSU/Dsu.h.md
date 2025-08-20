@@ -87,8 +87,8 @@ data:
   isVerificationFile: false
   path: DataStructure/DSU/Dsu.h
   requiredBy:
-  - Graph/Mst/Prim.h
   - Graph/Mst/Kruskal.h
+  - Graph/Mst/Prim.h
   timestamp: '2025-06-07 01:24:49+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

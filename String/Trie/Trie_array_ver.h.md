@@ -41,7 +41,7 @@ data:
     \ i < 26; i++) {\n            if (!tree[pos].child[i]) continue;\n           \
     \ cur += char(i + 'a');\n            dfs(tree[pos].child[i], cur, res);\n    \
     \        cur.pop_back();\n        }\n    }\n\n    vector<string> sort_string()\
-    \ {\n        vecor<int> res;\n        string s = \"\";\n        dfs(0, s, res);\n\
+    \ {\n        vector<int> res;\n        string s = \"\";\n        dfs(0, s, res);\n\
     \        return res;\n    }\n\n    string find_kth_string(int k) {\n        \n\
     \    }\n};\n"
   code: "#include \"../../template.h\"\n\n\nstruct Node {\n    int child[26], isEnd;\n\
@@ -64,7 +64,7 @@ data:
     \ {\n            res.push_back(cur);\n        }\n        for (int i = 0; i < 26;\
     \ i++) {\n            if (!tree[pos].child[i]) continue;\n            cur += char(i\
     \ + 'a');\n            dfs(tree[pos].child[i], cur, res);\n            cur.pop_back();\n\
-    \        }\n    }\n\n    vector<string> sort_string() {\n        vecor<int> res;\n\
+    \        }\n    }\n\n    vector<string> sort_string() {\n        vector<int> res;\n\
     \        string s = \"\";\n        dfs(0, s, res);\n        return res;\n    }\n\
     \n    string find_kth_string(int k) {\n        \n    }\n};"
   dependsOn:
@@ -72,7 +72,7 @@ data:
   isVerificationFile: false
   path: String/Trie/Trie_array_ver.h
   requiredBy: []
-  timestamp: '2025-06-11 15:37:14+07:00'
+  timestamp: '2025-08-20 16:22:54+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: String/Trie/Trie_array_ver.h
