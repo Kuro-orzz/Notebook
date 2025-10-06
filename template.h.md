@@ -177,6 +177,12 @@ data:
     path: NumberTheory/Math/Sieve.h
     title: NumberTheory/Math/Sieve.h
   - icon: ':warning:'
+    path: String/Kmp.h
+    title: String/Kmp.h
+  - icon: ':warning:'
+    path: String/Problem/Kmp.cpp
+    title: String/Problem/Kmp.cpp
+  - icon: ':warning:'
     path: String/Problem/Rolling_Hash1.cpp
     title: String/Problem/Rolling_Hash1.cpp
   - icon: ':warning:'
@@ -427,8 +433,10 @@ data:
   - Graph/Mst/Kruskal.h
   - String/Trie/Trie_array_ver.h
   - String/Trie/Trie.h
+  - String/Kmp.h
   - String/Problem/Rolling_Hash2.cpp
   - String/Problem/Rolling_Hash1.cpp
+  - String/Problem/Kmp.cpp
   - String/Z_Function.h
   - String/Rolling_Hash.h
   - Big_Integer/BigInt_full.h

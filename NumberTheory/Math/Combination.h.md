@@ -22,8 +22,8 @@ data:
     \ line -1: no such header\n"
   code: "#include \"../../template.h\"\n#include \"../../Misc/ModInt.h\"\n#include\
     \ \"Binary_exponentiation.h\"\n\n// This modint only work for MOD is prime cuz\
-    \ using modulo inverse\n// using mint = ModInt<MOD>;\n\n// vector<mint> fact;\n\
-    \n// void preprocess() {\n//     fact[0] = 1;\n//     for (int i = 1; i < (int)fact.size();\
+    \ using modulo inverse\nusing mint = ModInt<MOD>;\n\n// vector<mint> fact;\n\n\
+    // void preprocess() {\n//     fact[0] = 1;\n//     for (int i = 1; i < (int)fact.size();\
     \ i++) {\n//         fact[i] = fact[i-1] * i;\n//     }\n// }\n\n// mint comb(int\
     \ n, int k) {\n//     if (k < 0 || k > n) return 0; \n//     return fact[n] /\
     \ (fact[n-k] * fact[k]);\n// }\n\n\n// Using for n * k <= 1e7 or n,k <= 5000,\
