@@ -102,15 +102,15 @@ struct Sqrt {
     ll sum(int l, int r) {
         l = split(l), r = split(r + 1);
         ll res = 0;
-        for (int j = l; j < r; ++j)
-            res += blocks[ blockId[j] ].getSum();
+        for (int i = l; i < r; i++)
+            res += blocks[ blockId[i] ].getSum();
         return res;
     }
 
     void Reverse(int l, int r) {
         l = split(l), r = split(r + 1);
-        for (int j = l; j < r; ++j)
-            blocks[blockId[j]].rev ^= 1;
+        for (int i = l; i < r; i++)
+            blocks[blockId[i]].rev ^= 1;
         reverse(blockId.begin() + l, blockId.begin() + r);
     }
 
