@@ -3,7 +3,7 @@
 #include "Binary_exponentiation.h"
 
 // This modint only work for MOD is prime cuz using modulo inverse
-// using mint = ModInt<MOD>;
+using mint = ModInt<MOD>;
 
 // vector<mint> fact;
 
