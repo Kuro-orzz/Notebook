@@ -32,7 +32,13 @@ data:
     \ if (n == 0) return 0;\n    ll ans = n;\n    for (ll i = 2; i*i <= n; i++) {\n\
     \        if (n % i == 0) {\n            ans -= ans / i;\n            while (n\
     \ % i == 0) n /= i;\n        }\n    }\n    if (n > 1) ans -= ans / n;\n    return\
-    \ ans;\n}\n#line 5 \"NumberTheory/Math/test/aizu_ntl_1_d_euler_phi.test.cpp\"\n\
+    \ ans;\n}\n\nvector<int> phi_from_1_to_n(int n) {\n    vector<int> phi(n + 1);\n\
+    \    iota(all(phi), 0);\n    \n    for (int i = 2; i <= n; i++) {\n        if\
+    \ (phi[i] == i) {\n            for (int j = i; j <= n; j += i) {\n           \
+    \     phi[j] -= phi[j] / i;\n            }\n        }\n    }\n    return phi;\n\
+    }\n\n// phi(a * b) = phi(a) * phi(b) / phi(gcd(a, b)) * gcd(a, b)\n// int gcd\
+    \ = __gcd(a, b);\n// int phi[a*b] = (1ull * phi[a] * phi[b] / phi[gcd] * gcd)\
+    \ % mod;\n#line 5 \"NumberTheory/Math/test/aizu_ntl_1_d_euler_phi.test.cpp\"\n\
     \nvoid solve() {\n    ll n; cin >> n;\n    cout << eulerPhi(n) << '\\n';\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_D\"\
     \n\n#include \"../../../template.h\"\n#include \"../EulerPhi.h\"\n\nvoid solve()\
@@ -43,7 +49,7 @@ data:
   isVerificationFile: true
   path: NumberTheory/Math/test/aizu_ntl_1_d_euler_phi.test.cpp
   requiredBy: []
-  timestamp: '2025-06-11 15:37:14+07:00'
+  timestamp: '2025-10-06 23:30:53+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: NumberTheory/Math/test/aizu_ntl_1_d_euler_phi.test.cpp

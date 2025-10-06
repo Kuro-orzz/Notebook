@@ -27,17 +27,29 @@ data:
     \ if (n == 0) return 0;\n    ll ans = n;\n    for (ll i = 2; i*i <= n; i++) {\n\
     \        if (n % i == 0) {\n            ans -= ans / i;\n            while (n\
     \ % i == 0) n /= i;\n        }\n    }\n    if (n > 1) ans -= ans / n;\n    return\
-    \ ans;\n}\n"
+    \ ans;\n}\n\nvector<int> phi_from_1_to_n(int n) {\n    vector<int> phi(n + 1);\n\
+    \    iota(all(phi), 0);\n    \n    for (int i = 2; i <= n; i++) {\n        if\
+    \ (phi[i] == i) {\n            for (int j = i; j <= n; j += i) {\n           \
+    \     phi[j] -= phi[j] / i;\n            }\n        }\n    }\n    return phi;\n\
+    }\n\n// phi(a * b) = phi(a) * phi(b) / phi(gcd(a, b)) * gcd(a, b)\n// int gcd\
+    \ = __gcd(a, b);\n// int phi[a*b] = (1ull * phi[a] * phi[b] / phi[gcd] * gcd)\
+    \ % mod;\n"
   code: "#include \"../../template.h\"\n\nll eulerPhi(ll n) {\n    if (n == 0) return\
     \ 0;\n    ll ans = n;\n    for (ll i = 2; i*i <= n; i++) {\n        if (n % i\
     \ == 0) {\n            ans -= ans / i;\n            while (n % i == 0) n /= i;\n\
-    \        }\n    }\n    if (n > 1) ans -= ans / n;\n    return ans;\n}"
+    \        }\n    }\n    if (n > 1) ans -= ans / n;\n    return ans;\n}\n\nvector<int>\
+    \ phi_from_1_to_n(int n) {\n    vector<int> phi(n + 1);\n    iota(all(phi), 0);\n\
+    \    \n    for (int i = 2; i <= n; i++) {\n        if (phi[i] == i) {\n      \
+    \      for (int j = i; j <= n; j += i) {\n                phi[j] -= phi[j] / i;\n\
+    \            }\n        }\n    }\n    return phi;\n}\n\n// phi(a * b) = phi(a)\
+    \ * phi(b) / phi(gcd(a, b)) * gcd(a, b)\n// int gcd = __gcd(a, b);\n// int phi[a*b]\
+    \ = (1ull * phi[a] * phi[b] / phi[gcd] * gcd) % mod;"
   dependsOn:
   - template.h
   isVerificationFile: false
   path: NumberTheory/Math/EulerPhi.h
   requiredBy: []
-  timestamp: '2025-06-11 15:37:14+07:00'
+  timestamp: '2025-10-06 23:30:53+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - NumberTheory/Math/test/aizu_ntl_1_d_euler_phi.test.cpp

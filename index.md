@@ -118,6 +118,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: DataStructure/SqrtDecomposition/Sqrt.h
       title: DataStructure/SqrtDecomposition/Sqrt.h
+  - name: Dp
+    pages:
+    - icon: ':warning:'
+      path: Dp/DAG.h
+      title: Dp/DAG.h
+    - icon: ':warning:'
+      path: Dp/Knapsack.h
+      title: Dp/Knapsack.h
+    - icon: ':warning:'
+      path: Dp/LCS.h
+      title: Dp/LCS.h
   - name: Graph/Mst
     pages:
     - icon: ':heavy_check_mark:'
@@ -151,6 +162,9 @@ data:
     - icon: ':warning:'
       path: Misc/LIS.h
       title: Misc/LIS.h
+    - icon: ':warning:'
+      path: Misc/MITM.h
+      title: Misc/MITM.h
     - icon: ':warning:'
       path: Misc/Matrix.h
       title: Misc/Matrix.h

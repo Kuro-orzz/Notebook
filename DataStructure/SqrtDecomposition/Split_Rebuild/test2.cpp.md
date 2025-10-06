@@ -62,10 +62,10 @@ data:
     \                it = blockId.insert(it, newId);\n                return it -\
     \ blockId.begin();\n            }\n            curPos = curR + 1;\n        }\n\
     \        return 0;\n    }\n\n    ll sum(int l, int r) {\n        l = split(l),\
-    \ r = split(r + 1);\n        ll res = 0;\n        for (int j = l; j < r; ++j)\n\
-    \            res += blocks[ blockId[j] ].getSum();\n        return res;\n    }\n\
+    \ r = split(r + 1);\n        ll res = 0;\n        for (int i = l; i < r; i++)\n\
+    \            res += blocks[ blockId[i] ].getSum();\n        return res;\n    }\n\
     \n    void Reverse(int l, int r) {\n        l = split(l), r = split(r + 1);\n\
-    \        for (int j = l; j < r; ++j)\n            blocks[blockId[j]].rev ^= 1;\n\
+    \        for (int i = l; i < r; i++)\n            blocks[blockId[i]].rev ^= 1;\n\
     \        reverse(blockId.begin() + l, blockId.begin() + r);\n    }\n\n    void\
     \ rebuild_if_need() {\n        a.resize(1);\n        for (auto it : blockId) {\n\
     \            if (blocks[it].rev) {\n                blocks[it].perform_reverse();\n\
@@ -95,7 +95,7 @@ data:
   isVerificationFile: false
   path: DataStructure/SqrtDecomposition/Split_Rebuild/test2.cpp
   requiredBy: []
-  timestamp: '2025-05-25 00:26:18+07:00'
+  timestamp: '2025-10-06 23:30:53+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: DataStructure/SqrtDecomposition/Split_Rebuild/test2.cpp
