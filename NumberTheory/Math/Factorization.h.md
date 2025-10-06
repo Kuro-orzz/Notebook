@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: NumberTheory/Aizu/aizu_ntl_1_a_prime_factor.test.cpp
     title: NumberTheory/Aizu/aizu_ntl_1_a_prime_factor.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -43,7 +43,7 @@ data:
   path: NumberTheory/Math/Factorization.h
   requiredBy: []
   timestamp: '2025-06-11 15:37:14+07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - NumberTheory/Aizu/aizu_ntl_1_a_prime_factor.test.cpp
 documentation_of: NumberTheory/Math/Factorization.h

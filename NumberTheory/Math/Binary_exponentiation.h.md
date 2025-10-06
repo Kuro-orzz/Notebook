@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.h
     title: template.h
   _extendedRequiredBy:
   - icon: ':warning:'
     path: NumberTheory/Math/Divisors.h
     title: NumberTheory/Math/Divisors.h
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: NumberTheory/Math/MillerRabin.h
     title: NumberTheory/Math/MillerRabin.h
   - icon: ':warning:'
     path: NumberTheory/Math/Primality_test.h
     title: NumberTheory/Math/Primality_test.h
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: NumberTheory/Aizu/aizu_ntl_1_b_power_mod.test.cpp
     title: NumberTheory/Aizu/aizu_ntl_1_b_power_mod.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: NumberTheory/Yosupo/Primality_test.test.cpp
     title: NumberTheory/Yosupo/Primality_test.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: h
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -58,7 +58,7 @@ data:
   - NumberTheory/Math/Primality_test.h
   - NumberTheory/Math/MillerRabin.h
   timestamp: '2025-07-18 00:55:12+07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - NumberTheory/Aizu/aizu_ntl_1_b_power_mod.test.cpp
   - NumberTheory/Yosupo/Primality_test.test.cpp
