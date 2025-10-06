@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: DataStructure/Range_affine_range_sum_large_array.test.cpp
-    title: DataStructure/Range_affine_range_sum_large_array.test.cpp
+    path: DataStructure/Yosupo/Range_affine_range_sum_large_array.test.cpp
+    title: DataStructure/Yosupo/Range_affine_range_sum_large_array.test.cpp
   _isVerificationFailed: false
   _pathExtension: h
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -84,7 +84,7 @@ data:
   timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - DataStructure/Range_affine_range_sum_large_array.test.cpp
+  - DataStructure/Yosupo/Range_affine_range_sum_large_array.test.cpp
 documentation_of: DataStructure/SegTree/SparseSegTree.h
 layout: document
 redirect_from:

@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy:
   - icon: ':warning:'
-    path: DataStructure/SqrtDecomposition/Split_Rebuild/test2.cpp
-    title: DataStructure/SqrtDecomposition/Split_Rebuild/test2.cpp
+    path: DataStructure/Problem/Sqrt_split_rebuild2.cpp
+    title: DataStructure/Problem/Sqrt_split_rebuild2.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: DataStructure/Range_reverse_range_sum.test.cpp
-    title: DataStructure/Range_reverse_range_sum.test.cpp
+    path: DataStructure/Yosupo/Range_reverse_range_sum.test.cpp
+    title: DataStructure/Yosupo/Range_reverse_range_sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: h
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -128,11 +128,11 @@ data:
   isVerificationFile: false
   path: DataStructure/SqrtDecomposition/Split_Rebuild/Simplified_version.h
   requiredBy:
-  - DataStructure/SqrtDecomposition/Split_Rebuild/test2.cpp
+  - DataStructure/Problem/Sqrt_split_rebuild2.cpp
   timestamp: '2025-10-06 23:30:53+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - DataStructure/Range_reverse_range_sum.test.cpp
+  - DataStructure/Yosupo/Range_reverse_range_sum.test.cpp
 documentation_of: DataStructure/SqrtDecomposition/Split_Rebuild/Simplified_version.h
 layout: document
 redirect_from:

@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: NumberTheory/Math/test/aizu_ntl_1_d_euler_phi.test.cpp
-    title: NumberTheory/Math/test/aizu_ntl_1_d_euler_phi.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: NumberTheory/Aizu/aizu_ntl_1_d_euler_phi.test.cpp
+    title: NumberTheory/Aizu/aizu_ntl_1_d_euler_phi.test.cpp
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -50,9 +50,9 @@ data:
   path: NumberTheory/Math/EulerPhi.h
   requiredBy: []
   timestamp: '2025-10-06 23:30:53+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - NumberTheory/Math/test/aizu_ntl_1_d_euler_phi.test.cpp
+  - NumberTheory/Aizu/aizu_ntl_1_d_euler_phi.test.cpp
 documentation_of: NumberTheory/Math/EulerPhi.h
 layout: document
 redirect_from:

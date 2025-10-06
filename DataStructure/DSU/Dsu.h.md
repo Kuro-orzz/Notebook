@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: Graph/Mst/Kruskal.h
     title: Graph/Mst/Kruskal.h
   - icon: ':warning:'
     path: Graph/Mst/Prim.h
     title: Graph/Mst/Prim.h
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: DataStructure/Union_find.test.cpp
-    title: DataStructure/Union_find.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: DataStructure/Unionfind_with_potential.test.cpp
-    title: DataStructure/Unionfind_with_potential.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: Graph/test/aizu_grl_2_a_minimum_spanning_tree.test.cpp
-    title: Graph/test/aizu_grl_2_a_minimum_spanning_tree.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: DataStructure/Yosupo/Union_find.test.cpp
+    title: DataStructure/Yosupo/Union_find.test.cpp
+  - icon: ':x:'
+    path: DataStructure/Yosupo/Unionfind_with_potential.test.cpp
+    title: DataStructure/Yosupo/Unionfind_with_potential.test.cpp
+  - icon: ':x:'
+    path: Graph/Aizu/aizu_grl_2_a_minimum_spanning_tree.test.cpp
+    title: Graph/Aizu/aizu_grl_2_a_minimum_spanning_tree.test.cpp
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links:
     - https://judge.yosupo.jp/problem/unionfind_with_potential
@@ -90,11 +90,11 @@ data:
   - Graph/Mst/Prim.h
   - Graph/Mst/Kruskal.h
   timestamp: '2025-06-07 01:24:49+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - DataStructure/Unionfind_with_potential.test.cpp
-  - DataStructure/Union_find.test.cpp
-  - Graph/test/aizu_grl_2_a_minimum_spanning_tree.test.cpp
+  - DataStructure/Yosupo/Unionfind_with_potential.test.cpp
+  - DataStructure/Yosupo/Union_find.test.cpp
+  - Graph/Aizu/aizu_grl_2_a_minimum_spanning_tree.test.cpp
 documentation_of: DataStructure/DSU/Dsu.h
 layout: document
 redirect_from:

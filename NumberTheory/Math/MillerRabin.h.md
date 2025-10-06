@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: NumberTheory/Math/Binary_exponentiation.h
     title: NumberTheory/Math/Binary_exponentiation.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy:
@@ -12,12 +12,12 @@ data:
     path: NumberTheory/Math/Divisors.h
     title: NumberTheory/Math/Divisors.h
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: NumberTheory/Primality_test.test.cpp
-    title: NumberTheory/Primality_test.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: NumberTheory/Yosupo/Primality_test.test.cpp
+    title: NumberTheory/Yosupo/Primality_test.test.cpp
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -71,9 +71,9 @@ data:
   requiredBy:
   - NumberTheory/Math/Divisors.h
   timestamp: '2025-07-18 00:55:12+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - NumberTheory/Primality_test.test.cpp
+  - NumberTheory/Yosupo/Primality_test.test.cpp
 documentation_of: NumberTheory/Math/MillerRabin.h
 layout: document
 redirect_from:

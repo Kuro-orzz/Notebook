@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: String/Z_Algorithm.test.cpp
-    title: String/Z_Algorithm.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: String/Yosupo/Z_Algorithm.test.cpp
+    title: String/Yosupo/Z_Algorithm.test.cpp
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -43,9 +43,9 @@ data:
   path: String/Z_Function.h
   requiredBy: []
   timestamp: '2025-06-11 15:37:14+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - String/Z_Algorithm.test.cpp
+  - String/Yosupo/Z_Algorithm.test.cpp
 documentation_of: String/Z_Function.h
 layout: document
 redirect_from:

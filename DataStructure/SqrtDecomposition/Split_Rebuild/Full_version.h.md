@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy:
   - icon: ':warning:'
-    path: DataStructure/SqrtDecomposition/Split_Rebuild/test1.cpp
-    title: DataStructure/SqrtDecomposition/Split_Rebuild/test1.cpp
+    path: DataStructure/Problem/Sqrt_split_rebuild1.cpp
+    title: DataStructure/Problem/Sqrt_split_rebuild1.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: h
@@ -161,7 +161,7 @@ data:
   isVerificationFile: false
   path: DataStructure/SqrtDecomposition/Split_Rebuild/Full_version.h
   requiredBy:
-  - DataStructure/SqrtDecomposition/Split_Rebuild/test1.cpp
+  - DataStructure/Problem/Sqrt_split_rebuild1.cpp
   timestamp: '2025-05-22 16:09:02+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

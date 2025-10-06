@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: NumberTheory/Counting_primes.test.cpp
-    title: NumberTheory/Counting_primes.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: NumberTheory/Enumerate_primes.test.cpp
-    title: NumberTheory/Enumerate_primes.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: NumberTheory/Yosupo/Counting_primes.test.cpp
+    title: NumberTheory/Yosupo/Counting_primes.test.cpp
+  - icon: ':x:'
+    path: NumberTheory/Yosupo/Enumerate_primes.test.cpp
+    title: NumberTheory/Yosupo/Enumerate_primes.test.cpp
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links:
     - https://codeforces.com/blog/entry/91632
@@ -58,10 +58,10 @@ data:
   path: NumberTheory/Math/CheckPrime.h
   requiredBy: []
   timestamp: '2025-05-25 00:26:18+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - NumberTheory/Counting_primes.test.cpp
-  - NumberTheory/Enumerate_primes.test.cpp
+  - NumberTheory/Yosupo/Counting_primes.test.cpp
+  - NumberTheory/Yosupo/Enumerate_primes.test.cpp
 documentation_of: NumberTheory/Math/CheckPrime.h
 layout: document
 redirect_from:

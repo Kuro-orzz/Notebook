@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: DataStructure/Point_add_range_sum.test.cpp
-    title: DataStructure/Point_add_range_sum.test.cpp
+    path: DataStructure/Yosupo/Point_add_range_sum.test.cpp
+    title: DataStructure/Yosupo/Point_add_range_sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: h
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -57,7 +57,7 @@ data:
   timestamp: '2025-05-20 14:35:59+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - DataStructure/Point_add_range_sum.test.cpp
+  - DataStructure/Yosupo/Point_add_range_sum.test.cpp
 documentation_of: DataStructure/SegTree/SegTree.h
 layout: document
 redirect_from:

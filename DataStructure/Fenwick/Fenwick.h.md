@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: DataStructure/Static_range_sum.test.cpp
-    title: DataStructure/Static_range_sum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: Tree/Vertex_add_subtree_sum.test.cpp
-    title: Tree/Vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: DataStructure/Yosupo/Static_range_sum.test.cpp
+    title: DataStructure/Yosupo/Static_range_sum.test.cpp
+  - icon: ':x:'
+    path: Tree/Yosupo/Vertex_add_subtree_sum.test.cpp
+    title: Tree/Yosupo/Vertex_add_subtree_sum.test.cpp
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -52,10 +52,10 @@ data:
   path: DataStructure/Fenwick/Fenwick.h
   requiredBy: []
   timestamp: '2025-05-22 01:34:28+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - DataStructure/Static_range_sum.test.cpp
-  - Tree/Vertex_add_subtree_sum.test.cpp
+  - DataStructure/Yosupo/Static_range_sum.test.cpp
+  - Tree/Yosupo/Vertex_add_subtree_sum.test.cpp
 documentation_of: DataStructure/Fenwick/Fenwick.h
 layout: document
 redirect_from:

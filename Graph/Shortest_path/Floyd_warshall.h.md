@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: Graph/test/aizu_grl_1_c_floyd_warshall.test.cpp
-    title: Graph/test/aizu_grl_1_c_floyd_warshall.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: Graph/Aizu/aizu_grl_1_c_floyd_warshall.test.cpp
+    title: Graph/Aizu/aizu_grl_1_c_floyd_warshall.test.cpp
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -49,9 +49,9 @@ data:
   path: Graph/Shortest_path/Floyd_warshall.h
   requiredBy: []
   timestamp: '2025-06-11 15:37:14+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - Graph/test/aizu_grl_1_c_floyd_warshall.test.cpp
+  - Graph/Aizu/aizu_grl_1_c_floyd_warshall.test.cpp
 documentation_of: Graph/Shortest_path/Floyd_warshall.h
 layout: document
 redirect_from:

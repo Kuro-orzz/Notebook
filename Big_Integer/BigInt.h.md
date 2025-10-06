@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: Big_Integer/Addition_of_Big_Integers.test.cpp
-    title: Big_Integer/Addition_of_Big_Integers.test.cpp
+    path: Big_Integer/Yosupo/Addition_of_Big_Integers.test.cpp
+    title: Big_Integer/Yosupo/Addition_of_Big_Integers.test.cpp
   - icon: ':heavy_check_mark:'
     path: Sample/Many_A_plus_B_128bit.test.cpp
     title: Sample/Many_A_plus_B_128bit.test.cpp
@@ -173,7 +173,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - Sample/Many_A_plus_B_128bit.test.cpp
-  - Big_Integer/Addition_of_Big_Integers.test.cpp
+  - Big_Integer/Yosupo/Addition_of_Big_Integers.test.cpp
 documentation_of: Big_Integer/BigInt.h
 layout: document
 redirect_from:

@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy:
   - icon: ':warning:'
     path: NumberTheory/Math/Divisors.h
     title: NumberTheory/Math/Divisors.h
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: NumberTheory/Math/MillerRabin.h
     title: NumberTheory/Math/MillerRabin.h
   - icon: ':warning:'
     path: NumberTheory/Math/Primality_test.h
     title: NumberTheory/Math/Primality_test.h
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: NumberTheory/Math/test/aizu_ntl_1_b_power_mod.test.cpp
-    title: NumberTheory/Math/test/aizu_ntl_1_b_power_mod.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: NumberTheory/Primality_test.test.cpp
-    title: NumberTheory/Primality_test.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: NumberTheory/Aizu/aizu_ntl_1_b_power_mod.test.cpp
+    title: NumberTheory/Aizu/aizu_ntl_1_b_power_mod.test.cpp
+  - icon: ':x:'
+    path: NumberTheory/Yosupo/Primality_test.test.cpp
+    title: NumberTheory/Yosupo/Primality_test.test.cpp
+  _isVerificationFailed: true
   _pathExtension: h
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.h\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -58,10 +58,10 @@ data:
   - NumberTheory/Math/Primality_test.h
   - NumberTheory/Math/MillerRabin.h
   timestamp: '2025-07-18 00:55:12+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - NumberTheory/Primality_test.test.cpp
-  - NumberTheory/Math/test/aizu_ntl_1_b_power_mod.test.cpp
+  - NumberTheory/Aizu/aizu_ntl_1_b_power_mod.test.cpp
+  - NumberTheory/Yosupo/Primality_test.test.cpp
 documentation_of: NumberTheory/Math/Binary_exponentiation.h
 layout: document
 redirect_from:

@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.h
     title: template.h
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: DataStructure/Static_RMQ.test.cpp
-    title: DataStructure/Static_RMQ.test.cpp
+    path: DataStructure/Yosupo/Static_RMQ.test.cpp
+    title: DataStructure/Yosupo/Static_RMQ.test.cpp
   _isVerificationFailed: false
   _pathExtension: h
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -65,7 +65,7 @@ data:
   timestamp: '2025-06-11 15:37:14+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - DataStructure/Static_RMQ.test.cpp
+  - DataStructure/Yosupo/Static_RMQ.test.cpp
 documentation_of: DataStructure/RMQ/RMQ.h
 layout: document
 redirect_from:
